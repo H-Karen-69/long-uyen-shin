@@ -1,0 +1,59 @@
+{
+  "entities": {
+    "Confession": {
+      "title": "Confession",
+      "description": "A confession post in the corner.",
+      "type": "object",
+      "properties": {
+        "username": { "type": "string" },
+        "content": { "type": "string" },
+        "timestamp": { "type": "timestamp" },
+        "likes": { "type": "number" },
+        "likedBy": { "type": "array" }
+      },
+      "required": ["username", "content", "timestamp", "likes", "likedBy"]
+    },
+    "ConfessionReply": {
+      "title": "Confession Reply",
+      "description": "A reply to a confession.",
+      "type": "object",
+      "properties": {
+        "username": { "type": "string" },
+        "content": { "type": "string" },
+        "timestamp": { "type": "timestamp" },
+        "likes": { "type": "number" },
+        "likedBy": { "type": "array" }
+      },
+      "required": ["username", "content", "timestamp", "likes", "likedBy"]
+    },
+    "CharacterFeedback": {
+      "title": "Character Feedback",
+      "description": "Feedback for a character.",
+      "type": "object",
+      "properties": {
+        "charId": { "type": "string" },
+        "username": { "type": "string" },
+        "rating": { "type": "number" },
+        "content": { "type": "string" },
+        "timestamp": { "type": "timestamp" },
+        "likes": { "type": "number" },
+        "likedBy": { "type": "array" }
+      },
+      "required": ["charId", "username", "rating", "content", "timestamp", "likes", "likedBy"]
+    }
+  },
+  "firestore": {
+    "/confessions/{confessionId}": {
+      "schema": { "$ref": "#/entities/Confession" },
+      "description": "Stores confession posts"
+    },
+    "/confessions/{confessionId}/replies/{replyId}": {
+      "schema": { "$ref": "#/entities/ConfessionReply" },
+      "description": "Stores replies to a specific confession"
+    },
+    "/char_feedbacks/{feedbackId}": {
+      "schema": { "$ref": "#/entities/CharacterFeedback" },
+      "description": "Stores character feedbacks"
+    }
+  }
+}

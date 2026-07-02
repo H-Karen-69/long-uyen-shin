@@ -1,0 +1,68 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Global Safety Net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Helper functions
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+    function incoming() { return request.resource.data; }
+    function existing() { return resource.data; }
+
+    function isValidConfession(data) {
+      return data.keys().hasAll(['username', 'content', 'timestamp', 'likes', 'likedBy', 'replies']) &&
+             data.username is string && data.username.size() >= 2 && data.username.size() <= 20 &&
+             data.content is string && data.content.size() > 0 && data.content.size() <= 500 &&
+             data.likes is number && data.likes >= 0 &&
+             data.likedBy is list &&
+             data.replies is list;
+    }
+
+    function isValidCharacterFeedback(data) {
+      return data.keys().hasAll(['charId', 'username', 'rating', 'content', 'timestamp', 'likes', 'likedBy']) &&
+             data.charId is string && data.charId.size() > 0 && data.charId.size() <= 50 &&
+             data.username is string && data.username.size() >= 2 && data.username.size() <= 20 &&
+             data.rating is number && data.rating >= 1 && data.rating <= 5 &&
+             data.content is string && data.content.size() > 0 && data.content.size() <= 500 &&
+             data.likes is number && data.likes >= 0 &&
+             data.likedBy is list;
+    }
+
+    function isValidBirthdayWish(data) {
+      return data.keys().hasAll(['charId', 'username', 'content', 'timestamp', 'likes', 'likedBy']) &&
+             data.charId is string && data.charId.size() > 0 && data.charId.size() <= 50 &&
+             data.username is string && data.username.size() >= 2 && data.username.size() <= 20 &&
+             data.content is string && data.content.size() > 0 && data.content.size() <= 500 &&
+             data.likes is number && data.likes >= 0 &&
+             data.likedBy is list;
+    }
+
+    match /confessions/{confessionId} {
+      allow read: if true;
+      allow create: if isValidConfession(incoming());
+      // Allow updating likes, likedBy, and replies
+      allow update: if incoming().diff(existing()).affectedKeys().hasAny(['likes', 'likedBy', 'replies']);
+      
+      match /replies/{replyId} {
+        allow read: if true;
+        allow write: if true;
+      }
+    }
+
+    match /char_feedbacks/{feedbackId} {
+      allow read: if true;
+      allow create: if isValidCharacterFeedback(incoming());
+      allow update: if incoming().diff(existing()).affectedKeys().hasAny(['likes', 'likedBy']);
+    }
+
+    match /birthday_wishes/{wishId} {
+      allow read: if true;
+      allow create: if isValidBirthdayWish(incoming());
+      allow update: if incoming().diff(existing()).affectedKeys().hasAny(['likes', 'likedBy']);
+    }
+  }
+}
