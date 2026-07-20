@@ -6,8 +6,9 @@ import { collection, addDoc, onSnapshot, query, where, serverTimestamp, arrayUni
 import { formatDistanceToNow } from 'date-fns';
 import { vi } from 'date-fns/locale';
 import confetti from 'canvas-confetti';
-import { Heart, Send, X, Gift } from 'lucide-react';
+import { Heart, Send, Gift } from 'lucide-react';
 import CuteLemon from './CuteLemon';
+import LemonCloseButton from './LemonCloseButton';
 
 interface BirthdayWish {
   id: string;
@@ -39,6 +40,16 @@ export default function BirthdayModal({ character, onClose, addToast }: Birthday
     }
     return id;
   });
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [onClose]);
 
   useEffect(() => {
     // Fire confetti on mount
@@ -155,16 +166,17 @@ export default function BirthdayModal({ character, onClose, addToast }: Birthday
   };
 
   return (
-    <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+    <div 
+      onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
+      className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+    >
       <motion.div 
         initial={{ opacity: 0, scale: 0.9, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.9, y: 20 }}
         className="w-full max-w-4xl max-h-[90vh] bg-white rounded-[32px] overflow-hidden shadow-2xl flex flex-col md:flex-row relative"
       >
-        <button onClick={onClose} className="absolute top-4 right-4 z-20 p-2 text-white bg-black/30 rounded-full hover:bg-black/50 transition-colors backdrop-blur-sm">
-          <X className="w-6 h-6" />
-        </button>
+        <LemonCloseButton onClick={onClose} className="absolute top-4 right-4 z-20" tooltip="Khép lại buổi tiệc" />
 
         {/* Left Side: Image & Hero */}
         <div className="w-full md:w-1/2 relative h-48 md:h-auto flex-shrink-0">
@@ -173,6 +185,7 @@ export default function BirthdayModal({ character, onClose, addToast }: Birthday
             src={character.birthdayImage || character.avatar} 
             alt={character.name} 
             className="w-full h-full object-cover"
+            referrerPolicy="no-referrer"
           />
           <div className="absolute bottom-6 left-6 right-6 z-20 text-white">
             <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold mb-3 border border-white/30">

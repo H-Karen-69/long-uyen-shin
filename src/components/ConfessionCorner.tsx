@@ -6,6 +6,7 @@ import { formatDistanceToNow } from 'date-fns';
 import { vi } from 'date-fns/locale';
 import CuteLemon from './CuteLemon';
 import { Heart, MessageCircle, Send, X, Edit2 } from 'lucide-react';
+import LemonCloseButton from './LemonCloseButton';
 
 interface ConfessionReply {
   id: string;
@@ -33,7 +34,7 @@ interface ConfessionCornerProps {
 export default function ConfessionCorner({ addToast }: ConfessionCornerProps) {
   const [confessions, setConfessions] = useState<Confession[]>([]);
   const [username, setUsername] = useState<string>('');
-  const [showNamePrompt, setShowNamePrompt] = useState<boolean>(true);
+  const [showNamePrompt, setShowNamePrompt] = useState<boolean>(false);
   const [tempName, setTempName] = useState<string>('');
   
   const [newContent, setNewContent] = useState('');
@@ -41,6 +42,12 @@ export default function ConfessionCorner({ addToast }: ConfessionCornerProps) {
   const [replyingTo, setReplyingTo] = useState<string | null>(null);
   const [replyContent, setReplyContent] = useState('');
   const [isReplying, setIsReplying] = useState(false);
+
+  // Store action to replay after setting name
+  const [pendingAction, setPendingAction] = useState<{
+    type: 'like_confession' | 'reply_confession' | 'send_confession';
+    data?: any;
+  } | null>(null);
 
   // My random generated UUID for likes to simulate user session
   const [userId] = useState(() => {
@@ -56,7 +63,6 @@ export default function ConfessionCorner({ addToast }: ConfessionCornerProps) {
     const savedName = localStorage.getItem('vuonchanh_username');
     if (savedName) {
       setUsername(savedName);
-      setShowNamePrompt(false);
     }
 
     const q = query(collection(db, 'confessions'), orderBy('timestamp', 'desc'));
@@ -81,11 +87,51 @@ export default function ConfessionCorner({ addToast }: ConfessionCornerProps) {
     return () => unsubscribe();
   }, [addToast]);
 
+  // Sync username changes from other components (like CharacterFeedbackModal)
+  useEffect(() => {
+    const handleUsernameChanged = () => {
+      const savedName = localStorage.getItem('vuonchanh_username');
+      if (savedName) {
+        setUsername(savedName);
+      }
+    };
+    window.addEventListener('vuonchanh_username_changed', handleUsernameChanged);
+    return () => window.removeEventListener('vuonchanh_username_changed', handleUsernameChanged);
+  }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && showNamePrompt) {
+        setShowNamePrompt(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [showNamePrompt]);
+
   const handleSaveName = () => {
-    if (tempName.trim().length >= 2 && tempName.trim().length <= 20) {
-      localStorage.setItem('vuonchanh_username', tempName.trim());
-      setUsername(tempName.trim());
+    const trimmedName = tempName.trim();
+    if (trimmedName.length >= 2 && trimmedName.length <= 20) {
+      localStorage.setItem('vuonchanh_username', trimmedName);
+      setUsername(trimmedName);
       setShowNamePrompt(false);
+
+      // Dispatch event to sync with other components
+      window.dispatchEvent(new Event('vuonchanh_username_changed'));
+
+      addToast(`Chào mừng ${trimmedName} đến vườn chanh của Shin! 🍋`, 'success');
+
+      // Execute pending action
+      if (pendingAction) {
+        const action = pendingAction;
+        setPendingAction(null); // Clear to prevent recursion
+
+        if (action.type === 'like_confession') {
+          handleLikeConfession(action.data.confessionId, action.data.isLiked);
+        } else if (action.type === 'reply_confession') {
+          setReplyingTo(action.data.confessionId);
+        }
+      }
     } else {
       addToast('Tên cần từ 2 đến 20 ký tự nha!', 'info');
     }
@@ -178,6 +224,28 @@ export default function ConfessionCorner({ addToast }: ConfessionCornerProps) {
     }
   };
 
+  const handleLikeConfessionClick = (confessionId: string, isLiked: boolean) => {
+    if (!username) {
+      addToast('Đặt tên trong vườn để tương tác nhé 🍋', 'info');
+      setPendingAction({ type: 'like_confession', data: { confessionId, isLiked } });
+      setTempName('');
+      setShowNamePrompt(true);
+      return;
+    }
+    handleLikeConfession(confessionId, isLiked);
+  };
+
+  const handleReplyClick = (confessionId: string) => {
+    if (!username) {
+      addToast('Đặt tên trong vườn để tương tác nhé 🍋', 'info');
+      setPendingAction({ type: 'reply_confession', data: { confessionId } });
+      setTempName('');
+      setShowNamePrompt(true);
+      return;
+    }
+    setReplyingTo(replyingTo === confessionId ? null : confessionId);
+  };
+
   const formatTime = (ts: any) => {
     if (!ts) return 'Vừa xong';
     try {
@@ -187,34 +255,6 @@ export default function ConfessionCorner({ addToast }: ConfessionCornerProps) {
       return 'Gần đây';
     }
   };
-
-  if (showNamePrompt) {
-    return (
-      <div className="bg-[#FFFDF2]/90 p-6 md:p-8 rounded-[32px] border-2 border-[#FFE873] shadow-lg max-w-lg mx-auto w-full backdrop-blur-sm relative">
-        <div className="text-center mb-6">
-          <CuteLemon size={60} className="mx-auto mb-4" />
-          <h2 className="font-serif text-2xl font-bold text-[#5D4E3C] mb-2">Bước vào vườn chanh</h2>
-          <p className="text-[#5D4E3C]/70 text-sm font-comfortaa">Tên này sẽ hiển thị khi bạn gửi confession hoặc trả lời.</p>
-        </div>
-        <div className="space-y-4">
-          <input
-            type="text"
-            value={tempName}
-            onChange={(e) => setTempName(e.target.value)}
-            placeholder="Tên trong vườn của bạn..."
-            className="w-full bg-white/60 border-2 border-[#FFE873]/50 rounded-2xl px-4 py-3 text-[#5D4E3C] placeholder:text-[#5D4E3C]/40 focus:outline-none focus:border-[#FFE873] focus:bg-white transition-all font-comfortaa"
-            maxLength={20}
-          />
-          <button
-            onClick={handleSaveName}
-            className="w-full bg-gradient-to-r from-[#FFE873] to-[#FFD3B6] text-[#5D4E3C] font-bold py-3 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all font-comfortaa flex items-center justify-center space-x-2"
-          >
-            <span>Bước vào vườn</span>
-          </button>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="w-full max-w-3xl mx-auto flex flex-col max-h-[85vh]">
@@ -229,38 +269,68 @@ export default function ConfessionCorner({ addToast }: ConfessionCornerProps) {
       <div className="flex-1 bg-[#FFFDF2]/80 border-x-2 border-b-2 border-[#FFE873] rounded-b-[32px] overflow-hidden flex flex-col backdrop-blur-sm">
         {/* Confession Input */}
         <div className="flex-none p-4 md:p-6 bg-white/40 border-b-2 border-[#FFE873]/30">
-          <div className="flex items-center justify-between mb-3">
-            <div className="flex items-center space-x-2 text-sm text-[#5D4E3C]/70 font-comfortaa">
-              <span>Đang gửi với danh tính: <strong className="text-[#E8A382]">{username}</strong></span>
-              <button 
-                onClick={() => { setTempName(username); setShowNamePrompt(true); }}
-                className="text-xs flex items-center space-x-1 hover:text-[#E8A382] transition-colors bg-black/5 px-2 py-0.5 rounded-full"
-              >
-                <Edit2 className="w-3 h-3" />
-                <span>Đổi</span>
-              </button>
-            </div>
-          </div>
-          <div className="relative">
-            <textarea
-              value={newContent}
-              onChange={(e) => setNewContent(e.target.value)}
-              placeholder="Hôm nay có gì muốn kể với vườn không?"
-              className="w-full bg-white/60 border-2 border-[#FFE873]/50 rounded-2xl px-4 py-3 pb-10 text-[#5D4E3C] placeholder:text-[#5D4E3C]/40 focus:outline-none focus:border-[#FFE873] focus:bg-white transition-all font-comfortaa resize-none h-28"
-              maxLength={500}
-            />
-            <div className="absolute bottom-3 left-4 text-xs text-[#5D4E3C]/40 font-comfortaa font-medium">
-              {newContent.length}/500
-            </div>
-            <button
-              onClick={handleSendConfession}
-              disabled={isSubmitting || !newContent.trim()}
-              className="absolute bottom-2 right-2 bg-gradient-to-r from-[#FFE873] to-[#FFD3B6] text-[#5D4E3C] font-bold py-1.5 px-4 rounded-xl shadow-sm hover:shadow-md transition-all font-comfortaa disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-1"
+          {username ? (
+            <>
+              <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center space-x-2 text-sm text-[#5D4E3C]/70 font-comfortaa">
+                  <span>Đang gửi với danh tính: <strong className="text-[#E8A382]">{username}</strong></span>
+                  <button 
+                    onClick={() => { setTempName(username); setShowNamePrompt(true); }}
+                    className="text-xs flex items-center space-x-1 hover:text-[#E8A382] transition-colors bg-black/5 px-2 py-0.5 rounded-full cursor-pointer"
+                  >
+                    <Edit2 className="w-3 h-3" />
+                    <span>Đổi</span>
+                  </button>
+                </div>
+              </div>
+              <div className="relative">
+                <textarea
+                  value={newContent}
+                  onChange={(e) => setNewContent(e.target.value)}
+                  placeholder="Hôm nay có gì muốn kể với vườn không?"
+                  className="w-full bg-white/60 border-2 border-[#FFE873]/50 rounded-2xl px-4 py-3 pb-10 text-[#5D4E3C] placeholder:text-[#5D4E3C]/40 focus:outline-none focus:border-[#FFE873] focus:bg-white transition-all font-comfortaa resize-none h-28"
+                  maxLength={500}
+                />
+                <div className="absolute bottom-3 left-4 text-xs text-[#5D4E3C]/40 font-comfortaa font-medium">
+                  {newContent.length}/500
+                </div>
+                <button
+                  onClick={handleSendConfession}
+                  disabled={isSubmitting || !newContent.trim()}
+                  className="absolute bottom-2 right-2 bg-gradient-to-r from-[#FFE873] to-[#FFD3B6] text-[#5D4E3C] font-bold py-1.5 px-4 rounded-xl shadow-sm hover:shadow-md transition-all font-comfortaa disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-1 cursor-pointer"
+                >
+                  <span>Thả vào vườn</span>
+                  <Send className="w-3 h-3" />
+                </button>
+              </div>
+            </>
+          ) : (
+            /* BANNER MỜI ĐẶT TÊN */
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="bg-[#FFFDF2] border-2 border-[#FFE873]/40 rounded-2xl p-4 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4"
             >
-              <span>Thả vào vườn</span>
-              <Send className="w-3 h-3" />
-            </button>
-          </div>
+              <div className="flex items-center gap-3 text-left">
+                <div className="shrink-0 w-8 h-8 bg-[#FFE873]/20 rounded-full flex items-center justify-center border border-[#FFE873]/30">
+                  <CuteLemon size={18} />
+                </div>
+                <p className="text-[#5D4E3C] text-xs font-comfortaa leading-snug">
+                  Đặt tên trong vườn để cùng thả confession và trò chuyện nhé 🍋
+                </p>
+              </div>
+              <button
+                onClick={() => {
+                  setTempName('');
+                  setPendingAction({ type: 'send_confession' });
+                  setShowNamePrompt(true);
+                }}
+                className="shrink-0 bg-gradient-to-r from-[#FFE873] to-[#FFD3B6] hover:from-[#FFD3B6] hover:to-[#FFE873] text-[#5D4E3C] font-extrabold text-xs py-2 px-4 rounded-xl shadow-sm hover:shadow active:scale-95 transition-all duration-300 font-comfortaa cursor-pointer border border-[#FFE873]/50"
+              >
+                Đặt tên ngay
+              </button>
+            </motion.div>
+          )}
         </div>
 
         {/* Confession List */}
@@ -299,16 +369,16 @@ export default function ConfessionCorner({ addToast }: ConfessionCornerProps) {
                     
                     <div className="flex items-center justify-between pt-3 border-t border-[#FFE873]/20">
                       <button 
-                        onClick={() => setReplyingTo(replyingTo === confession.id ? null : confession.id)}
-                        className={`flex items-center space-x-1.5 text-xs font-bold transition-colors px-3 py-1.5 rounded-lg ${replyingTo === confession.id ? 'bg-[#FFE873]/30 text-[#E8A382]' : 'text-[#5D4E3C]/60 hover:text-[#5D4E3C] hover:bg-black/5'}`}
+                        onClick={() => handleReplyClick(confession.id)}
+                        className={`flex items-center space-x-1.5 text-xs font-bold transition-colors px-3 py-1.5 rounded-lg cursor-pointer ${replyingTo === confession.id ? 'bg-[#FFE873]/30 text-[#E8A382]' : 'text-[#5D4E3C]/60 hover:text-[#5D4E3C] hover:bg-black/5'}`}
                       >
                         <MessageCircle className="w-4 h-4" />
                         <span>Trả lời {confession.replies?.length > 0 ? `(${confession.replies.length})` : ''}</span>
                       </button>
                       
                       <button 
-                        onClick={() => handleLikeConfession(confession.id, isLiked)}
-                        className={`flex items-center space-x-1.5 text-xs font-bold px-3 py-1.5 rounded-lg transition-all ${isLiked ? 'text-[#E8A382] bg-[#E8A382]/10' : 'text-[#5D4E3C]/50 hover:bg-black/5 hover:text-[#E8A382]'}`}
+                        onClick={() => handleLikeConfessionClick(confession.id, isLiked)}
+                        className={`flex items-center space-x-1.5 text-xs font-bold px-3 py-1.5 rounded-lg transition-all cursor-pointer ${isLiked ? 'text-[#E8A382] bg-[#E8A382]/10' : 'text-[#5D4E3C]/50 hover:bg-black/5 hover:text-[#E8A382]'}`}
                       >
                         <Heart className="w-4 h-4" fill={isLiked ? "currentColor" : "none"} />
                         <span>{confession.likes || 0}</span>
@@ -335,14 +405,14 @@ export default function ConfessionCorner({ addToast }: ConfessionCornerProps) {
                             <div className="absolute bottom-2 right-2 flex space-x-2">
                               <button
                                 onClick={() => setReplyingTo(null)}
-                                className="px-3 py-1 text-xs font-bold text-[#5D4E3C]/60 hover:text-[#5D4E3C] transition-colors"
+                                className="px-3 py-1 text-xs font-bold text-[#5D4E3C]/60 hover:text-[#5D4E3C] transition-colors cursor-pointer"
                               >
                                 Hủy
                               </button>
                               <button
                                 onClick={() => handleSendReply(confession.id)}
                                 disabled={isReplying || !replyContent.trim()}
-                                className="bg-gradient-to-r from-[#FFE873] to-[#FFD3B6] text-[#5D4E3C] font-bold py-1 px-3 rounded-lg text-xs shadow-sm hover:shadow-md transition-all disabled:opacity-50 flex items-center space-x-1"
+                                className="bg-gradient-to-r from-[#FFE873] to-[#FFD3B6] text-[#5D4E3C] font-bold py-1 px-3 rounded-lg text-xs shadow-sm hover:shadow-md transition-all disabled:opacity-50 flex items-center space-x-1 cursor-pointer"
                               >
                                 <span>Gửi</span>
                                 <Send className="w-3 h-3" />
@@ -372,6 +442,54 @@ export default function ConfessionCorner({ addToast }: ConfessionCornerProps) {
           </AnimatePresence>
         </div>
       </div>
+
+      {/* Name Prompt Popup Overlay */}
+      <AnimatePresence>
+        {showNamePrompt && (
+          <div 
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm"
+            onClick={() => setShowNamePrompt(false)}
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-[#FFFDF2] p-6 md:p-8 rounded-[32px] border-2 border-[#FFE873] shadow-2xl max-w-md w-full relative overflow-hidden"
+            >
+              <LemonCloseButton
+                onClick={() => setShowNamePrompt(false)}
+                className="absolute top-4 right-4 z-20"
+                tooltip="Đóng lại"
+              />
+              <div className="text-center mb-6">
+                <CuteLemon size={60} className="mx-auto mb-4" />
+                <h2 className="font-serif text-2xl font-bold text-[#5D4E3C] mb-2">Bước vào vườn chanh</h2>
+                <p className="text-[#5D4E3C]/70 text-sm font-comfortaa">Tên này sẽ hiển thị khi bạn gửi confession hoặc trả lời.</p>
+              </div>
+              <div className="space-y-4">
+                <input
+                  type="text"
+                  value={tempName}
+                  onChange={(e) => setTempName(e.target.value)}
+                  placeholder="Tên trong vườn của bạn..."
+                  className="w-full bg-white/60 border-2 border-[#FFE873]/50 rounded-2xl px-4 py-3 text-[#5D4E3C] placeholder:text-[#5D4E3C]/40 focus:outline-none focus:border-[#FFE873] focus:bg-white transition-all font-comfortaa"
+                  maxLength={20}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter') handleSaveName();
+                  }}
+                />
+                <button
+                  onClick={handleSaveName}
+                  className="w-full bg-gradient-to-r from-[#FFE873] to-[#FFD3B6] text-[#5D4E3C] font-bold py-3 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all font-comfortaa flex items-center justify-center space-x-2 cursor-pointer"
+                >
+                  <span>Bước vào vườn</span>
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

@@ -202,30 +202,32 @@ export default function MoodQuiz({ characters, onThuongVi, onShowBackstory }: Mo
 
   // Filter recommended characters
   const getRecommended = (): Character[] => {
-    if (!selectedMood) return characters.slice(0, 3);
-    
-    let filtered = [...characters];
-    
-    if (selectedMood === 'vui' || selectedFlavor === 'ngot') {
-      filtered = characters.filter(c => c.taste === 'Ngọt' || c.taste === 'Sủng');
-    } else if (selectedMood === 'buon' || selectedFlavor === 'dang') {
-      filtered = characters.filter(c => c.taste === 'Ngược' || c.taste === 'Ngọt xen đau');
-    } else if (selectedMood === 'codon' || selectedFlavor === 'non') {
-      filtered = characters.filter(c => c.taste === 'Sủng' || c.taste === 'Ngọt xen đau');
-    } else if (selectedMood === 'buc' || selectedFlavor === 'chua') {
-      filtered = characters.filter(c => c.genre === 'Hắc Bang' || c.genre === 'Cổ Điển');
-    } else if (selectedFlavor === 'la') {
-      // Pick characters that are 'Mới' or unique
-      filtered = characters.filter(c => c.statusType === 'Mới' || c.id === 'char-3' || c.id === 'char-6');
+    if (!selectedMood) return [];
+
+    if (selectedMood === 'binh-thuong') {
+      if (selectedFlavor === 'chua') {
+        return characters.filter(c => c.name === "Nhiếp Cảnh Hành");
+      }
+      if (selectedFlavor === 'ngot') {
+        return characters.filter(c => c.name === "Yến Bắc Thần");
+      }
+      if (selectedFlavor === 'dang') {
+        return characters.filter(c => c.name === "Trình Dĩ Phàm");
+      }
+      return [];
     }
-    
-    // If we have less than 3, pad with others
-    if (filtered.length < 3) {
-      const rest = characters.filter(c => !filtered.some(f => f.id === c.id));
-      filtered = [...filtered, ...rest];
+
+    if (selectedMood === 'vui') {
+      return characters.filter(c => c.name === "Trình Dĩ Phàm");
     }
-    
-    return filtered.slice(0, 3);
+    if (selectedMood === 'codon' || selectedMood === 'buon') {
+      return characters.filter(c => c.name === "Yến Bắc Thần");
+    }
+    if (selectedMood === 'buc') {
+      return characters.filter(c => c.name === "Yến Bắc Thần");
+    }
+
+    return [];
   };
 
   const recommendedList = getRecommended();
@@ -493,55 +495,69 @@ export default function MoodQuiz({ characters, onThuongVi, onShowBackstory }: Mo
               </div>
 
               {/* 3 Compact recommended character cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                {recommendedList.map((char) => (
-                  <div
-                    key={char.id}
-                    className="bg-[#FFFDF2] border border-[#F5EAD2] hover:border-[#FFF176] rounded-2xl p-3 flex flex-col justify-between transition-all duration-300 hover:shadow-sm"
-                  >
-                    <div className="flex items-start gap-2.5">
-                      <img
-                        src={char.avatar}
-                        alt={char.name}
-                        referrerPolicy="no-referrer"
-                        className="w-10 h-10 rounded-xl object-cover border border-[#FAE9C5] shrink-0"
-                      />
-                      <div className="min-w-0">
-                        <h5 className="font-serif text-xs font-bold text-[#5D4E3C] truncate">
-                          {char.name}
-                        </h5>
-                        <p className="text-[10px] text-[#5D4E3C]/60 line-clamp-1 mt-0.5">
-                          {char.title}
-                        </p>
+              {recommendedList.length > 0 ? (
+                <div className={`grid grid-cols-1 ${
+                  recommendedList.length === 1 
+                    ? 'max-w-xs mx-auto' 
+                    : recommendedList.length === 2 
+                    ? 'sm:grid-cols-2 max-w-xl mx-auto' 
+                    : 'sm:grid-cols-3'
+                } gap-4`}>
+                  {recommendedList.map((char) => (
+                    <div
+                      key={char.id}
+                      className="bg-[#FFFDF2] border border-[#F5EAD2] hover:border-[#FFF176] rounded-2xl p-3 flex flex-col justify-between transition-all duration-300 hover:shadow-sm"
+                    >
+                      <div className="flex items-start gap-2.5">
+                        <img
+                          src={char.avatar}
+                          alt={char.name}
+                          referrerPolicy="no-referrer"
+                          className="w-10 h-10 rounded-xl object-cover object-top border border-[#FAE9C5] shrink-0"
+                        />
+                        <div className="min-w-0">
+                          <h5 className="font-serif text-xs font-bold text-[#5D4E3C] truncate">
+                            {char.name}
+                          </h5>
+                          <p className="text-[10px] text-[#5D4E3C]/60 line-clamp-1 mt-0.5">
+                            {char.title}
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-wrap gap-1 mt-2 mb-3">
+                        <span className="text-[9px] bg-[#FAE9C5] text-[#5D4E3C]/80 px-1.5 py-0.5 rounded font-bold">
+                          {char.worldTag}
+                        </span>
+                        <span className="text-[9px] bg-[#FFD3B6] text-[#5D4E3C]/80 px-1.5 py-0.5 rounded font-bold">
+                          {char.aftertasteTag}
+                        </span>
+                      </div>
+
+                      <div className="flex gap-1.5">
+                        <button
+                          onClick={() => onShowBackstory(char)}
+                          className="flex-1 text-center font-bold text-[10px] text-[#5D4E3C]/70 hover:text-[#5D4E3C] bg-[#FAE9C5]/40 hover:bg-[#FAE9C5] py-1.5 rounded-lg transition-colors cursor-pointer"
+                        >
+                          Cốt Truyện
+                        </button>
+                        <button
+                          onClick={() => onThuongVi(char)}
+                          className="flex-1 text-center font-bold text-[10px] text-[#5D4E3C] bg-[#FFF176] hover:bg-[#FFF59D] py-1.5 rounded-lg transition-colors cursor-pointer"
+                        >
+                          Thưởng Vị
+                        </button>
                       </div>
                     </div>
-
-                    <div className="flex flex-wrap gap-1 mt-2 mb-3">
-                      <span className="text-[9px] bg-[#FAE9C5] text-[#5D4E3C]/80 px-1.5 py-0.5 rounded font-bold">
-                        {char.worldTag}
-                      </span>
-                      <span className="text-[9px] bg-[#FFD3B6] text-[#5D4E3C]/80 px-1.5 py-0.5 rounded font-bold">
-                        {char.aftertasteTag}
-                      </span>
-                    </div>
-
-                    <div className="flex gap-1.5">
-                      <button
-                        onClick={() => onShowBackstory(char)}
-                        className="flex-1 text-center font-bold text-[10px] text-[#5D4E3C]/70 hover:text-[#5D4E3C] bg-[#FAE9C5]/40 hover:bg-[#FAE9C5] py-1.5 rounded-lg transition-colors cursor-pointer"
-                      >
-                        Đọc Truyện
-                      </button>
-                      <button
-                        onClick={() => onThuongVi(char)}
-                        className="flex-1 text-center font-bold text-[10px] text-[#5D4E3C] bg-[#FFF176] hover:bg-[#FFF59D] py-1.5 rounded-lg transition-colors cursor-pointer"
-                      >
-                        Thưởng Vị
-                      </button>
-                    </div>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="bg-[#FFFDF2]/60 rounded-2xl p-5 border border-dashed border-[#F5EAD2] text-center">
+                  <p className="text-xs text-[#5D4E3C]/60 italic font-medium">
+                    Xin lỗi babi vì hiện tại vườn chưa có hương vị này nha இ௰இ Hãy thử chọn hương vị khác nhé, hứa là sau sẽ có nèe.
+                  </p>
+                </div>
+              )}
             </div>
           </motion.div>
         )}

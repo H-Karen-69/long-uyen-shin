@@ -3,9 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, Sparkles, BookOpen, Heart, Coffee } from 'lucide-react';
+import { Sparkles, BookOpen, Heart, Coffee } from 'lucide-react';
 import { Character } from '../types';
+import LemonCloseButton from './LemonCloseButton';
 
 interface StoryModalProps {
   character: Character | null;
@@ -15,6 +17,16 @@ interface StoryModalProps {
 }
 
 export default function StoryModal({ character, onClose, onLike, isLiked }: StoryModalProps) {
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [onClose]);
+
   if (!character) return null;
 
   return (
@@ -42,14 +54,11 @@ export default function StoryModal({ character, onClose, onLike, isLiked }: Stor
           <div className="h-2 bg-gradient-to-r from-[#FFE873] via-[#FFD3B6] to-[#C8E6C9]" />
 
           {/* Close Button */}
-          <button
-            id={`close-modal-btn-${character.id}`}
+          <LemonCloseButton
             onClick={onClose}
-            className="absolute top-4 right-4 p-2 rounded-full bg-[#FFE873]/30 hover:bg-[#FFE873]/60 text-[#5D4E3C] transition-all cursor-pointer hover:rotate-90 duration-300"
-            aria-label="Đóng bối cảnh"
-          >
-            <X size={18} />
-          </button>
+            className="absolute top-4 right-4 z-20"
+            tooltip="Khép lại bối cảnh"
+          />
 
           {/* Body Content */}
           <div className="p-6 md:p-8 max-h-[80vh] overflow-y-auto custom-scrollbar">
@@ -58,7 +67,7 @@ export default function StoryModal({ character, onClose, onLike, isLiked }: Stor
               <img
                 src={character.avatar}
                 alt={character.name}
-                className="w-16 h-16 rounded-[20px] object-cover shadow-md border-2 border-[#FFE873]"
+                className="w-16 h-16 rounded-[20px] object-cover object-top shadow-md border-2 border-[#FFE873]"
                 referrerPolicy="no-referrer"
               />
               <div>

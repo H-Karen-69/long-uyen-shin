@@ -14,13 +14,20 @@ export interface Character {
   aftertasteTag: string; // #DưVị (đào sữa)
   statusTag: string;     // #MẻMới (vàng chanh đậm)
   likes: number;
-  genre: 'TXVT' | 'Hắc Bang' | 'Thần Thoại' | 'Cổ Điển';
-  taste: 'Ngọt' | 'Ngược' | 'Sủng' | 'Ngọt xen đau';
-  statusType: 'Mới' | 'Hot' | 'Kỳ Cựu';
+  genre: string;
+  taste: string;
+  statusType: string;
   birthday?: string; // DD/MM format
   birthdayImage?: string;
   age?: number;
   isHot?: boolean;
+  isNew?: boolean;
+  isComingSoon?: boolean;
+  releaseDate?: string;
+  creatorPick?: boolean;
+  worldCategory: string[];
+  moodCategory: string[];
+  hashtags: string[];
 }
 
 export interface Feedback {

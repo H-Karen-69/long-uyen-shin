@@ -109,6 +109,21 @@ body {
   animation: hot-border-pulse 2s infinite ease-in-out;
 }
 
+/* Coming Soon Card Border Animation (Tím nhạt -> Xanh mint) */
+@keyframes coming-soon-border-pulse {
+  0%, 100% { 
+    border-color: #D4C5E8; 
+    box-shadow: 0 0 15px rgba(212, 197, 232, 0.55), inset 0 1px 0 0 rgba(255, 255, 255, 0.8);
+  }
+  50% { 
+    border-color: #B8D8D8; 
+    box-shadow: 0 0 15px rgba(184, 216, 216, 0.55), inset 0 1px 0 0 rgba(255, 255, 255, 0.8);
+  }
+}
+.coming-soon-card-border {
+  animation: coming-soon-border-pulse 1.8s infinite ease-in-out;
+}
+
 @keyframes hot-badge-pulse {
   0%, 100% { 
     opacity: 1; 
@@ -121,6 +136,21 @@ body {
 }
 .hot-badge-animate {
   animation: hot-badge-pulse 1.2s infinite ease-in-out;
+}
+
+/* Breath/Flashing Badge Animation */
+@keyframes badge-breath-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+.badge-breath-animate {
+  animation: badge-breath-pulse 1.8s infinite ease-in-out;
 }
 
 /* Jumping Music Waves */
@@ -147,5 +177,14 @@ body {
 .wave-bar-3 {
   animation: wave-bounce-3 0.7s ease-in-out infinite;
   transform-origin: bottom;
+}
+
+/* Blinking text animation for bulletins */
+@keyframes text-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+.animate-text-blink {
+  animation: text-blink 1.2s infinite ease-in-out;
 }
 

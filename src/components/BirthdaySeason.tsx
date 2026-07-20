@@ -63,7 +63,8 @@ export default function BirthdaySeason({ characters, onOpenBirthdayModal }: Birt
               <img 
                 src={mainBirthdayChar.birthdayImage || mainBirthdayChar.avatar} 
                 alt={mainBirthdayChar.name} 
-                className="w-full h-full object-cover opacity-80"
+                className="w-full h-full object-cover object-top opacity-80"
+                referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
             </div>
@@ -125,7 +126,7 @@ export default function BirthdaySeason({ characters, onOpenBirthdayModal }: Birt
                   <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
                     <div className="relative w-24 h-24 flex-shrink-0">
                       <div className="absolute inset-0 bg-[#FFE873] rounded-full animate-pulse opacity-50 blur-md" />
-                      <img src={nextBirthdayChar.char.avatar} alt={nextBirthdayChar.char.name} className="w-full h-full object-cover rounded-full border-4 border-white relative z-10 shadow-sm" />
+                      <img src={nextBirthdayChar.char.avatar} alt={nextBirthdayChar.char.name} className="w-full h-full object-cover object-top rounded-full border-4 border-white relative z-10 shadow-sm" referrerPolicy="no-referrer" />
                     </div>
                     <div className="text-center md:text-left">
                       <h3 className="font-bold text-xl text-[#5D4E3C]">{nextBirthdayChar.char.name}</h3>
@@ -181,7 +182,7 @@ export default function BirthdaySeason({ characters, onOpenBirthdayModal }: Birt
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {upcomingBirthdays.map((item, idx) => (
                   <div key={item.char.id} className="bg-white p-4 rounded-2xl flex items-center space-x-4 border border-[#FFE873]/30 shadow-sm hover:shadow-md transition-shadow group">
-                    <img src={item.char.avatar} className="w-16 h-16 rounded-xl object-cover" alt={item.char.name} />
+                    <img src={item.char.avatar} className="w-16 h-16 rounded-xl object-cover object-top" alt={item.char.name} referrerPolicy="no-referrer" />
                     <div className="flex-1">
                       <h4 className="font-bold text-[#5D4E3C] text-lg group-hover:text-[#E8A382] transition-colors">{item.char.name}</h4>
                       <p className="text-sm text-[#5D4E3C]/60 font-comfortaa">Ngày {item.char.birthday}</p>
@@ -265,7 +266,8 @@ export default function BirthdaySeason({ characters, onOpenBirthdayModal }: Birt
                               src={c.avatar} 
                               alt={c.name}
                               title={c.name}
-                              className="w-6 h-6 rounded-full border border-white object-cover shadow-sm"
+                              referrerPolicy="no-referrer"
+                              className="w-6 h-6 rounded-full border border-white object-cover object-top shadow-sm"
                             />
                           ))}
                         </div>

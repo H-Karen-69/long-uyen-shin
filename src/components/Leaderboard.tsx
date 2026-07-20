@@ -74,7 +74,7 @@ export default function Leaderboard({ characters, onShowBackstory }: Leaderboard
                 <img
                   src={char.avatar}
                   alt={char.name}
-                  className="w-10 h-10 rounded-[12px] object-cover border border-[#F5EAD2] shadow-sm"
+                  className="w-10 h-10 rounded-[12px] object-cover object-top border border-[#F5EAD2] shadow-sm"
                   referrerPolicy="no-referrer"
                 />
 
