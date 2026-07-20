@@ -280,7 +280,19 @@ export default function App() {
                          activeGenres.includes(char.genre) || 
                          activeGenres.some(g => char.worldCategory?.includes(g));
     const matchesTaste = activeTastes.includes('Tất cả') || activeTastes.includes(char.taste);
-    const matchesStatus = activeStatuses.includes('Tất cả') || activeStatuses.includes(char.statusType);
+    const matchesStatus = activeStatuses.includes('Tất cả') || 
+                          activeStatuses.some(status => {
+                            if (status === 'Hot') {
+                              return char.isHot || char.statusType === 'Hot' || char.statusTag === 'HOT 🔥';
+                            }
+                            if (status === 'Mới') {
+                              return char.isNew || char.statusType === 'Mới' || char.statusTag === 'Mẻ Mới' || char.statusType === 'Mẻ Mới';
+                            }
+                            if (status === 'Kỳ Cựu') {
+                              return char.statusType === 'Kỳ Cựu' || char.statusTag === 'Kỳ Cựu';
+                            }
+                            return char.statusType === status;
+                          });
 
     return matchesSearch && matchesGenre && matchesTaste && matchesStatus;
   });
