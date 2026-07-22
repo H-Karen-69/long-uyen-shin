@@ -15,9 +15,9 @@ import { Character } from './types';
  * - avatar: Link ảnh đại diện (Nên dùng link ảnh Unsplash hoặc link ảnh trực tiếp dạng https://...)
  * - roleplayLink: Đường dẫn liên kết đến chatbot Roleplay thực tế của bạn
  * - storyText: Cốt truyện / Lời chào / Bối cảnh sâu sắc để thu hút người chơi
- * - genre: Thể loại giống chanh (Phân loại: 'TXVT', 'Hắc Bang', 'Thần Thoại', 'Cổ Điển')
- * - taste: Trải nghiệm dư vị (Phân loại: 'Ngọt', 'Ngược', 'Sủng', 'Ngọt xen đau')
- * - statusType: Phân loại mẻ mới/cũ (Phân loại: 'Mới', 'Yêu Thích', 'Kỳ Cựu')
+ * - genre: Long tộc / Thể loại (Phân loại: 'TXVT', 'Hắc Bang', 'Thần Thoại', 'Cổ Điển')
+ * - taste: Trải nghiệm long vị (Phân loại: 'Ngọt', 'Ngược', 'Sủng', 'Ngọt xen đau')
+ * - statusType: Phân loại rồng (Phân loại: 'Mới', 'Yêu Thích', 'Kỳ Cựu')
  * - likes: Số lượt thả tim ban đầu hiển thị trên card
  */
 
@@ -325,9 +325,9 @@ Khóe môi Nhiếp Cảnh Hành từ từ nhếch lên một độ cong mỉa ma
 export const BULLETINS = [
   {
     id: 1,
-    title: "Chào mừng đến với Vườn Chanh",
-    text: "🍋 Chào mừng bạn đến với Vườn Chanh của Shin! Nơi tổng hợp những linh hồn Roleplay tinh khiết và ngọt ngào nhất.",
-    detail: "Đây là không gian dành riêng cho những ai đam mê thể loại Roleplay. Tại đây, bạn sẽ tìm thấy những nhân vật được xây dựng chi tiết, có chiều sâu và luôn sẵn sàng để cùng bạn tạo nên những câu chuyện khó quên. Hãy dạo quanh vườn, chọn cho mình một 'quả chanh' ưng ý và bắt đầu thưởng thức nhé!"
+    title: "Chào mừng đến với Long Uyển",
+    text: "🐉 Chào mừng bạn đến với Long Uyển của Shin! Nơi linh hồn của rồng thiêng hòa quyện cùng bối cảnh Roleplay sâu lắng nhất.",
+    detail: "Đây là không gian dành riêng cho những ai đam mê thể loại Roleplay. Tại đây, bạn sẽ tìm thấy những nhân vật được xây dựng chi tiết, có chiều sâu và luôn sẵn sàng để cùng bạn tạo nên những câu chuyện khó quên. Hãy dạo quanh Long Uyển, chọn cho mình một 'vị rồng' ưng ý và bắt đầu triệu hồi nhé!"
   },
   {
     id: 2,
@@ -339,13 +339,13 @@ export const BULLETINS = [
     id: 3,
     title: "Góc Confession đã mở",
     text: "💬 Góc Confession đã hoạt động! Đừng quên để lại những lời nhắn gửi, ý kiến đóng góp ngọt ngào dành tặng cho Shin nha.",
-    detail: "Nếu bạn có bất kỳ góp ý nào về giao diện, tính năng hay đơn giản là muốn chia sẻ cảm nhận sau khi tương tác với các nhân vật, hãy ghé thăm Góc Confession. Shin luôn lắng nghe và trân trọng mọi phản hồi từ các bạn để khu vườn ngày càng phát triển hơn."
+    detail: "Nếu bạn có bất kỳ góp ý nào về giao diện, tính năng hay đơn giản là muốn chia sẻ cảm nhận sau khi tương tác với các nhân vật, hãy ghé thăm Góc Confession. Shin luôn lắng nghe và trân trọng mọi phản hồi từ các bạn để Long Uyển ngày càng phát triển hơn."
   },
   {
     id: 4,
     title: "Mách nhỏ về âm nhạc",
-    text: "🎶 Mách nhỏ: Bạn có thể mở playlist ở góc trái trên cùng để vừa chọn chanh, vừa nghe nhạc nhé ♪(^∇^*)",
-    detail: "Khu vườn luôn có những bản nhạc sâu lắng vang lên. Bạn có thể mở playlist ở góc trái trên cùng để vừa chọn chanh, vừa nghe nhạc. Sự kết hợp này sẽ giúp cảm xúc của bạn được thăng hoa hơn đó nhaa ♪(^∇^*)"
+    text: "🎶 Mách nhỏ: Bạn có thể mở playlist ở góc trái trên cùng để vừa Tầm Long, vừa nghe nhạc nhé ♪(^∇^*)",
+    detail: "Long Uyển luôn có những bản nhạc sâu lắng vang lên. Bạn có thể mở playlist ở góc trái trên cùng để vừa triệu rồng, vừa thưởng nhạc. Sự kết hợp này sẽ giúp cảm xúc của bạn được thăng hoa hơn đó nhaa ♪(^∇^*)"
   }
 ];
 

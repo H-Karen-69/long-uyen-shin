@@ -1,6 +1,6 @@
 {
-  "name": "Vườn Chanh Của Shin",
-  "description": "Cổng thông tin và liên kết các nhân vật Roleplay của Creator Kamishiro Shinju.",
+  "name": "Long Uyển Của Shin",
+  "description": "Cổng thông tin và liên kết các nhân vật Roleplay của Creator Kamishiro Shinju tại Long Uyển.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

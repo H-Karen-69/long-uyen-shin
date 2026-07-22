@@ -12,7 +12,7 @@ export interface Character {
   storyText: string;
   worldTag: string;      // #ThếGiới (olive pastel)
   aftertasteTag: string; // #DưVị (đào sữa)
-  statusTag: string;     // #MẻMới (vàng chanh đậm)
+  statusTag: string;     // #PhânLoại (vàng hoàng kim)
   likes: number;
   genre: string;
   taste: string;

@@ -7,8 +7,8 @@ import { formatDistanceToNow } from 'date-fns';
 import { vi } from 'date-fns/locale';
 import confetti from 'canvas-confetti';
 import { Heart, Send, Gift } from 'lucide-react';
-import CuteLemon from './CuteLemon';
-import LemonCloseButton from './LemonCloseButton';
+import CuteDragon from './CuteDragon';
+import DragonCloseButton from './DragonCloseButton';
 
 interface BirthdayWish {
   id: string;
@@ -33,10 +33,10 @@ export default function BirthdayModal({ character, onClose, addToast }: Birthday
   const [username, setUsername] = useState<string>('');
   
   const [userId] = useState(() => {
-    let id = localStorage.getItem('vuonchanh_userid');
+    let id = localStorage.getItem('longuyen_userid');
     if (!id) {
       id = 'user_' + Math.random().toString(36).substr(2, 9);
-      localStorage.setItem('vuonchanh_userid', id);
+      localStorage.setItem('longuyen_userid', id);
     }
     return id;
   });
@@ -71,11 +71,11 @@ export default function BirthdayModal({ character, onClose, addToast }: Birthday
       const particleCount = 50 * (timeLeft / duration);
       confetti(Object.assign({}, defaults, { particleCount,
         origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
-        colors: ['#FFE873', '#FFD3B6', '#C8E6C9', '#F8BBD0']
+        colors: ['#7A8AA5', '#E88BA0', '#B8C4D8', '#F5C8D0']
       }));
       confetti(Object.assign({}, defaults, { particleCount,
         origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
-        colors: ['#FFE873', '#FFD3B6', '#C8E6C9', '#F8BBD0']
+        colors: ['#7A8AA5', '#E88BA0', '#B8C4D8', '#F5C8D0']
       }));
     }, 250);
 
@@ -83,7 +83,7 @@ export default function BirthdayModal({ character, onClose, addToast }: Birthday
   }, []);
 
   useEffect(() => {
-    const savedName = localStorage.getItem('vuonchanh_username') || 'Khách Ẩn Danh';
+    const savedName = localStorage.getItem('longuyen_username') || 'Khách Ẩn Danh';
     setUsername(savedName);
 
     const q = query(
@@ -176,7 +176,7 @@ export default function BirthdayModal({ character, onClose, addToast }: Birthday
         exit={{ opacity: 0, scale: 0.9, y: 20 }}
         className="w-full max-w-4xl max-h-[90vh] bg-white rounded-[32px] overflow-hidden shadow-2xl flex flex-col md:flex-row relative"
       >
-        <LemonCloseButton onClick={onClose} className="absolute top-4 right-4 z-20" tooltip="Khép lại buổi tiệc" />
+        <DragonCloseButton onClick={onClose} className="absolute top-4 right-4 z-20" tooltip="Khép lại buổi tiệc" />
 
         {/* Left Side: Image & Hero */}
         <div className="w-full md:w-1/2 relative h-48 md:h-auto flex-shrink-0">
@@ -190,7 +190,7 @@ export default function BirthdayModal({ character, onClose, addToast }: Birthday
           <div className="absolute bottom-6 left-6 right-6 z-20 text-white">
             <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold mb-3 border border-white/30">
               <Gift className="w-4 h-4 text-[#FFE873]" />
-              <span>Mùa Chín</span>
+              <span>Long Đản</span>
             </div>
             <h2 className="font-serif text-3xl md:text-4xl font-bold mb-1 leading-tight text-[#FFE873]">
               Chúc mừng sinh nhật,
@@ -204,14 +204,14 @@ export default function BirthdayModal({ character, onClose, addToast }: Birthday
         </div>
 
         {/* Right Side: Wishes Content */}
-        <div className="w-full md:w-1/2 flex flex-col h-[50vh] md:h-[80vh] bg-[#FFFDF2]">
-          <div className="flex-none p-6 border-b-2 border-[#FFE873]/30 bg-white/50 relative overflow-hidden">
+        <div className="w-full md:w-1/2 flex flex-col h-[50vh] md:h-[80vh] bg-[#F8F6F5]">
+          <div className="flex-none p-6 border-b-2 border-[#D8DEE8] bg-white/50 relative overflow-hidden">
             <div className="absolute -right-10 -top-10 opacity-10">
-              <CuteLemon size={150} />
+              <CuteDragon size={150} />
             </div>
-            <h3 className="font-serif text-xl font-bold text-[#5D4E3C] mb-2 relative z-10">Gửi lời chúc</h3>
-            <p className="text-[#5D4E3C]/70 text-xs font-comfortaa mb-4 relative z-10">
-              Bạn đang gửi với tên: <strong className="text-[#E8A382]">{username}</strong>
+            <h3 className="font-serif text-xl font-bold text-[#3A4258] mb-2 relative z-10">Gửi lời chúc</h3>
+            <p className="text-[#6B7590] text-xs font-comfortaa mb-4 relative z-10">
+              Bạn đang gửi với tên: <strong className="text-[#E88BA0]">{username}</strong>
             </p>
             
             <div className="relative z-10">
@@ -219,16 +219,16 @@ export default function BirthdayModal({ character, onClose, addToast }: Birthday
                 value={newContent}
                 onChange={(e) => setNewContent(e.target.value)}
                 placeholder={`Gửi lời yêu thương đến ${character.name} nhân ngày đặc biệt...`}
-                className="w-full bg-white/80 border-2 border-[#FFE873]/50 rounded-2xl px-4 py-3 pb-10 text-sm text-[#5D4E3C] placeholder:text-[#5D4E3C]/40 focus:outline-none focus:border-[#FFE873] transition-all font-comfortaa resize-none h-28"
+                className="w-full bg-white/80 border-2 border-[#D8DEE8] rounded-2xl px-4 py-3 pb-10 text-sm text-[#3A4258] placeholder:text-[#9AAAC5] focus:outline-none focus:border-[#7A8AA5] transition-all font-comfortaa resize-none h-28"
                 maxLength={500}
               />
-              <div className="absolute bottom-2 left-3 text-[10px] text-[#5D4E3C]/40 font-comfortaa">
+              <div className="absolute bottom-2 left-3 text-[10px] text-[#6B7590] font-comfortaa">
                 {newContent.length}/500
               </div>
               <button
                 onClick={handleSendWish}
                 disabled={isSubmitting || !newContent.trim()}
-                className="absolute bottom-2 right-2 bg-gradient-to-r from-[#FFE873] to-[#FFD3B6] text-[#5D4E3C] font-bold py-1.5 px-4 rounded-xl shadow-sm hover:shadow-md transition-all disabled:opacity-50 flex items-center space-x-1.5"
+                className="absolute bottom-2 right-2 bg-gradient-to-r from-[#7A8AA5] to-[#E88BA0] text-[#F8F6F5] font-bold py-1.5 px-4 rounded-xl shadow-sm hover:shadow-md transition-all disabled:opacity-50 flex items-center space-x-1.5"
               >
                 <span>Thả vào tiệc</span>
                 <Send className="w-3.5 h-3.5" />
@@ -237,12 +237,12 @@ export default function BirthdayModal({ character, onClose, addToast }: Birthday
           </div>
 
           <div className="flex-1 overflow-y-auto p-6 space-y-4 custom-scrollbar">
-            <h3 className="font-serif text-sm font-bold text-[#5D4E3C]/80 mb-2">Lời chúc từ vườn ({wishes.length})</h3>
+            <h3 className="font-serif text-sm font-bold text-[#3A4258]/80 mb-2">Lời chúc từ Long Uyển ({wishes.length})</h3>
             
             <AnimatePresence>
               {wishes.length === 0 ? (
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center text-[#5D4E3C]/50 text-sm py-10 font-comfortaa">
-                  <Gift className="w-12 h-12 mx-auto mb-3 text-[#FFE873]/50" />
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center text-[#6B7590] text-sm py-10 font-comfortaa">
+                  <Gift className="w-12 h-12 mx-auto mb-3 text-[#7A8AA5]/50" />
                   Chưa có lời chúc nào. Hãy là người đầu tiên nhé!
                 </motion.div>
               ) : (
@@ -253,22 +253,22 @@ export default function BirthdayModal({ character, onClose, addToast }: Birthday
                       key={wish.id}
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="bg-white rounded-[20px] p-4 shadow-sm border border-[#FFE873]/30"
+                      className="bg-white rounded-[20px] p-4 shadow-sm border border-[#D8DEE8]"
                     >
                       <div className="flex items-center space-x-3 mb-2">
-                        <div className="w-8 h-8 bg-gradient-to-br from-[#FFE873] to-[#FFD3B6] rounded-full flex items-center justify-center">
-                          <CuteLemon size={18} />
+                        <div className="w-8 h-8 bg-gradient-to-br from-[#7A8AA5] to-[#E88BA0] rounded-full flex items-center justify-center text-white">
+                          <CuteDragon size={18} />
                         </div>
                         <div>
-                          <span className="font-bold text-[#5D4E3C] text-sm block leading-tight">{wish.username}</span>
-                          <span className="text-[10px] text-[#5D4E3C]/50 font-comfortaa">{formatTime(wish.timestamp)}</span>
+                          <span className="font-bold text-[#3A4258] text-sm block leading-tight">{wish.username}</span>
+                          <span className="text-[10px] text-[#6B7590] font-comfortaa">{formatTime(wish.timestamp)}</span>
                         </div>
                       </div>
-                      <p className="text-[#5D4E3C]/90 text-sm font-comfortaa mb-3 whitespace-pre-wrap pl-11">{wish.content}</p>
+                      <p className="text-[#3A4258]/90 text-sm font-comfortaa mb-3 whitespace-pre-wrap pl-11">{wish.content}</p>
                       <div className="flex justify-end">
                         <button 
                           onClick={() => handleLike(wish.id, isLiked)}
-                          className={`flex items-center space-x-1 text-xs font-bold px-2 py-1.5 rounded-lg transition-all ${isLiked ? 'text-[#E8A382] bg-[#E8A382]/10' : 'text-[#5D4E3C]/50 hover:bg-black/5 hover:text-[#E8A382]'}`}
+                          className={`flex items-center space-x-1 text-xs font-bold px-2 py-1.5 rounded-lg transition-all ${isLiked ? 'text-[#E88BA0] bg-[#E88BA0]/10' : 'text-[#6B7590] hover:bg-black/5 hover:text-[#E88BA0]'}`}
                         >
                           <Heart className="w-4 h-4" fill={isLiked ? "currentColor" : "none"} />
                           <span>{wish.likes || 0}</span>

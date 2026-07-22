@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Sparkles, BookOpen, Heart, Coffee } from 'lucide-react';
 import { Character } from '../types';
-import LemonCloseButton from './LemonCloseButton';
+import DragonCloseButton from './DragonCloseButton';
 
 interface StoryModalProps {
   character: Character | null;
@@ -38,7 +38,7 @@ export default function StoryModal({ character, onClose, onLike, isLiked }: Stor
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="absolute inset-0 bg-[#5D4E3C]/30 backdrop-blur-sm"
+          className="absolute inset-0 bg-[#3A4258]/50 backdrop-blur-sm"
         />
 
         {/* Modal Content */}
@@ -48,13 +48,13 @@ export default function StoryModal({ character, onClose, onLike, isLiked }: Stor
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ type: 'spring', damping: 25, stiffness: 350 }}
           id={`story-modal-${character.id}`}
-          className="relative w-full max-w-lg glass-modal text-[#5D4E3C] rounded-[30px] overflow-hidden z-10"
+          className="relative w-full max-w-lg glass-modal text-[#3A4258] rounded-[30px] overflow-hidden z-10"
         >
           {/* Accent Top Bar */}
-          <div className="h-2 bg-gradient-to-r from-[#FFE873] via-[#FFD3B6] to-[#C8E6C9]" />
+          <div className="h-2 bg-gradient-to-r from-[#7A8AA5] via-[#F5C8D0] to-[#E88BA0]" />
 
           {/* Close Button */}
-          <LemonCloseButton
+          <DragonCloseButton
             onClick={onClose}
             className="absolute top-4 right-4 z-20"
             tooltip="Khép lại bối cảnh"
@@ -67,45 +67,45 @@ export default function StoryModal({ character, onClose, onLike, isLiked }: Stor
               <img
                 src={character.avatar}
                 alt={character.name}
-                className="w-16 h-16 rounded-[20px] object-cover object-top shadow-md border-2 border-[#FFE873]"
+                className="w-16 h-16 rounded-[20px] object-cover object-top shadow-md border-2 border-[#7A8AA5]"
                 referrerPolicy="no-referrer"
               />
               <div>
-                <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#7A8B63] bg-[#C8E6C9]/30 px-2.5 py-1 rounded-full mb-1">
+                <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#5A6B85] bg-[#D8DEE8]/50 px-2.5 py-1 rounded-full mb-1">
                   <Sparkles size={10} />
                   {character.genre}
                 </span>
-                <h3 className="font-serif text-2xl font-bold tracking-tight text-[#5D4E3C] leading-none">
+                <h3 className="font-serif text-2xl font-bold tracking-tight text-[#3A4258] leading-none">
                   {character.name}
                 </h3>
-                <p className="text-xs text-[#E8A382] mt-1 font-medium">{character.title}</p>
+                <p className="text-xs text-[#E88BA0] mt-1 font-medium">{character.title}</p>
               </div>
             </div>
 
             {/* Backstory Prose */}
-            <div className="bg-[#FFF9E5] p-5 rounded-[20px] border border-[#F5EAD2] shadow-inner mb-6 relative">
-              <div className="absolute top-3 right-3 text-[#FFE873]/60">
+            <div className="bg-[#F8F6F5] p-5 rounded-[20px] border border-[#D8DEE8] shadow-inner mb-6 relative">
+              <div className="absolute top-3 right-3 text-[#7A8AA5]/60">
                 <BookOpen size={24} className="opacity-30" />
               </div>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-[#5D4E3C]/60 mb-2 flex items-center gap-1.5 font-sans">
-                <Coffee size={12} className="text-[#FFE873]" />
+              <h4 className="text-xs font-bold uppercase tracking-wider text-[#6B7590] mb-2 flex items-center gap-1.5 font-sans">
+                <Coffee size={12} className="text-[#7A8AA5]" />
                 Hồi ức & Bối cảnh
               </h4>
-              <p className="text-sm text-[#5D4E3C]/90 leading-relaxed font-sans whitespace-pre-line text-justify italic">
+              <p className="text-sm text-[#3A4258]/90 leading-relaxed font-sans whitespace-pre-line text-justify italic">
                 "{character.storyText}"
               </p>
             </div>
 
             {/* Quick Stats & Tags */}
-            <div className="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-[#F5EAD2]">
+            <div className="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-[#D8DEE8]">
               <div className="flex gap-2">
-                <span className="text-xs font-semibold text-[#7A8B63]">
+                <span className="text-xs font-semibold text-[#5A6B85]">
                   #{character.worldTag}
                 </span>
-                <span className="text-xs font-semibold text-[#E8A382]">
+                <span className="text-xs font-semibold text-[#E88BA0]">
                   #{character.aftertasteTag}
                 </span>
-                <span className="text-xs font-semibold text-[#BCA136]">
+                <span className="text-xs font-semibold text-[#6B7590]">
                   #{character.statusTag}
                 </span>
               </div>
@@ -114,12 +114,12 @@ export default function StoryModal({ character, onClose, onLike, isLiked }: Stor
               <button
                 id={`modal-like-btn-${character.id}`}
                 onClick={() => onLike(character)}
-                className="flex items-center gap-1.5 text-xs font-semibold py-2 px-4 rounded-full bg-[#FFF9E5] hover:bg-[#FFE873]/30 text-[#5D4E3C] border border-[#F5EAD2] transition-all duration-300 shadow-sm cursor-pointer"
+                className="flex items-center gap-1.5 text-xs font-semibold py-2 px-4 rounded-full bg-[#F8F6F5] hover:bg-[#D8DEE8]/50 text-[#3A4258] border border-[#D8DEE8] transition-all duration-300 shadow-sm cursor-pointer"
               >
                 <Heart
                   size={14}
                   className={`transition-all duration-300 ${
-                    isLiked ? 'fill-[#EF4444] text-[#EF4444] scale-110' : 'text-[#E8A382]'
+                    isLiked ? 'fill-[#D66A85] text-[#D66A85] scale-110' : 'text-[#E88BA0]'
                   }`}
                 />
                 <span>{character.likes} Tim</span>
@@ -128,15 +128,15 @@ export default function StoryModal({ character, onClose, onLike, isLiked }: Stor
           </div>
 
           {/* Footer Action */}
-          <div className="bg-[#FAE9C5]/20 p-4 border-t border-[#F5EAD2] flex justify-end">
+          <div className="bg-[#F0EEED]/80 p-4 border-t border-[#D8DEE8] flex justify-end">
             <a
               id={`modal-action-btn-${character.id}`}
               href={character.roleplayLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full text-center text-sm font-bold text-[#5D4E3C] bg-[#FFF176] hover:bg-[#FFF59D] py-3 px-6 rounded-[15px] shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
+              className="w-full text-center text-sm font-bold text-[#F8F6F5] bg-gradient-to-r from-[#7A8AA5] to-[#E88BA0] hover:from-[#5A6B85] hover:to-[#D66A85] py-3 px-6 rounded-[15px] shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
             >
-              Thưởng Vị Ngay
+              Triệu Long Ngay
             </a>
           </div>
         </motion.div>
