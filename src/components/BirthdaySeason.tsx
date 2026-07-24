@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Character } from '../types';
 import { getDaysUntilBirthday, isBirthdayToday } from '../lib/dateUtils';
-import { Gift, CalendarDays, List, ChevronRight, ChevronLeft } from 'lucide-react';
-import CuteDragon from './CuteDragon';
+import { Gift, CalendarDays, List, ChevronRight, ChevronLeft, Sparkles } from 'lucide-react';
 import { format, addMonths, subMonths } from 'date-fns';
 import { vi } from 'date-fns/locale';
 
@@ -113,8 +112,8 @@ export default function BirthdaySeason({ characters, onOpenBirthdayModal }: Birt
           </div>
         ) : (
           <div className="p-8 md:p-12 flex flex-col items-center text-center relative overflow-hidden">
-            <div className="absolute -left-20 -top-20 opacity-20"><CuteDragon size={200} /></div>
-            <div className="absolute -right-10 -bottom-10 opacity-20"><CuteDragon size={150} /></div>
+            <div className="absolute -left-20 -top-20 opacity-20"><Sparkles className="w-48 h-48 text-[#7A8AA5]" /></div>
+            <div className="absolute -right-10 -bottom-10 opacity-20"><Sparkles className="w-36 h-36 text-[#E88BA0]" /></div>
             
             <div className="relative z-10 max-w-lg mx-auto">
               <Gift className="w-16 h-16 text-[#7A8AA5] mx-auto mb-4 drop-shadow-md" />

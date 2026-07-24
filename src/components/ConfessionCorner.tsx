@@ -4,8 +4,7 @@ import { db, handleFirestoreError, OperationType } from '../lib/firebase';
 import { collection, addDoc, onSnapshot, query, orderBy, updateDoc, doc, serverTimestamp, arrayUnion, arrayRemove } from 'firebase/firestore';
 import { formatDistanceToNow } from 'date-fns';
 import { vi } from 'date-fns/locale';
-import CuteDragon from './CuteDragon';
-import { Heart, MessageCircle, Send, X, Edit2 } from 'lucide-react';
+import { Heart, MessageCircle, Send, X, Edit2, Sparkles, User } from 'lucide-react';
 import DragonCloseButton from './DragonCloseButton';
 
 interface ConfessionReply {
@@ -313,7 +312,7 @@ export default function ConfessionCorner({ addToast }: ConfessionCornerProps) {
             >
               <div className="flex items-center gap-3 text-left">
                 <div className="shrink-0 w-8 h-8 bg-[#7A8AA5]/20 rounded-full flex items-center justify-center border border-[#D8DEE8]/30">
-                  <CuteDragon size={18} />
+                  <Sparkles className="w-4 h-4 text-[#7A8AA5]" />
                 </div>
                 <p className="text-[#3A4258] text-xs font-comfortaa leading-snug">
                   Đặt danh tính tại Long Uyển để cùng thả confession và trò chuyện nhé 🐉
@@ -338,7 +337,7 @@ export default function ConfessionCorner({ addToast }: ConfessionCornerProps) {
           <AnimatePresence>
             {confessions.length === 0 ? (
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center text-[#6B7590] font-comfortaa py-10">
-                <CuteDragon size={50} className="mx-auto mb-3 opacity-50 grayscale" />
+                <Sparkles className="w-10 h-10 mx-auto mb-3 text-[#B8C4D8]" />
                 Long Uyển đang vắng lặng. Hãy là người gửi confession đầu tiên nhé!
               </motion.div>
             ) : (
@@ -355,7 +354,7 @@ export default function ConfessionCorner({ addToast }: ConfessionCornerProps) {
                   >
                     <div className="flex items-center space-x-3 mb-3">
                       <div className="w-10 h-10 bg-gradient-to-br from-[#7A8AA5] to-[#B8C4D8] rounded-full flex items-center justify-center shadow-inner overflow-hidden border border-[#3A4258]/10 text-white">
-                        <CuteDragon size={24} />
+                        <User className="w-5 h-5 text-white" />
                       </div>
                       <div className="flex-1">
                         <h4 className="font-bold text-[#3A4258] text-sm">{confession.username}</h4>
@@ -424,7 +423,7 @@ export default function ConfessionCorner({ addToast }: ConfessionCornerProps) {
                             <div key={reply.id} className="bg-[#F8F6F5] rounded-xl p-3 text-sm">
                               <div className="flex items-center space-x-2 mb-1.5">
                                 <div className="w-6 h-6 bg-[#B8C4D8] rounded-full flex items-center justify-center text-white">
-                                  <CuteDragon size={14} />
+                                  <User className="w-3.5 h-3.5 text-white" />
                                 </div>
                                 <span className="font-bold text-[#3A4258] text-xs">{reply.username}</span>
                                 <span className="text-[10px] text-[#6B7590]">{formatTime(reply.timestamp)}</span>
@@ -463,7 +462,7 @@ export default function ConfessionCorner({ addToast }: ConfessionCornerProps) {
                 tooltip="Đóng lại"
               />
               <div className="text-center mb-6">
-                <CuteDragon size={60} className="mx-auto mb-4" />
+                <Sparkles className="w-12 h-12 mx-auto mb-3 text-[#E88BA0]" />
                 <h2 className="font-serif text-2xl font-bold text-[#3A4258] mb-2">Bước vào Long Uyển</h2>
                 <p className="text-[#6B7590] text-sm font-comfortaa">Tên này sẽ hiển thị khi bạn gửi confession hoặc trả lời.</p>
               </div>

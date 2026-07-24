@@ -6,8 +6,7 @@ import { collection, addDoc, onSnapshot, query, where, serverTimestamp, arrayUni
 import { formatDistanceToNow } from 'date-fns';
 import { vi } from 'date-fns/locale';
 import confetti from 'canvas-confetti';
-import { Heart, Send, Gift } from 'lucide-react';
-import CuteDragon from './CuteDragon';
+import { Heart, Send, Gift, Sparkles } from 'lucide-react';
 import DragonCloseButton from './DragonCloseButton';
 
 interface BirthdayWish {
@@ -207,7 +206,7 @@ export default function BirthdayModal({ character, onClose, addToast }: Birthday
         <div className="w-full md:w-1/2 flex flex-col h-[50vh] md:h-[80vh] bg-[#F8F6F5]">
           <div className="flex-none p-6 border-b-2 border-[#D8DEE8] bg-white/50 relative overflow-hidden">
             <div className="absolute -right-10 -top-10 opacity-10">
-              <CuteDragon size={150} />
+              <Sparkles className="w-32 h-32 text-[#E88BA0]" />
             </div>
             <h3 className="font-serif text-xl font-bold text-[#3A4258] mb-2 relative z-10">Gửi lời chúc</h3>
             <p className="text-[#6B7590] text-xs font-comfortaa mb-4 relative z-10">
@@ -257,7 +256,7 @@ export default function BirthdayModal({ character, onClose, addToast }: Birthday
                     >
                       <div className="flex items-center space-x-3 mb-2">
                         <div className="w-8 h-8 bg-gradient-to-br from-[#7A8AA5] to-[#E88BA0] rounded-full flex items-center justify-center text-white">
-                          <CuteDragon size={18} />
+                          <Sparkles className="w-4 h-4 text-white" />
                         </div>
                         <div>
                           <span className="font-bold text-[#3A4258] text-sm block leading-tight">{wish.username}</span>

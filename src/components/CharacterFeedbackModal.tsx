@@ -4,8 +4,7 @@ import { db, handleFirestoreError, OperationType } from '../lib/firebase';
 import { collection, addDoc, onSnapshot, query, orderBy, updateDoc, doc, serverTimestamp, arrayUnion, arrayRemove, where } from 'firebase/firestore';
 import { formatDistanceToNow } from 'date-fns';
 import { vi } from 'date-fns/locale';
-import CuteDragon from './CuteDragon';
-import { Heart, Send, Edit2 } from 'lucide-react';
+import { Heart, Send, Edit2, Sparkles, User } from 'lucide-react';
 import DragonCloseButton from './DragonCloseButton';
 
 interface CharacterFeedback {
@@ -275,7 +274,7 @@ export default function CharacterFeedbackModal({ charId, charName, onClose, addT
             >
               <div className="flex items-center gap-2.5 text-left">
                 <div className="shrink-0 w-8 h-8 bg-[#7A8AA5]/20 rounded-full flex items-center justify-center border border-[#D8DEE8]">
-                  <CuteDragon size={16} />
+                  <Sparkles className="w-4 h-4 text-[#7A8AA5]" />
                 </div>
                 <p className="text-[#3A4258] text-xs font-comfortaa leading-snug">
                   Đặt danh tính tại Long Uyển để cùng gửi cảm nhận về vị rồng này nhé 🐉
@@ -317,7 +316,7 @@ export default function CharacterFeedbackModal({ charId, charName, onClose, addT
                     <div className="flex justify-between items-start mb-2">
                       <div className="flex items-center space-x-2">
                         <div className="w-6 h-6 bg-[#7A8AA5]/20 rounded-full flex items-center justify-center">
-                          <CuteDragon size={12} />
+                          <User className="w-3.5 h-3.5 text-[#7A8AA5]" />
                         </div>
                         <div>
                           <span className="font-bold text-[#3A4258] text-xs block leading-tight">{fb.username}</span>
@@ -363,7 +362,7 @@ export default function CharacterFeedbackModal({ charId, charName, onClose, addT
                 tooltip="Khép lại"
               />
               <div className="text-center mb-6">
-                <CuteDragon size={50} className="mx-auto mb-3" />
+                <Sparkles className="w-10 h-10 mx-auto mb-3 text-[#E88BA0]" />
                 <h2 className="font-serif text-xl font-bold text-[#3A4258] mb-2">Tên của bạn</h2>
                 <p className="text-[#6B7590] text-xs font-comfortaa">Tên này sẽ hiện khi bạn gửi feedback cho {charName}.</p>
               </div>

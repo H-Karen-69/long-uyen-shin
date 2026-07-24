@@ -1,66 +1,136 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import React, { useMemo } from 'react';
 import { motion } from 'motion/react';
 
-interface FallingItem {
+interface FloatingParticle {
   id: number;
-  x: number;
+  type: 'sparkle' | 'dot' | 'pearl' | 'star';
+  x: number; // percentage
   delay: number;
   duration: number;
   size: number;
-  content: string;
-  rotationDirection: number;
+  color: string;
   opacity: number;
+  char?: string;
 }
 
 export default function FallingDragons() {
-  const items = useMemo<FallingItem[]>(() => {
-    const types = ['🐉', '🌸', '🔮', '✨', '🍵', '🍃'];
-    return Array.from({ length: 24 }).map((_, i) => ({
-      id: i,
-      x: Math.random() * 100, // Random percentage across width
-      delay: Math.random() * 10, // Delay before start
-      duration: 12 + Math.random() * 15, // Travel time (slow)
-      size: 14 + Math.random() * 24, // Size in pixels
-      content: types[i % types.length],
-      rotationDirection: Math.random() > 0.5 ? 1 : -1,
-      opacity: 0.25 + Math.random() * 0.45,
-    }));
+  const particles = useMemo<FloatingParticle[]>(() => {
+    const sparkleChars = ['✦', '✧', '⋆', '✨'];
+    const colors = ['#F5C8D0', '#B8C4D8', '#E8CC8B', '#E88BA0', '#7A8AA5', '#F8F6F5'];
+
+    return Array.from({ length: 28 }).map((_, i) => {
+      const pType = i % 4 === 0 ? 'pearl' : i % 3 === 0 ? 'sparkle' : i % 2 === 0 ? 'star' : 'dot';
+      const color = colors[i % colors.length];
+      const opacity = pType === 'dot' ? 0.2 + (i % 3) * 0.1 : 0.35 + (i % 4) * 0.08;
+
+      return {
+        id: i,
+        type: pType,
+        x: (i * 3.7 + Math.sin(i) * 12 + 100) % 100,
+        delay: (i * 0.4) % 8,
+        duration: 14 + (i % 7) * 2,
+        size: pType === 'pearl' ? 18 + (i % 3) * 4 : pType === 'dot' ? 5 + (i % 4) * 2 : 12 + (i % 5) * 4,
+        color,
+        opacity,
+        char: sparkleChars[i % sparkleChars.length],
+      };
+    });
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-      {items.map((item) => (
-        <motion.div
-          key={item.id}
-          initial={{ y: '105vh', x: 0, rotate: 0, opacity: 0 }}
-          animate={{
-            y: '-10vh',
-            x: [0, item.rotationDirection * 35, -item.rotationDirection * 15, 0],
-            rotate: item.rotationDirection * 360,
-            opacity: [0, item.opacity, item.opacity, 0],
-          }}
-          transition={{
-            duration: item.duration,
-            repeat: Infinity,
-            delay: item.delay,
-            ease: 'linear',
-          }}
-          style={{
-            position: 'absolute',
-            left: `${item.x}%`,
-            top: 0,
-            fontSize: item.size,
-            filter: 'drop-shadow(0 2px 4px rgba(93, 78, 60, 0.08))',
-          }}
-        >
-          {item.content}
-        </motion.div>
-      ))}
+    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden select-none">
+      {particles.map((p) => {
+        if (p.type === 'pearl') {
+          return (
+            <motion.div
+              key={p.id}
+              initial={{ y: '105vh', opacity: 0, scale: 0.8 }}
+              animate={{
+                y: '-10vh',
+                x: [0, 20, -15, 0],
+                opacity: [0, p.opacity, p.opacity, 0],
+                scale: [0.8, 1.1, 0.9, 0.8],
+              }}
+              transition={{
+                duration: p.duration,
+                repeat: Infinity,
+                delay: p.delay,
+                ease: 'linear',
+              }}
+              style={{
+                position: 'absolute',
+                left: `${p.x}%`,
+                top: 0,
+                width: p.size,
+                height: p.size,
+                borderRadius: '50%',
+                background: `radial-gradient(circle at 35% 35%, #FFFFFF 0%, ${p.color} 60%, rgba(216, 222, 232, 0.4) 100%)`,
+                boxShadow: `0 0 12px ${p.color}80`,
+              }}
+            />
+          );
+        }
+
+        if (p.type === 'dot') {
+          return (
+            <motion.div
+              key={p.id}
+              initial={{ y: '105vh', opacity: 0 }}
+              animate={{
+                y: '-10vh',
+                x: [0, -12, 12, 0],
+                opacity: [0, p.opacity, p.opacity, 0],
+              }}
+              transition={{
+                duration: p.duration * 1.1,
+                repeat: Infinity,
+                delay: p.delay,
+                ease: 'linear',
+              }}
+              style={{
+                position: 'absolute',
+                left: `${p.x}%`,
+                top: 0,
+                width: p.size,
+                height: p.size,
+                borderRadius: '50%',
+                backgroundColor: p.color,
+                filter: 'blur(1px)',
+              }}
+            />
+          );
+        }
+
+        // Sparkle / Star
+        return (
+          <motion.div
+            key={p.id}
+            initial={{ y: '105vh', opacity: 0, rotate: 0 }}
+            animate={{
+              y: '-10vh',
+              x: [0, 15, -10, 0],
+              rotate: [0, 180, 360],
+              opacity: [0, p.opacity, p.opacity * 0.4, p.opacity, 0],
+            }}
+            transition={{
+              duration: p.duration,
+              repeat: Infinity,
+              delay: p.delay,
+              ease: 'easeInOut',
+            }}
+            style={{
+              position: 'absolute',
+              left: `${p.x}%`,
+              top: 0,
+              fontSize: `${p.size}px`,
+              color: p.color,
+              textShadow: `0 0 8px ${p.color}90`,
+            }}
+          >
+            {p.char}
+          </motion.div>
+        );
+      })}
     </div>
   );
 }

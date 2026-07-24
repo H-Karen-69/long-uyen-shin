@@ -162,7 +162,7 @@ export default function CharacterCard({
           </h3>
           {character.isComingSoon && (
             <p className="text-[11px] text-[#6B7590] font-bold italic flex items-center gap-1 mt-1 font-comfortaa">
-              Đang ươm mầm, sớm ra mắt 🌱 {character.releaseDate ? `(${character.releaseDate})` : ''}
+              Đang đi bắt, sớm ra mắt 🍵 {character.releaseDate ? `(${character.releaseDate})` : ''}
             </p>
           )}
           <p className="text-xs text-[#6B7590] font-medium mt-1 min-h-[32px] line-clamp-2">

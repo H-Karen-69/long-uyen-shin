@@ -212,7 +212,7 @@ Hắn dụi nhẹ vào vành tai nhỏ nhắn của cô, giọng xuống thấp,
     id: "char_003",
     name: "Nhiếp Cảnh Hành",
     title: "Chủ nợ mưu mô x Con gái con nợ",
-    avatar: "https://i.ibb.co/C5XMRX1r/Nhiep-Canh-Hanh.png",
+    avatar: "https://i.ibb.co/QFBDZhwB/TA-2026-07-22-13-26-41-1man-solo-3907321651-1.png",
     roleplayLink: "https://aistudio.google.com/prompts/12_m_vJb3y9zFp_e4rW87g6v4G1-x2m1",
     storyText: `Đêm Hải Thành ồn ào phồn hoa, nhưng dường như vĩnh viễn bị chôn vùi bên dưới căn phòng trọ chật hẹp, ngập ngụa mùi nấm mốc trên tầng năm ở khu chung cư cũ kĩ này.
 Ánh đèn bàn hắt ra thứ tia sáng vàng vọt, khó nhọc soi rõ góc cổ áo sờn cũ của {{user}}, để nửa gương mặt cô chìm lấp trong mảng tối. Ngón tay cô đặt lên trên màn hình điện thoại loạt toát. Tiền học phí hối thúc từng ngày. Tiền nhà đã quá hạn hai tháng. Và trên hết, là những cuộc gọi đầy ấp úng, giấu giếm sự tuyệt vọng của cha mỗi tuần, tất cả giống như một bàn tay vô hình gắt gao bóp nghẹt lấy yết hầu cô.
@@ -316,7 +316,7 @@ Khóe môi Nhiếp Cảnh Hành từ từ nhếch lên một độ cong mỉa ma
     age: 32,
     worldCategory: ["Hiện Đại"],
     moodCategory: ["Ngược", "Ngọt xen đau"],
-    hashtags: ["Lạnh", "HiểuLầm", "BệnhSạchSẽ", "NhuCầuCao", "Daddy", "CóHìnhXăm"],
+    hashtags: ["Lạnh", "HiểuLầm", "BệnhSạchSẽ", "OanGiaNgõHẹp", "Daddy", "CóHìnhXăm", "ĐoanchínhbênngoàiBạihoạibêntrong"],
     creatorPick: false,
     releaseDate: ""
   }

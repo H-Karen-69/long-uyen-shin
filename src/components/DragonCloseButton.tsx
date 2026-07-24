@@ -23,8 +23,8 @@ export default function DragonCloseButton({ onClick, tooltip = 'Khép lại Long
         <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
           {/* Outer golden aura ring */}
           <circle cx="50" cy="50" r="45" fill="#FFE873" stroke="#5D4E3C" strokeWidth="6" />
-          {/* Inner mystical jade center */}
-          <circle cx="50" cy="50" r="37" fill="#98D7C2" />
+          {/* Inner mystical pearl center */}
+          <circle cx="50" cy="50" r="37" fill="#F5C8D0" />
           {/* Yin-Yang swirl or Dragon Clouds */}
           <path d="M50 13 A37 37 0 0 0 50 87 A18.5 18.5 0 0 1 50 50 A18.5 18.5 0 0 0 50 13 Z" fill="#FFFDF2" opacity="0.35" />
           {/* Rotating "X" close symbol styled as mystical intersecting clouds */}

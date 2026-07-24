@@ -30,7 +30,6 @@ import StoryModal from './components/StoryModal';
 import Leaderboard from './components/Leaderboard';
 import ConfessionCorner from './components/ConfessionCorner';
 import CharacterFeedbackModal from './components/CharacterFeedbackModal';
-import CuteDragon from './components/CuteDragon';
 import FallingDragons from './components/FallingDragons';
 import MoodQuiz from './components/MoodQuiz';
 import MiniMusicPlayer from './components/MiniMusicPlayer';
@@ -276,36 +275,80 @@ export default function App() {
     addToast('Đã đặt lại bộ lọc hương vị! 🔄', 'info');
   };
 
-  // Filter Logic
-  const filteredCharacters = characters.filter((char) => {
-    const matchesSearch = char.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                          char.title.toLowerCase().includes(searchTerm.toLowerCase());
-    
-    const matchesGenre = activeGenres.includes('Tất cả') || 
-                         activeGenres.includes(char.genre) || 
-                         activeGenres.some(g => char.worldCategory?.includes(g));
-    const matchesTaste = activeTastes.includes('Tất cả') || activeTastes.includes(char.taste);
-    const matchesStatus = activeStatuses.includes('Tất cả') || 
-                          activeStatuses.some(status => {
-                            if (status === 'Hot') {
-                              return char.isHot || char.statusType === 'Hot' || char.statusTag === 'HOT 🔥';
-                            }
-                            if (status === 'Mới') {
-                              return char.isNew || char.statusType === 'Mới' || char.statusTag === 'Mẻ Mới' || char.statusType === 'Mẻ Mới';
-                            }
-                            if (status === 'Kỳ Cựu') {
-                              return char.statusType === 'Kỳ Cựu' || char.statusTag === 'Kỳ Cựu';
-                            }
-                            return char.statusType === status;
-                          });
+  // Helper: Retrieve all tags for a character, normalized
+  const getNormalizedCharTags = (char: Character): string[] => {
+    const rawTags: string[] = [];
+    if (char.genre) rawTags.push(char.genre);
+    if (char.taste) rawTags.push(char.taste);
+    if (Array.isArray(char.worldCategory)) rawTags.push(...char.worldCategory);
+    if (Array.isArray(char.moodCategory)) rawTags.push(...char.moodCategory);
+    if (Array.isArray(char.hashtags)) rawTags.push(...char.hashtags);
 
-    return matchesSearch && matchesGenre && matchesTaste && matchesStatus;
+    return Array.from(
+      new Set(
+        rawTags
+          .filter(Boolean)
+          .map((t) => t.toString().toLowerCase().trim().replace(/^#/, ''))
+      )
+    );
+  };
+
+  // Filter Logic (AND logic across selected filters, matching against worldCategory, moodCategory & hashtags)
+  const filteredCharacters = characters.filter((char) => {
+    // 1. Search filter
+    const matchesSearch =
+      !searchTerm.trim() ||
+      char.name.toLowerCase().includes(searchTerm.toLowerCase().trim()) ||
+      char.title.toLowerCase().includes(searchTerm.toLowerCase().trim());
+
+    if (!matchesSearch) return false;
+
+    // 2. Extract character tags
+    const charTags = getNormalizedCharTags(char);
+
+    // 3. Selected genre & taste tag filters
+    const selectedGenres = activeGenres.filter((g) => g !== 'Tất cả');
+    const selectedTastes = activeTastes.filter((t) => t !== 'Tất cả');
+    const activeFilterTags = [...selectedGenres, ...selectedTastes];
+
+    // AND logic: Char MUST contain ALL selected filter tags in any of its tag fields
+    const matchesTagFilters =
+      activeFilterTags.length === 0 ||
+      activeFilterTags.every((filterTag) => {
+        const normFilter = filterTag.toLowerCase().trim().replace(/^#/, '');
+        return charTags.includes(normFilter);
+      });
+
+    if (!matchesTagFilters) return false;
+
+    // 4. Status filter (AND logic if multiple statuses selected)
+    const selectedStatuses = activeStatuses.filter((s) => s !== 'Tất cả');
+    const matchesStatusFilter =
+      selectedStatuses.length === 0 ||
+      selectedStatuses.every((status) => {
+        if (status === 'Hot') {
+          return char.isHot || char.statusType === 'Hot' || char.statusTag === 'HOT 🔥';
+        }
+        if (status === 'Mới' || status === 'Tân Long') {
+          return char.isNew || char.statusType === 'Mới' || char.statusTag === 'Mẻ Mới';
+        }
+        if (status === 'Kỳ Cựu') {
+          return char.statusType === 'Kỳ Cựu' || char.statusTag === 'Kỳ Cựu';
+        }
+        if (status === 'Sắp Ra Mắt') {
+          return char.isComingSoon || char.statusType === 'Sắp Ra Mắt' || char.statusTag?.includes('Sắp Ra Mắt');
+        }
+        return char.statusType === status;
+      });
+
+    return matchesStatusFilter;
   });
 
   const hashtagFilteredCharacters = characters.filter((char) => {
     if (!activeHashtag) return [];
-    const normActive = activeHashtag.toLowerCase().replace('#', '');
-    return char.hashtags?.some(tag => tag.toLowerCase().replace('#', '') === normActive);
+    const normActive = activeHashtag.toLowerCase().trim().replace(/^#/, '');
+    const charTags = getNormalizedCharTags(char);
+    return charTags.includes(normActive);
   });
 
   const handleHashtagClick = (hashtag: string) => {
@@ -319,8 +362,8 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-transparent text-[#5D4E3C] relative font-sans selection:bg-[#8FCFB8] selection:text-[#5D4E3C] overflow-x-hidden">
-      {/* Falling animation of anime dragons & leaves */}
+    <div className="min-h-screen bg-transparent text-[#5D4E3C] relative font-sans selection:bg-[#F5C8D0] selection:text-[#3A4258] overflow-x-hidden">
+      {/* Falling animation of sparkles & leaves */}
       <FallingDragons />
 
       {/* Floating Toast Container */}
@@ -334,7 +377,7 @@ export default function App() {
               exit={{ opacity: 0, scale: 0.85, transition: { duration: 0.2 } }}
               className={`p-4 pr-12 rounded-[16px] shadow-lg flex items-center gap-3 backdrop-blur-md pointer-events-auto border transition-all relative ${
                 toast.type === 'success'
-                  ? 'bg-[#8FCFB8] border-[#5FB599] text-[#5D4E3C]'
+                  ? 'bg-[#F5C8D0] border-[#E88BA0] text-[#3A4258]'
                   : toast.type === 'heart-on'
                   ? 'bg-[#FFD3B6] border-[#FFB088] text-[#991B1B]'
                   : toast.type === 'heart-off'
@@ -374,8 +417,8 @@ export default function App() {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-40 bg-gradient-to-b from-[#E8EAEF] to-[#F0EEED] flex flex-col justify-between items-center p-6 md:p-12 overflow-hidden"
           >
-            {/* Dynamic aesthetic floating elements (Mây, ngọc, rồng huyền ảo) */}
-            <div className="absolute inset-0 opacity-40 pointer-events-none overflow-hidden">
+            {/* Dynamic aesthetic floating elements (Mây, ngọc, sao lấp lánh) */}
+            <div className="absolute inset-0 opacity-40 pointer-events-none overflow-hidden select-none">
               <motion.div
                 animate={{
                   y: [0, -15, 0],
@@ -389,7 +432,7 @@ export default function App() {
                 }}
                 className="absolute top-10 left-[8%] z-0 text-[#B8C4D8]"
               >
-                <CuteDragon size={70} />
+                <span className="text-6xl filter drop-shadow opacity-80">✦</span>
               </motion.div>
               <motion.div
                 animate={{
@@ -419,7 +462,7 @@ export default function App() {
                 }}
                 className="absolute bottom-20 left-[15%] z-0 text-[#B8C4D8]"
               >
-                <CuteDragon size={60} />
+                <span className="text-5xl filter drop-shadow opacity-70">✧</span>
               </motion.div>
               <motion.div
                 animate={{
@@ -449,15 +492,15 @@ export default function App() {
                 }}
                 className="absolute top-[50%] left-[80%] z-0 text-[#B8C4D8]"
               >
-                <CuteDragon size={45} />
+                <span className="text-4xl filter drop-shadow opacity-80">⋆</span>
               </motion.div>
             </div>
 
             <div /> {/* Spacer */}
 
-            {/* Central Header with CTA and Placeholder Mascot Logo */}
+            {/* Central Header with CTA and Long Uyển Avatar */}
             <div className="text-center max-w-lg z-10 flex flex-col items-center">
-              {/* PLACEHOLDER LOGO LONG UYỂN: Thay ảnh logo/avatar thật vào đây */}
+              {/* AVATAR LONG UYỂN */}
               <motion.div
                 animate={
                   isEntering
@@ -472,14 +515,18 @@ export default function App() {
                         transition: { repeat: Infinity, duration: 3, ease: 'easeInOut' }
                       }
                 }
-                className="w-28 h-28 bg-gradient-to-br from-[#E8EAEF] to-[#F5C8D0] rounded-[20px] shadow-md flex flex-col items-center justify-center border border-[#D8DEE8] mb-6 cursor-pointer select-none overflow-hidden relative group"
+                className="w-28 h-28 p-1.5 border border-[#7A8AA5]/50 rounded-[28px] shadow-lg mb-6 cursor-pointer select-none relative group bg-[#F8F6F5]/80 backdrop-blur-sm"
                 onClick={handleEnterGarden}
-                title="Logo Long Uyển Placeholder"
+                title="Long Uyển Avatar"
               >
-                <CuteDragon size={52} />
-                <span className="font-serif font-extrabold text-[11px] tracking-widest text-[#5A6B85] mt-1">
-                  LONG UYỂN
-                </span>
+                <div className="w-full h-full rounded-[20px] overflow-hidden">
+                  <img
+                    src="https://i.ibb.co/93qnWNTK/avt.png"
+                    alt="Long Uyển Avatar"
+                    className="w-full h-full object-cover"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
               </motion.div>
 
               {/* Title and Subtitle */}
@@ -500,7 +547,7 @@ export default function App() {
                 className="relative px-10 py-4 rounded-full font-serif font-bold text-sm text-[#3A4258] bg-gradient-to-r from-[#B8C4D8] via-[#F5C8D0] to-[#E88BA0] hover:from-[#7A8AA5] hover:via-[#E88BA0] hover:to-[#D66A85] hover:text-[#F8F6F5] shadow-[0_8px_24px_rgba(214,106,133,0.25)] hover:shadow-xl transition-all duration-300 cursor-pointer flex items-center gap-2 group border border-[#B8C4D8]/50"
               >
                 <span className="tracking-widest">THAM QUAN LONG UYỂN</span>
-                <span className="text-lg group-hover:translate-x-1.5 transition-transform duration-300">🐉</span>
+                <span className="text-lg group-hover:translate-x-1.5 transition-transform duration-300">✨</span>
               </motion.button>
             </div>
 
@@ -733,7 +780,7 @@ export default function App() {
                       🌱 Phân Loại Rồng
                     </span>
                     <div className="flex flex-wrap gap-1.5">
-                      {['Tất cả', 'Mới', 'Hot', 'Kỳ Cựu'].map((status) => {
+                      {['Tất cả', 'Mới', 'Hot', 'Kỳ Cựu', 'Sắp Ra Mắt'].map((status) => {
                         const isSelected = activeStatuses.includes(status);
                         return (
                           <button
@@ -792,7 +839,7 @@ export default function App() {
                         {/* Back Button */}
                         <button
                           onClick={handleBackToGarden}
-                          className="self-start md:self-center px-5 py-2.5 rounded-full font-bold text-xs text-[#5D4E3C] bg-[#FFF3D6] hover:bg-[#8FCFB8]/30 transition-all duration-300 flex items-center gap-2 cursor-pointer shadow-sm hover:shadow active:scale-95 border border-[#C4E4D6]/20"
+                          className="self-start md:self-center px-5 py-2.5 rounded-full font-bold text-xs text-[#3A4258] bg-[#FFF9E5] hover:bg-[#F5C8D0]/40 transition-all duration-300 flex items-center gap-2 cursor-pointer shadow-sm hover:shadow active:scale-95 border border-[#B8C4D8]/30"
                         >
                           <span>← Quay lại Long Đường</span>
                         </button>
@@ -824,7 +871,7 @@ export default function App() {
                       </motion.div>
                     ) : (
                       <div className="glass-card rounded-[24px] p-12 text-center flex flex-col items-center justify-center">
-                        <span className="text-5xl mb-4 animate-bounce">🐉</span>
+                        <span className="text-5xl mb-4 animate-bounce">✨</span>
                         <h3 className="font-serif text-lg font-bold text-[#5D4E3C]">
                           Chưa có vị rồng nào!
                         </h3>
@@ -833,7 +880,7 @@ export default function App() {
                         </p>
                         <button
                           onClick={handleBackToGarden}
-                          className="mt-4 text-xs font-bold text-[#5D4E3C] bg-[#8FCFB8]/40 hover:bg-[#8FCFB8]/80 px-4 py-2 rounded-xl transition-colors cursor-pointer"
+                          className="mt-4 text-xs font-bold text-[#3A4258] bg-[#F5C8D0]/50 hover:bg-[#F5C8D0]/90 px-4 py-2 rounded-xl transition-colors cursor-pointer"
                         >
                           Quay lại Long Đường
                         </button>
@@ -847,7 +894,7 @@ export default function App() {
                     <div className="flex items-center justify-between border-b border-[#FFE0CE] pb-4">
                       <div>
                         <h1 className="font-serif text-2xl font-bold tracking-tight text-[#5D4E3C] flex items-center gap-2">
-                          <span>🐉</span> Danh Sách Triệu Hồi
+                          <span>✨</span> Danh Sách Triệu Hồi
                         </h1>
                         <div className="text-xs text-[#5D4E3C]/80 font-medium mt-1 font-sans">
                           <AnimatePresence mode="wait">
@@ -862,10 +909,10 @@ export default function App() {
                               {filteredCharacters.length === characters.length ? (
                                 <span className="flex items-center gap-1.5">
                                   Long Uyển hiện có{' '}
-                                  <strong className="text-sm font-extrabold text-[#5FB599] bg-[#8FCFB8]/20 px-2 py-0.5 rounded-md inline-block">
+                                  <strong className="text-sm font-extrabold text-[#E88BA0] bg-[#F5C8D0]/30 px-2 py-0.5 rounded-md inline-block">
                                     {characters.length}
                                   </strong>{' '}
-                                  rồng, cùng dạo một vòng nhé 🐉
+                                  rồng, cùng dạo một vòng nhé ✨
                                 </span>
                               ) : filteredCharacters.length === 0 ? (
                                 <span className="flex items-center gap-1.5">
@@ -873,18 +920,18 @@ export default function App() {
                                   <strong className="text-sm font-extrabold text-[#8A7A62] bg-[#FFF3D6] px-2 py-0.5 rounded-md inline-block">
                                     {characters.length}
                                   </strong>{' '}
-                                  rồng, nhưng chưa có vị nào hợp mệnh này. Tầm long khác nhé 🐉
+                                  rồng, nhưng chưa có vị nào hợp mệnh này. Tầm long khác nhé ✨
                                 </span>
                               ) : (
                                 <span className="flex items-center gap-1.5 flex-wrap">
-                                  <span>🐉 Long Uyển có</span>
-                                  <strong className="text-sm font-extrabold text-[#5FB599] bg-[#8FCFB8]/20 px-2 py-0.5 rounded-md inline-block">
+                                  <span>✨ Long Uyển có</span>
+                                  <strong className="text-sm font-extrabold text-[#E88BA0] bg-[#F5C8D0]/30 px-2 py-0.5 rounded-md inline-block">
                                     {characters.length}
                                   </strong>
                                   <span>rồng</span>
                                   <span className="text-[#8A7A62]/60 font-bold">·</span>
                                   <span>Bạn đã triệu được</span>
-                                  <strong className="text-sm font-extrabold text-[#FFB088] bg-[#FFD3B6]/30 px-2 py-0.5 rounded-md inline-block">
+                                  <strong className="text-sm font-extrabold text-[#7A8AA5] bg-[#B8C4D8]/30 px-2 py-0.5 rounded-md inline-block">
                                     {filteredCharacters.length}
                                   </strong>
                                   <span>rồng hợp mệnh</span>
@@ -921,7 +968,7 @@ export default function App() {
                       </motion.div>
                     ) : (
                       <div className="glass-card rounded-[24px] p-12 text-center flex flex-col items-center justify-center">
-                        <span className="text-5xl mb-4 animate-bounce">🐉</span>
+                        <span className="text-5xl mb-4 animate-bounce">✨</span>
                         <h3 className="font-serif text-lg font-bold text-[#5D4E3C]">
                           Vị rồng này chưa được triệu hồi!
                         </h3>
@@ -932,7 +979,7 @@ export default function App() {
                           onClick={() => {
                             handleResetFilters();
                           }}
-                          className="mt-4 text-xs font-bold text-[#5D4E3C] bg-[#8FCFB8]/40 hover:bg-[#8FCFB8]/80 px-4 py-2 rounded-xl transition-colors cursor-pointer"
+                          className="mt-4 text-xs font-bold text-[#3A4258] bg-[#F5C8D0]/50 hover:bg-[#F5C8D0]/90 px-4 py-2 rounded-xl transition-colors cursor-pointer"
                         >
                           Xóa Bộ Lọc
                         </button>
@@ -979,9 +1026,19 @@ export default function App() {
                 </div>
 
                 {/* Line 1: Main copyright & Cultivation */}
-                <p className="text-sm md:text-base font-bold font-serif tracking-wide text-[#3A4258]">
-                  2026 Long Uyển Của Shin — Created by Kamishiro Shinju
-                </p>
+                <div className="flex items-center justify-center gap-2.5">
+                  <div className="p-0.5 border border-[#7A8AA5]/50 rounded-full flex items-center justify-center shrink-0 bg-[#F8F6F5]">
+                    <img
+                      src="https://i.ibb.co/93qnWNTK/avt.png"
+                      alt="Long Uyển Avatar"
+                      className="w-7 h-7 rounded-full object-cover"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                  <p className="text-sm md:text-base font-bold font-serif tracking-wide text-[#3A4258]">
+                    2026 Long Uyển Của Shin — Created by Kamishiro Shinju
+                  </p>
+                </div>
                 
                 {/* Line 2: Cute sub-text */}
                 <p className="text-xs font-comfortaa text-[#6B7590]">
@@ -1052,7 +1109,7 @@ export default function App() {
               onClick={(e) => e.stopPropagation()}
               className="bg-[#F8F6F5] border border-[#D8DEE8] p-8 rounded-[32px] shadow-2xl max-w-md w-full relative overflow-hidden"
             >
-              <div className="absolute -top-10 -right-10 opacity-10 text-[#7A8AA5]"><CuteDragon size={120} /></div>
+              <div className="absolute -top-10 -right-10 opacity-15 text-[#7A8AA5]"><Sparkles className="w-28 h-28" /></div>
               <DragonCloseButton 
                 onClick={() => setSelectedBulletin(null)}
                 className="absolute top-4 right-4 z-20"
@@ -1087,8 +1144,8 @@ export default function App() {
               onClick={(e) => e.stopPropagation()}
               className="bg-[#F8F6F5] p-8 rounded-[32px] border-2 border-[#D8DEE8] shadow-2xl max-w-sm w-full text-center relative overflow-hidden"
             >
-              <div className="absolute -top-10 -right-10 opacity-15 text-[#7A8AA5]"><CuteDragon size={120} /></div>
-              <div className="absolute -bottom-10 -left-10 opacity-15 text-[#7A8AA5]"><CuteDragon size={120} /></div>
+              <div className="absolute -top-10 -right-10 opacity-15 text-[#7A8AA5]"><Sparkles className="w-28 h-28" /></div>
+              <div className="absolute -bottom-10 -left-10 opacity-15 text-[#7A8AA5]"><Sparkles className="w-28 h-28" /></div>
               
               <DragonCloseButton 
                 onClick={() => setShowBirthdayPopup(false)}
@@ -1140,7 +1197,7 @@ export default function App() {
               onClick={(e) => e.stopPropagation()}
               className="bg-[#F8F6F5] border border-[#D8DEE8] p-8 rounded-[32px] shadow-2xl max-w-sm w-full text-center relative overflow-hidden"
             >
-              <div className="absolute -top-10 -right-10 opacity-10 text-[#7A8AA5]"><CuteDragon size={120} /></div>
+              <div className="absolute -top-10 -right-10 opacity-15 text-[#7A8AA5]"><Sparkles className="w-28 h-28" /></div>
               
               <DragonCloseButton 
                 onClick={() => setShowDonatePopup(false)}
@@ -1149,8 +1206,13 @@ export default function App() {
               />
               
               <div className="relative z-10">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#7A8AA5] to-[#E88BA0] rounded-full flex items-center justify-center mb-4 shadow-inner mx-auto text-white">
-                  <span className="text-3xl">🍵</span>
+                <div className="w-16 h-16 p-1 border border-[#7A8AA5]/50 rounded-full shadow-md mx-auto mb-4 flex items-center justify-center bg-[#F8F6F5]">
+                  <img
+                    src="https://i.ibb.co/93qnWNTK/avt.png"
+                    alt="Long Uyển Avatar"
+                    className="w-full h-full object-cover rounded-full"
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
                 <h2 className="font-serif text-2xl font-bold text-[#3A4258] mb-2">Mời Shin một tách trà Long Tĩnh 🐉</h2>
                 <p className="text-[#6B7590] font-comfortaa text-xs mb-6 leading-relaxed">
