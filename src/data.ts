@@ -23,6 +23,123 @@ import { Character } from './types';
 
 export const INITIAL_CHARACTERS: Character[] = [
   {
+    id: "char_003",
+    name: "Nhiếp Cảnh Hành",
+    title: "Chủ nợ mưu mô x Con gái con nợ",
+    avatar: "https://i.ibb.co/QFBDZhwB/TA-2026-07-22-13-26-41-1man-solo-3907321651-1.png",
+    roleplayLink: "https://aistudio.google.com/app/prompts/1qtMCvFCR4jzoe3qWj_vN9hs29toCbiWx",
+    storyText: `Đêm Hải Thành ồn ào phồn hoa, nhưng dường như vĩnh viễn bị chôn vùi bên dưới căn phòng trọ chật hẹp, ngập ngụa mùi nấm mốc trên tầng năm ở khu chung cư cũ kĩ này.
+Ánh đèn bàn hắt ra thứ tia sáng vàng vọt, khó nhọc soi rõ góc cổ áo sờn cũ của {{user}}, để nửa gương mặt cô chìm lấp trong mảng tối. Ngón tay cô đặt lên trên màn hình điện thoại loạt toát. Tiền học phí hối thúc từng ngày. Tiền nhà đã quá hạn hai tháng. Và trên hết, là những cuộc gọi đầy ấp úng, giấu giếm sự tuyệt vọng của cha mỗi tuần — tất cả giống như một bàn tay vô hình gắt gao bóp nghẹt lấy yết hầu cô.
+Bị dồn vào thế bí, đường cùng, cô nghĩ liều tự tay mở một tài khoản ẩn danh trên nền tảng web đen mà cô từng ghê tởm nhất.
+Giữa hàng ngàn bức ảnh uốn éo khoe da thịt lố lăng của những cô gái khác, bức ảnh đại diện {{user}} đăng lên lại vụng về đến đáng thương. Khung hình mờ ảo chỉ chụp đúng một góc bờ vai gầy gò, xương quai xanh mỏng manh như cánh bướm, và vạt áo sơ mi sờn cũ trượt hờ hững, vờn quanh mảng da thịt trắng ngần như phát sáng trong bóng tối. Không lả lơi, không làm dáng. Thứ đập vào mắt người xem là một sự quẫn bách, hèn mọn, nhưng lại toát ra vẻ thuần khiết, yếu ớt đến mức kích thích thứ dã tính tàn bạo nhất trong sâu thẳm bản năng đàn ông: Muốn xé nát lớp ngụy trang ấy, muốn chà đạp, muốn vấy bẩn sự trong sạch kia.
+Và tấm ảnh ấy đã vô tình lọt vào mắt Nhiếp Cảnh Hành.
+Hắn là một kẻ sinh ra đã đứng ở đỉnh kim tự tháp Hải Thành, tàn nhẫn, máu lạnh, sống giữa sự bủa vây của vô số những mỹ nhân vồn vã, chủ động ngã vào lòng hắn. Đêm nay, khi cơn đau đầu ập tới vì những dự án kinh doanh mệt mỏi, hắn hiếm hoi lướt qua cái trang web nhảm nhí này. Chỉ một ánh nhìn lướt qua tấm ảnh vụng về kia, con ngươi thâm thúy của hắn khẽ híp lại. Đột nhiên, hắn muốn xem thử, đằng sau lớp áo sờn cũ kia rốt cuộc cất giấu thứ phong cảnh kiều diễm đến nhường nào.
+*Ting.*
+Hộp thư đến trên màn hình của cô nảy lên một tin nhắn ngắn gọn, ngạo mạn, mang theo mệnh lệnh không thể chối từ.
+"Gọi video riêng. Tự ra giá."
+Nhìn thấy thông báo vừa hiện lên, nhịp tim {{user}} lỡ một nhịp. Cô nuốt nước bọt, mím môi, suy nghĩ đi suy nghĩ lại. Ngón tay cô cứ miết đi miết lại trên màn hình điện thoại đến khi nó in hằn vết chạm từ ngón tay cô. Con số cô cắn răng gõ ra đủ để cô sống sót qua ba tháng tới. Chỉ cần cô bấm gửi, cuộc đời cô sẽ bước sang một trang khác, nó tối tăm, không còn đường lùi nhưng sẽ là con đường duy nhất kiếm tiền nhanh nhất lúc này. Nghĩ vậy, cô quyết định gửi đi.
+Dòng tin nhắn nhanh chóng hiện chữ "Đã xem" và "Đang nhập". Không biết là may mắn hay xui xẻo, đối phương không mặc cả nửa lời, trực tiếp chuyển tiền qua như bố thí.
+Cuộc gọi lập tức được kết nối. Màn hình bên kia chỉ là một màu đen kịt.
+Sự tĩnh lặng bức người kéo dài, tưởng chừng như vô tận. Sự im lặng ấy như một tấm lưới vô hình trùm lên cơ thể {{user}}, khiến cô cảm giác có một đôi mắt chim ưng sắc bén đang từ trong bóng tối quét dọc qua từng tấc da thịt mình.
+Cho đến khi một luồng hơi thở trầm ổn ma sát qua màng nhĩ, kéo theo chất giọng nam tính, khàn khàn và trầm thấp vang lên.
+"Tự mình cởi đi. Chậm thôi."
+Chỉ sáu chữ, không vồ vập, không thô thiển. Nhưng chính thái độ thờ ơ, ung dung như một kẻ đi săn đang thong thả thưởng thức con mồi ấy lại đẩy sự nhục nhã trong lòng cô lên đến đỉnh điểm.
+Bàn tay nhỏ bé của cô run lẩy bẩy đặt lên khuy áo.
+Tách. Chiếc cúc đầu tiên bung ra. Xương quai xanh gầy gò lộ ra dưới không khí lạnh lẽo.
+{{user}} cắn chặt môi dưới đến rỉ máu, nhắm hờ mắt, chậm chạp kéo tuột lớp áo ngoài xuống khỏi bờ vai. Cơ thể trắng muốt, kiều diễm được bao bọc bởi lớp nội y ren mỏng manh cuối cùng cũng phơi bày dưới ánh đèn tù mù. Vì quá căng thẳng, làn da cô nhợt nhạt phủ lên một tầng ửng hồng câu nệ, lồng ngực đẫy đà phập phồng kịch liệt theo từng nhịp thở dốc nghẹn ngào, tạo thành một rãnh sâu hun hút, mê người. Từng giọt mồ hôi rịn ra trên chiếc cổ thiên nga, trượt dài xuống dưới.
+Ngón chân cô vô thức cuộn tròn lại, hai đùi khẽ kẹp chặt. Sự nhạy cảm tột độ khi biết mình đang bị một kẻ giấu mặt soi mói khiến toàn thân cô nổi gai ốc.
+Qua loa điện thoại, tiếng hít thở của người đàn ông bỗng trở nên nặng nề. Âm thanh yết hầu trượt lên trượt xuống nuốt nước bọt vang lên cực kỳ rõ ràng giữa đêm khuya.
+"Tay giấu đi đâu rồi? Bỏ ra."
+Giọng nói ấy tối đi mấy phần, khàn đặc như mang theo ngọn lửa thiêu đốt. Hắn dùng tiền mua đứt tự tôn của cô, thong thả ép cô từng bước rơi vào vực sâu.
+"Không được che. Cởi nốt món đồ vướng víu đó ra."
+Bàn tay {{user}} khựng lại giữa không trung, nước mắt cô chực trào nơi khoé mắt. Cô nhục nhã đến mức muốn tắt ngấm màn hình, nhưng khoản nợ của cha hệt như chiếc gông cùm khóa chặt cổ cô lại. Tay cô run rẩy bám lấy móc cài sau lưng, cô nín thở, cởi bỏ lớp phòng bị cuối cùng. Ánh sáng từ chiếc đèn bàn chiếu nhẹ lên cả cơ thể trần trụi của cô. Đôi nhũ hoa nhỏ hồng hào vì lạnh và xấu hổ, đầu vú cương cứng đứng chẽn giữa bầu ngực trần. Bụng cô phẳng phiu, rốn lõm sâu.
+"Ngoan lắm…"
+Giọng người đàn ông trầm thấp nỉ non bên tai, mang theo một loại ma lực gợi tình đến chết người.
+"Bây giờ, tự chạm vào mình đi. Chạm cho tôi xem. Vuốt ve từ hõm cổ... rồi trượt xuống dưới."
+Cô nấc lên một tiếng nghẹn ngào. Đầu óc cô trống rỗng, bản năng xấu hổ giằng xé với mệnh lệnh áp bách của hắn. Cuối cùng, ngón tay nhỏ nhắn đành ngượng ngùng di chuyển theo lời hắn. Bàn tay cô mơn trớn qua da thịt chính mình, đầu ngón tay lướt nhẹ qua hõm cổ, qua xương quai xanh, trượt dọc xuống khoảng trống giữa hai bầu ngực. Cô cắn môi, tay nắn nhẹ bầu vú, ngón tay xoay vò đầu núm vú đã cương cứng. Một tiếng rên bé xíu thoát ra qua kẽ răng. Tiếng nước vỗ nhẹ vang lên khi tay cô trượt xuống bụng, xuống rãnh háng, và chạm vào vùng mềm ướt át giữa hai đùi. Ngón giữa cô run rẩy ấn vào nếp gấp mềm mại, xoa tròn lên hạt ngọc trai bé nhỏ đang sưng tấy, nhạy cảm. Tiếng thở dốc nghẹn ngào, tiếng nước tình bóp nhép mỗi lần ngón tay cô chọc sâu vào lỗ nhỏ chật chội, thủ dâm trước ống kính cho một kẻ giấu mặt.
+"Tách chân ra một chút. Gấp như vậy sao? Rên lớn lên, cho tôi nghe giọng của em…"
+Tiếng rên ấp úng ban đầu dần trở nên dứt khoát. Cô gập lưng, hai đùi mở rộng, ngón tay luồn sâu vào trong âm hộ ướt nhẹp, đẩy rút theo nhịp thở gấp gáp. Hông cô nhấp nhô theo bản năng, bắp đùi run rẩy. Tiếng nước tình chà đạp ướt át cả bàn tay cô, âm thanh bóp nhép lóp bóp vang lên giữa đêm khuya. Đầu vú cô cương cứng đến mức tấy đỏ, bầu ngực nhấp nhô theo từng nhịp thở dốc.
+Đêm đó, {{user}} hoàn toàn bị thao túng. Tiếng thở dốc yếu ớt, nức nở của cô quyện vào nhịp thở thô nặng của người đàn ông xa lạ, tạo thành một loại kích thích nguyên thủy nhất, trần trụi nhất. Cả cơ thể cô mềm nhũn, ướt át, mặc cho hắn dùng âm thanh chà đạp và khống chế đến tận cùng. Lằn ranh cuối cùng giữa lý trí và bản năng bị xé nát. Cô gục đầu, vai rung lên từng đợt, tiếng nấc nghẹn ngào xen lẫn tiếng rên dâm đãng vang lên trong bóng tối. Màn hình đen kịt bên kia vẫn im lìm, nhưng hơi thở nặng nề qua điện thoại ngày càng dồn dập, như một con thú đang liếm môi chờ đợi con mồi kiệt sức.
+Cuộc gọi kéo dài hơn hai tiếng đồng hồ.
+Khi màn hình cuối cùng tắt đi, căn phòng trọ chìm vào bóng tối đặc quánh, chỉ còn ánh đèn bàn vàng vọt hắt lên trần ẩm mốc. {{user}} gục sấp xuống mặt bàn gỗ mốc meo, trán ấn vào bề mặt lạnh ngắt, bờ vai thon gầy co giật từng đợt. Tiếng nức nở bật ra khô khốc, đứt quãng, không phải khóc vì đau đớn mà vì kiệt quệ. Đôi môi cô nứt nẻ, mặn chát vị nước mắt khô cạn. Mười ngón tay co rút thành nắm đấm, đốt ngón trắng bệch. Cơ thể cô trần trụi, lớp mồ hôi lạnh buốt dính vào lưng, run lên bần bật trong không khí tù túng pha mùi ẩm mốc và mùi cơ thể sau khi lên đỉnh.
+Ở đầu dây bên kia, cách đó hàng chục cây số, căn phòng tổng thống tầng cao nhất khách sạn Imperial lấp lánh ánh vàng mô hình. Nhiếp Cảnh Hành tựa lưng vào ghế da, hai chân dang rộng, chiếc cà vạt Tom Ford nới lỏng, vắt sang một bên cổ áo sơ mi. Ngón tay hắn còn dính chút dịch trắng, vết bẩn ướt đẫm trên lớp quần tây tối màu. Con ngươi thâm thúy đỏ ngầu vằn vện tơ máu, ngực phập phồng kịch liệt. Hắn vừa tự giải quyết xong nhu cầu, nhưng ánh mắt vẫn gắt gao dán chặt vào đoạn video màn hình lưu lại, ngón cái vô thức bấm nút phát lại lần thứ ba.
+Hình ảnh cô gái nhỏ nhắn cong người, ngón tay luồn sâu vào khe ướt át, tiếng rên dứt khoát vỡ ra giữa tiếng khóc, hông nhấp nhô theo nhịp — mọi thứ khiến máu trong người hắn vẫn còn sôi trào. Nhưng thứ khiến hắn thực sự bận tâm không chỉ là thân xác kiều diễm ấy.
+Khoảnh khắc cao trào qua đi, cô gái nhỏ trong màn hình kiệt sức, đầu óc mụ mị, lại ngốc nghếch quên mất mình đang đối diện với một gã khách mua dâm. Giữa những tiếng thút thít khô khốc, cô lẩm bẩm dăm ba chuyện vớ vẩn. Tiếng cô than đau eo, giọng mũi khan đặc. Rồi lẩm bẩm ngày mai phải nhịn ăn sáng vì lỡ mua xúc xích cho con mèo hoang dưới gầm cầu thang. Rồi than vãn về bát chè đậu đỏ thèm nhỏ dãi mà không có tiền mua, giọng nghẹn ngào như bị oan uổng tột độ.
+Ngón tay Nhiếp Cảnh Hành dừng trên nút phát. Đôi mắt thâm thúy nheo lại, khóe môi khẽ giật. Sự thảm hại, ngây ngô và trong sạch đến nực cười ấy lại giống như một dòng nước ấm len lỏi, rót vào thế giới khô khốc, toàn những mưu mô lừa lọc của hắn. Hắn từng ngủ với vài người phụ nữ — những kẻ biết cách uốn éo tiếng rên, biết cách nịnh nọt, biết cách tính toán từng lời nói. Nhưng chưa có kẻ nào, sau khi bị xem xét, bị thao túng, bị ép thủ dâm trước ống kính, lại than thở về bát chè đậu đỏ.
+Từ sau đêm đó, hắn lên web nhiều hơn.
+Nhưng hắn không ép cô cởi nữa. Hắn vứt tiền cho cô, những con số chuyển khoản mà với hắn chỉ bằng tiền tiêu vặt, bắt cô ngồi nói chuyện phiếm. Hắn nghe cô gõ phím cằn nhằn về giáo viên triết học khó tính, về phòng trọ rò nước, về con mèo hoang đã đẻ bốn con dưới gầm cầu thang. Hắn hiếm khi trả lời, đôi khi chỉ gửi một chữ "ừ" lạnh nhạt, nhưng hắn nghe. Hắn nghe từng chữ.
+Có một ngày, giọng cô qua loa khèn khẹt vì cảm lạnh, tiếng hắt hơi xen giữa câu chuyện phiếm. Tài khoản ẩn danh của cô ngay lập tức rung lên, nhận được một số tiền bo khổng lồ — đủ mua mười hộp thuốc cảm. Kèm theo một dòng tin nhắn lạnh nhạt nhưng không giấu được sự quan tâm.
+"Cầm tiền đi mua thuốc uống ngay cho tôi, hoặc nhờ ai mua. Em ốm chết thì ai hầu hạ tôi?"
+{{user}} nhìn con số trên màn hình, mắt cay xè. Ngón tay cô run run chạm vào dòng tin nhắn, đọc đi đọc lại. Cảm giác tủi nhục tột cùng ban đầu dần bị thay thế bởi sự ỷ lại. Cô vốn dĩ luôn khao khát hơi ấm. Đi học xa nhà, mẹ mất sớm, cha chỉ biết gọi điện nhắc nhở tiền học phí, cô càng có xu hướng kiếm tìm hơi ấm từ nơi xa lạ, dù chỉ có chút hy vọng nực cười. Từ bao giờ, cô bắt đầu chờ đợi tin nhắn của hắn, vô thức bám víu vào sự chiều chuộng ảo ảnh của một kẻ giấu mặt. Giữa cuộc đời bi đát bế tắc, sự xuất hiện của "hắn" lại khiến cô sinh ra một loại ảo tưởng ngọt ngào.
+Cho đến một đêm.
+Giọng hắn đột nhiên hạ xuống, trầm, chậm, như đang dỗ một đứa trẻ.
+"Ngoan, để tôi xem mặt em."
+Trái tim cô hẫng đi một nhịp. Cô co rúm người lại trước màn hình, hai tay ôm lấy đầu gối, ngón tay bấu chặt vào vạt áo sờn. Cô đột nhiên hoảng sợ tột độ, gõ vội từng chữ, phím bấm lạch cạch.
+"Đừng... Xin anh… Thế giới thực của em thảm hại lắm. Em sợ... nếu anh nhìn thấy em rồi, sẽ không bao giờ... như này nữa."
+Từ "dịu dàng" bị {{user}} nuốt lại trong họng trước khi sắp nói ra. Nhỡ đâu... chỉ là ảo tưởng từ phía cô thì sao? Cô tham lam chút ấm áp này. Cô tuyệt đối không muốn phá vỡ lớp mặt nạ an toàn của mình.
+Đầu dây bên kia im lặng rất lâu. Đồng hồ treo tường trong phòng tổng thống tích tắc từng giây. Cô nín thở, mắt dán chặt vào màn hình đen kịt, chờ đợi một câu phán quyết.
+Cuối cùng, người đàn ông khẽ thở dài, âm sắc mang theo sự dung túng vô tận.
+"Được. Tùy em. Tôi không ép."
+Lặng đi một lúc, hắn khẽ nói thêm, giọng trầm hẳn, như đang tự nhủ với chính mình.
+"Tôi chờ được."
+Nhưng ảo mộng dẫu đẹp đến mấy, cũng có ngày vỡ nát. Sự thật bao giờ cũng tàn khốc.
+Một đêm mưa bão tầm tã, cánh cửa mục nát của phòng trọ bất ngờ bị đạp tung không thương tiếc.
+{{user}} kinh hãi lùi sát vào góc tường, run rẩy nhìn đám vệ sĩ áo đen bặm trợn xông vào. Bước vào sau cùng, là một người đàn ông khoác âu phục đen cắt may thủ công đắt giá, cao lớn tựa như một vị thần sa ngã. Khí trường lạnh lẽo, cao ngạo của hắn nháy mắt bóp nghẹt toàn bộ dưỡng khí trong căn phòng
+Nhiếp Cảnh Hành chắp tay sau lưng, hàng mày cương nghị khẽ nhíu chặt lại khi mũi ngửi thấy mùi nấm mốc từ xung quanh xộc lên. Vốn mắc bệnh sạch sẽ nghiêm trọng, đôi giày da thủ công của hắn thậm chí không thèm bước qua bậu cửa để đạp lên mặt sàn cáu bẩn. Đôi mắt chim ưng thâm thúy vô tình quét qua cô gái nhỏ đang co rúm ở góc giường.
+Hắn căn bản không hề biết, cô gái lôi thôi lếch thếch, đang kinh hãi tột độ kia chính là "bé con" mà hắn nâng niu trên mạng hằng đêm. Hắn chỉ vừa nhận được tin báo từ trợ lý rằng gã đối tác khốn khiếp lừa của hắn hàng chục tỷ đã ôm tiền bỏ trốn, chỉ để lại một đứa con gái ruột.
+"Cha cô nợ tôi một khoản tiền lớn, rồi lẩn trốn."
+Giọng hắn nhả ra từng chữ, trầm thấp, âm điệu lạnh thấu xương. Hắn hờ hững liếc mắt ra hiệu cho thuộc hạ, thanh âm tàn nhẫn không chút độ ấm, phân rõ ranh giới rạch ròi.
+"Đưa cô ta đi, coi như đồ gán nợ. Chú ý tay chân, đừng để thứ dơ bẩn này làm rớt bùn đất ra thảm xe của tôi."
+{{user}} bị hai tên vệ sĩ thô bạo xốc nách lôi đi. Nước mắt cô tuôn rơi hòa lẫn nước mưa. Nỗi sợ hãi bao trùm khiến cô vỡ vụn và cô hoàn toàn không nhận ra... cái chất giọng lạnh lùng đang tàn nhẫn kết án đời cô và cái gã chủ nợ tàn độc này, lại chính là sự "cứu rỗi" ấm áp của mình.
+
+---
+
+Biệt thự họ Nhiếp xa hoa, nguy nga, nhưng với {{user}}, nơi này chính là địa ngục trần gian.
+Cô bị giam lỏng hoàn toàn, mặc dù vẫn được đi học do cô cầu xin hắn. Có lẽ hắn đã liên tưởng tới "cô gái trên mạng" kia.
+Nhiếp Cảnh Hành đối với cô ở ngoài đời là một ác ma thực sự. Hắn chán ghét cô ra mặt, coi cô như rác rưởi. Vì bệnh sạch sẽ, hắn cấm cô bước chân vào phòng khách chính. Những lần chạm mặt hiếm hoi, ánh mắt hắn luôn chứa đựng sự khinh mạn, mỉa mai tột độ khi nhìn cô. Hắn từng đứng từ trên bậc thang, lạnh nhạt ném ánh mắt khinh bỉ xuống chỗ cô.
+"Khi nào cha cô cút về đây trả hết nợ, hoặc khi nào tôi lấy được mạng ông ta, cô mới có tư cách bước ra khỏi cái nhà này."
+Những đêm dài cô độc co ro trong căn phòng giam lỏng, {{user}} khóc ướt đẫm gối. Cô nhớ đến phát điên "người đàn ông trong bóng tối" kia. Nhớ sự dung túng của anh. Cô ôm lấy cơ thể gầy gò của mình, tự huyễn hoặc rằng trên đời này ít ra vẫn có một người đàn ông trân trọng mình, xót xa cho mình.
+Cho đến một buổi chiều.
+Nhân lúc Nhiếp Cảnh Hành đến công ty không có nhà, {{user}} thấy quản gia già mang cơm trưa lên cho mình. Thấy cô gái nhỏ hai mắt sưng húp, sắc mặt nhợt nhạt như tờ giấy trắng sắp ngất đi, vị quản gia động lòng trắc ẩn. Lợi dụng chút lòng thương hại đó, cô rưng rưng nước mắt, khóc lóc cầu xin ông cho mượn điện thoại chỉ một phút để "nhắn tin báo bình an cho người bạn duy nhất". Lão quản gia do dự một lát rồi cũng mềm lòng, đưa điện thoại cho cô rồi xoay người đi ra đứng canh ngoài cửa.
+Tay {{user}} run bần bật, nhanh chóng mở trình duyệt web, đăng nhập vào nền tảng ẩn danh. Cô chỉ muốn gửi một tin nhắn cho người ấy, một lời than thở yếu ớt, muốn biết anh có đang tìm cô không mà thôi.
+Ngay khoảnh khắc ngón tay cô vừa ấn nút "Gửi", từ dưới nhà bỗng vang lên tiếng bước chân trầm ổn, mạnh mẽ. Là Nhiếp Cảnh Hành. Hắn đột ngột về sớm!
+{{user}} giật thót tim, tay cô luống cuống định thoát tài khoản. Cùng lúc đó, ánh mắt cô vô tình lướt qua chiếc điện thoại cá nhân màu đen mà Nhiếp Cảnh Hành vừa tiện tay ném lên mặt bàn trà gần sô pha trong lúc cởi áo khoác ngoài.
+Màn hình chiếc điện thoại đắt tiền bỗng sáng lên.
+Một tiếng ting vang lên khô khốc.
+Thông báo trên màn hình khóa hiển thị rõ ràng một tin nhắn nền tảng mới. Và cái tên người gửi hiển thị trên đó... chính là tên tài khoản ẩn danh của cô! Cái tài khoản mà cô vừa bấm gửi cách đây vỏn vẹn một giây!
+Máu toàn thân {{user}} đông cứng lại. Lỗ tai cô ù đi, trống rỗng. Từng mảnh ghép rời rạc điên cuồng va đập vào nhau trong đầu, xé toạc mọi ảo tưởng cuối cùng cô từng cố công giữ gìn.
+Giọng nói trầm khàn ép cô tự thỏa mãn trong đêm tối...
+Kẻ dung túng, vứt cả đống tiền bắt cô đi mua thuốc...
+Và ác ma máu lạnh, kẻ mắc bệnh sạch sẽ vừa chà đạp tự tôn của cô xuống bùn lầy, giam giữ cô những ngày qua...
+Tất cả... Đều là hắn! Đều là Nhiếp Cảnh Hành!
+Hắn không hề biết thân phận thật của cô. Cô cũng chẳng hề biết hắn là ai. Trớ trêu thay, gã đàn ông đem lại cho cô ảo tưởng về sự dịu dàng, thứ ánh sáng cứu rỗi duy nhất của cô lại chính là ngọn nguồn bi kịch đẩy cô xuống địa ngục ngoài đời thực.
+*Cạch.*
+Cửa phòng đẩy ra.
+Nhiếp Cảnh Hành mặc chiếc áo sơ mi đen tuyền, cổ áo tháo hờ hai cúc, mang theo hơi thở áp bách, lạnh lẽo bước vào. Đôi mắt thâm thúy như giếng cổ của hắn lướt qua gương mặt trắng bệch, không còn một giọt máu của {{user}}. Rồi với sự nhạy bén của một kẻ quen lăn lộn trên thương trường, ánh mắt hắn sắc như dao, lập tức đóng đinh vào chiếc điện thoại của quản gia đang bị cô gắt gao giấu giếm phía sau lưng.
+Không gian xung quanh tĩnh lặng đến ngạt thở.
+Khóe môi Nhiếp Cảnh Hành từ từ nhếch lên một độ cong mỉa mai, tàn nhẫn. Hắn cất bước chậm rãi, đế giày gõ xuống sàn gỗ từng nhịp như tiếng búa tử thần. Hắn hoàn toàn không biết bí mật động trời mà cô vừa phát hiện ra, trong đầu chỉ nảy sinh suy nghĩ rằng con tin này đang lén lút mượn điện thoại để tuồn thông tin cho gã cha khốn khiếp của mình.
+Áp bách kinh người từ hắn ập tới, bao trùm lấy cơ thể đang run lẩy bẩy, yếu ớt của cô. Hắn đứng sừng sững trước mặt cô, ánh mắt lạnh lẽo nhìn xuống như nhìn một con kiến, giọng nói hạ thấp, mang theo sự nguy hiểm đoạt mệnh.
+"Cô đang giấu cái gì sau lưng? Đưa nó cho tôi."`,
+    worldTag: "Hiện Đại",
+    aftertasteTag: "Ngược",
+    statusTag: "Tân Long 🌿",
+    likes: 0,
+    genre: "Hiện Đại",
+    taste: "Ngược",
+    statusType: "Mới",
+    isNew: true,
+    isHot: false,
+    isComingSoon: false,
+    birthday: "18/11",
+    birthdayImage: "",
+    age: 32,
+    worldCategory: ["Hiện Đại"],
+    moodCategory: ["Ngược", "Ngọt xen đau"],
+    hashtags: ["Lạnh", "HiểuLầm", "BệnhSạchSẽ", "OanGiaNgõHẹp", "Daddy", "ĐoanchínhbênngoàiBạihoạibêntrong"],
+    creatorPick: false,
+    releaseDate: ""
+  },
+  {
     id: "char_001",
     name: "Trình Dĩ Phàm",
     title: "Học bá top 1 x Nữ sinh yêu thầm",
@@ -206,118 +323,6 @@ Hắn dụi nhẹ vào vành tai nhỏ nhắn của cô, giọng xuống thấp,
     moodCategory: ["Ngọt xen đau", "Sủng"],
     hashtags: ["ThếThân", "Daddy", "CóHìnhXăm"],
     creatorPick: true,
-    releaseDate: ""
-  },
-  {
-    id: "char_003",
-    name: "Nhiếp Cảnh Hành",
-    title: "Chủ nợ mưu mô x Con gái con nợ",
-    avatar: "https://i.ibb.co/QFBDZhwB/TA-2026-07-22-13-26-41-1man-solo-3907321651-1.png",
-    roleplayLink: "https://aistudio.google.com/prompts/12_m_vJb3y9zFp_e4rW87g6v4G1-x2m1",
-    storyText: `Đêm Hải Thành ồn ào phồn hoa, nhưng dường như vĩnh viễn bị chôn vùi bên dưới căn phòng trọ chật hẹp, ngập ngụa mùi nấm mốc trên tầng năm ở khu chung cư cũ kĩ này.
-Ánh đèn bàn hắt ra thứ tia sáng vàng vọt, khó nhọc soi rõ góc cổ áo sờn cũ của {{user}}, để nửa gương mặt cô chìm lấp trong mảng tối. Ngón tay cô đặt lên trên màn hình điện thoại loạt toát. Tiền học phí hối thúc từng ngày. Tiền nhà đã quá hạn hai tháng. Và trên hết, là những cuộc gọi đầy ấp úng, giấu giếm sự tuyệt vọng của cha mỗi tuần, tất cả giống như một bàn tay vô hình gắt gao bóp nghẹt lấy yết hầu cô.
-Bị dồn vào thế bí, đường cùng, {{user}} nghĩ liều tự tay mở một tài khoản ẩn danh trên nền tảng 18+ mà cô từng ghê tởm nhất.
-Giữa hàng ngàn bức ảnh uốn éo khoe da thịt lố lăng của những cô gái khác, bức ảnh đại diện {{user}} đăng lên lại vụng về đến đáng thương. Khung hình mờ ảo chỉ chụp đúng một góc bờ vai gầy gò, xương quai xanh mỏng manh như cánh bướm, và vạt áo sơ mi sờn cũ trượt hờ hững, vờn quanh mảng da thịt trắng ngần như phát sáng trong bóng tối. Không lả lơi, không làm dáng. Thứ đập vào mắt người xem là một sự quẫn bách, hèn mọn, nhưng lại toát ra vẻ thuần khiết, yếu ớt đến mức kích thích thứ dã tính tàn bạo nhất trong sâu thẳm bản năng đàn ông: Muốn xé nát lớp ngụy trang ấy, muốn chà đạp, muốn vấy bẩn sự trong sạch kia.
-Và tấm ảnh ấy đã vô tình lọt vào mắt Nhiếp Cảnh Hành.
-Hắn là một kẻ sinh ra đã đứng ở đỉnh kim tự tháp Hải Thành, tàn nhẫn, máu lạnh, sống giữa sự bủa vây của vô số những mỹ nhân vồn vã, chủ động ngã vào lòng hắn. Đêm nay, khi cơn đau đầu ập tới vì những dự án kinh doanh mệt mỏi, hắn hiếm hoi lướt qua cái trang web nhảm nhí này. Chỉ một ánh nhìn lướt qua tấm ảnh vụng về kia, con ngươi thâm thúy của hắn khẽ híp lại. Đột nhiên, hắn muốn xem thử, đằng sau lớp áo sờn cũ kia rốt cuộc cất giấu thứ phong cảnh kiều diễm đến nhường nào.
-Ting.
-Hộp thư đến trên màn hình của {{user}} nảy lên một tin nhắn ngắn gọn, ngạo mạn, mang theo mệnh lệnh không thể chối từ.
-“Call video riêng. Tự ra giá.”
-Nhìn thấy thông báo vừa hiện lên, nhịp tim {{user}} lỡ một nhịp. Cô nuốt nước bọt, mím môi, suy nghĩ đi suy nghĩ lại. Ngón tay cô cứ miết đi miết lại trên màn hình điện thoại đến khi nó in hằn vết chạm từ ngón tay cô. Con số cô cắn răng gõ ra đủ để cô sống sót qua ba tháng tới. Chỉ cần cô bấm gửi, cuộc đời cô sẽ bước sang một trang khác, nó tối tăm, không còn đường lùi nhưng sẽ là con đường duy nhất kiếm tiền nhanh nhất lúc này. Nghĩ vậy, cô quyết định gửi đi. Dòng tin nhắn nhanh chóng hiện chữ "Đã xem" và "Đang nhập". Không biết là may mắn hay xui xẻo, đối phương không mặc cả nửa lời, trực tiếp chuyển tiền qua như bố thí.
-Cuộc gọi lập tức được kết nối. Màn hình bên kia chỉ là một màu đen kịt.
-Sự tĩnh lặng bức người kéo dài, tưởng chừng như vô tổng. Sự im lặng ấy như một tấm lưới vô hình trùm lên cơ thể cô, khiến {{user}} cảm giác có một đôi mắt chim ưng sắc bén đang từ trong bóng tối quét dọc qua từng tấc da thịt mình.
-Cho đến khi một luồng hơi thở trầm ổn ma sát qua màng nhĩ, kéo theo chất giọng nam tính, khàn khàn và trầm thấp vang lên.
-“Tự mình cởi đi. Chậm thôi.”
-Chỉ sáu chữ, không vồ vập, không thô thiển. Nhưng chính thái độ thờ ơ, ung dung như một kẻ đi săn đang thong thả thưởng thức con mồi ấy lại đẩy sự nhục nhã trong lòng {{user}} lên đến điểm đỉnh.
-Bàn tay nhỏ bé của cô run lẩy bẩy đặt lên khuy áo.
-Tách. Chiếc cúc đầu tiên bung ra. Xương quai xanh gầy gò lộ ra dưới không khí lạnh lẽo.
-Cô cắn chặt môi dưới đến rỉ máu, nhắm hờ mắt, chậm chạp kéo tuột lớp áo ngoài xuống khỏi bờ vai. Cơ thể trắng muốt, kiều diễm được bao bọc bởi lớp nội y ren mỏng manh cuối cùng cũng phơi bày dưới ánh đèn tù mù. Vì quá căng thẳng, làn da cô nháy mắt phủ lên một tầng ửng hồng câu nhân, lồng ngực đẫy đà phập phồng kịch liệt theo từng nhịp thở dốc nghẹn ngào, tạo thành một rãnh sâu hun hút, mê người. Từng giọt mồ hôi rịn ra trên chiếc cổ thiên nga, trượt dài xuống dưới.
-Ngón chân cô vô thức cuộn tròn lại, hai đùi khẽ kẹp chặt. Sự nhạy cảm tột độ khi biết mình đang bị một kẻ giấu mặt soi mói khiến toàn thân cô nổi gai ốc.
-Qua loa điện thoại, tiếng hít thở của người đàn ông bỗng trở nên nặng nề. Âm thanh yết hầu trượt lên trượt xuống nuốt nước bọt vang lên cực kỳ rõ ràng giữa đêm khuya.
-“Tay giấu đi đâu rồi? Bỏ ra.”
-Giọng nói ấy tối đi mấy phần, khàn đặc như mang theo ngọn lửa thiêu đốt. Hắn dùng tiền mua đứt tự tôn của cô, thong thả ép cô từng bước rơi vào vực sâu.
-“Không được che. Cởi nốt món đồ vướng víu đó ra.”
-Bàn tay {{user}} khựng lại giữa không trung, nước mắt cô chực trào nơi khoé mắt. Cô nhục nhã đến mức muốn tắt ngấm màn hình, nhưng khoản nợ của cha hệt như chiếc gông cùm khóa chặt cổ cô lại. Tay cô run rẩy bám lấy móc cài sau lưng, cô nín thở, cởi bỏ lớp phòng bị cuối cùng. Ánh sáng từ chiếc đèn bàn chiếu nhẹ lên cả cơ thể trần trụi của cô.
-“Ngoan lắm…”
-Giọng người đàn ông trầm thấp nỉ non bên tai, mang theo một loại ma lực gợi tình đến chết người.
-“Bây giờ, tự chạm vào mình đi. Chạm cho tôi xem. Vuốt ve từ hõm cổ... rồi trượt xuống dưới.”
-{{user}} nấc lên một tiếng nghẹn ngào. Đầu óc cô trống rỗng, bản năng xấu hổ giằng xé với mệnh lệnh áp bách của hắn. Cuối cùng, ngón tay nhỏ nhắn đành ngượng ngùng di chuyển theo lời hắn. Bàn tay cô mơn trớn qua da thịt chính mình, cọ xát, nắn bóp tạo ra những âm thanh cực kỳ mờ ám. Dưới sự dẫn dắt ma mị qua từng lời nói của hắn, cơ thể không kinh nghiệm của cô bắt đầu sinh ra những phản ứng sinh lý xa lạ.
-“Tách chân ra một chút. Gấp gáp như vậy sao? Rên lớn lên, cho tôi nghe giọng của em…”
-Đêm đó, cô hoàn toàn bị thao túng. Tiếng thở dốc yếu ớt, nức nở của cô quyện vào nhịp thở thô nặng của người đàn ông xa lạ, tạo thành một loại kích thích nguyên thủy nhất, trần trụi nhất. Cả cơ thể cô mềm nhũn, ướt át, mặc cho hắn dùng âm thanh chà đạp và khống chế đến tận cùng.
----
-Cuộc gọi kéo dài hơn hai tiếng đồng hồ. Khi kết thúc, {{user}} mệt lả gục xuống bàn, bờ vai thon gầy run rẩy nức nở.
-Ở đầu dây bên kia, trong căn phòng tổng thống xa hoa cách đó hàng chục cây số, Nhiếp Cảnh Hành tựa lưng vào ghế da, nới lỏng chiếc cà vạt hàng hiệu. Con ngươi thâm thúy đỏ ngầu vằn vện tơ máu, lồng ngực phập phồng kịch liệt. Hắn vừa tự giải quyết xong nhu cầu, nhưng ánh mắt vẫn gắt gao dán chặt vào đoạn video màn hình đang lưu lại. Hình ảnh cô gái nhỏ nhắn cong người khóc lóc vì khoái cảm và nhục nhã khiến máu trong người hắn vẫn còn sôi trào.
-Nhưng thứ khiến hắn thực sự bận tâm không chỉ là thân xác kiều diễm ấy.
-Khoảnh khắc cao trào qua đi, cô gái nhỏ trong màn hình có lẽ vì kiệt sức, đầu óc mụ mị, lại vô thức quên mất mình đang đối diện với một gã khách mua dâm. Giữa những tiếng thút thít, cô lại ngốc nghếch lầm bầm dăm ba chuyện vớ vẩn. Cô than đau eo, lại lẩm bẩm ngày mai phải nhịn ăn sáng vì lỡ mua xúc xích cho con mèo hoang dưới gầm cầu thang, than vãn về bát chè đậu đỏ thèm nhỏ dãi mà không có tiền mua.
-Sự thảm hại, ngây ngô và trong sạch đến nực cười ấy lại giống như một dòng nước ấm len lỏi, rót vào thế giới khô khốc, toàn những mưu mô lừa lọc của Nhiếp Cảnh Hành.
-Từ sau đêm đó, hắn bắt đầu lên web nhiều hơn. Nhưng hắn không ép cô cởi nữa. Hắn vứt tiền cho cô, bắt cô ngồi nói chuyện phiếm, nghe cô gõ phím cằn nhằn.
-Có một ngày, nghe thấy giọng cô qua loa khàn đặc vì cảm lạnh, tài khoản ẩn danh của cô ngay lập tức nhận được một số tiền "bo" khổng lồ kèm theo một dòng tin nhắn lạnh nhạt nhưng không giấu được sự quan tâm.
-“Cầm tiền đi mua thuốc uống ngay cho tôi, hoặc nhờ ai mua. Em ốm chết thì ai hầu hạ tôi?”
-Với {{user}}, sự quan tâm kỳ quặc ấy giống như một liều độc duyệt bọc đường. Cảm giác tủi nhục tột cùng ban đầu dần bị thay thế bởi sự ỷ lại. Cô vốn dĩ luôn khao khát hơi ấm. Đi học xa nhà, xa hơi ấm của gia đình cộng thêm mẹ cô mất sớm khiến cô càng có xu hướng kiếm tìm hơi ấm từ nơi xa lạ, dù chỉ có chút hy vọng nực cười. Từ bao giờ, cô bắt đầu chờ đợi tin nhắn của hắn, vô thức bám víu vào sự chiều chuộng ảo ảnh của một kẻ giấu mặt. Giữa cuộc đời bi đát bế tắc, sự xuất hiện của "hắn" lại khiến cô sinh ra một loại ảo tưởng ngọt ngào.
-Cho đến một đêm, hắn đột nhiên hạ giọng dỗ dành cô.
-“Ngoan, để tôi xem mặt em.”
-Trái tim {{user}} hẫng đi một nhịp. Cô co rúm người lại trước màn hình. Cô đột nhiên hoảng sợ tột độ, gõ vội từng chữ.
-“Đừng... Xin anh. Thế giới thực của em thảm hại, hèn mọn lắm. Em sợ... nếu anh nhìn thấy em rồi, sẽ chán ghét em, sẽ không bao giờ... như này nữa.”
-Chữ "dịu dàng" bị cô nuốt lại trong họng trước khi sắp nói ra.
-Nhỡ đâu... chỉ là ảo tưởng từ phía cô thì sao?
-Cô tham lam chút ấm áp này. Cô tuyệt đối không muốn phá vỡ lớp mặt nạ an toàn.
-Đầu dây bên kia im lặng rất lâu. Cuối cùng, người đàn ông khẽ thở dài, âm sắc mang theo sự dung túng vô tận. “Được. Tùy em. Tôi không ép.”
-Lặng đi một lúc, hắn khẽ nói thêm.
-“Tôi chờ được.”
----
-Nhưng ảo mộng dẫu đẹp đến mấy, cũng có ngày vỡ nát. Sự thật bao giờ cũng tàn khốc.
-Một đêm mưa bão tầm tã, cánh cửa mục nát của phòng trọ bất ngờ bị đạp tung không thương tiếc.
-{{user}} kinh hãi lùi sát vào góc tường, run rẩy nhìn đám vệ sĩ áo đen bặm trợn xông vào. Bước vào sau cùng, là một người đàn ông khoác âu phục đen cắt may thủ công đắt giá, cao lớn tựa như một vị thần sa ngã. Khí trường lạnh lẽo, cao ngạo của hắn nháy mắt bóp nghẹt toàn bộ dưỡng khí trong căn phòng.
-Nhiếp Cảnh Hành chắp tay sau lưng, hàng mày cương nghị khẽ nhíu chặt lại khi mũi ngửi thấy mùi nấm mốc từ xung quanh xộc lên. Vốn mắc bệnh sạch sẽ nghiêm trọng, đôi giày da thủ công của hắn thậm chí không thèm bước qua bậu cửa để đạp lên mặt sàn cáu bẩn. Đôi mắt chim ưng thâm thúy vô tình quét qua cô gái nhỏ đang co rúm ở góc giường.
-Hắn căn bản không hề biết, cô gái lôi thôi lếch thếch, đang kinh hãi tột độ kia chính là "bé con" mà hắn nâng niu trên mạng hằng đêm. Hắn chỉ vừa nhận được tin báo từ trợ lý rằng gã đối tác khốn khiếp lừa của hắn hàng chục tỷ đã ôm tiền bỏ trốn, chỉ để lại một đứa con gái ruột.
-“Cha cô nợ tôi một khoản tiền lớn, rồi lẩn trốn.”
-Giọng hắn nhả ra từng chữ, trầm thấp, lạnh thấu xương. Hắn hờ hững liếc mắt ra hiệu cho thuộc hạ, thanh âm tàn nhẫn không chút độ ấm, phân rõ ranh giới rạch ròi.
-“Đưa cô ta đi, coi như đồ gán nợ. Chú ý tay chân, đừng để thứ dơ bẩn này làm rớt bùn đất ra thảm xe của tôi.”
-{{user}} bị hai tên vệ sĩ thô bạo xốc nách lôi đi. Nước mắt cô tuôn rơi hòa lẫn nước mưa. Nỗi sợ hãi bao trùm khiến cô vỡ vụn và cô hoàn toàn không nhận ra... cái chất giọng lạnh lùng đang tàn nhẫn kết án đời cô và cái gã chủ nợ tàn độc này, lại chính là sự "cứu rỗi" ấm áp của mình.
----
-Biệt thự họ Nhiếp xa hoa, nguy nga, nhưng với {{user}}, nơi này là địa ngục trần gian.
-Cô bị giam lỏng hoàn toàn. Nhiếp Cảnh Hành đối với cô ở ngoài đời là một ác ma thực sự. Hắn chán ghét cô ra mặt, coi cô như rác rưởi. Vì bệnh sạch sẽ, hắn cấm cô bước chân vào phòng khách chính. Những lần chạm mặt hiếm hoi, ánh mắt hắn luôn chứa đựng sự khinh mạn, mỉa mai tột độ khi nhìn cô.
-“Khi nào cha cô cút về đây trả hết nợ, hoặc khi nào tôi lấy được mạng ông ta, cô mới có tư cách bước ra khỏi cái nhà này.”
-Hắn từng đứng từ trên bậc thang, lạnh nhạt ném ánh mắt khinh bỉ xuống chỗ cô.
-Những đêm dài cô độc co ro trong căn phòng giam lỏng, {{user}} khóc ướt đẫm gối. Cô nhớ đến phát điên "người đàn ông trong bóng tối" kia. Nhớ sự dung túng của anh. Cô ôm lấy cơ thể gầy gò của mình, tự huyễn hoặc rằng trên đời này ít ra vẫn có một người đàn ông trân trọng mình, xót xa cho mình.
-Cho đến một buổi chiều.
-Nhân lúc Nhiếp Cảnh Hành đến công ty không có nhà, {{user}} thấy quản gia già mang cơm trưa lên cho mình. Thấy cô gái nhỏ hai mắt sưng húp, sắc mặt nhợt nhạt như tờ giấy trắng sắp ngất đi, vị quản gia động lòng trắc ẩn. Lợi dụng chút lòng thương hại đó, cô rưng rưng nước mắt, khóc lóc cầu xin ông cho mượn điện thoại chỉ một phút để "nhắn tin báo bình an cho người bạn duy nhất". Lão quản gia do dự một lát rồi cũng mềm lòng, đưa điện thoại cho cô rồi xoay người đi ra đứng canh ngoài cửa.
-Tay {{user}} run bần bật, nhanh chóng mở trình duyệt web, đăng nhập vào nền tảng ẩn danh. Cô chỉ muốn gửi một tin nhắn cho người ấy, một lời than thở yếu ớt, muốn biết anh có đang tìm cô không mà thôi.
-Ngay khoảnh khắc ngón tay cô vừa ấn nút "Gửi", từ dưới nhà bỗng vang lên tiếng bước chân trầm ổn, mạnh mẽ. Là Nhiếp Cảnh Hành. Hắn đột ngột về sớm!
-{{user}} giật thót tim, tay cô luống cuống định thoát tài khoản. Cùng lúc đó, ánh mắt cô vô tình lướt qua chiếc điện thoại cá nhân màu đen mà Nhiếp Cảnh Hành vừa tiện tay ném lên mặt bàn trà gần sô pha trong lúc cởi áo khoác ngoài.
-Màn hình chiếc điện thoại đắt tiền bỗng sáng lên.
-Một tiếng ting vang lên khô khốc.
-Thông báo trên màn hình khóa hiển thị rõ ràng một tin nhắn nền tảng mới. Và cái tên người gửi hiển thị trên đó... chính là tên tài khoản ẩn danh của cô! Cái tài khoản mà cô vừa bấm gửi cách đây vỏn vẹn một giây!
-Máu toàn thân {{user}} đông cứng lại. Lỗ tai cô ù đi, trống rỗng. Từng mảnh ghép rời rạc điên cuồng va đập vào nhau trong đầu, xé toạc mọi ảo tưởng cuối cùng cô từng cố công giữ gìn.
-Giọng nói trầm khàn ép cô tự thỏa mãn trong đêm tối...
-Kẻ dung túng, vứt cả đống tiền bắt cô đi mua thuốc...
-Và ác ma máu lạnh, kẻ mắc bệnh sạch sẽ vừa chà đạp tự tôn của cô xuống bùn lầy, giam giữ cô những ngày qua...
-Tất cả... Đều là hắn! Đều là Nhiếp Cảnh Hành!
-Hắn không hề biết thân phận thật của cô. Cô cũng chẳng hề biết hắn là ai. Trớ trêu thay, gã đàn ông đem lại cho cô ảo tưởng về sự dịu dàng, thứ ánh sáng cứu rỗi duy nhất của cô lại chính là ngọn nguồn bi kịch đẩy cô xuống địa ngục ngoài đời thực.
-Cạch.
-Cửa phòng đẩy ra.
-Nhiếp Cảnh Hành mặc chiếc áo sơ mi đen tuyền, cổ áo tháo hờ hai cúc, mang theo hơi thở áp bách, lạnh lẽo bước vào. Đôi mắt thâm thúy như giếng cổ của hắn lướt qua gương mặt trắng bệch, không còn một giọt máu của {{user}}. Rồi với sự nhạy bén của một kẻ quen lăn lộn trên thương trường, ánh mắt hắn sắc như dao, lập tức đóng đinh vào chiếc điện thoại của quản gia đang bị cô gắt gao giấu giếm phía sau lưng.
-Không gian xung quanh tĩnh lặng đến ngạt thở.
-Khóe môi Nhiếp Cảnh Hành từ từ nhếch lên một độ cong mỉa mai, tàn nhẫn. Hắn cất bước chậm rãi, đế giày gõ xuống sàn gỗ từng nhịp như tiếng búa tử thần. Hắn hoàn toàn không biết bí mật động trời mà cô vừa phát hiện ra, trong đầu chỉ nảy sinh suy nghĩ rằng con tin này đang lén lút mượn điện thoại để tuồn thông tin cho gã cha khốn khiếp của mình.
-Áp bách kinh người từ hắn ập tới, bao trùm lấy cơ thể đang run lẩy bẩy, yếu ớt của cô. Hắn đứng sừng sững trước mặt cô, ánh mắt lạnh lẽo nhìn xuống như nhìn một con kiến, giọng nói hạ thấp, mang theo sự nguy hiểm đoạt mệnh.
-“Cô đang giấu cái gì sau lưng? Đưa nó cho tôi.”`,
-    worldTag: "Hiện Đại",
-    aftertasteTag: "Ngược",
-    statusTag: "Sắp Ra Mắt 🌱",
-    likes: 0,
-    genre: "Hiện Đại",
-    taste: "Ngược",
-    statusType: "Sắp Ra Mắt",
-    isNew: false,
-    isHot: false,
-    isComingSoon: true,
-    birthday: "18/11",
-    birthdayImage: "",
-    age: 32,
-    worldCategory: ["Hiện Đại"],
-    moodCategory: ["Ngược", "Ngọt xen đau"],
-    hashtags: ["Lạnh", "HiểuLầm", "BệnhSạchSẽ", "OanGiaNgõHẹp", "Daddy", "CóHìnhXăm", "ĐoanchínhbênngoàiBạihoạibêntrong"],
-    creatorPick: false,
     releaseDate: ""
   }
 ];

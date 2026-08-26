@@ -160,11 +160,7 @@ export default function CharacterCard({
           <h3 className="font-serif text-xl font-extrabold text-[#3A4258] leading-tight flex items-center gap-1.5">
             {character.name}
           </h3>
-          {character.isComingSoon && (
-            <p className="text-[11px] text-[#6B7590] font-bold italic flex items-center gap-1 mt-1 font-comfortaa">
-              Đang đi bắt, sớm ra mắt 🍵 {character.releaseDate ? `(${character.releaseDate})` : ''}
-            </p>
-          )}
+
           <p className="text-xs text-[#6B7590] font-medium mt-1 min-h-[32px] line-clamp-2">
             {character.title}
           </p>
