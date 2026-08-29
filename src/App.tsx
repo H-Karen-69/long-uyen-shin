@@ -40,6 +40,7 @@ import BirthdaySeason from './components/BirthdaySeason';
 import BirthdayModal from './components/BirthdayModal';
 import { isBirthdayToday } from './lib/dateUtils';
 import DragonCloseButton from './components/DragonCloseButton';
+import { VisitorCounter } from './components/VisitorCounter';
 
 export default function App() {
   // THÔNG TIN TÀI KHOẢN DONATE (Bạn hãy thay thế thông tin thật của mình ở đây nhé 🔮)
@@ -1044,6 +1045,9 @@ export default function App() {
                 <p className="text-xs font-comfortaa text-[#6B7590]">
                   Một góc nhỏ dành cho những ai yêu mến rồng của Shin 🐉
                 </p>
+
+                {/* Visitor Counter Pill Badge */}
+                <VisitorCounter />
 
                 {/* Separator */}
                 <div className="w-16 h-0.5 bg-[#D8DEE8] my-1 rounded-full opacity-80" />

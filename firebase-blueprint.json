@@ -40,6 +40,15 @@
         "likedBy": { "type": "array" }
       },
       "required": ["charId", "username", "rating", "content", "timestamp", "likes", "likedBy"]
+    },
+    "SiteStats": {
+      "title": "Site Stats",
+      "description": "Global statistics for the website such as visitor count.",
+      "type": "object",
+      "properties": {
+        "totalVisits": { "type": "number" }
+      },
+      "required": ["totalVisits"]
     }
   },
   "firestore": {
@@ -54,6 +63,10 @@
     "/char_feedbacks/{feedbackId}": {
       "schema": { "$ref": "#/entities/CharacterFeedback" },
       "description": "Stores character feedbacks"
+    },
+    "/site_stats/{statId}": {
+      "schema": { "$ref": "#/entities/SiteStats" },
+      "description": "Stores site stats like visitor counts"
     }
   }
 }
