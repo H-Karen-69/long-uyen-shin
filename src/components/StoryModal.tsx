@@ -64,12 +64,18 @@ export default function StoryModal({ character, onClose, onLike, isLiked }: Stor
           <div className="p-6 md:p-8 max-h-[80vh] overflow-y-auto custom-scrollbar">
             {/* Header section */}
             <div className="flex items-center gap-4 mb-6">
-              <img
-                src={character.avatar}
-                alt={character.name}
-                className="w-16 h-16 rounded-[20px] object-cover object-top shadow-md border-2 border-[#7A8AA5]"
-                referrerPolicy="no-referrer"
-              />
+              {character.avatar ? (
+                <img
+                  src={character.avatar}
+                  alt={character.name}
+                  className="w-16 h-16 rounded-[20px] object-cover object-top shadow-md border-2 border-[#7A8AA5]"
+                  referrerPolicy="no-referrer"
+                />
+              ) : (
+                <div className="w-16 h-16 rounded-[20px] flex items-center justify-center bg-gradient-to-br from-[#E8EAEF] to-[#F5C8D0] shadow-md border-2 border-[#7A8AA5] text-2xl">
+                  🐉
+                </div>
+              )}
               <div>
                 <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#5A6B85] bg-[#D8DEE8]/50 px-2.5 py-1 rounded-full mb-1">
                   <Sparkles size={10} />

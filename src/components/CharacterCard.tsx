@@ -136,12 +136,21 @@ export default function CharacterCard({
       <div>
         {/* Character Avatar Container with badge */}
         <div className="relative overflow-hidden rounded-[32px] border-2 border-[#D8DEE8] shadow-md mb-4 aspect-square group bg-[#F8F6F5]">
-          <motion.img
-            src={character.avatar}
-            alt={character.name}
-            className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
-            referrerPolicy="no-referrer"
-          />
+          {character.avatar ? (
+            <motion.img
+              src={character.avatar}
+              alt={character.name}
+              className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+              referrerPolicy="no-referrer"
+            />
+          ) : (
+            <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-[#E8EAEF] via-[#F5C8D0]/30 to-[#D8DEE8] text-[#7A8AA5] p-4 text-center select-none">
+              <span className="text-3xl mb-1 filter drop-shadow-sm animate-pulse">🐉</span>
+              <Sparkles size={22} className="text-[#E88BA0] animate-bounce mb-1" />
+              <span className="font-comfortaa font-bold text-xs text-[#3A4258]">Chưa có ảnh</span>
+              <span className="text-[10px] text-[#6B7590] mt-0.5 font-sans">Sẽ sớm cập nhật ảnh rồng</span>
+            </div>
+          )}
           <div className="absolute top-3 left-3 flex flex-wrap gap-1.5 max-w-[70%] z-10">
             {visibleBadges}
           </div>

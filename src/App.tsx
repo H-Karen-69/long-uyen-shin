@@ -331,7 +331,7 @@ export default function App() {
           return char.isHot || char.statusType === 'Hot' || char.statusTag === 'HOT 🔥';
         }
         if (status === 'Mới' || status === 'Tân Long') {
-          return char.isNew || char.statusType === 'Mới' || char.statusTag === 'Mẻ Mới';
+          return char.isNew || char.statusType === 'Mới' || char.statusTag === 'Mẻ Mới' || char.statusTag?.includes('Tân Long');
         }
         if (status === 'Kỳ Cựu') {
           return char.statusType === 'Kỳ Cựu' || char.statusTag === 'Kỳ Cựu';
@@ -756,7 +756,7 @@ export default function App() {
                       🔮 Long Vị (Trải nghiệm)
                     </span>
                     <div className="flex flex-wrap gap-1.5">
-                      {['Tất cả', 'Ngọt', 'Ngược', 'Sủng', 'Ngọt xen đau', 'Yêu Thầm', 'Slow Burn'].map((taste) => {
+                      {['Tất cả', 'Ngọt', 'Ngược', 'Sủng', 'Ngọt xen đau', 'Yêu Thầm', 'Slow Burn', 'NSFW', 'Open World'].map((taste) => {
                         const isSelected = activeTastes.includes(taste);
                         return (
                           <button

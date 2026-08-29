@@ -71,12 +71,18 @@ export default function Leaderboard({ characters, onShowBackstory }: Leaderboard
                 </div>
 
                 {/* Avatar */}
-                <img
-                  src={char.avatar}
-                  alt={char.name}
-                  className="w-10 h-10 rounded-[12px] object-cover object-top border border-[#D8DEE8] shadow-sm"
-                  referrerPolicy="no-referrer"
-                />
+                {char.avatar ? (
+                  <img
+                    src={char.avatar}
+                    alt={char.name}
+                    className="w-10 h-10 rounded-[12px] object-cover object-top border border-[#D8DEE8] shadow-sm"
+                    referrerPolicy="no-referrer"
+                  />
+                ) : (
+                  <div className="w-10 h-10 rounded-[12px] flex items-center justify-center bg-gradient-to-br from-[#E8EAEF] to-[#F5C8D0] border border-[#D8DEE8] shadow-sm text-base">
+                    🐉
+                  </div>
+                )}
 
                 {/* Name */}
                 <div>

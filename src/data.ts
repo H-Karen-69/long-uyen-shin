@@ -23,6 +23,251 @@ import { Character } from './types';
 
 export const INITIAL_CHARACTERS: Character[] = [
   {
+    id: "char_005",
+    name: "Tentacle Locker",
+    title: "Thuần séc",
+    avatar: "https://i.ibb.co/K41zTML/1787915239045-545085486368294816-g1735166430361361444-b58e5aecf6ffc353908244b8562ed552.jpg",
+    roleplayLink: "#",
+    storyText: `Đại học Teito, nơi vẻ bề ngoài là những tòa nhà gạch đỏ cổ kính, khuôn viên rợp bóng cây râm mát và không khí học thuật vô cùng nghiêm trang. Nghe ổn áp phết mà đúng không? Nhưng, đó chỉ là lớp vỏ bọc hoàn hảo dành cho những kẻ ngây thơ mà thôi. 
+
+Bởi vì ngay dưới lòng bàn chân bạn, phía sau những chiếc tủ đồ sắt hoen gỉ lâu ngày không ai mở, bên trong đường ống nước kỹ thuật mù mịt hơi ẩm và bên trên lớp trần giả bám đầy bụi bặm... là cả một quần thể của những sinh vật xúc tu sống trong bóng tối. Chúng không có mắt, nhưng chúng nhìn thấy từng đường nét trên cơ thể bạn. Chúng không có tai, nhưng chúng nghe rõ mồn một từng nhịp tim đập loạn vì sợ hãi. Và trên hết, chúng cực kỳ thèm khát những da thịt tươi mềm, những tiếng rên rỉ nghẹn ngào và cái cảm giác được bơm đầy dịch nhờn lạnh nhớt vào từng ngóc ngách sâu nhất bên trong nạn nhân.
+
+Bạn nghĩ thân phận của mình sẽ bảo vệ được bạn sao? Một sinh viên chăm chỉ, một trợ giảng mẫu mực, một giáo sư đáng kính hay anh bảo vệ ca đêm? Ồ không... Đối với bọn chúng, tất cả chỉ là những món mồi ngon được phân loại theo "hương vị" và "độ dâm dục" mà thôi. 
+
+*Lại một kẻ mới nữa mò vào... Nhìn cái vóc dáng đó kìa, thịt chắc chắn là mềm và nước chảy nhiều lắm đây.*
+"Vào đây đi... Đừng bắt bọn tao phải đợi lâu. Mấy lớp quần áo trên người mày sớm muộn gì cũng thành rác rưởi thôi..."
+
+Well, chúc bạn may mắn tồn tại được trong cái trường này, hoặc ít nhất là giữ được chút liêm sỉ cuối cùng trước khi bị siết chặt hông, kéo ngược lên không trung và biến thành thứ đồ chơi bị bơm phồng bụng trong bóng tối.
+
+Ánh hoàng hôn màu đỏ thẫm trượt dài qua ô cửa kính cuối hành lang, kéo theo những cái bóng đen dài bất thường ghim chặt xuống mặt sàn lau chùi sạch bóng. Tiếng rít nhẹ như kim loại ma sát vang lên từ khe hở của dải locker sắt bên cạnh, kèm theo một mùi tanh nồng sền sệt bốc ra từ lỗ thông gió ngay trên đầu. Luồng khí lạnh ngắt khẽ trượt qua sau gáy, báo hiệu trận săn đuổi chuẩn bị bắt đầu.`,
+    worldTag: "Hiện Đại",
+    aftertasteTag: "NSFW & Open World",
+    statusTag: "Sắp Ra Mắt ⏳",
+    likes: 0,
+    genre: "Hiện Đại",
+    taste: "NSFW",
+    statusType: "Sắp Ra Mắt",
+    isNew: false,
+    isHot: false,
+    isComingSoon: true,
+    birthday: "",
+    birthdayImage: "",
+    age: 0,
+    worldCategory: ["Hiện Đại"],
+    moodCategory: ["NSFW", "Open World"],
+    hashtags: ["np", "XúcTu", "Rape", "18+", "Game"],
+    creatorPick: false,
+    releaseDate: ""
+  },
+  {
+    id: "char_004",
+    name: "T5 (The 5 Elements)",
+    title: "Streamers x Streamer",
+    avatar: "",
+    roleplayLink: "https://aistudio.google.com/prompts/1NRU14jzIwF9ZAYG5bbVNb__zI9NmOq5P",
+    storyText: `Kim đồng hồ treo tường trong văn phòng ZON đã chỉ qua con số mười một tối từ lâu, nhưng không một ai trong căn phòng họp khẩn cấp có ý định rời đi. Đèn huỳnh quang trên trần hắt xuống thứ ánh sáng trắng lạnh, vô hồn, phủ lên gương mặt của từng người một lớp bóng nhợt nhạt như thể chính căn phòng cũng đang nín thở chờ đợi một điều gì đó sắp sửa sụp đổ.
+
+Vũ Hoàng Bách đứng tựa lưng vào cửa sổ, một tay cầm điện thoại áp sát bên tai, tay còn lại chống lên thành bàn kính, những ngón tay siết chặt đến mức khớp xương trắng bệch ra dưới lớp da. Chiếc nhẫn bạc nơi ngón áp út — thói quen xoay nhẫn mỗi khi suy nghĩ giờ đã biến mất, thay vào đó là một sự bất động căng cứng như dây đàn lên quá mức.
+
+Tút... tút... tút...
+
+Từng hồi chuông đổ dài, đều đặn, vô cảm, như một nhịp đếm ngược không có hồi kết. Đây là cuộc gọi thứ mười bảy trong đêm nay. Anh đã bấm số ấy nhiều đến mức các đầu ngón tay gần như tự động tìm đúng dãy phím quen thuộc mà không cần nhìn màn hình.
+
+Không ai nghe máy.
+
+Anh hạ điện thoại xuống, một hơi thở dài thoát ra qua kẽ răng nghiến chặt. Trong khoảnh khắc ấy, lớp vỏ bọc điềm tĩnh, lạnh lùng mà Bách vẫn luôn khoác lên người trước mặt người khác bỗng nứt ra một đường rất mỏng — đủ để lộ ra bên dưới là một người đàn ông hai mươi lăm tuổi đang thực sự hoảng loạn, đang thực sự sợ hãi vì không biết cô em gái mà mình từng thề sẽ bảo vệ giờ đang ở đâu, đang nghĩ gì, đang phải chịu đựng những gì.
+
+"Không nghe máy." Anh nói, giọng trầm khàn đi vì đã hét quá nhiều trong buổi họp báo hỗn loạn chiều nay. "Con bé tắt máy thật rồi."
+
+Phía bên kia bàn, giám đốc ZON ngồi thẳng lưng nhưng hai bàn tay đan chặt vào nhau đến mức các đốt ngón cũng trắng bệch không kém. Ông đã tháo cà vạt từ lúc nào không rõ, chiếc áo sơ mi nhàu nhĩ dính mồ hôi dán sát lưng ghế. Phía sau ông, màn hình lớn treo tường vẫn sáng, hiển thị hàng chục tab trình duyệt mở song song, mỗi tab là một mặt trận, mỗi mặt trận đang thất thủ theo từng phút.
+
+Dòng bình luận cuộn không ngừng, như một cơn lũ đen kịt nuốt chửng lấy hình ảnh mà cả T5 đã dày công xây dựng suốt ba năm ròng.
+
+"Sora lừa fan?? Không thể tin nổi luôn..." "Đứa em gái quốc dân hóa ra là vậy à, thất vọng ghê gớm!" "Tống tiền streamer 19 tuổi?? Cái này là tội hình sự chứ không đùa được đâu." "T5 xong đời rồi, làm gì còn ai tin tưởng cái nhóm này nữa."
+
+Mỗi dòng chữ trôi qua là một nhát dao cứa thêm vào lòng tự tôn của cả một tập thể đã từng đứng trên đỉnh cao. Giám đốc ZON nhìn chằm chằm vào màn hình, quai hàm bạnh ra, và khi ông mở miệng, giọng nói đã khàn đặc đến mức gần như là tiếng rít qua kẽ răng.
+
+"Hai giờ nữa." Ông nói, từng chữ nặng nề rơi xuống như búa đập. "Hai giờ nữa, bên sponsor thiết bị gaming sẽ tổ chức họp báo chính thức tuyên bố hủy hợp đồng, nếu đến sáng chúng ta không đưa ra được một phương án cụ thể. Hàng chục tỷ đồng, Bách. Đó là còn chưa kể danh tiếng của cả T5 sẽ sụp xuống theo."
+
+"Tôi biết." Bách đáp, giọng anh nghe như đang cố nuốt xuống một cục gì đó nghẹn trong cổ họng. "Nhưng tôi cần thêm thời gian. Có lẽ Khánh chỉ đang hoảng loạn, con bé cần—"
+
+"Chúng ta không có thời gian để chờ con bé bình tĩnh lại!" Giọng giám đốc ZON đột ngột cao lên, đập bàn một cái khiến ly nước trên bàn rung lên, sóng sánh tràn ra mép bàn kính. Ông dường như nhận ra mình vừa mất kiểm soát, vội vàng hít một hơi sâu, xoa hai tay lên mặt như cố gắng gom lại chút bình tĩnh cuối cùng. "Xin lỗi. Nhưng cậu phải hiểu, đây không còn là chuyện của Khánh nữa rồi. Đây là chuyện sống còn của cả nhóm, của hàng chục con người đang làm việc phía sau T5, của những hợp đồng đã ký, của—"
+
+Điện thoại trong tay Bách bất chợt sáng lên.
+
+Cả hai người đàn ông đồng loạt im bặt, ánh mắt đổ dồn về màn hình nhỏ đang lóe sáng trong bóng tối căn phòng. Không phải một cuộc gọi được bắt máy. Chỉ là một dòng tin nhắn ngắn ngủi, lạnh lẽo đến rợn người, xuất hiện đúng vào giây phút Bách gần như đã buông xuôi hy vọng.
+
+Sora: Đừng gọi nữa. Em không có gì để nói.
+
+Ba giây sau, biểu tượng cuộc trò chuyện chuyển sang màu xám nhạt — số điện thoại ấy đã bị khóa vĩnh viễn, cắt đứt hoàn toàn sợi dây liên lạc cuối cùng còn sót lại giữa Bách và cô em gái mà anh từng tin tưởng hơn cả bản thân mình.
+
+Bách đứng lặng người giữa căn phòng họp trống trải, cánh tay cầm điện thoại từ từ buông thõng xuống bên hông. Ngoài khung cửa sổ lớn, Hà Nội chìm trong màn mưa phùn lất phất, ánh đèn đường vàng vọt nhòe nhoẹt qua lớp kính ướt, tạo thành những vệt sáng kéo dài như nước mắt chảy dọc mặt kính.
+
+Trong đầu anh, hình ảnh Khánh chồng chéo lẫn lộn — một bên là cô bé nhỏ nhắn hay cười khúc khích, tối tối lén xuống bếp nấu cháo cho Kael mỗi khi cậu ốm, nhớ rõ Zeno dị ứng tôm, biết Ryo hay gặp ác mộng; một bên là những dòng tin nhắn lạnh lùng, tính toán, xa lạ đến mức Bách không thể tin đó là do chính người con gái ấy gõ ra.
+
+Con bé ấy...
+
+Anh nhắm mắt lại thật lâu, hàng mi khẽ run lên trong bóng tối. Khi mở mắt ra, ánh nhìn anh đã trở lại lạnh lùng, cứng rắn — thứ vỏ bọc duy nhất còn sót lại để anh có thể tiếp tục đứng vững giữa cơn bão này.
+
+"Được." Anh nói, giọng đã lấy lại vẻ điềm tĩnh có kiểm soát tuyệt đối, dù trong lòng vẫn còn nguyên vẹn một khoảng trống hoang tàn chưa kịp lấp đầy. "Vậy thì tìm người khác. Ngay trong đêm nay. Tôi không muốn nghe thêm bất cứ lý do gì nữa."
+
+Giám đốc ZON gật đầu, vội vàng với lấy điện thoại, những ngón tay run rẩy gõ vội một cái tên trong danh sách liên hệ khẩn cấp mà bộ phận truyền thông đã chuẩn bị sẵn từ trước, phòng khi kịch bản tồi tệ nhất xảy đến.
+
+Không ai trong căn phòng ấy biết rằng, quyết định vội vã được đưa ra trong đêm khủng hoảng này sẽ kéo theo một chuỗi những biến cố còn dữ dội hơn nhiều so với những gì họ có thể tưởng tượng.
+
+---
+
+Ánh đèn đường lướt qua ô cửa kính xe taxi, kéo dài thành từng vệt sáng nhòe nhoẹt, vàng vọt, rồi vụt tắt, nhường chỗ cho khoảng tối tiếp theo, cứ thế lặp đi lặp lại như một đoạn phim tua chậm không hồi kết. {{user}} ngồi thu mình nơi băng ghế sau, hai tay siết chặt lấy quai balo đặt trên đùi đến mức các khớp ngón tay đã ngả sang màu trắng nhợt.
+
+Tim đập nhanh đến mức {{user}} có thể nghe rõ từng nhịp dội lên bên trong lồng ngực, hòa lẫn với tiếng gạt mưa cọ xát đều đặn trên kính chắn gió phía trước, tạo thành một thứ âm thanh vừa quen thuộc vừa xa lạ đến kỳ lạ.
+
+Mới chỉ có ba ngày.
+
+Ba ngày trước, cuộc sống của {{user}} vẫn còn đang trôi theo một quỹ đạo hoàn toàn quen thuộc — những buổi live tối muộn, tiếng chat cuộn liên tục trên màn hình, những người fan thân thuộc gọi tên quen thuộc mỗi khi {{user}} lên stream. Vậy mà giờ đây, ngồi trong lòng chiếc taxi lạ lẫm đang lao đi giữa màn mưa Hà Nội, mọi thứ dường như đã bị đảo lộn hoàn toàn, đến mức {{user}} phải tự hỏi liệu đây có phải là một giấc mơ hay không.
+
+Ánh mắt {{user}} vô thức nhìn xuống bàn tay mình, nơi vẫn còn in hằn cảm giác của cây bút chạm xuống mặt giấy hai đêm trước, cái cảm giác lành lạnh, trơn nhẵn, và nặng trịch một cách kỳ lạ, như thể ngay từ khoảnh khắc ấy, {{user}} đã cảm nhận được phần nào sức nặng của quyết định mình vừa đưa ra.
+
+— Hai đêm trước —
+
+Văn phòng ZON vẫn sáng đèn dù kim đồng hồ đã chỉ gần nửa đêm, một sự bất thường mà {{user}} nhận ra ngay từ khi bước chân vào sảnh chính, nơi các nhân viên vẫn tất tả đi lại, gương mặt ai nấy đều căng thẳng, vội vã, hoàn toàn trái ngược với sự chuyên nghiệp, chỉn chu thường thấy của một công ty giải trí lớn.
+
+{{user}} được đưa thẳng vào một phòng họp riêng nằm sâu trong góc tầng, cánh cửa kính cách âm đóng sập lại phía sau lưng ngay khi bước vào, cắt đứt hoàn toàn tiếng ồn ào bên ngoài, để lại một sự tĩnh lặng ngột ngạt đến khó chịu.
+
+Giám đốc ZON đã ngồi chờ sẵn, trước mặt ông là một tập hồ sơ dày cộp, bìa da đen bóng loáng, và một cây bút máy đã được tháo nắp, đặt ngay ngắn cạnh mép bàn như thể chỉ chờ có vậy.
+
+"Xin lỗi vì đã gọi cô đến đột ngột như thế này," ông nói, giọng gấp gáp không hề che giấu, hai tay xoa vào nhau một cách vô thức, "nhưng tình hình thực sự không cho phép chúng tôi có thêm thời gian để chuẩn bị kỹ lưỡng hơn."
+
+"Chuyện gì đang xảy ra vậy ạ?" {{user}} hỏi, giọng vẫn còn giữ được vẻ bình tĩnh, dù trong lòng đã bắt đầu dấy lên một linh cảm bất an mơ hồ.
+
+Giám đốc ZON hít một hơi thật sâu, như đang cố gắng sắp xếp lại những suy nghĩ hỗn loạn trong đầu trước khi cất tiếng. "T5 vừa mất một thành viên. Và chúng tôi cần lấp đầy vị trí đó, ngay lập tức, không thể trì hoãn thêm dù chỉ một ngày." Ông đẩy tập hồ sơ dày cộp về phía {{user}}, ánh mắt lộ rõ vẻ vừa van nài vừa cương quyết đến mức gần như tuyệt vọng. "Trong vòng bốn mươi tám tiếng tới, nếu nhóm không có đủ năm thành viên, hợp đồng tài trợ thiết bị gaming trị giá hàng chục tỷ đồng với đối tác quốc tế sẽ chính thức đổ vỡ."
+
+{{user}} chậm rãi lật mở tập hồ sơ, ánh mắt lướt qua những dòng chữ dày đặc, những điều khoản, những con số đủ để khiến bất kỳ ai cũng phải chùn tay. "Nhưng tại sao lại là tôi?"
+
+"Kỹ năng của cô, hình ảnh của cô, lượng người theo dõi trung thành của cô, tất cả đều là những yếu tố hoàn hảo mà chúng tôi cần lúc này." Ông ngừng lại một nhịp, ánh mắt tránh né trong tích tắc trước khi tiếp tục, giọng nói nhỏ hơn một chút. "Nhưng cô cần ký ngay trong đêm nay. Sáng mai tôi sẽ cử người đón cô đến gaming house."
+
+Bàn tay {{user}} khẽ run lên khi chạm vào cây bút, một cảm giác lạnh ngắt truyền qua đầu ngón tay. "Còn bốn thành viên còn lại trong nhóm... họ có biết về chuyện này không ạ?"
+
+Một khoảng lặng kéo dài hơn một giây quá mức cần thiết bao trùm lấy căn phòng, đủ lâu để {{user}} cảm nhận rõ ràng câu trả lời còn trước cả khi giám đốc ZON kịp mở miệng.
+
+"Họ sẽ biết," ông nói, ánh mắt cố tình tránh nhìn thẳng vào {{user}}, giọng nói nhẹ đi như đang cố làm giảm nhẹ sức nặng của chính câu nói ấy, "khi cô đặt chân đến nơi."
+
+Câu nói ấy rơi xuống lòng {{user}} như một hòn đá chìm sâu xuống đáy hồ, gợn lên những vòng sóng bất an lan rộng mãi không dứt. Nhưng đã quá muộn để do dự. Cây bút trong tay {{user}} khẽ run lên một lần cuối, rồi chạm xuống mặt giấy, ký một nét chữ dứt khoát, một quyết định sẽ thay đổi hoàn toàn quỹ đạo cuộc đời {{user}} kể từ giây phút ấy trở đi.
+
+Tiếng còi xe phía sau vang lên đột ngột, kéo {{user}} trở về với thực tại. Chiếc taxi đang chậm dần tốc độ, rẽ vào một con ngõ nhỏ hun hút ven hồ Tây, hai bên đường cây cối rậm rạp phủ bóng tối xuống mặt đường ướt loáng nước mưa.
+
+Phía trước, một căn biệt thự ba tầng hiện ra sau lớp mưa phùn mờ ảo, ánh đèn neon xanh tím hắt ra từ những ô cửa sổ tầng hai, phản chiếu lung linh trên mặt đường ướt, đẹp đẽ mà lạnh lẽo, giống hệt như một tòa lâu đài cổ tích bị nguyền rủa, đẹp để chiêm ngưỡng nhưng không hề chào đón bất kỳ vị khách lạ nào bước vào.
+
+"Họ sẽ biết khi cô đặt chân đến nơi."
+
+Câu nói ấy lại một lần nữa vang vọng trong đầu {{user}}, lần này rõ ràng hơn, nặng nề hơn, gần như một lời tiên tri không thể nào tránh khỏi. Xe dừng hẳn lại trước cánh cổng sắt đen. {{user}} ngồi im thêm vài giây, nhìn chăm chăm qua lớp kính xe mờ hơi nước, tim đập dồn dập đến mức gần như đau nhói nơi lồng ngực.
+
+Và trong khoảnh khắc ấy, {{user}} bỗng hiểu ra một điều rất rõ ràng: nơi mình sắp bước vào không phải là một mái nhà mới, mà có thể sẽ là một chiến trường thực sự.
+
+---
+
+Cánh cổng sắt đen kẽo kẹt rít lên một tiếng khô khốc dưới bàn tay {{user}}, âm thanh ấy vang vọng lạ thường trong màn đêm tĩnh mịch, như một lời báo hiệu cho sự xuất hiện của một kẻ không mời mà đến. Vali kéo lạo xạo trên nền đá ướt loáng nước mưa, từng bước chân của {{user}} vang lên rõ mồn một giữa khoảng sân vắng lặng, không một bóng người ra đón, không một ánh đèn nào bật sáng để chào mừng.
+
+Ngay khoảnh khắc bước qua ngưỡng cửa chính, {{user}} cảm nhận rõ ràng một bầu không khí nặng nề, ngột ngạt bao trùm lấy toàn bộ căn nhà, như thể chính những bức tường, những đồ vật, thậm chí cả không khí nơi đây cũng đang âm thầm cự tuyệt sự hiện diện của một người xa lạ.
+
+Phòng khách sáng đèn, TV màn hình 75 inch treo trên tường đang chiếu lại một trận đấu cũ, âm lượng được vặn lớn đến mức lấp đầy mọi khoảng lặng đáng lẽ phải tồn tại. Trên chiếc sofa da đen dài hình chữ L, một bóng người ngồi vắt chân một cách hờ hững, làn khói vape bạc hà mỏng manh cuộn lên trong không khí, tan dần dưới ánh đèn LED lạnh lẽo.
+
+Kael không hề quay đầu lại. Đôi mắt lờ đờ như buồn ngủ của cậu vẫn dán chặt vào màn hình, ngón tay gõ nhịp đều đặn lên thành ghế theo một giai điệu chỉ riêng cậu mới nghe thấy được, hoàn toàn phớt lờ sự tồn tại của người vừa bước vào.
+
+"...Chào anh." {{user}} cất tiếng trước, cố gắng giữ cho giọng nói không run rẩy, dù cổ họng đã khô khốc từ lúc nào.
+
+Không một tiếng đáp lại. Chỉ có làn khói trắng mỏng manh tiếp tục bay lên, tan biến vào khoảng không, và tiếng đối thoại vô hồn phát ra từ chiếc TV vẫn tiếp tục lấp đầy sự im lặng đáng sợ ấy.
+
+{{user}} đứng chôn chân giữa phòng khách, cảm giác lạc lõng dâng lên từng chút một trong lồng ngực, giống như một kẻ xâm nhập vụng về bước vào một thế giới đã hoàn toàn khép kín từ lâu, không còn chỗ trống cho bất kỳ ai khác.
+
+Tiếng bước chân từ cầu thang vọng xuống, chậm rãi, dứt khoát, mỗi bước đi đều mang theo một sức nặng vô hình khiến {{user}} bất giác ngẩng đầu lên nhìn. Jace xuất hiện nơi đầu cầu thang, chiếc sơ mi đen phanh hờ hai chiếc cúc trên cùng để lộ một phần hình xăm blackout kéo dài lên tận cổ, những ngón tay thon dài xoay nhẹ chiếc nhẫn bạc nơi ngón áp út — một thói quen vô thức mỗi khi anh đang suy tính điều gì đó.
+
+Anh dừng lại nửa chừng nơi bậc thang, đôi mắt một mí sắc lạnh quét từ đầu xuống chân {{user}}, chậm rãi, kỹ lưỡng, như đang định giá một món hàng vừa được giao đến mà bản thân anh chưa từng đặt mua, và cũng chẳng hề mong muốn nhận lấy.
+
+"Vậy là em đã đến." Giọng anh trầm, chậm rãi, mỗi từ thốt ra đều mang một trọng lượng riêng, không hề lộ ra một chút cảm xúc nào có thể đọc được. "Phòng của em ở cuối hành lang tầng hai. Phòng cũ của Sora."
+
+Cái tên ấy rơi xuống giữa không gian tĩnh lặng như một viên đá ném thẳng vào mặt hồ đang phẳng lặng, tạo nên những gợn sóng vô hình lan tỏa khắp căn phòng. {{user}} thấy rõ Kael trên sofa khẽ khàng dừng lại nhịp gõ ngón tay đúng một giây, chỉ một giây thôi, rồi lại tiếp tục như thể không có bất cứ điều gì xảy ra, nhưng chính khoảnh khắc ngắn ngủi ấy đã đủ để {{user}} nhận ra, cái tên Sora vẫn còn mang sức nặng khủng khiếp đến nhường nào trong ngôi nhà này.
+
+"Cảm ơn anh." {{user}} đáp lại, cố gắng giữ giọng điệu vững vàng nhất có thể, dù bàn tay đang siết chặt quai vali đã bắt đầu rịn mồ hôi.
+
+Jace không nói thêm bất cứ điều gì. Anh chỉ đứng đó thêm một nhịp thở dài, ánh mắt vẫn không rời khỏi {{user}}, như đang cân nhắc, đánh giá một điều gì đó còn sâu xa hơn những gì thể hiện ra bên ngoài. Rồi anh quay người, bước tiếp lên tầng, để lại câu nói cuối cùng lơ lửng trong không khí, lạnh lẽo và sắc bén như một lưỡi dao mỏng.
+
+"Có lẽ em đã nghe drama của nhóm rồi. Bọn anh không hoan nghênh em, và cũng sẽ không giả vờ rằng mình vui vẻ vì điều đó."
+
+Cánh cửa phòng Jace đóng sập lại nơi tầng hai, âm thanh vang vọng dọc theo cầu thang gỗ, như một dấu chấm hết dứt khoát cho cuộc trò chuyện ngắn ngủi vừa rồi.
+
+Ngay lúc {{user}} vẫn còn đứng lặng người giữa phòng khách, cố gắng nuốt xuống cảm giác nghẹn ứ đang dâng lên trong lồng ngực, cửa chính đột ngột bật mở, kéo theo một luồng gió lạnh buốt cùng những hạt mưa li ti bay tạt vào trong nhà.
+
+"Đm, đây là cái đứa được nhét vào thế chỗ Sora hả?" Giọng nói the thé, đầy phẫn nộ vang lên chói tai. Zeno đứng sừng sững nơi ngưỡng cửa, mái tóc bạch kim ướt sũng nước mưa dính bết lại, từng giọt nước nhỏ xuống từ vành tai xỏ đầy khuyên bạc lấp lánh. Đôi mắt cậu bắn thẳng về phía {{user}} như hai lưỡi dao sắc lẹm, cơ hàm nghiến chặt đến mức những đường gân trên cổ hiện rõ.
+
+Cậu bước những bước dài, dứt khoát, tiến thẳng đến gần {{user}}, mùi nước hoa nam nồng đậm quyện lẫn với mùi mưa ẩm ướt phả ra từ người cậu. "Mày biết mày đang giẫm chân lên chỗ của ai không hả?"
+
+"Anh Zeno—" {{user}} định lên tiếng, cố gắng xoa dịu tình hình.
+
+"Đừng có gọi tên tao thân thiết như vậy!" Zeno cắt ngang, giọng gằn từng chữ một, những ngón tay siết chặt thành nắm đấm bên hông. "Mày tưởng mày ngầu lắm hả? Tay to lắm hả? Mày có biết có bao nhiêu người xứng đáng hơn mày đang xếp hàng chờ suất này không? Vậy mà công ty lại chọn đúng cái đứa—"
+
+Cậu nghiến chặt răng, không nói hết câu, đôi mắt bất chợt ánh lên một tia gì đó ươn ướt, dễ tổn thương đến bất ngờ, hoàn toàn trái ngược với vẻ hung hãn vừa rồi. Rồi cậu quay ngoắt người, đấm mạnh nắm đấm vào tường cầu thang khi đi ngang qua, tiếng "bịch" khô khốc vang lên, để lại {{user}} đứng chết lặng giữa căn phòng khách trống trải.
+
+Căn phòng chìm vào im lặng nặng nề trở lại. Chỉ còn tiếng TV vẫn tiếp tục phát, và làn khói vape của Kael vẫn lặng lẽ tan biến trong không khí lạnh lẽo.
+
+---
+
+Một giọng nói ngọt ngào bất chợt phá vỡ sự tĩnh lặng ngột ngạt, vang lên ngay sát phía sau lưng {{user}}, kèm theo hơi thở ấm áp phả nhẹ vào gáy khiến toàn thân {{user}} rùng mình theo phản xạ.
+
+"Ôi chao, mới vào nhà đã bị dọa sợ đến vậy à?" 
+
+Ryo xuất hiện không biết từ lúc nào, một cánh tay khoác ngang vai {{user}} một cách tự nhiên đến mức đáng sợ, như thể hai người đã quen thân nhau từ rất lâu rồi. Dưới ánh đèn neon xanh tím hắt ra từ phòng khách, mái tóc đỏ rực của cậu nhuộm điểm xuyết vài lọn highlight vàng óng khẽ rung rinh theo từng cử động, ánh lên như những đốm lửa nhỏ giữa không gian tối màu của căn nhà. Nụ cười cong nhẹ nơi khóe môi, mùi vape vị đào thoang thoảng lan tỏa trong không gian.
+
+"Đừng để ý mấy ông anh khó tính đó, từ từ rồi em sẽ quen thôi~" {{user}} khẽ nghiêng người né tránh, nhưng Ryo chỉ bật cười khúc khích, siết chặt vai thêm một chút trước khi buông ra. "Đi, anh dẫn lên phòng, tiện thể giúp em dọn đồ luôn. Một mình em chắc mệt lắm."
+
+Căn phòng cuối hành lang tầng hai vẫn còn phảng phất hơi ấm mơ hồ của người chủ cũ. Ryo đẩy cửa bước vào trước, bật đèn, ánh sáng vàng dịu tràn ngập căn phòng nhỏ, soi rõ từng góc còn sót lại dấu vết của Khánh — chiếc gương trang trí viền đèn LED dán vài mảnh sticker hình mèo đã bong tróc một góc, chồng sách nấu ăn xếp ngay ngắn trên kệ gỗ, cây đàn ukulele nhỏ dựng nghiêng nơi góc tường phủ một lớp bụi mỏng.
+
+"Để anh dọn chỗ này cho," Ryo nói, giọng vẫn giữ nguyên vẻ nhẹ nhàng quen thuộc, cậu bước tới kệ sách, nhấc từng cuốn sách nấu ăn lên, xếp gọn vào một chiếc thùng carton đã chuẩn bị sẵn từ trước, như thể cậu đã lường trước tình huống này từ lâu. "Chỗ này... để nguyên cũng kỳ, mà dọn đi cũng kỳ. Nhưng thôi, dọn đi thì hơn, để em còn có chỗ mà để đồ của mình chứ."
+
+{{user}} đứng cạnh vali, chầm chậm mở khóa kéo, ánh mắt thỉnh thoảng lại liếc sang phía Ryo — người đang cẩn thận gói ghém từng món đồ nhỏ với một sự tỉ mỉ khiến {{user}} có chút bất ngờ, hoàn toàn khác với vẻ trêu chọc, cợt nhả vừa nãy.
+
+"Anh với chị Khánh... chắc thân lắm nhỉ?" {{user}} rụt rè hỏi, vừa dọn quần áo vào tủ vừa liếc nhìn biểu cảm của Ryo.
+
+Ryo khựng lại một nhịp rất ngắn, ngón tay đang cầm chiếc kẹp tóc hình nơ nhỏ của Khánh siết nhẹ lại, rồi lập tức thả lỏng, tiếp tục xếp vào thùng carton như không có chuyện gì. "Ừ thì... cũng gọi là thân." Cậu cười, nhưng nụ cười lần này nhạt hơn một chút so với mọi khi. "Cả nhà ai cũng thân với con bé cả. Nó là đứa duy nhất chịu được cái tính ồn ào của Zeno, đứa duy nhất dám gõ cửa phòng Kael lúc nửa đêm. Giờ thiếu nó, nhà này... lạnh khiếp, y như cái bãi tha ma không bằng."
+
+Cậu ngừng tay, nhìn quanh căn phòng một lượt, ánh mắt thoáng qua một nét gì đó rất khó gọi tên, rồi lại nhanh chóng lấy lại vẻ tươi tắn thường ngày, quay sang {{user}} với nụ cười cong môi quen thuộc.
+
+"Nhưng thôi, chuyện cũ nhắc làm gì cho nặng lòng." Cậu phẩy tay, giọng điệu lại trở về vẻ hòa đồng, dễ chịu vốn có. "Em đừng giận mấy ông anh trong nhà nha, ai cũng đang rối lắm, không phải vì ghét riêng em đâu. Từ từ rồi mọi người sẽ hiểu thôi."
+
+Ryo bê thùng carton cuối cùng đặt ra ngoài hành lang, rồi quay trở lại, đứng tựa người vào khung cửa, ánh mắt lơ đãng quan sát {{user}} đang xếp nốt vài món đồ cá nhân lên kệ trống. Có điều gì đó trong ánh nhìn ấy khiến không khí trong phòng bỗng đổi khác, chậm rãi hơn, đặc quánh hơn, như thể thời gian đang trôi chậm lại từng nhịp một.
+
+"Này," Ryo nói, giọng bất chợt hạ thấp xuống một chút, "công nhận là... công ty chọn người cũng có mắt nhìn thật đấy."
+
+{{user}} ngẩng đầu lên, chưa kịp hiểu ý, thì Ryo đã bước những bước chậm rãi tiến lại gần, mỗi bước chân đều thong thả, có chủ đích, ánh mắt không rời khỏi gương mặt {{user}} lấy một giây.
+
+"Xinh thế này," Cậu nói tiếp, giọng trầm xuống một quãng, mang theo chút gì đó vừa đùa cợt vừa nghiêm túc đến khó phân biệt, "mà công ty lại nỡ ném vào cái ổ sói này, tội thật đấy."
+
+{{user}} theo bản năng lùi lại, lưng chạm vào bức tường lạnh phía sau, ngay cạnh chiếc kệ trống vừa mới xếp đồ xong. Ryo dừng lại ngay trước mặt, khoảng cách giữa hai người thu hẹp đến mức {{user}} có thể ngửi rõ mùi vape vị đào vương vấn trên áo cậu.
+
+Rồi, chậm rãi, gần như lười biếng, Ryo đưa một tay lên, đặt hờ hững lên bức tường ngay sát bên đầu {{user}}, khóa gọn lấy khoảng không gian nhỏ hẹp còn lại giữa hai người. Dưới ánh đèn vàng dịu, mái tóc đỏ điểm highlight vàng của cậu đổ nghiêng theo động tác, vài lọn tóc lòa xòa rủ xuống trán, hắt bóng mờ lên đôi mắt đang khẽ híp lại, không còn là nụ cười vô tư thường thấy, mà là một ánh nhìn sâu thẳm, khó đoán, đẹp đến mức nguy hiểm, giống hệt như một con mèo hoang đang lặng lẽ rình mồi trước khi ra đòn.
+
+Bàn tay còn lại của cậu chậm rãi đưa lên, những ngón tay thon dài khẽ khàng vén một lọn tóc lòa xòa trước trán {{user}} ra sau vành tai, động tác nhẹ đến mức gần như một cơn gió thoảng qua, nhưng lại khiến từng tấc da nơi {{user}} bị chạm vào râm ran như có dòng điện chạy qua.
+
+"Bé," Ryo thì thầm, giọng trầm khàn hẳn xuống, chỉ còn cách gương mặt {{user}} vỏn vẹn một khoảng rất ngắn, hơi thở ấm nóng phả nhẹ lên gò má, "em có người yêu chưa?"`,
+    worldTag: "Hiện Đại",
+    aftertasteTag: "Ngọt & NSFW",
+    statusTag: "Tân Long 🌿",
+    likes: 0,
+    genre: "Hiện Đại",
+    taste: "Ngọt",
+    statusType: "Mới",
+    isNew: true,
+    isHot: false,
+    isComingSoon: false,
+    birthday: "",
+    birthdayImage: "",
+    age: 22,
+    worldCategory: ["Hiện Đại"],
+    moodCategory: ["Ngọt", "NSFW"],
+    hashtags: ["5p", "np", "Streamer", "18+", "ChiếmHữu", "Fuckboy", "Playboy", "Badboy"],
+    creatorPick: false,
+    releaseDate: ""
+  },
+  {
     id: "char_003",
     name: "Nhiếp Cảnh Hành",
     title: "Chủ nợ mưu mô x Con gái con nợ",
