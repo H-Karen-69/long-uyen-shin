@@ -49,9 +49,25 @@
         "totalVisits": { "type": "number" }
       },
       "required": ["totalVisits"]
+    },
+    "CharacterLike": {
+      "title": "Character Like",
+      "description": "Like records and user list for each character.",
+      "type": "object",
+      "properties": {
+        "charId": { "type": "string" },
+        "totalLikes": { "type": "number" },
+        "likedBy": { "type": "array" },
+        "lastUpdated": { "type": "timestamp" }
+      },
+      "required": ["charId", "totalLikes", "likedBy"]
     }
   },
   "firestore": {
+    "/character_likes/{charId}": {
+      "schema": { "$ref": "#/entities/CharacterLike" },
+      "description": "Stores like counts and liked users per character"
+    },
     "/confessions/{confessionId}": {
       "schema": { "$ref": "#/entities/Confession" },
       "description": "Stores confession posts"

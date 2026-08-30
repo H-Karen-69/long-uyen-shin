@@ -50,3 +50,10 @@ export interface Track {
   src: string;
 }
 
+export interface CharacterLike {
+  charId: string;
+  totalLikes: number;
+  likedBy: string[];
+  lastUpdated?: any;
+}
+

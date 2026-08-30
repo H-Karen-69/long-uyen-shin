@@ -5,18 +5,20 @@
 
 import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Sparkles, BookOpen, Heart, Coffee } from 'lucide-react';
+import { Sparkles, BookOpen, Coffee } from 'lucide-react';
 import { Character } from '../types';
 import DragonCloseButton from './DragonCloseButton';
+import LikeButton from './LikeButton';
 
 interface StoryModalProps {
   character: Character | null;
   onClose: () => void;
   onLike: (char: Character) => void;
   isLiked: boolean;
+  onToast?: (msg: string, type: 'heart-on' | 'heart-off') => void;
 }
 
-export default function StoryModal({ character, onClose, onLike, isLiked }: StoryModalProps) {
+export default function StoryModal({ character, onClose, onLike, isLiked, onToast }: StoryModalProps) {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -117,19 +119,13 @@ export default function StoryModal({ character, onClose, onLike, isLiked }: Stor
               </div>
 
               {/* Like action inside modal */}
-              <button
-                id={`modal-like-btn-${character.id}`}
-                onClick={() => onLike(character)}
-                className="flex items-center gap-1.5 text-xs font-semibold py-2 px-4 rounded-full bg-[#F8F6F5] hover:bg-[#D8DEE8]/50 text-[#3A4258] border border-[#D8DEE8] transition-all duration-300 shadow-sm cursor-pointer"
-              >
-                <Heart
-                  size={14}
-                  className={`transition-all duration-300 ${
-                    isLiked ? 'fill-[#D66A85] text-[#D66A85] scale-110' : 'text-[#E88BA0]'
-                  }`}
-                />
-                <span>{character.likes} Tim</span>
-              </button>
+              <LikeButton
+                charId={character.id}
+                initialLikes={character.likes}
+                variant="pill"
+                size="md"
+                onToast={onToast}
+              />
             </div>
           </div>
 

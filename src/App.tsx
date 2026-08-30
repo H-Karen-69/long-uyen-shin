@@ -41,6 +41,7 @@ import BirthdayModal from './components/BirthdayModal';
 import { isBirthdayToday } from './lib/dateUtils';
 import DragonCloseButton from './components/DragonCloseButton';
 import { VisitorCounter } from './components/VisitorCounter';
+import { subscribeAllCharacterLikes, toggleCharacterLike } from './lib/characterLikesService';
 
 export default function App() {
   // THÔNG TIN TÀI KHOẢN DONATE (Bạn hãy thay thế thông tin thật của mình ở đây nhé 🔮)
@@ -127,6 +128,29 @@ export default function App() {
       setCharacters(INITIAL_CHARACTERS);
     }
 
+    // Real-time Firestore sync for character likes
+    const initialLikesMap: Record<string, number> = {};
+    INITIAL_CHARACTERS.forEach((c) => {
+      initialLikesMap[c.id] = c.likes;
+    });
+
+    const unsubscribeLikes = subscribeAllCharacterLikes(initialLikesMap, (dataMap) => {
+      const activeLikedIds: string[] = [];
+      setCharacters((prevChars) =>
+        prevChars.map((char) => {
+          const liveData = dataMap[char.id];
+          if (liveData) {
+            if (liveData.isLiked) {
+              activeLikedIds.push(char.id);
+            }
+            return { ...char, likes: liveData.totalLikes };
+          }
+          return char;
+        })
+      );
+      setLikedIds(activeLikedIds);
+    });
+
     // Check for today's birthday
     const todayChar = INITIAL_CHARACTERS.find(c => c.birthday && isBirthdayToday(c.birthday));
     if (todayChar) {
@@ -136,6 +160,10 @@ export default function App() {
         setShowBirthdayPopup(true);
       }, 1500);
     }
+
+    return () => {
+      unsubscribeLikes();
+    };
   }, []);
 
 
@@ -191,7 +219,7 @@ export default function App() {
   };
 
   // Toggle Heart likes
-  const handleLikeToggle = (char: Character) => {
+  const handleLikeToggle = async (char: Character) => {
     const isLikedNow = likedIds.includes(char.id);
     let updatedLikedIds: string[];
     let diff = 0;
@@ -206,24 +234,32 @@ export default function App() {
       addToast('Ngọc này đã thuộc về bạn!', 'heart-on');
     }
 
+    // Optimistic state updates
     setLikedIds(updatedLikedIds);
     localStorage.setItem('longuyen_liked_ids', JSON.stringify(updatedLikedIds));
 
     // Update characters state
     const updatedChars = characters.map((c) => {
       if (c.id === char.id) {
-        return { ...c, likes: c.likes + diff };
+        return { ...c, likes: Math.max(0, c.likes + diff) };
       }
       return c;
     });
     setCharacters(updatedChars);
 
-    // Save likes count to local storage
+    // Save likes count to local storage as fallback
     const likesMap: Record<string, number> = {};
     updatedChars.forEach((c) => {
       likesMap[c.id] = c.likes;
     });
     localStorage.setItem('longuyen_likes_count', JSON.stringify(likesMap));
+
+    // Async toggle to Firebase Firestore
+    try {
+      await toggleCharacterLike(char.id, char.likes, isLikedNow);
+    } catch (e) {
+      console.warn('[App] Error in toggleCharacterLike:', e);
+    }
   };
 
   const handleToggleGenre = (genre: string) => {
@@ -555,7 +591,7 @@ export default function App() {
             {/* Social links below CTA */}
             <div className="z-10 flex items-center gap-6 text-[#6B7590] font-sans text-xs tracking-wide font-medium mt-8 border-t border-[#D8DEE8] pt-6 w-full max-w-sm justify-center">
               <a
-                href="https://facebook.com/kamishiro.shinju"
+                href="https://facebook.com/kamishiro.shin"
                 target="_blank"
                 rel="noreferrer"
                 className="hover:text-[#3A4258] flex items-center gap-1 transition-colors group cursor-pointer"
@@ -866,6 +902,7 @@ export default function App() {
                               onFeedback={(char) => setFeedbackChar(char)}
                               onBirthdayClick={(char) => setBirthdayChar(char)}
                               onHashtagClick={handleHashtagClick}
+                              onToast={addToast}
                             />
                           ))}
                         </AnimatePresence>
@@ -963,6 +1000,7 @@ export default function App() {
                               onFeedback={(char) => setFeedbackChar(char)}
                               onBirthdayClick={(char) => setBirthdayChar(char)}
                               onHashtagClick={handleHashtagClick}
+                              onToast={addToast}
                             />
                           ))}
                         </AnimatePresence>
@@ -1009,7 +1047,7 @@ export default function App() {
                 {/* Social icons with pastel line style */}
                 <div className="flex items-center gap-5 mb-2">
                   <a
-                    href="https://facebook.com/kamishiro.shinju"
+                    href="https://facebook.com/kamishiro.shin"
                     target="_blank"
                     rel="noreferrer"
                     className="p-2 rounded-full bg-[#F8F6F5] hover:bg-[#D8DEE8] text-[#6B7590] hover:text-[#3A4258] transition-all duration-300 border border-[#D8DEE8] hover:scale-110 cursor-pointer"
@@ -1077,6 +1115,7 @@ export default function App() {
         onClose={() => setSelectedChar(null)}
         onLike={handleLikeToggle}
         isLiked={selectedChar ? likedIds.includes(selectedChar.id) : false}
+        onToast={addToast}
       />
 
       {/* CHARACTER FEEDBACK MODAL */}

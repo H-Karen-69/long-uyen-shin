@@ -212,4 +212,23 @@ body {
   animation: text-blink 1.2s infinite ease-in-out;
 }
 
+/* Character Like Button Enhancements */
+.like-btn {
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.like-btn:hover {
+  box-shadow: 0 4px 14px rgba(232, 139, 160, 0.28);
+}
+.like-btn.liked {
+  border-color: rgba(232, 139, 160, 0.6);
+}
+@keyframes heart-burst {
+  0% { transform: scale(0.9); }
+  50% { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+.heart-pop {
+  animation: heart-burst 0.35s ease-out;
+}
+
 

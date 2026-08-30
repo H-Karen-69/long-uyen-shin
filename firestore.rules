@@ -46,6 +46,21 @@ service cloud.firestore {
              data.totalVisits is number && data.totalVisits >= 0;
     }
 
+    function isValidCharacterLike(data, charId) {
+      return data.keys().hasAll(['charId', 'totalLikes', 'likedBy']) &&
+             data.charId is string && data.charId == charId &&
+             data.totalLikes is number && data.totalLikes >= 0 &&
+             data.likedBy is list;
+    }
+
+    match /character_likes/{charId} {
+      allow read: if true;
+      allow create: if isValidCharacterLike(incoming(), charId);
+      allow update: if incoming().diff(existing()).affectedKeys().hasAny(['totalLikes', 'likedBy', 'lastUpdated']) &&
+                      incoming().totalLikes is number && incoming().totalLikes >= 0 &&
+                      incoming().likedBy is list;
+    }
+
     match /confessions/{confessionId} {
       allow read: if true;
       allow create: if isValidConfession(incoming());

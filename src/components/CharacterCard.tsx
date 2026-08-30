@@ -4,20 +4,22 @@
  */
 
 import { motion } from 'motion/react';
-import { Heart, BookOpen, Copy, MessageSquareHeart, Sparkles, Gift } from 'lucide-react';
+import { BookOpen, Copy, MessageSquareHeart, Sparkles, Gift } from 'lucide-react';
 import { Character } from '../types';
 import { isBirthdayToday, getDaysUntilBirthday } from '../lib/dateUtils';
+import LikeButton from './LikeButton';
 
 interface CharacterCardProps {
   character: Character;
-  isLiked: boolean;
+  isLiked?: boolean;
   onThuongVi: (char: Character) => void;
   onBackground: (char: Character) => void;
   onCopyLink: (char: Character) => void;
-  onLikeToggle: (char: Character) => void;
+  onLikeToggle?: (char: Character) => void;
   onFeedback: (char: Character) => void;
   onBirthdayClick?: (char: Character) => void;
   onHashtagClick?: (hashtag: string) => void;
+  onToast?: (msg: string, type: 'heart-on' | 'heart-off') => void;
 }
 
 export default function CharacterCard({
@@ -30,6 +32,7 @@ export default function CharacterCard({
   onFeedback,
   onBirthdayClick,
   onHashtagClick,
+  onToast,
 }: CharacterCardProps) {
   // Pastel Color Maps for Hashtags
   const hashtagColors = ['#5A6B85', '#B85068', '#4A5468', '#8B3A50'];
@@ -155,12 +158,15 @@ export default function CharacterCard({
             {visibleBadges}
           </div>
           
-          {/* Fast Heart display */}
+          {/* Fast Heart & Like display */}
           <div className="absolute top-3 right-3 flex flex-col items-end gap-1.5 z-10">
-            <div className="flex items-center gap-1 bg-[#F8F6F5]/95 backdrop-blur-sm py-1 px-2.5 rounded-full text-[10px] font-bold text-[#6B7590] shadow-sm">
-              <Heart size={10} className="fill-[#E88BA0] text-[#E88BA0]" />
-              {character.likes}
-            </div>
+            <LikeButton
+              charId={character.id}
+              initialLikes={character.likes}
+              variant="card-badge"
+              size="sm"
+              onToast={onToast}
+            />
           </div>
         </div>
 
@@ -268,20 +274,15 @@ export default function CharacterCard({
             <span>Feedback</span>
           </button>
 
-          {/* Nút Icon Tim (Cất Ngọc) */}
-          <button
-            id={`btn-heart-${character.id}`}
-            onClick={() => onLikeToggle(character)}
-            className="p-3 bg-gradient-to-r from-[#F5C8D0] to-[#E88BA0] hover:from-[#E88BA0] hover:to-[#F5C8D0] text-[#3A4258] rounded-[15px] transition-all duration-300 cursor-pointer active:scale-95 shadow-sm"
-            title="Cất Ngọc"
-          >
-            <Heart
-              size={14}
-              className={`transition-all duration-300 ${
-                isLiked ? 'fill-[#D66A85] text-[#D66A85] scale-110' : 'text-[#8B3A50]'
-              }`}
-            />
-          </button>
+          {/* Nút Icon Tim (Cất Ngọc / Thả Tim) */}
+          <LikeButton
+            charId={character.id}
+            initialLikes={character.likes}
+            variant="action-btn"
+            size="md"
+            showCount={false}
+            onToast={onToast}
+          />
         </div>
 
         {/* Hàng Hashtag */}
