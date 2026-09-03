@@ -64,7 +64,7 @@ Well, chúc bạn may mắn tồn tại được trong cái trường này, ho�
     name: "T5 (The 5 Elements)",
     title: "Streamers x Streamer",
     avatar: "",
-    roleplayLink: "https://aistudio.google.com/prompts/1NRU14jzIwF9ZAYG5bbVNb__zI9NmOq5P",
+    roleplayLink: "#",
     storyText: `Kim đồng hồ treo tường trong văn phòng ZON đã chỉ qua con số mười một tối từ lâu, nhưng không một ai trong căn phòng họp khẩn cấp có ý định rời đi. Đèn huỳnh quang trên trần hắt xuống thứ ánh sáng trắng lạnh, vô hồn, phủ lên gương mặt của từng người một lớp bóng nhợt nhạt như thể chính căn phòng cũng đang nín thở chờ đợi một điều gì đó sắp sửa sụp đổ.
 
 Vũ Hoàng Bách đứng tựa lưng vào cửa sổ, một tay cầm điện thoại áp sát bên tai, tay còn lại chống lên thành bàn kính, những ngón tay siết chặt đến mức khớp xương trắng bệch ra dưới lớp da. Chiếc nhẫn bạc nơi ngón áp út — thói quen xoay nhẫn mỗi khi suy nghĩ giờ đã biến mất, thay vào đó là một sự bất động căng cứng như dây đàn lên quá mức.
@@ -272,7 +272,7 @@ Bàn tay còn lại của cậu chậm rãi đưa lên, những ngón tay thon d
     name: "Nhiếp Cảnh Hành",
     title: "Chủ nợ mưu mô x Con gái con nợ",
     avatar: "https://i.ibb.co/QFBDZhwB/TA-2026-07-22-13-26-41-1man-solo-3907321651-1.png",
-    roleplayLink: "https://aistudio.google.com/app/prompts/1qtMCvFCR4jzoe3qWj_vN9hs29toCbiWx",
+    roleplayLink: "#",
     storyText: `Đêm Hải Thành ồn ào phồn hoa, nhưng dường như vĩnh viễn bị chôn vùi bên dưới căn phòng trọ chật hẹp, ngập ngụa mùi nấm mốc trên tầng năm ở khu chung cư cũ kĩ này.
 Ánh đèn bàn hắt ra thứ tia sáng vàng vọt, khó nhọc soi rõ góc cổ áo sờn cũ của {{user}}, để nửa gương mặt cô chìm lấp trong mảng tối. Ngón tay cô đặt lên trên màn hình điện thoại loạt toát. Tiền học phí hối thúc từng ngày. Tiền nhà đã quá hạn hai tháng. Và trên hết, là những cuộc gọi đầy ấp úng, giấu giếm sự tuyệt vọng của cha mỗi tuần — tất cả giống như một bàn tay vô hình gắt gao bóp nghẹt lấy yết hầu cô.
 Bị dồn vào thế bí, đường cùng, cô nghĩ liều tự tay mở một tài khoản ẩn danh trên nền tảng web đen mà cô từng ghê tởm nhất.
@@ -389,7 +389,7 @@ Khóe môi Nhiếp Cảnh Hành từ từ nhếch lên một độ cong mỉa ma
     name: "Trình Dĩ Phàm",
     title: "Học bá top 1 x Nữ sinh yêu thầm",
     avatar: "https://i.ibb.co/RTHMYBqm/TA-2026-07-20-21-20-03-artist-ma-65538540.png",
-    roleplayLink: "https://aistudio.google.com/prompts/1AXBtrJfodmEgRBujw2BEYMnYef8IXL2x",
+    roleplayLink: "#",
     storyText: `Có những người sinh ra đã là ánh sáng.
 {{user}} hiểu điều đó từ rất lâu rồi — từ cái ngày đầu tiên cô bước vào lớp 12A, nhìn quanh một lượt, và nhận ra rằng mình không phải kiểu người mà người ta sẽ nhớ tên sau buổi học đầu tiên.
 Không sao. Cô đã quen rồi.
@@ -499,7 +499,7 @@ Dù chỉ là theo cái cách này.
     name: "Yến Bắc Thần",
     title: "Thương gia hắc đạo x Nữ hầu thế thân",
     avatar: "https://i.ibb.co/8gjwDNCp/Yen-Bac-Than.jpg",
-    roleplayLink: "https://aistudio.google.com/prompts/1LXVS_3D5Zvsjq-eOMw0QGIzMCO1H8Pxf",
+    roleplayLink: "#",
     storyText: `Người đời đồn thương nhân hắc đạo Đế Đô — Yến Bắc Thần — là một lão già, hành tung bí ẩn, không ai từng trông thấy hình dạng thật của hắn. Từ lúc lên ngôi yên vị đến nay đã tám năm trời, không ai dám tranh chấp chia phần giằng xé, không ai dám thò tay vào phần mà hắn đã đặt dấu ấn xuống.
 Cho đến gần đây nhất.
 Qua một trận chiến ngầm dưới lưỡi đao tàn khốc và mạng người rải rác khắp nơi, Yến Bắc Thần bị kẻ thân cận lâu năm — người đã ẩn giấu lớp ngụy trang suốt nhiều năm, đồng hành cùng hắn qua bao nhiêu ngày tháng — hãm hại. Dù thoát được mạng sống dưới làn đạn như bão, dù cơ thể hắn vẫn còn thở, vẫn còn đứng thẳng được — đôi mắt hắn đã không còn nhìn thấy đường nữa. Di chứng từ loại độc tố kỳ lạ mà lũ ám sát sử dụng ăn sâu vào dây thần kinh thị giác, để lại trong hắn một khoảng tối đen hoàn toàn không thể xuyên thủng.
@@ -575,9 +575,10 @@ Hắn dụi nhẹ vào vành tai nhỏ nhắn của cô, giọng xuống thấp,
 export const BULLETINS = [
   {
     id: 1,
-    title: "Chào mừng đến với Long Uyển",
-    text: "🐉 Chào mừng bạn đến với Long Uyển của Shin! Nơi linh hồn của rồng thiêng hòa quyện cùng bối cảnh Roleplay sâu lắng nhất.",
-    detail: "Đây là không gian dành riêng cho những ai đam mê thể loại Roleplay. Tại đây, bạn sẽ tìm thấy những nhân vật được xây dựng chi tiết, có chiều sâu và luôn sẵn sàng để cùng bạn tạo nên những câu chuyện khó quên. Hãy dạo quanh Long Uyển, chọn cho mình một 'vị rồng' ưng ý và bắt đầu triệu hồi nhé!"
+    title: "Thông báo fix char",
+    isRainbow: true,
+    text: "⚠️ Thông báo fix char: Vì Shin phát hiện nhiều lỗi, tất cả char sẽ được đóng link để fix.",
+    detail: "Vì Shin phát hiện nhiều lỗi, tất cả char sẽ được đóng link để fix. Shin sẽ tập trung fix xong rùi mới ra char mới nha.\n\nThứ tự fix:\n1. Trình Dĩ Phàm\n2. T5 (The 5 Elements)\n3. Nhiếp Cảnh Hành\n4. Yến Bắc Thần"
   },
   {
     id: 2,

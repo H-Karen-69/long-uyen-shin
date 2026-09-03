@@ -195,6 +195,10 @@ export default function App() {
 
   // Roleplay link Action ("Triệu Long")
   const handleThuongVi = (char: Character) => {
+    if (!char.roleplayLink || char.roleplayLink === '#') {
+      addToast('Vì Shin phát hiện nhiều lỗi, char đang được đóng link để fix nha! 🛠️', 'info');
+      return;
+    }
     addToast('Đang triệu hồi rồng, chờ xíu nhé...', 'success');
     setTimeout(() => {
       window.open(char.roleplayLink, '_blank', 'noopener,noreferrer');
@@ -209,7 +213,10 @@ export default function App() {
 
   // Copy or store link of character
   const handleCopyLink = (char: Character) => {
-    const link = `${window.location.origin}/character/${char.id}`;
+    if (!char.roleplayLink || char.roleplayLink === '#') {
+      addToast('Char đang được đóng link để fix lỗi, chưa thể lấy ngọc nha! 🔮', 'info');
+      return;
+    }
     navigator.clipboard.writeText(char.roleplayLink).then(() => {
       addToast('Đã nhận ngọc rồi nhé! 🔮', 'success');
     }).catch(() => {
@@ -638,34 +645,48 @@ export default function App() {
             </header>
 
             {/* BẢNG TIN LONG TRẠM (BULLETIN TICKER - FULL SCREEN WIDTH SCROLLING) */}
-            <div className="relative bg-[#F0EEED] border-y border-[#D8DEE8] shadow-sm z-10 overflow-hidden w-full py-2 px-0 select-none">
-              <div className="relative w-full overflow-hidden h-6 flex items-center">
+            <div className="relative bg-[#F0EEED] border-y border-[#D8DEE8] shadow-sm z-10 overflow-hidden w-full py-1.5 px-0 select-none">
+              <div className="relative w-full overflow-hidden h-7 flex items-center">
                 <div className="animate-marquee absolute flex text-xs text-[#3A4258] font-extrabold font-sans tracking-wider">
                   <div className="flex shrink-0">
-                    {BULLETINS.map(b => (
-                      <div key={`b1-${b.id}`} className="flex items-center">
-                        <button 
-                          onClick={() => setSelectedBulletin(b)}
-                          className="cursor-pointer hover:text-[#7A8AA5] transition-colors focus:outline-none animate-text-blink"
-                        >
-                          {b.text}
-                        </button>
-                        <span className="mx-8 text-[#7A8AA5]">✦</span>
-                      </div>
-                    ))}
+                    {BULLETINS.map(b => {
+                      const isRainbow = (b as any).isRainbow || b.id === 1;
+                      return (
+                        <div key={`b1-${b.id}`} className="flex items-center">
+                          <button 
+                            onClick={() => setSelectedBulletin(b)}
+                            className={`cursor-pointer transition-all focus:outline-none ${
+                              isRainbow 
+                                ? 'animate-rainbow font-black tracking-wide drop-shadow-sm' 
+                                : 'hover:text-[#7A8AA5] animate-text-blink'
+                            }`}
+                          >
+                            {b.text}
+                          </button>
+                          <span className="mx-8 text-[#7A8AA5]">✦</span>
+                        </div>
+                      );
+                    })}
                   </div>
                   <div className="flex shrink-0">
-                    {BULLETINS.map(b => (
-                      <div key={`b2-${b.id}`} className="flex items-center">
-                        <button 
-                          onClick={() => setSelectedBulletin(b)}
-                          className="cursor-pointer hover:text-[#7A8AA5] transition-colors focus:outline-none animate-text-blink"
-                        >
-                          {b.text}
-                        </button>
-                        <span className="mx-8 text-[#7A8AA5]">✦</span>
-                      </div>
-                    ))}
+                    {BULLETINS.map(b => {
+                      const isRainbow = (b as any).isRainbow || b.id === 1;
+                      return (
+                        <div key={`b2-${b.id}`} className="flex items-center">
+                          <button 
+                            onClick={() => setSelectedBulletin(b)}
+                            className={`cursor-pointer transition-all focus:outline-none ${
+                              isRainbow 
+                                ? 'animate-rainbow font-black tracking-wide drop-shadow-sm' 
+                                : 'hover:text-[#7A8AA5] animate-text-blink'
+                            }`}
+                          >
+                            {b.text}
+                          </button>
+                          <span className="mx-8 text-[#7A8AA5]">✦</span>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
@@ -1160,13 +1181,23 @@ export default function App() {
               />
               
               <div className="relative z-10">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#7A8AA5] to-[#E88BA0] rounded-2xl flex items-center justify-center mb-4 shadow-inner text-[#F8F6F5]">
-                  <Sparkles className="w-6 h-6" />
+                <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-4 shadow-inner text-[#F8F6F5] ${
+                  (selectedBulletin as any).isRainbow || selectedBulletin.id === 1
+                    ? 'rainbow-border'
+                    : 'bg-gradient-to-br from-[#7A8AA5] to-[#E88BA0]'
+                }`}>
+                  <Sparkles className="w-6 h-6 text-white" />
                 </div>
-                <h2 className="font-serif text-2xl font-bold text-[#3A4258] mb-4">{selectedBulletin.title}</h2>
-                <p className="text-[#6B7590] font-comfortaa leading-relaxed text-sm">
+                <h2 className={`font-serif text-2xl font-bold mb-4 ${
+                  (selectedBulletin as any).isRainbow || selectedBulletin.id === 1
+                    ? 'animate-rainbow font-black'
+                    : 'text-[#3A4258]'
+                }`}>
+                  {selectedBulletin.title}
+                </h2>
+                <div className="text-[#6B7590] font-comfortaa leading-relaxed text-sm whitespace-pre-line">
                   {selectedBulletin.detail}
-                </p>
+                </div>
               </div>
             </motion.div>
           </div>

@@ -131,15 +131,25 @@ export default function StoryModal({ character, onClose, onLike, isLiked, onToas
 
           {/* Footer Action */}
           <div className="bg-[#F0EEED]/80 p-4 border-t border-[#D8DEE8] flex justify-end">
-            <a
-              id={`modal-action-btn-${character.id}`}
-              href={character.roleplayLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full text-center text-sm font-bold text-[#F8F6F5] bg-gradient-to-r from-[#7A8AA5] to-[#E88BA0] hover:from-[#5A6B85] hover:to-[#D66A85] py-3 px-6 rounded-[15px] shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
-            >
-              Triệu Long Ngay
-            </a>
+            {!character.roleplayLink || character.roleplayLink === '#' ? (
+              <button
+                id={`modal-action-btn-${character.id}`}
+                onClick={() => onToast?.('Vì Shin phát hiện nhiều lỗi, char đang được đóng link để fix nha! 🛠️', 'heart-off')}
+                className="w-full text-center text-sm font-bold text-[#3A4258]/70 bg-[#D8DEE8]/60 hover:bg-[#D8DEE8]/90 py-3 px-6 rounded-[15px] border border-[#D8DEE8] cursor-pointer transition-all duration-300"
+              >
+                Đang đóng link để fix 🛠️
+              </button>
+            ) : (
+              <a
+                id={`modal-action-btn-${character.id}`}
+                href={character.roleplayLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full text-center text-sm font-bold text-[#F8F6F5] bg-gradient-to-r from-[#7A8AA5] to-[#E88BA0] hover:from-[#5A6B85] hover:to-[#D66A85] py-3 px-6 rounded-[15px] shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
+              >
+                Triệu Long Ngay
+              </a>
+            )}
           </div>
         </motion.div>
       </div>

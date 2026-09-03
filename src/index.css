@@ -231,4 +231,53 @@ body {
   animation: heart-burst 0.35s ease-out;
 }
 
+/* Continuously shifting rainbow text & background animation */
+@keyframes rainbow-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-rainbow {
+  background: linear-gradient(
+    90deg,
+    #ff2a6d,
+    #ff7700,
+    #ffb703,
+    #05d550,
+    #00b4d8,
+    #7209b7,
+    #f72585,
+    #ff2a6d
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: rainbow-shift 3.5s linear infinite;
+  display: inline-block;
+}
+
+.rainbow-border {
+  background: linear-gradient(
+    90deg,
+    #ff2a6d,
+    #ff7700,
+    #ffb703,
+    #05d550,
+    #00b4d8,
+    #7209b7,
+    #f72585,
+    #ff2a6d
+  );
+  background-size: 300% 300%;
+  animation: rainbow-shift 3.5s linear infinite;
+}
+
 
