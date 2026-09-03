@@ -41,6 +41,20 @@
       },
       "required": ["charId", "username", "rating", "content", "timestamp", "likes", "likedBy"]
     },
+    "BirthdayWish": {
+      "title": "Birthday Wish",
+      "description": "Birthday wishes for a character.",
+      "type": "object",
+      "properties": {
+        "charId": { "type": "string" },
+        "username": { "type": "string" },
+        "content": { "type": "string" },
+        "timestamp": { "type": "timestamp" },
+        "likes": { "type": "number" },
+        "likedBy": { "type": "array" }
+      },
+      "required": ["charId", "username", "content", "timestamp", "likes", "likedBy"]
+    },
     "SiteStats": {
       "title": "Site Stats",
       "description": "Global statistics for the website such as visitor count.",
@@ -79,6 +93,10 @@
     "/char_feedbacks/{feedbackId}": {
       "schema": { "$ref": "#/entities/CharacterFeedback" },
       "description": "Stores character feedbacks"
+    },
+    "/birthday_wishes/{wishId}": {
+      "schema": { "$ref": "#/entities/BirthdayWish" },
+      "description": "Stores birthday wishes for characters"
     },
     "/site_stats/{statId}": {
       "schema": { "$ref": "#/entities/SiteStats" },

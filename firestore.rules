@@ -91,5 +91,9 @@ service cloud.firestore {
       allow update: if incoming().diff(existing()).affectedKeys().hasOnly(['totalVisits']) &&
                       incoming().totalVisits is number && incoming().totalVisits >= 0;
     }
+
+    match /test/connection {
+      allow read: if true;
+    }
   }
 }

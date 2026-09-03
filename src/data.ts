@@ -578,7 +578,7 @@ export const BULLETINS = [
     title: "Thông báo fix char",
     isRainbow: true,
     text: "⚠️ Thông báo fix char: Vì Shin phát hiện nhiều lỗi, tất cả char sẽ được đóng link để fix.",
-    detail: "Vì Shin phát hiện nhiều lỗi, tất cả char sẽ được đóng link để fix. Shin sẽ tập trung fix xong rùi mới ra char mới nha.\n\nThứ tự fix:\n1. Trình Dĩ Phàm\n2. T5 (The 5 Elements)\n3. Nhiếp Cảnh Hành\n4. Yến Bắc Thần"
+    detail: "Vì Shin phát hiện nhiều lỗi, tất cả char sẽ được đóng link để fix.\n\nThứ tự fix:\n1. Trình Dĩ Phàm\n2. T5 (The 5 Elements)\n3. Nhiếp Cảnh Hành\n4. Yến Bắc Thần"
   },
   {
     id: 2,
