@@ -446,7 +446,7 @@ export default function MiniMusicPlayer({ addToast, hasEntered }: MiniMusicPlaye
 
               <button
                 onClick={togglePlay}
-                className="w-12 h-12 rounded-full flex items-center justify-center bg-gradient-to-r from-[#7A8AA5] to-[#E88BA0] hover:from-[#5A6B85] hover:to-[#D66A85] text-[#F8F6F5] shadow-md hover:scale-105 active:scale-95 transition-all cursor-pointer"
+                className="w-12 h-12 rounded-full flex items-center justify-center bg-gradient-to-r from-[#7A8AA5] to-[#F2DB88] hover:from-[#5A6B85] hover:to-[#E5C973] text-[#F8F6F5] shadow-md hover:scale-105 active:scale-95 transition-all cursor-pointer"
                 title={isPlaying ? "Tạm dừng" : "Phát nhạc"}
               >
                 {isPlaying ? <Pause size={20} fill="currentColor" /> : <Play size={20} fill="currentColor" className="ml-1" />}

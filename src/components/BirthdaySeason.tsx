@@ -75,7 +75,7 @@ export default function BirthdaySeason({ characters, onOpenBirthdayModal }: Birt
                 transition={{ delay: 0.2 }}
                 className="inline-flex items-center space-x-2 bg-[#7A8AA5]/30 backdrop-blur-md px-4 py-2 rounded-full font-bold mb-4 border border-[#7A8AA5]/50 text-[#D8DEE8]"
               >
-                <Gift className="w-5 h-5 text-[#E88BA0]" />
+                <Gift className="w-5 h-5 text-[#F2DB88]" />
                 <span>Long Đản Hôm Nay</span>
               </motion.div>
               
@@ -86,7 +86,7 @@ export default function BirthdaySeason({ characters, onOpenBirthdayModal }: Birt
                 className="font-serif text-4xl md:text-6xl font-bold mb-2 leading-tight text-white"
               >
                 Hôm nay là Long Đản của <br className="hidden md:block"/>
-                <span className="text-[#F5C8D0]">{mainBirthdayChar.name}</span>! 🎂
+                <span className="text-[#FDF3D2]">{mainBirthdayChar.name}</span>! 🎂
               </motion.h1>
               
               {mainBirthdayChar.age && (
@@ -103,7 +103,7 @@ export default function BirthdaySeason({ characters, onOpenBirthdayModal }: Birt
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.5 }}
                 onClick={() => onOpenBirthdayModal(mainBirthdayChar)}
-                className="bg-gradient-to-r from-[#7A8AA5] to-[#E88BA0] text-[#F8F6F5] px-8 py-4 rounded-2xl font-bold text-lg shadow-[0_0_20px_rgba(122,138,165,0.4)] hover:shadow-[0_0_30px_rgba(122,138,165,0.6)] hover:scale-105 transition-all duration-300 flex items-center space-x-2"
+                className="bg-gradient-to-r from-[#7A8AA5] to-[#F2DB88] text-[#F8F6F5] px-8 py-4 rounded-2xl font-bold text-lg shadow-[0_0_20px_rgba(122,138,165,0.4)] hover:shadow-[0_0_30px_rgba(122,138,165,0.6)] hover:scale-105 transition-all duration-300 flex items-center space-x-2"
               >
                 <span>Đến tiệc chúc mừng ngay</span>
                 <ChevronRight className="w-5 h-5" />
@@ -113,7 +113,7 @@ export default function BirthdaySeason({ characters, onOpenBirthdayModal }: Birt
         ) : (
           <div className="p-8 md:p-12 flex flex-col items-center text-center relative overflow-hidden">
             <div className="absolute -left-20 -top-20 opacity-20"><Sparkles className="w-48 h-48 text-[#7A8AA5]" /></div>
-            <div className="absolute -right-10 -bottom-10 opacity-20"><Sparkles className="w-36 h-36 text-[#E88BA0]" /></div>
+            <div className="absolute -right-10 -bottom-10 opacity-20"><Sparkles className="w-36 h-36 text-[#F2DB88]" /></div>
             
             <div className="relative z-10 max-w-lg mx-auto">
               <Gift className="w-16 h-16 text-[#7A8AA5] mx-auto mb-4 drop-shadow-md" />
@@ -129,7 +129,7 @@ export default function BirthdaySeason({ characters, onOpenBirthdayModal }: Birt
                     <div className="text-center md:text-left">
                       <h3 className="font-bold text-xl text-[#3A4258]">{nextBirthdayChar.char.name}</h3>
                       <p className="text-[#6B7590] font-comfortaa">Sinh nhật: {nextBirthdayChar.char.birthday}</p>
-                      <div className="mt-2 inline-block bg-gradient-to-r from-[#7A8AA5] to-[#E88BA0] px-4 py-1.5 rounded-full font-bold text-[#F8F6F5] text-sm">
+                      <div className="mt-2 inline-block bg-gradient-to-r from-[#7A8AA5] to-[#F2DB88] px-4 py-1.5 rounded-full font-bold text-[#F8F6F5] text-sm">
                         Còn {nextBirthdayChar.daysUntil} ngày nữa!
                       </div>
                     </div>
@@ -174,7 +174,7 @@ export default function BirthdaySeason({ characters, onOpenBirthdayModal }: Birt
               className="bg-[#F8F6F5] shadow-md border border-[#D8DEE8] p-6 md:p-8 rounded-[32px]"
             >
               <h3 className="font-serif text-2xl font-bold text-[#3A4258] mb-6 flex items-center">
-                <Gift className="w-6 h-6 mr-2 text-[#E88BA0]" /> Sắp Tới
+                <Gift className="w-6 h-6 mr-2 text-[#F2DB88]" /> Sắp Tới
               </h3>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -186,7 +186,7 @@ export default function BirthdaySeason({ characters, onOpenBirthdayModal }: Birt
                       <p className="text-sm text-[#6B7590] font-comfortaa">Ngày {item.char.birthday}</p>
                     </div>
                     <div className="bg-[#F8F6F5] px-3 py-2 rounded-xl text-center border border-[#D8DEE8]">
-                      <span className="block text-xl font-bold text-[#E88BA0] leading-none">{item.daysUntil}</span>
+                      <span className="block text-xl font-bold text-[#F2DB88] leading-none">{item.daysUntil}</span>
                       <span className="text-[10px] uppercase font-bold text-[#6B7590]">Ngày</span>
                     </div>
                   </div>
@@ -244,11 +244,11 @@ export default function BirthdaySeason({ characters, onOpenBirthdayModal }: Birt
                     <div 
                       key={`day-${day}`} 
                       className={`relative flex flex-col items-center justify-center p-2 rounded-xl border min-h-[60px] transition-all
-                        ${isToday ? 'border-[#E88BA0] bg-white shadow-sm' : 'border-transparent hover:bg-white hover:shadow-sm'}
+                        ${isToday ? 'border-[#F2DB88] bg-white shadow-sm' : 'border-transparent hover:bg-white hover:shadow-sm'}
                         ${hasBirthday ? 'bg-[#7A8AA5]/10 border-[#7A8AA5]/30 cursor-pointer' : ''}
                       `}
                     >
-                      <span className={`font-bold text-sm ${isToday ? 'text-[#E88BA0]' : 'text-[#3A4258]'}`}>
+                      <span className={`font-bold text-sm ${isToday ? 'text-[#F2DB88]' : 'text-[#3A4258]'}`}>
                         {day}
                       </span>
                       {hasBirthday && (

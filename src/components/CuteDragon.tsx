@@ -13,7 +13,7 @@ interface SparkleProps {
 export default function CuteDragon({
   className = '',
   size = 24,
-  color = '#E88BA0',
+  color = '#F2DB88',
 }: SparkleProps) {
   return (
     <svg
@@ -39,7 +39,7 @@ export default function CuteDragon({
       {/* Corner diagonal sparkles */}
       <path
         d="M 50 32 L 53 47 L 68 50 L 53 53 L 50 68 L 47 53 L 32 50 L 47 47 Z"
-        fill="#E8CC8B"
+        fill="#F2DB88"
         opacity="0.9"
       />
     </svg>

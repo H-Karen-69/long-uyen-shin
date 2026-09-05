@@ -1,6 +1,6 @@
 {
   "name": "Long Uyển Của Shin",
-  "description": "Cổng thông tin và liên kết các nhân vật Roleplay của Creator Kamishiro Shinju.",
+  "description": "Cổng thông tin và liên kết các nhân vật của Kamishiro Shinju.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

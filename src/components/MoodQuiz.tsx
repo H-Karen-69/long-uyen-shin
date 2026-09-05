@@ -22,13 +22,13 @@ interface QuizDragonProps {
 }
 
 export function QuizDragon({ mood, size = 60, className = '' }: QuizDragonProps) {
-  let colorTop = '#F5C8D0';
+  let colorTop = '#FDF3D2';
   let colorBottom = '#F8E0E4';
   let auraColor = 'rgba(245, 200, 208, 0.45)';
 
   switch (mood) {
     case 'vui':
-      colorTop = '#F5C8D0';
+      colorTop = '#FDF3D2';
       colorBottom = '#F8E0E4';
       auraColor = 'rgba(245, 200, 208, 0.5)';
       break;
@@ -48,7 +48,7 @@ export function QuizDragon({ mood, size = 60, className = '' }: QuizDragonProps)
       auraColor = 'rgba(184, 196, 216, 0.5)';
       break;
     case 'buc':
-      colorTop = '#E88BA0';
+      colorTop = '#F2DB88';
       colorBottom = '#F0A8B8';
       auraColor = 'rgba(232, 139, 160, 0.5)';
       break;
@@ -538,7 +538,7 @@ export default function MoodQuiz({ characters, onThuongVi, onShowBackstory }: Mo
                         </button>
                         <button
                           onClick={() => onThuongVi(char)}
-                          className="flex-1 text-center font-bold text-[10px] text-[#F8F6F5] bg-gradient-to-r from-[#7A8AA5] to-[#E88BA0] hover:from-[#5A6B85] hover:to-[#D66A85] py-1.5 rounded-lg transition-all duration-300 cursor-pointer shadow-sm"
+                          className="flex-1 text-center font-bold text-[10px] text-[#F8F6F5] bg-gradient-to-r from-[#7A8AA5] to-[#F2DB88] hover:from-[#5A6B85] hover:to-[#E5C973] py-1.5 rounded-lg transition-all duration-300 cursor-pointer shadow-sm"
                         >
                           Triệu Long
                         </button>

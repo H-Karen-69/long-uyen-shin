@@ -53,7 +53,7 @@ export default function StoryModal({ character, onClose, onLike, isLiked, onToas
           className="relative w-full max-w-lg glass-modal text-[#3A4258] rounded-[30px] overflow-hidden z-10"
         >
           {/* Accent Top Bar */}
-          <div className="h-2 bg-gradient-to-r from-[#7A8AA5] via-[#F5C8D0] to-[#E88BA0]" />
+          <div className="h-2 bg-gradient-to-r from-[#7A8AA5] via-[#FDF3D2] to-[#F2DB88]" />
 
           {/* Close Button */}
           <DragonCloseButton
@@ -74,7 +74,7 @@ export default function StoryModal({ character, onClose, onLike, isLiked, onToas
                   referrerPolicy="no-referrer"
                 />
               ) : (
-                <div className="w-16 h-16 rounded-[20px] flex items-center justify-center bg-gradient-to-br from-[#E8EAEF] to-[#F5C8D0] shadow-md border-2 border-[#7A8AA5] text-2xl">
+                <div className="w-16 h-16 rounded-[20px] flex items-center justify-center bg-gradient-to-br from-[#E8EAEF] to-[#FDF3D2] shadow-md border-2 border-[#7A8AA5] text-2xl">
                   🐉
                 </div>
               )}
@@ -86,7 +86,7 @@ export default function StoryModal({ character, onClose, onLike, isLiked, onToas
                 <h3 className="font-serif text-2xl font-bold tracking-tight text-[#3A4258] leading-none">
                   {character.name}
                 </h3>
-                <p className="text-xs text-[#E88BA0] mt-1 font-medium">{character.title}</p>
+                <p className="text-xs text-[#F2DB88] mt-1 font-medium">{character.title}</p>
               </div>
             </div>
 
@@ -110,7 +110,7 @@ export default function StoryModal({ character, onClose, onLike, isLiked, onToas
                 <span className="text-xs font-semibold text-[#5A6B85]">
                   #{character.worldTag}
                 </span>
-                <span className="text-xs font-semibold text-[#E88BA0]">
+                <span className="text-xs font-semibold text-[#F2DB88]">
                   #{character.aftertasteTag}
                 </span>
                 <span className="text-xs font-semibold text-[#6B7590]">
@@ -145,7 +145,7 @@ export default function StoryModal({ character, onClose, onLike, isLiked, onToas
                 href={character.roleplayLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full text-center text-sm font-bold text-[#F8F6F5] bg-gradient-to-r from-[#7A8AA5] to-[#E88BA0] hover:from-[#5A6B85] hover:to-[#D66A85] py-3 px-6 rounded-[15px] shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
+                className="w-full text-center text-sm font-bold text-[#F8F6F5] bg-gradient-to-r from-[#7A8AA5] to-[#F2DB88] hover:from-[#5A6B85] hover:to-[#E5C973] py-3 px-6 rounded-[15px] shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
               >
                 Triệu Long Ngay
               </a>

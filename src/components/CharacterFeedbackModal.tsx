@@ -257,7 +257,7 @@ export default function CharacterFeedbackModal({ charId, charName, onClose, addT
                   <button
                     onClick={handleSendFeedback}
                     disabled={isSubmitting || !newContent.trim()}
-                    className="bg-gradient-to-r from-[#7A8AA5] to-[#E88BA0] text-[#F8F6F5] font-bold py-1 px-3 rounded-lg text-xs shadow-sm hover:shadow-md transition-all disabled:opacity-50 flex items-center space-x-1 cursor-pointer"
+                    className="bg-gradient-to-r from-[#7A8AA5] to-[#F2DB88] text-[#F8F6F5] font-bold py-1 px-3 rounded-lg text-xs shadow-sm hover:shadow-md transition-all disabled:opacity-50 flex items-center space-x-1 cursor-pointer"
                   >
                     <span>Gửi</span>
                     <Send className="w-3 h-3" />
@@ -286,7 +286,7 @@ export default function CharacterFeedbackModal({ charId, charName, onClose, addT
                   setPendingAction({ type: 'submit' });
                   setShowNamePrompt(true);
                 }}
-                className="shrink-0 bg-gradient-to-r from-[#7A8AA5] to-[#E88BA0] hover:from-[#E88BA0] hover:to-[#7A8AA5] text-[#F8F6F5] font-extrabold text-xs py-2 px-3 rounded-xl shadow-sm hover:shadow active:scale-95 transition-all duration-300 font-comfortaa cursor-pointer border border-[#D8DEE8]"
+                className="shrink-0 bg-gradient-to-r from-[#7A8AA5] to-[#F2DB88] hover:from-[#F2DB88] hover:to-[#7A8AA5] text-[#F8F6F5] font-extrabold text-xs py-2 px-3 rounded-xl shadow-sm hover:shadow active:scale-95 transition-all duration-300 font-comfortaa cursor-pointer border border-[#D8DEE8]"
               >
                 Đặt tên ngay
               </button>
@@ -328,7 +328,7 @@ export default function CharacterFeedbackModal({ charId, charName, onClose, addT
                     <div className="flex justify-end">
                       <button 
                         onClick={() => handleLikeClick(fb.id, isLiked)}
-                        className={`flex items-center space-x-1 text-xs font-bold px-2 py-1 rounded-md transition-all cursor-pointer ${isLiked ? 'text-[#E88BA0] bg-[#E88BA0]/10' : 'text-[#6B7590] hover:bg-black/5 hover:text-[#E88BA0]'}`}
+                        className={`flex items-center space-x-1 text-xs font-bold px-2 py-1 rounded-md transition-all cursor-pointer ${isLiked ? 'text-[#F2DB88] bg-[#F2DB88]/10' : 'text-[#6B7590] hover:bg-black/5 hover:text-[#F2DB88]'}`}
                       >
                         <Heart className="w-3 h-3" fill={isLiked ? "currentColor" : "none"} />
                         <span>{fb.likes || 0}</span>
@@ -362,7 +362,7 @@ export default function CharacterFeedbackModal({ charId, charName, onClose, addT
                 tooltip="Khép lại"
               />
               <div className="text-center mb-6">
-                <Sparkles className="w-10 h-10 mx-auto mb-3 text-[#E88BA0]" />
+                <Sparkles className="w-10 h-10 mx-auto mb-3 text-[#F2DB88]" />
                 <h2 className="font-serif text-xl font-bold text-[#3A4258] mb-2">Tên của bạn</h2>
                 <p className="text-[#6B7590] text-xs font-comfortaa">Tên này sẽ hiện khi bạn gửi feedback cho {charName}.</p>
               </div>
@@ -380,7 +380,7 @@ export default function CharacterFeedbackModal({ charId, charName, onClose, addT
                 />
                 <button
                   onClick={handleSaveName}
-                  className="w-full bg-gradient-to-r from-[#7A8AA5] to-[#E88BA0] text-[#F8F6F5] font-bold py-3 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all font-comfortaa cursor-pointer"
+                  className="w-full bg-gradient-to-r from-[#7A8AA5] to-[#F2DB88] text-[#F8F6F5] font-bold py-3 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all font-comfortaa cursor-pointer"
                 >
                   Tiếp tục
                 </button>

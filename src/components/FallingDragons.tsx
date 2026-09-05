@@ -16,7 +16,7 @@ interface FloatingParticle {
 export default function FallingDragons() {
   const particles = useMemo<FloatingParticle[]>(() => {
     const sparkleChars = ['✦', '✧', '⋆', '✨'];
-    const colors = ['#F5C8D0', '#B8C4D8', '#E8CC8B', '#E88BA0', '#7A8AA5', '#F8F6F5'];
+    const colors = ['#FDF3D2', '#B8C4D8', '#F2DB88', '#F2DB88', '#7A8AA5', '#F8F6F5'];
 
     return Array.from({ length: 28 }).map((_, i) => {
       const pType = i % 4 === 0 ? 'pearl' : i % 3 === 0 ? 'sparkle' : i % 2 === 0 ? 'star' : 'dot';

@@ -58,7 +58,7 @@ export default function CharacterCard({
       <button 
         key="birthday"
         onClick={(e) => { e.stopPropagation(); onBirthdayClick?.(character); }}
-        className="bg-gradient-to-r from-[#F5C8D0] to-[#E88BA0] text-[#3A4258] text-[10px] font-bold px-2.5 py-1 rounded-full shadow-sm flex items-center space-x-1 animate-bounce cursor-pointer hover:scale-110 transition-transform shrink-0"
+        className="bg-gradient-to-r from-[#FDF3D2] to-[#F2DB88] text-[#3A4258] text-[10px] font-bold px-2.5 py-1 rounded-full shadow-sm flex items-center space-x-1 animate-bounce cursor-pointer hover:scale-110 transition-transform shrink-0"
       >
         <Gift size={12} />
         <span>Long Đản</span>
@@ -70,7 +70,7 @@ export default function CharacterCard({
     badgesList.push(
       <div 
         key="coming_soon" 
-        className="badge-breath-animate bg-gradient-to-r from-[#9AAAC5] to-[#F5C8D0] text-[#3A4258] py-1 px-2.5 rounded-full text-[10px] font-extrabold shadow-md flex items-center gap-1 shrink-0"
+        className="badge-breath-animate bg-gradient-to-r from-[#9AAAC5] to-[#FDF3D2] text-[#3A4258] py-1 px-2.5 rounded-full text-[10px] font-extrabold shadow-md flex items-center gap-1 shrink-0"
       >
         <span>🌱</span> Sắp Ra Mắt
       </div>
@@ -81,7 +81,7 @@ export default function CharacterCard({
     badgesList.push(
       <div 
         key="hot" 
-        className="badge-breath-animate bg-gradient-to-r from-[#D66A85] to-[#E88BA0] text-[#F8F6F5] py-1 px-2.5 rounded-full text-[10px] font-extrabold shadow-md flex items-center gap-1 shrink-0"
+        className="badge-breath-animate bg-gradient-to-r from-[#E5C973] to-[#F2DB88] text-[#F8F6F5] py-1 px-2.5 rounded-full text-[10px] font-extrabold shadow-md flex items-center gap-1 shrink-0"
       >
         HOT 🔥
       </div>
@@ -93,7 +93,7 @@ export default function CharacterCard({
     badgesList.push(
       <div 
         key="ky_cuu" 
-        className="badge-breath-animate bg-gradient-to-r from-[#7A8AA5] to-[#E88BA0] text-[#F8F6F5] py-1 px-2.5 rounded-full text-[10px] font-extrabold shadow-md flex items-center gap-1 shrink-0"
+        className="badge-breath-animate bg-gradient-to-r from-[#7A8AA5] to-[#F2DB88] text-[#F8F6F5] py-1 px-2.5 rounded-full text-[10px] font-extrabold shadow-md flex items-center gap-1 shrink-0"
       >
         KỲ CỰU 👑
       </div>
@@ -147,9 +147,9 @@ export default function CharacterCard({
               referrerPolicy="no-referrer"
             />
           ) : (
-            <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-[#E8EAEF] via-[#F5C8D0]/30 to-[#D8DEE8] text-[#7A8AA5] p-4 text-center select-none">
+            <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-[#E8EAEF] via-[#FDF3D2]/30 to-[#D8DEE8] text-[#7A8AA5] p-4 text-center select-none">
               <span className="text-3xl mb-1 filter drop-shadow-sm animate-pulse">🐉</span>
-              <Sparkles size={22} className="text-[#E88BA0] animate-bounce mb-1" />
+              <Sparkles size={22} className="text-[#F2DB88] animate-bounce mb-1" />
               <span className="font-comfortaa font-bold text-xs text-[#3A4258]">Chưa có ảnh</span>
               <span className="text-[10px] text-[#6B7590] mt-0.5 font-sans">Sẽ sớm cập nhật ảnh rồng</span>
             </div>
@@ -217,7 +217,7 @@ export default function CharacterCard({
               </button>
               {/* Custom Tooltip */}
               <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2.5 hidden group-hover:block w-52 bg-[#3A4258] text-[#F8F6F5] text-[10px] font-bold py-2 px-3 rounded-xl shadow-xl text-center z-50 pointer-events-none transition-all border border-[#D8DEE8]/20">
-                Vị rồng này đang ẩn mình, sớm ra mắt nhé 🐉
+                Rồng này đang ẩn mình, sẽ sớm ra mắt nhé 🐉
                 <div className="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-[#3A4258]" />
               </div>
             </div>
@@ -225,7 +225,7 @@ export default function CharacterCard({
             <button
               id={`btn-thuong-vi-${character.id}`}
               onClick={() => onThuongVi(character)}
-              className="flex-1 text-center font-bold text-xs text-[#F8F6F5] bg-gradient-to-r from-[#7A8AA5] to-[#E88BA0] hover:from-[#5A6B85] hover:to-[#D66A85] py-3 px-3 rounded-[15px] shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+              className="flex-1 text-center font-bold text-xs text-[#F8F6F5] bg-gradient-to-r from-[#7A8AA5] to-[#F2DB88] hover:from-[#5A6B85] hover:to-[#E5C973] py-3 px-3 rounded-[15px] shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
             >
               Triệu Long
             </button>
@@ -246,7 +246,7 @@ export default function CharacterCard({
             <button
               disabled
               className="p-3 bg-[#D8DEE8]/30 text-[#3A4258]/30 rounded-[15px] cursor-not-allowed"
-              title="Vị rồng sắp ra mắt chưa có liên kết truyền tin nhé! 🛸"
+              title="Rồng sắp ra mắt chưa có liên kết truyền tin nhé! 🛸"
             >
               <Copy size={14} />
             </button>

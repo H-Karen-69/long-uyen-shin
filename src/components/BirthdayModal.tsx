@@ -70,11 +70,11 @@ export default function BirthdayModal({ character, onClose, addToast }: Birthday
       const particleCount = 50 * (timeLeft / duration);
       confetti(Object.assign({}, defaults, { particleCount,
         origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
-        colors: ['#7A8AA5', '#E88BA0', '#B8C4D8', '#F5C8D0']
+        colors: ['#7A8AA5', '#F2DB88', '#B8C4D8', '#FDF3D2']
       }));
       confetti(Object.assign({}, defaults, { particleCount,
         origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
-        colors: ['#7A8AA5', '#E88BA0', '#B8C4D8', '#F5C8D0']
+        colors: ['#7A8AA5', '#F2DB88', '#B8C4D8', '#FDF3D2']
       }));
     }, 250);
 
@@ -206,11 +206,11 @@ export default function BirthdayModal({ character, onClose, addToast }: Birthday
         <div className="w-full md:w-1/2 flex flex-col h-[50vh] md:h-[80vh] bg-[#F8F6F5]">
           <div className="flex-none p-6 border-b-2 border-[#D8DEE8] bg-white/50 relative overflow-hidden">
             <div className="absolute -right-10 -top-10 opacity-10">
-              <Sparkles className="w-32 h-32 text-[#E88BA0]" />
+              <Sparkles className="w-32 h-32 text-[#F2DB88]" />
             </div>
             <h3 className="font-serif text-xl font-bold text-[#3A4258] mb-2 relative z-10">Gửi lời chúc</h3>
             <p className="text-[#6B7590] text-xs font-comfortaa mb-4 relative z-10">
-              Bạn đang gửi với tên: <strong className="text-[#E88BA0]">{username}</strong>
+              Bạn đang gửi với tên: <strong className="text-[#F2DB88]">{username}</strong>
             </p>
             
             <div className="relative z-10">
@@ -227,7 +227,7 @@ export default function BirthdayModal({ character, onClose, addToast }: Birthday
               <button
                 onClick={handleSendWish}
                 disabled={isSubmitting || !newContent.trim()}
-                className="absolute bottom-2 right-2 bg-gradient-to-r from-[#7A8AA5] to-[#E88BA0] text-[#F8F6F5] font-bold py-1.5 px-4 rounded-xl shadow-sm hover:shadow-md transition-all disabled:opacity-50 flex items-center space-x-1.5"
+                className="absolute bottom-2 right-2 bg-gradient-to-r from-[#7A8AA5] to-[#F2DB88] text-[#F8F6F5] font-bold py-1.5 px-4 rounded-xl shadow-sm hover:shadow-md transition-all disabled:opacity-50 flex items-center space-x-1.5"
               >
                 <span>Thả vào tiệc</span>
                 <Send className="w-3.5 h-3.5" />
@@ -255,7 +255,7 @@ export default function BirthdayModal({ character, onClose, addToast }: Birthday
                       className="bg-white rounded-[20px] p-4 shadow-sm border border-[#D8DEE8]"
                     >
                       <div className="flex items-center space-x-3 mb-2">
-                        <div className="w-8 h-8 bg-gradient-to-br from-[#7A8AA5] to-[#E88BA0] rounded-full flex items-center justify-center text-white">
+                        <div className="w-8 h-8 bg-gradient-to-br from-[#7A8AA5] to-[#F2DB88] rounded-full flex items-center justify-center text-white">
                           <Sparkles className="w-4 h-4 text-white" />
                         </div>
                         <div>
@@ -267,7 +267,7 @@ export default function BirthdayModal({ character, onClose, addToast }: Birthday
                       <div className="flex justify-end">
                         <button 
                           onClick={() => handleLike(wish.id, isLiked)}
-                          className={`flex items-center space-x-1 text-xs font-bold px-2 py-1.5 rounded-lg transition-all ${isLiked ? 'text-[#E88BA0] bg-[#E88BA0]/10' : 'text-[#6B7590] hover:bg-black/5 hover:text-[#E88BA0]'}`}
+                          className={`flex items-center space-x-1 text-xs font-bold px-2 py-1.5 rounded-lg transition-all ${isLiked ? 'text-[#F2DB88] bg-[#F2DB88]/10' : 'text-[#6B7590] hover:bg-black/5 hover:text-[#F2DB88]'}`}
                         >
                           <Heart className="w-4 h-4" fill={isLiked ? "currentColor" : "none"} />
                           <span>{wish.likes || 0}</span>

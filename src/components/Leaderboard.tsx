@@ -79,7 +79,7 @@ export default function Leaderboard({ characters, onShowBackstory }: Leaderboard
                     referrerPolicy="no-referrer"
                   />
                 ) : (
-                  <div className="w-10 h-10 rounded-[12px] flex items-center justify-center bg-gradient-to-br from-[#E8EAEF] to-[#F5C8D0] border border-[#D8DEE8] shadow-sm text-base">
+                  <div className="w-10 h-10 rounded-[12px] flex items-center justify-center bg-gradient-to-br from-[#E8EAEF] to-[#FDF3D2] border border-[#D8DEE8] shadow-sm text-base">
                     🐉
                   </div>
                 )}

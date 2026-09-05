@@ -179,7 +179,7 @@ export default function ConfessionCorner({ addToast }: ConfessionCornerProps) {
   const handleSendReply = async (confessionId: string) => {
     if (!replyContent.trim()) return;
     if (replyContent.length > 500) {
-      addToast('Lời an ủi dài quá, tối đa 500 ký tự thôi nha!', 'info');
+      addToast('Tâm thư dài quá, tối đa 500 ký tự thôi nha!', 'info');
       return;
     }
     if (!checkSpam()) return;
@@ -203,10 +203,10 @@ export default function ConfessionCorner({ addToast }: ConfessionCornerProps) {
       setReplyingTo(null);
       setReplyContent('');
       localStorage.setItem('longuyen_last_submit', Date.now().toString());
-      addToast('Đã gửi lời an ủi!', 'success');
+      addToast('Đã gửi tâm thư!', 'success');
     } catch (err) {
       console.error(err);
-      addToast('Không thể gửi lời an ủi lúc này!', 'info');
+      addToast('Không thể gửi tâm thư lúc này!', 'info');
     }
     setIsReplying(false);
   };
@@ -225,7 +225,7 @@ export default function ConfessionCorner({ addToast }: ConfessionCornerProps) {
 
   const handleLikeConfessionClick = (confessionId: string, isLiked: boolean) => {
     if (!username) {
-      addToast('Đặt danh tính tại Long Uyển để tương tác nhé 🐉', 'info');
+      addToast('Đặt danh tính tại Long Uyển để tương tác nhé 😚', 'info');
       setPendingAction({ type: 'like_confession', data: { confessionId, isLiked } });
       setTempName('');
       setShowNamePrompt(true);
@@ -236,7 +236,7 @@ export default function ConfessionCorner({ addToast }: ConfessionCornerProps) {
 
   const handleReplyClick = (confessionId: string) => {
     if (!username) {
-      addToast('Đặt danh tính tại Long Uyển để tương tác nhé 🐉', 'info');
+      addToast('Đặt danh tính tại Long Uyển để tương tác nhé 😚', 'info');
       setPendingAction({ type: 'reply_confession', data: { confessionId } });
       setTempName('');
       setShowNamePrompt(true);
@@ -260,9 +260,9 @@ export default function ConfessionCorner({ addToast }: ConfessionCornerProps) {
       <div className="flex-none p-4 relative z-10 flex flex-col items-center justify-center text-center border-b border-[#D8DEE8]/30">
         <h2 className="font-serif text-2xl font-bold text-[#3A4258] flex items-center space-x-2">
           <span>GÓC CONFESSION</span>
-          <MessageCircle className="w-5 h-5 text-[#E88BA0]" fill="currentColor" />
+          <MessageCircle className="w-5 h-5 text-[#F2DB88]" fill="currentColor" />
         </h2>
-        <p className="text-[#6B7590] text-sm font-comfortaa mt-1">Thả một confession, nhận vài lời an ủi 🐉</p>
+        <p className="text-[#6B7590] text-sm font-comfortaa mt-1">Thả một confession, nhận vài tâm thư 😚</p>
       </div>
 
       <div className="flex-1 overflow-hidden flex flex-col">
@@ -296,7 +296,7 @@ export default function ConfessionCorner({ addToast }: ConfessionCornerProps) {
                 <button
                   onClick={handleSendConfession}
                   disabled={isSubmitting || !newContent.trim()}
-                  className="absolute bottom-2 right-2 bg-gradient-to-r from-[#7A8AA5] to-[#E88BA0] hover:from-[#5A6B85] hover:to-[#D66A85] text-[#F8F6F5] font-bold py-1.5 px-4 rounded-xl shadow-sm hover:shadow-md transition-all font-comfortaa disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-1 cursor-pointer"
+                  className="absolute bottom-2 right-2 bg-gradient-to-r from-[#7A8AA5] to-[#F2DB88] hover:from-[#5A6B85] hover:to-[#E5C973] text-[#F8F6F5] font-bold py-1.5 px-4 rounded-xl shadow-sm hover:shadow-md transition-all font-comfortaa disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-1 cursor-pointer"
                 >
                   <span>Thả vào Long Uyển</span>
                   <Send className="w-3 h-3" />
@@ -315,7 +315,7 @@ export default function ConfessionCorner({ addToast }: ConfessionCornerProps) {
                   <Sparkles className="w-4 h-4 text-[#7A8AA5]" />
                 </div>
                 <p className="text-[#3A4258] text-xs font-comfortaa leading-snug">
-                  Đặt danh tính tại Long Uyển để cùng thả confession và trò chuyện nhé 🐉
+                  Đặt danh tính tại Long Uyển để cùng thả confession và trò chuyện nhé 💋
                 </p>
               </div>
               <button
@@ -324,7 +324,7 @@ export default function ConfessionCorner({ addToast }: ConfessionCornerProps) {
                   setPendingAction({ type: 'send_confession' });
                   setShowNamePrompt(true);
                 }}
-                className="shrink-0 bg-gradient-to-r from-[#7A8AA5] to-[#E88BA0] hover:from-[#E88BA0] hover:to-[#7A8AA5] text-[#F8F6F5] font-extrabold text-xs py-2 px-4 rounded-xl shadow-sm hover:shadow active:scale-95 transition-all duration-300 font-comfortaa cursor-pointer border border-[#D8DEE8]/50"
+                className="shrink-0 bg-gradient-to-r from-[#7A8AA5] to-[#F2DB88] hover:from-[#F2DB88] hover:to-[#7A8AA5] text-[#F8F6F5] font-extrabold text-xs py-2 px-4 rounded-xl shadow-sm hover:shadow active:scale-95 transition-all duration-300 font-comfortaa cursor-pointer border border-[#D8DEE8]/50"
               >
                 Đặt tên ngay
               </button>
@@ -411,7 +411,7 @@ export default function ConfessionCorner({ addToast }: ConfessionCornerProps) {
                               <button
                                 onClick={() => handleSendReply(confession.id)}
                                 disabled={isReplying || !replyContent.trim()}
-                                className="bg-gradient-to-r from-[#7A8AA5] to-[#E88BA0] hover:from-[#5A6B85] hover:to-[#D66A85] text-[#F8F6F5] font-bold py-1 px-3 rounded-lg text-xs shadow-sm hover:shadow-md transition-all disabled:opacity-50 flex items-center space-x-1 cursor-pointer"
+                                className="bg-gradient-to-r from-[#7A8AA5] to-[#F2DB88] hover:from-[#5A6B85] hover:to-[#E5C973] text-[#F8F6F5] font-bold py-1 px-3 rounded-lg text-xs shadow-sm hover:shadow-md transition-all disabled:opacity-50 flex items-center space-x-1 cursor-pointer"
                               >
                                 <span>Gửi</span>
                                 <Send className="w-3 h-3" />
@@ -462,7 +462,7 @@ export default function ConfessionCorner({ addToast }: ConfessionCornerProps) {
                 tooltip="Đóng lại"
               />
               <div className="text-center mb-6">
-                <Sparkles className="w-12 h-12 mx-auto mb-3 text-[#E88BA0]" />
+                <Sparkles className="w-12 h-12 mx-auto mb-3 text-[#F2DB88]" />
                 <h2 className="font-serif text-2xl font-bold text-[#3A4258] mb-2">Bước vào Long Uyển</h2>
                 <p className="text-[#6B7590] text-sm font-comfortaa">Tên này sẽ hiển thị khi bạn gửi confession hoặc trả lời.</p>
               </div>
@@ -480,7 +480,7 @@ export default function ConfessionCorner({ addToast }: ConfessionCornerProps) {
                 />
                 <button
                   onClick={handleSaveName}
-                  className="w-full bg-gradient-to-r from-[#7A8AA5] to-[#E88BA0] hover:from-[#5A6B85] hover:to-[#D66A85] text-[#F8F6F5] font-bold py-3 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all font-comfortaa flex items-center justify-center space-x-2 cursor-pointer"
+                  className="w-full bg-gradient-to-r from-[#7A8AA5] to-[#F2DB88] hover:from-[#5A6B85] hover:to-[#E5C973] text-[#F8F6F5] font-bold py-3 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all font-comfortaa flex items-center justify-center space-x-2 cursor-pointer"
                 >
                   <span>Bước vào Long Uyển</span>
                 </button>

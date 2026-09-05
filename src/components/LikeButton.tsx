@@ -64,12 +64,13 @@ export default function LikeButton({
     // Huy hiệu gắn trên góc trên Avatar Card
     variantStyles = `
       py-1.5 px-3 rounded-full backdrop-blur-md shadow-sm border transition-all duration-300
-      bg-[#F8F6F5]/95 border-[#D8DEE8] text-[#7A8AA5] hover:border-[#F5C8D0]
+      bg-[#F8F6F5]/95 border-[#D8DEE8] text-[#7A8AA5] hover:border-[#FDF3D2]
     `;
   } else if (variant === 'action-btn') {
-    // Nút chức năng trong hàng Action ở thân Card: Giữ nguyên màu nền gradient như cũ, chỉ có icon tim đổi màu đỏ
+    // Nút chức năng trong hàng Action ở thân Card
     variantStyles = `
-      p-3 bg-gradient-to-r from-[#F5C8D0] to-[#E88BA0] hover:from-[#E88BA0] hover:to-[#F5C8D0] text-[#3A4258] rounded-[15px] transition-all duration-300 min-h-[44px] min-w-[44px] flex items-center justify-center shadow-sm active:scale-95
+      p-3 transition-all duration-300 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-[15px] shadow-sm active:scale-95
+      bg-gradient-to-r from-[#F8F6F5] to-[#D8DEE8] hover:from-[#D8DEE8] hover:to-[#F8F6F5] text-[#3A4258]
     `;
   } else if (variant === 'compact') {
     // Dạng rút gọn không nền
@@ -81,7 +82,7 @@ export default function LikeButton({
     // Dạng pill mặc định
     variantStyles = `
       px-3 py-1.5 rounded-full border shadow-sm transition-all duration-300 flex items-center gap-1.5 min-h-[36px]
-      bg-[#F8F6F5] border-[#D8DEE8] text-[#6B7590] hover:bg-[#F8E0E4]/40 hover:border-[#F5C8D0]
+      bg-[#F8F6F5] border-[#D8DEE8] text-[#6B7590] hover:bg-[#F8E0E4]/40 hover:border-[#FDF3D2]
     `;
   }
 
