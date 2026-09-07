@@ -1,71 +1,48 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- * 
- * ============================================================================
- * LANDING SCREEN - LONG UYÊN CỦA SHIN
- * Giao diện bên ngoài: Mộng Cảnh Tiên Giới (Bầu trời Mây Núi & Thần Long Á Đông)
- * ============================================================================
- */
-
-import React, { useEffect, useState, useCallback } from 'react';
-import { ToastMessage } from '../types';
+import React, { useState, useCallback, useEffect } from 'react';
 import GoldenGate from './GoldenGate';
-import { AnimeSakuraTree } from './AnimeSakuraTree';
+import LivingEasternDragon from './LivingEasternDragon';
 import { AnimeHills, AnimeWildflowers } from './AnimeMeadow';
 import { AnimeBirds } from './AnimeBirds';
-import LivingEasternDragon from './LivingEasternDragon';
+import { AnimeSakuraTree } from './AnimeSakuraTree';
 
 interface LandingScreenProps {
-  /** Hàm kích hoạt khi người dùng nhấn "Tham quan Long Uyển" */
   onEnterGarden: () => void;
-  /** Trạng thái đang chuyển cảnh vào Inner App */
   isEntering: boolean;
-  /** Hàm hiển thị thông báo toast (tùy chọn) */
-  onToast?: (text: string, type?: ToastMessage['type']) => void;
+  onToast: (text: string, type: 'info' | 'success' | 'heart-on' | 'heart-off') => void;
 }
 
-/**
- * Hiệu ứng âm thanh chuông đại hồng chung & chuông vàng mở cổng Tiên Giới (Web Audio API)
- */
-function playGateOpeningSound() {
+// Âm thanh chuông gió tiên cảnh du dương khi mở cổng
+const playGateOpeningSound = () => {
   try {
     const AudioContextClass = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
     if (!AudioContextClass) return;
     const ctx = new AudioContextClass();
-    
-    // 1. Tiếng đại hồng chung trầm ấm ngân vang (Resonant bronze bell)
-    const bellOsc = ctx.createOscillator();
-    const bellGain = ctx.createGain();
-    bellOsc.type = 'sine';
-    bellOsc.frequency.setValueAtTime(164.81, ctx.currentTime); // E3
-    bellGain.gain.setValueAtTime(0.12, ctx.currentTime);
-    bellGain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 2.8);
-    bellOsc.connect(bellGain);
-    bellGain.connect(ctx.destination);
-    bellOsc.start();
-    bellOsc.stop(ctx.currentTime + 2.9);
+    if (ctx.state === 'suspended') {
+      ctx.resume();
+    }
 
-    // 2. Chuỗi hòa âm chuông vàng ngân tiên cảnh (Golden Chimes)
-    const goldenChord = [523.25, 659.25, 783.99, 1046.5, 1318.51];
-    goldenChord.forEach((freq, idx) => {
+    const bellPitches = [523.25, 659.25, 783.99, 1046.50, 1318.51];
+    bellPitches.forEach((freq, idx) => {
       const osc = ctx.createOscillator();
       const gain = ctx.createGain();
-      osc.type = 'triangle';
-      osc.frequency.setValueAtTime(freq, ctx.currentTime);
-      const startTime = ctx.currentTime + 0.12 + idx * 0.08;
-      gain.gain.setValueAtTime(0, startTime);
-      gain.gain.linearRampToValueAtTime(0.06, startTime + 0.04);
-      gain.gain.exponentialRampToValueAtTime(0.0001, startTime + 2.2);
+
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(freq, ctx.currentTime + idx * 0.12);
+
+      gain.gain.setValueAtTime(0, ctx.currentTime + idx * 0.12);
+      gain.gain.linearRampToValueAtTime(0.09, ctx.currentTime + idx * 0.12 + 0.04);
+      gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + idx * 0.12 + 1.8);
+
       osc.connect(gain);
       gain.connect(ctx.destination);
-      osc.start(startTime);
-      osc.stop(startTime + 2.3);
+
+      osc.start(ctx.currentTime + idx * 0.12);
+      osc.stop(ctx.currentTime + idx * 0.12 + 1.85);
     });
   } catch {
-    // Bỏ qua nếu trình duyệt chặn tự phát âm thanh
+    // Ignore audio error if user hasn't interacted
   }
-}
+};
 
 export default function LandingScreen({
   onEnterGarden,
@@ -73,17 +50,19 @@ export default function LandingScreen({
   onToast
 }: LandingScreenProps) {
   const [isGateOpen, setIsGateOpen] = useState(false);
+  const [isZooming, setIsZooming] = useState(false);
 
-  // Kích hoạt mở cổng 3D và chuyển cảnh
+  // Kích hoạt mở cổng, camera lướt tới từ từ êm ái, thời gian chuyển vào giao diện chính giữ nguyên như cũ (~1.4s)
   const handleOpenGate = useCallback(() => {
     if (isEntering || isGateOpen) return;
     setIsGateOpen(true);
+    setIsZooming(true);
     playGateOpeningSound();
 
-    // Cánh cổng xoay mở 3D trong 1.6s, sau 850ms kích hoạt chuyển sang Inner App
+    // Giữ nguyên thời gian chuyển cảnh vào giao diện chính (~1.4s), không phải chờ đợi lâu
     setTimeout(() => {
       onEnterGarden();
-    }, 850);
+    }, 1400);
   }, [isEntering, isGateOpen, onEnterGarden]);
 
   useEffect(() => {
@@ -162,95 +141,75 @@ export default function LandingScreen({
   }, []);
 
   return (
-    <div className="fixed inset-0 z-40 overflow-hidden select-none flex flex-col justify-between items-center">
+    <div className="fixed inset-0 z-40 overflow-hidden select-none flex flex-col justify-between items-center bg-[#F5F3EC]">
       {/* =====================================================================
-          LỚP NỀN (BACKGROUND SCENIC WRAPPER - LAYERS 0 ĐẾN 7)
-          Bầu trời pastel, dãy núi Ghibli, đàn chim bay, cây cổ thụ hoa đào
-          và Thần Long Á Đông uyển chuyển bơi lượn quanh giữa màn hình.
-          Khi mở cổng: Background zoom nhẹ lên (scale 1.12) tạo cảm giác người dùng
-          đang tiến bước qua cánh cổng vào cõi tiên Long Uyển!
+          KHUNG HÌNH CAMERA 3D (ZOOM VÀO TỪ TỪ, ÊM DỊU KHI MỞ CỔNG)
+          Khi bấm mở cổng: Cổng mở ra khoan thai, camera lướt tới từ từ, êm dịu (scale 2.0).
+          Các cánh cổng dạt ra 2 bên, người dùng nhẹ nhàng tiến qua cổng vào khu vườn.
           ===================================================================== */}
       <div 
-        className="absolute inset-0 pointer-events-none transition-transform will-change-transform"
+        className="absolute inset-0 w-full h-full will-change-transform"
         style={{
-          transform: isGateOpen ? 'scale(1.12)' : 'scale(1)',
-          transitionDuration: '1.8s',
-          transitionTimingFunction: 'cubic-bezier(0.25, 1, 0.5, 1)',
-          transformOrigin: 'center center'
+          transform: isZooming ? 'scale(1.26)' : 'scale(1)',
+          transformOrigin: '50% 50%',
+          transition: 'transform 3.0s cubic-bezier(0.2, 0.9, 0.3, 1)',
         }}
       >
-        {/* ===================================================================
-            🌸 KHU VƯỜN TIÊN CẢNH GHIBLI (DƯỚI CÙNG LỚP NỀN)
-            Bầu trời pastel, vầng dương dịu nhẹ, đồi mờ xa, chim bay từng đàn,
-            cây cổ thụ hoa đào khổng lồ rủ bóng và mưa cánh hoa lất phất
-            =================================================================== */}
-        <div className="enchanted-garden-bg" aria-hidden="true">
-          {/* Bầu trời & Ánh mặt trời dịu */}
-          <div className="sky-gradient"></div>
-          <div className="glowing-sun"></div>
-
-          {/* Dãy đồi xanh mướt phong cách Anime Ghibli (đa tầng, điểm hoa cỏ, đón vệt nắng) */}
-          <AnimeHills />
-
-          {/* Đàn chim phong cách Anime: Bay tới gần, chao cánh rồi bay xa khuất chân trời */}
-          <AnimeBirds />
-
-          {/* CÂY HOA ANH ĐÀO CỔ THỤ PHONG CÁCH ANIME (Gốc rễ cắm sâu, đung đưa theo gió) */}
-          <AnimeSakuraTree />
-
-          {/* Mưa cánh hoa rơi từ cây xuống */}
-          <div id="sakuraRain" className="sakura-rain"></div>
-        </div>
-
-        {/* ===================================================================
-            KHU VƯỜN LỚP NỀN & SƯƠNG MÙ TIÊN CẢNH
-            =================================================================== */}
-        <div className="garden-bg" aria-hidden="true">
-          {/* Lớp sương mù tiên cảnh phủ toàn màn hình (gradient trắng trong suốt, chuyển động nhẹ nhàng) */}
-          <div className="garden-mist"></div>
-
-          {/* Mây bồng bềnh */}
-          <div className="cloud c1"></div>
-          <div className="cloud c2"></div>
-          <div className="cloud c3"></div>
-
-          {/* ===================================================================
-              🐉 THẦN LONG Á ĐÔNG UỐN LƯỢN CHÂN THỰC (LIVING EASTERN DRAGON)
-              Sống lưng 28 đốt uốn lượn hình sin lan truyền liên tục, bờm sừng hoàng kim,
-              vảy ngấn bụng co giãn nhịp nhàng, tứ trảo & râu rồng bay lượn trong gió
-              =================================================================== */}
-          <div className="dragon-sky-layer" aria-hidden="true">
-            <div 
-              className="dragon-flight"
-              style={isGateOpen ? { animationDuration: '6s' } : undefined}
-            >
-              <LivingEasternDragon isGateOpen={isGateOpen} />
-            </div>
+        {/* =====================================================================
+            LỚP NỀN (BACKGROUND SCENIC WRAPPER)
+            Bầu trời pastel, dãy núi Ghibli, đàn chim bay, cây cổ thụ hoa đào
+            và Thần Long Á Đông uy nghi tĩnh tại trên bầu trời.
+            ===================================================================== */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* KHU VƯỜN TIÊN CẢNH GHIBLI */}
+          <div className="enchanted-garden-bg" aria-hidden="true">
+            <div className="sky-gradient"></div>
+            <div className="glowing-sun"></div>
+            <AnimeHills />
+            <AnimeBirds />
+            <AnimeSakuraTree />
+            <div id="sakuraRain" className="sakura-rain"></div>
           </div>
 
-          {/* KHÓM HOA CỎ TIỀN CẢNH ANIME (Từng ngọn cỏ xanh đung đưa theo gió, cúc dại, bồ công anh, hoa chuông và hoa cánh bướm) */}
-          <AnimeWildflowers />
+          {/* SƯƠNG MÙ & MÂY TIÊN CẢNH */}
+          <div className="garden-bg" aria-hidden="true">
+            <div className="garden-mist"></div>
+            <div className="cloud c1"></div>
+            <div className="cloud c2"></div>
+            <div className="cloud c3"></div>
+
+            {/* THẦN LONG Á ĐÔNG UY NGHI TĨNH TẠI (LIVING EASTERN DRAGON) */}
+            <div className="dragon-sky-layer" aria-hidden="true">
+              <div className="dragon-flight">
+                <LivingEasternDragon isGateOpen={isGateOpen} />
+              </div>
+            </div>
+
+            {/* KHÓM HOA CỎ TIỀN CẢNH */}
+            <AnimeWildflowers />
+          </div>
         </div>
+
+        {/* =====================================================================
+            LỚP TIỀN CẢNH (CÁNH CỔNG SONG SẮT VÀNG KIM - 3D WROUGHT IRON GATE)
+            ===================================================================== */}
+        <GoldenGate
+          isOpen={isGateOpen}
+          onOpenGate={handleOpenGate}
+          isEntering={isEntering}
+          onToast={onToast}
+        />
       </div>
 
       {/* =====================================================================
-          LỚP TIỀN CẢNH (CÁNH CỔNG SONG SẮT VÀNG KIM - 3D WROUGHT IRON GATE)
-          Cổng đôi vàng kim có khe hở, hoa văn vảy rồng và dây leo,
-          tấm biển kính mờ và hiệu ứng mở toang 3D sang 2 bên khi click!
-          ===================================================================== */}
-      <GoldenGate
-        isOpen={isGateOpen}
-        onOpenGate={handleOpenGate}
-        isEntering={isEntering}
-        onToast={onToast}
-      />
-
-      {/* =====================================================================
           🌸 CÁNH HOA HỒNG NHẠT RƠI PHỦ TRƯỚC MÀN HÌNH
-          Nằm ở lớp ngoài cùng nhất (z-50), bay lượn lướt qua cả cánh cổng
-          và bảng tiêu đề trung tâm, tạo không gian tiên cảnh lãng mạn đa chiều.
           ===================================================================== */}
-      <div id="petalRain" className="petal-rain fixed inset-0 z-50 pointer-events-none" aria-hidden="true"></div>
+      <div 
+        id="petalRain" 
+        className="petal-rain fixed inset-0 z-50 pointer-events-none transition-opacity duration-700" 
+        style={{ opacity: isEntering ? 0 : 1 }}
+        aria-hidden="true"
+      />
     </div>
   );
 }

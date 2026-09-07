@@ -46,6 +46,26 @@ service cloud.firestore {
              data.totalVisits is number && data.totalVisits >= 0;
     }
 
+    function isValidTamMenhDraw(data) {
+      return data.keys().hasAll(['totalDraws', 'streak']) &&
+             data.totalDraws is number && data.totalDraws >= 0 &&
+             data.streak is number && data.streak >= 0;
+    }
+
+    function isValidLeaderboardEntry(data) {
+      return data.keys().hasAll(['playerName', 'timeSec', 'moves']) &&
+             data.playerName is string && data.playerName.size() >= 1 && data.playerName.size() <= 50 &&
+             data.timeSec is number && data.timeSec >= 0 &&
+             data.moves is number && data.moves >= 0;
+    }
+
+    function isValidChatIdea(data) {
+      return data.keys().hasAll(['content', 'likes', 'likedBy']) &&
+             data.content is string && data.content.size() > 0 && data.content.size() <= 1000 &&
+             data.likes is number && data.likes >= 0 &&
+             data.likedBy is list;
+    }
+
     function isValidCharacterLike(data, charId) {
       return data.keys().hasAll(['charId', 'totalLikes', 'likedBy']) &&
              data.charId is string && data.charId == charId &&
@@ -90,6 +110,26 @@ service cloud.firestore {
       allow create: if isValidSiteStats(incoming());
       allow update: if incoming().diff(existing()).affectedKeys().hasOnly(['totalVisits']) &&
                       incoming().totalVisits is number && incoming().totalVisits >= 0;
+    }
+
+    match /memory_leaderboard/{entryId} {
+      allow read: if true;
+      allow create: if isValidLeaderboardEntry(incoming());
+      allow update, delete: if false;
+    }
+
+    match /chat_ideas/{ideaId} {
+      allow read: if true;
+      allow create: if isValidChatIdea(incoming());
+      allow update: if incoming().diff(existing()).affectedKeys().hasAny(['likes', 'likedBy']) &&
+                      incoming().likes is number && incoming().likes >= 0 &&
+                      incoming().likedBy is list;
+      allow delete: if true;
+    }
+
+    match /taminh_draws/{userId} {
+      allow read: if true;
+      allow create, update: if isValidId(userId) && isValidTamMenhDraw(incoming());
     }
 
     match /test/connection {

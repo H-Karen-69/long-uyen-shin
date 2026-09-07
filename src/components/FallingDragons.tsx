@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 
 interface FloatingParticle {
   id: number;
-  type: 'sparkle' | 'dot' | 'pearl' | 'star';
+  type: 'sparkle' | 'pearl' | 'star';
   x: number; // percentage
   delay: number;
   duration: number;
@@ -18,18 +18,18 @@ export default function FallingDragons() {
     const sparkleChars = ['✦', '✧', '⋆', '✨'];
     const colors = ['#FDF3D2', '#B8C4D8', '#F2DB88', '#F2DB88', '#7A8AA5', '#F8F6F5'];
 
-    return Array.from({ length: 28 }).map((_, i) => {
-      const pType = i % 4 === 0 ? 'pearl' : i % 3 === 0 ? 'sparkle' : i % 2 === 0 ? 'star' : 'dot';
+    return Array.from({ length: 24 }).map((_, i) => {
+      const pType: 'sparkle' | 'pearl' | 'star' = i % 3 === 0 ? 'pearl' : i % 2 === 0 ? 'sparkle' : 'star';
       const color = colors[i % colors.length];
-      const opacity = pType === 'dot' ? 0.2 + (i % 3) * 0.1 : 0.35 + (i % 4) * 0.08;
+      const opacity = 0.35 + (i % 4) * 0.08;
 
       return {
         id: i,
         type: pType,
-        x: (i * 3.7 + Math.sin(i) * 12 + 100) % 100,
+        x: (i * 4.2 + Math.sin(i) * 12 + 100) % 100,
         delay: (i * 0.4) % 8,
         duration: 14 + (i % 7) * 2,
-        size: pType === 'pearl' ? 18 + (i % 3) * 4 : pType === 'dot' ? 5 + (i % 4) * 2 : 12 + (i % 5) * 4,
+        size: pType === 'pearl' ? 14 + (i % 3) * 3 : 12 + (i % 5) * 4,
         color,
         opacity,
         char: sparkleChars[i % sparkleChars.length],
@@ -66,36 +66,6 @@ export default function FallingDragons() {
                 borderRadius: '50%',
                 background: `radial-gradient(circle at 35% 35%, #FFFFFF 0%, ${p.color} 60%, rgba(216, 222, 232, 0.4) 100%)`,
                 boxShadow: `0 0 12px ${p.color}80`,
-              }}
-            />
-          );
-        }
-
-        if (p.type === 'dot') {
-          return (
-            <motion.div
-              key={p.id}
-              initial={{ y: '105vh', opacity: 0 }}
-              animate={{
-                y: '-10vh',
-                x: [0, -12, 12, 0],
-                opacity: [0, p.opacity, p.opacity, 0],
-              }}
-              transition={{
-                duration: p.duration * 1.1,
-                repeat: Infinity,
-                delay: p.delay,
-                ease: 'linear',
-              }}
-              style={{
-                position: 'absolute',
-                left: `${p.x}%`,
-                top: 0,
-                width: p.size,
-                height: p.size,
-                borderRadius: '50%',
-                backgroundColor: p.color,
-                filter: 'blur(1px)',
               }}
             />
           );

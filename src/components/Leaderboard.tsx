@@ -21,8 +21,8 @@ export default function Leaderboard({ characters, onShowBackstory }: Leaderboard
   return (
     <div id="leaderboard-section" className="bg-[#F8F6F5] border border-[#D8DEE8] rounded-[24px] p-6 shadow-sm">
       <div className="flex items-center gap-2.5 mb-5 pb-3 border-b border-[#D8DEE8]">
-        <div className="p-2 bg-[#7A8AA5]/15 rounded-xl text-[#7A8AA5]">
-          <Trophy size={20} className="animate-bounce text-[#E88BA0]" />
+        <div className="p-2 bg-[#F2D184]/20 rounded-xl text-[#F2D184]">
+          <Trophy size={20} className="animate-bounce text-[#F2D184]" />
         </div>
         <div>
           <h3 className="font-serif text-lg font-extrabold text-[#3A4258] leading-tight">
@@ -54,7 +54,7 @@ export default function Leaderboard({ characters, onShowBackstory }: Leaderboard
                 {/* Placement Badge */}
                 <div className="w-7 h-7 flex items-center justify-center rounded-full text-xs font-bold shrink-0">
                   {isTop1 ? (
-                    <span className="text-[#E88BA0] animate-pulse">
+                    <span className="text-[#F2D184] animate-pulse">
                       <Crown size={18} className="fill-current" />
                     </span>
                   ) : isTop2 ? (

@@ -75,9 +75,61 @@
         "lastUpdated": { "type": "timestamp" }
       },
       "required": ["charId", "totalLikes", "likedBy"]
+    },
+    "TamMenhDraw": {
+      "title": "Tam Menh Draw",
+      "description": "Stores user streak and draw statistics for Tam Menh Card game.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "lastDrawDate": { "type": "string" },
+        "lastStreakDate": { "type": "string" },
+        "lastCardId": { "type": "string" },
+        "lastCharId": { "type": "string" },
+        "totalDraws": { "type": "number" },
+        "streak": { "type": "number" },
+        "updatedAt": { "type": "timestamp" }
+      },
+      "required": ["totalDraws", "streak"]
+    },
+    "MemoryLeaderboardEntry": {
+      "title": "Memory Game Leaderboard Entry",
+      "description": "Records player score for Top 5 Memory Game leaderboard.",
+      "type": "object",
+      "properties": {
+        "playerName": { "type": "string" },
+        "timeSec": { "type": "number" },
+        "moves": { "type": "number" },
+        "playedAt": { "type": "timestamp" }
+      },
+      "required": ["playerName", "timeSec", "moves"]
+    },
+    "ChatIdea": {
+      "title": "Chat Idea",
+      "description": "A community roleplay prompt or chat idea for characters.",
+      "type": "object",
+      "properties": {
+        "content": { "type": "string" },
+        "likes": { "type": "number" },
+        "likedBy": { "type": "array" },
+        "createdAt": { "type": "timestamp" }
+      },
+      "required": ["content", "likes", "likedBy"]
     }
   },
   "firestore": {
+    "/chat_ideas/{ideaId}": {
+      "schema": { "$ref": "#/entities/ChatIdea" },
+      "description": "Stores user shared roleplay chat ideas with likes and real-time ranking"
+    },
+    "/memory_leaderboard/{entryId}": {
+      "schema": { "$ref": "#/entities/MemoryLeaderboardEntry" },
+      "description": "Stores top leaderboard scores for memory card game"
+    },
+    "/taminh_draws/{userId}": {
+      "schema": { "$ref": "#/entities/TamMenhDraw" },
+      "description": "Stores streak and draw history for Tam Menh card game per user"
+    },
     "/character_likes/{charId}": {
       "schema": { "$ref": "#/entities/CharacterLike" },
       "description": "Stores like counts and liked users per character"

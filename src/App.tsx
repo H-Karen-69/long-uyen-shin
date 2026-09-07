@@ -31,7 +31,8 @@ import Leaderboard from './components/Leaderboard';
 import ConfessionCorner from './components/ConfessionCorner';
 import CharacterFeedbackModal from './components/CharacterFeedbackModal';
 import FallingDragons from './components/FallingDragons';
-import MoodQuiz from './components/MoodQuiz';
+import { ChatIdeasBoard } from './components/ChatIdeasBoard';
+import { GameHubCTA } from './components/GameHubCTA';
 import MiniMusicPlayer from './components/MiniMusicPlayer';
 import { GardenBackground } from './components/GardenBackground';
 
@@ -183,17 +184,21 @@ export default function App() {
     setToasts((prev) => prev.filter((t) => t.id !== id));
   };
 
-  // Chuyển cảnh Tham Quan Long Uyển (vào thẳng giao diện chính mượt mà, không dùng hiệu ứng viên ngọc)
+  // Chuyển cảnh Tham Quan Long Uyển: Cảnh mờ dần êm dịu rồi hiện ra giao diện chính
   const handleEnterGarden = () => {
     setIsEntering(true);
     setTimeout(() => {
       setHasEntered(true);
       setIsEntering(false);
-    }, 450);
+    }, 800);
   };
 
   // Roleplay link Action ("Triệu Long")
   const handleThuongVi = (char: Character) => {
+    if (char.isComingSoon) {
+      addToast('Rồng này đang ẩn mình, sẽ sớm ra mắt nhé! 🌱', 'info');
+      return;
+    }
     if (!char.roleplayLink || char.roleplayLink === '#') {
       addToast('Vì Shin phát hiện nhiều lỗi, char đang được đóng link để fix nha! 🛠️', 'info');
       return;
@@ -212,6 +217,10 @@ export default function App() {
 
   // Copy or store link of character
   const handleCopyLink = (char: Character) => {
+    if (char.isComingSoon) {
+      addToast('Rồng sắp ra mắt chưa có liên kết truyền tin nhé! 🛸', 'info');
+      return;
+    }
     if (!char.roleplayLink || char.roleplayLink === '#') {
       addToast('Char đang được đóng link để fix lỗi, chưa thể lấy ngọc nha! 🔮', 'info');
       return;
@@ -336,63 +345,85 @@ export default function App() {
     );
   };
 
+  // Helper: Retrieve sorting priority for characters:
+  // 0: Sắp Ra Mắt (đẩy lên đầu)
+  // 1: Hot (sau sắp ra mắt, trước tân long)
+  // 2: Tân Long (Mới)
+  // 3: Còn lại (Kỳ Cựu, bình thường...)
+  const getCharacterSortPriority = (char: Character): number => {
+    if (char.isComingSoon || char.statusType === 'Sắp Ra Mắt' || char.statusTag?.includes('Sắp Ra Mắt')) {
+      return 0;
+    }
+    if (char.isHot || char.statusType === 'Hot' || char.statusTag === 'HOT 🔥') {
+      return 1;
+    }
+    if (char.isNew || char.statusType === 'Mới' || char.statusTag === 'Mẻ Mới' || char.statusTag?.includes('Tân Long')) {
+      return 2;
+    }
+    return 3;
+  };
+
   // Filter Logic (AND logic across selected filters, matching against worldCategory, moodCategory & hashtags)
-  const filteredCharacters = characters.filter((char) => {
-    // 1. Search filter
-    const matchesSearch =
-      !searchTerm.trim() ||
-      char.name.toLowerCase().includes(searchTerm.toLowerCase().trim()) ||
-      char.title.toLowerCase().includes(searchTerm.toLowerCase().trim());
+  const filteredCharacters = characters
+    .filter((char) => {
+      // 1. Search filter
+      const matchesSearch =
+        !searchTerm.trim() ||
+        char.name.toLowerCase().includes(searchTerm.toLowerCase().trim()) ||
+        char.title.toLowerCase().includes(searchTerm.toLowerCase().trim());
 
-    if (!matchesSearch) return false;
+      if (!matchesSearch) return false;
 
-    // 2. Extract character tags
-    const charTags = getNormalizedCharTags(char);
+      // 2. Extract character tags
+      const charTags = getNormalizedCharTags(char);
 
-    // 3. Selected genre & taste tag filters
-    const selectedGenres = activeGenres.filter((g) => g !== 'Tất cả');
-    const selectedTastes = activeTastes.filter((t) => t !== 'Tất cả');
-    const activeFilterTags = [...selectedGenres, ...selectedTastes];
+      // 3. Selected genre & taste tag filters
+      const selectedGenres = activeGenres.filter((g) => g !== 'Tất cả');
+      const selectedTastes = activeTastes.filter((t) => t !== 'Tất cả');
+      const activeFilterTags = [...selectedGenres, ...selectedTastes];
 
-    // AND logic: Char MUST contain ALL selected filter tags in any of its tag fields
-    const matchesTagFilters =
-      activeFilterTags.length === 0 ||
-      activeFilterTags.every((filterTag) => {
-        const normFilter = filterTag.toLowerCase().trim().replace(/^#/, '');
-        return charTags.includes(normFilter);
-      });
+      // AND logic: Char MUST contain ALL selected filter tags in any of its tag fields
+      const matchesTagFilters =
+        activeFilterTags.length === 0 ||
+        activeFilterTags.every((filterTag) => {
+          const normFilter = filterTag.toLowerCase().trim().replace(/^#/, '');
+          return charTags.includes(normFilter);
+        });
 
-    if (!matchesTagFilters) return false;
+      if (!matchesTagFilters) return false;
 
-    // 4. Status filter (AND logic if multiple statuses selected)
-    const selectedStatuses = activeStatuses.filter((s) => s !== 'Tất cả');
-    const matchesStatusFilter =
-      selectedStatuses.length === 0 ||
-      selectedStatuses.every((status) => {
-        if (status === 'Hot') {
-          return char.isHot || char.statusType === 'Hot' || char.statusTag === 'HOT 🔥';
-        }
-        if (status === 'Mới' || status === 'Tân Long') {
-          return char.isNew || char.statusType === 'Mới' || char.statusTag === 'Mẻ Mới' || char.statusTag?.includes('Tân Long');
-        }
-        if (status === 'Kỳ Cựu') {
-          return char.statusType === 'Kỳ Cựu' || char.statusTag === 'Kỳ Cựu';
-        }
-        if (status === 'Sắp Ra Mắt') {
-          return char.isComingSoon || char.statusType === 'Sắp Ra Mắt' || char.statusTag?.includes('Sắp Ra Mắt');
-        }
-        return char.statusType === status;
-      });
+      // 4. Status filter (AND logic if multiple statuses selected)
+      const selectedStatuses = activeStatuses.filter((s) => s !== 'Tất cả');
+      const matchesStatusFilter =
+        selectedStatuses.length === 0 ||
+        selectedStatuses.every((status) => {
+          if (status === 'Hot') {
+            return char.isHot || char.statusType === 'Hot' || char.statusTag === 'HOT 🔥';
+          }
+          if (status === 'Mới' || status === 'Tân Long') {
+            return char.isNew || char.statusType === 'Mới' || char.statusTag === 'Mẻ Mới' || char.statusTag?.includes('Tân Long');
+          }
+          if (status === 'Kỳ Cựu') {
+            return char.statusType === 'Kỳ Cựu' || char.statusTag === 'Kỳ Cựu';
+          }
+          if (status === 'Sắp Ra Mắt') {
+            return char.isComingSoon || char.statusType === 'Sắp Ra Mắt' || char.statusTag?.includes('Sắp Ra Mắt');
+          }
+          return char.statusType === status;
+        });
 
-    return matchesStatusFilter;
-  });
+      return matchesStatusFilter;
+    })
+    .sort((a, b) => getCharacterSortPriority(a) - getCharacterSortPriority(b));
 
-  const hashtagFilteredCharacters = characters.filter((char) => {
-    if (!activeHashtag) return [];
-    const normActive = activeHashtag.toLowerCase().trim().replace(/^#/, '');
-    const charTags = getNormalizedCharTags(char);
-    return charTags.includes(normActive);
-  });
+  const hashtagFilteredCharacters = characters
+    .filter((char) => {
+      if (!activeHashtag) return false;
+      const normActive = activeHashtag.toLowerCase().trim().replace(/^#/, '');
+      const charTags = getNormalizedCharTags(char);
+      return charTags.includes(normActive);
+    })
+    .sort((a, b) => getCharacterSortPriority(a) - getCharacterSortPriority(b));
 
   const handleHashtagClick = (hashtag: string) => {
     addToast(`Đang tìm các vị rồng mang thuộc tính ${hashtag}...`, 'info');
@@ -405,9 +436,9 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-transparent text-[#5D4E3C] relative font-sans selection:bg-[#FDF3D2] selection:text-[#3A4258] overflow-x-hidden">
-      {/* Falling animation of sparkles & leaves */}
-      <FallingDragons />
+    <div className="min-h-screen bg-[#F8F6F0] text-[#5D4E3C] relative font-sans selection:bg-[#FDF3D2] selection:text-[#3A4258] overflow-x-hidden">
+      {/* Falling animation of sparkles - Chỉ hiển thị khi đã vào trong Long Uyển */}
+      {hasEntered && <FallingDragons />}
 
       {/* Floating Toast Container */}
       <div className="fixed bottom-5 right-5 z-50 flex flex-col gap-2.5 max-w-sm pointer-events-none">
@@ -456,9 +487,9 @@ export default function App() {
           <motion.div
             key="landing-screen"
             animate={{ opacity: isEntering ? 0 : 1 }}
-            transition={{ duration: 1.2, ease: 'easeInOut' }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40"
+            transition={{ duration: 0.8, ease: 'easeInOut' }}
+            exit={{ opacity: 0, transition: { duration: 0.5 } }}
+            className="fixed inset-0 z-40 bg-[#F5F3EC]"
           >
             <LandingScreen
               onEnterGarden={handleEnterGarden}
@@ -472,6 +503,7 @@ export default function App() {
             key="inner-garden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
             className="w-full min-h-screen flex flex-col inner-app-bg relative"
           >
             {/* Nền Vườn Hoa Mới */}
@@ -579,14 +611,18 @@ export default function App() {
             <main className="max-w-7xl mx-auto p-6 md:p-12 flex-1 w-full grid grid-cols-1 lg:grid-cols-4 gap-8 items-start relative z-10">
               {activeMainTab === 'long-duong' ? (
                 <>
-                  {/* MOOD QUIZ CORNER (FULL WIDTH AT TOP) */}
-              <div className="lg:col-span-4 w-full">
-                <MoodQuiz
-                  characters={characters}
-                  onThuongVi={handleThuongVi}
-                  onShowBackstory={handleBackground}
-                />
-              </div>
+                  {/* BẢNG Ý TƯỞNG CHAT VỚI CHARACTER */}
+                  <div className="lg:col-span-4 w-full">
+                    <ChatIdeasBoard onToast={addToast} />
+                  </div>
+
+                  {/* Ô CTA TRẢI NGHIỆM THÊM TRÒ CHƠI */}
+                  <div className="lg:col-span-4 w-full -mt-2">
+                    <GameHubCTA
+                      characters={characters}
+                      onShowBackstory={handleBackground}
+                    />
+                  </div>
               
               {/* SIDEBAR COLUMNS (Top Chanh Board & Filters) */}
               <div className="space-y-6 lg:col-span-1">
@@ -620,7 +656,7 @@ export default function App() {
                     <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#6B7590]" size={14} />
                     <input
                       type="text"
-                      placeholder="Tầm Long (Tìm tên rồng)..."
+                      placeholder="Tìm Long (Tìm tên rồng)..."
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
                       className="w-full text-xs bg-white border border-[#D8DEE8] rounded-[12px] py-2.5 pl-10 pr-4 text-[#3A4258] placeholder-[#9AAAC5] outline-none focus:border-[#7A8AA5] focus:ring-1 focus:ring-[#7A8AA5]/30 transition-all font-medium font-sans"

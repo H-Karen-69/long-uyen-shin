@@ -59,12 +59,18 @@ export default function BirthdaySeason({ characters, onOpenBirthdayModal }: Birt
         {mainBirthdayChar ? (
           <div className="relative min-h-[400px] flex items-center">
             <div className="absolute inset-0 z-0">
-              <img 
-                src={mainBirthdayChar.birthdayImage || mainBirthdayChar.avatar} 
-                alt={mainBirthdayChar.name} 
-                className="w-full h-full object-cover object-top opacity-80"
-                referrerPolicy="no-referrer"
-              />
+              {(mainBirthdayChar.birthdayImage || mainBirthdayChar.avatar) ? (
+                <img 
+                  src={mainBirthdayChar.birthdayImage || mainBirthdayChar.avatar} 
+                  alt={mainBirthdayChar.name} 
+                  className="w-full h-full object-cover object-top opacity-80"
+                  referrerPolicy="no-referrer"
+                />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center bg-[#7A8AA5]/20 text-6xl">
+                  🐉
+                </div>
+              )}
               <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
             </div>
             
@@ -124,7 +130,11 @@ export default function BirthdaySeason({ characters, onOpenBirthdayModal }: Birt
                   <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
                     <div className="relative w-24 h-24 flex-shrink-0">
                       <div className="absolute inset-0 bg-[#7A8AA5] rounded-full animate-pulse opacity-50 blur-md" />
-                      <img src={nextBirthdayChar.char.avatar} alt={nextBirthdayChar.char.name} className="w-full h-full object-cover object-top rounded-full border-4 border-white relative z-10 shadow-sm" referrerPolicy="no-referrer" />
+                      {nextBirthdayChar.char.avatar ? (
+                        <img src={nextBirthdayChar.char.avatar} alt={nextBirthdayChar.char.name} className="w-full h-full object-cover object-top rounded-full border-4 border-white relative z-10 shadow-sm" referrerPolicy="no-referrer" />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center bg-[#E8EAEF] rounded-full border-4 border-white relative z-10 shadow-sm text-3xl">🐉</div>
+                      )}
                     </div>
                     <div className="text-center md:text-left">
                       <h3 className="font-bold text-xl text-[#3A4258]">{nextBirthdayChar.char.name}</h3>
@@ -180,7 +190,11 @@ export default function BirthdaySeason({ characters, onOpenBirthdayModal }: Birt
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {upcomingBirthdays.map((item) => (
                   <div key={item.char.id} className="bg-white p-4 rounded-2xl flex items-center space-x-4 border border-[#D8DEE8] shadow-sm hover:shadow-md transition-shadow group">
-                    <img src={item.char.avatar} className="w-16 h-16 rounded-xl object-cover object-top" alt={item.char.name} referrerPolicy="no-referrer" />
+                    {item.char.avatar ? (
+                      <img src={item.char.avatar} className="w-16 h-16 rounded-xl object-cover object-top" alt={item.char.name} referrerPolicy="no-referrer" />
+                    ) : (
+                      <div className="w-16 h-16 rounded-xl flex items-center justify-center bg-[#E8EAEF] text-2xl">🐉</div>
+                    )}
                     <div className="flex-1">
                       <h4 className="font-bold text-[#3A4258] text-lg group-hover:text-[#7A8AA5] transition-colors">{item.char.name}</h4>
                       <p className="text-sm text-[#6B7590] font-comfortaa">Ngày {item.char.birthday}</p>
@@ -254,14 +268,20 @@ export default function BirthdaySeason({ characters, onOpenBirthdayModal }: Birt
                       {hasBirthday && (
                         <div className="mt-1 flex -space-x-2">
                           {chars.map(c => (
-                            <img 
-                              key={c.id} 
-                              src={c.avatar} 
-                              alt={c.name}
-                              title={c.name}
-                              referrerPolicy="no-referrer"
-                              className="w-6 h-6 rounded-full border border-white object-cover object-top shadow-sm"
-                            />
+                            c.avatar ? (
+                              <img 
+                                key={c.id} 
+                                src={c.avatar} 
+                                alt={c.name}
+                                title={c.name}
+                                referrerPolicy="no-referrer"
+                                className="w-6 h-6 rounded-full border border-white object-cover object-top shadow-sm"
+                              />
+                            ) : (
+                              <div key={c.id} title={c.name} className="w-6 h-6 rounded-full border border-white bg-[#E8EAEF] flex items-center justify-center text-[8px] shadow-sm">
+                                🐉
+                              </div>
+                            )
                           ))}
                         </div>
                       )}

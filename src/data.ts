@@ -371,7 +371,7 @@ Khóe môi Nhiếp Cảnh Hành từ từ nhếch lên một độ cong mỉa ma
     likes: 0,
     genre: "Hiện Đại",
     taste: "Ngược",
-    statusType: "Mới",
+    statusType: "",
     isNew: false,
     isHot: false,
     isComingSoon: false,
@@ -389,92 +389,207 @@ Khóe môi Nhiếp Cảnh Hành từ từ nhếch lên một độ cong mỉa ma
     name: "Trình Dĩ Phàm",
     title: "Học bá top 1 x Nữ sinh yêu thầm",
     avatar: "https://i.ibb.co/RTHMYBqm/TA-2026-07-20-21-20-03-artist-ma-65538540.png",
-    roleplayLink: "#",
+    roleplayLink: "https://aistudio.google.com/prompts/1AXBtrJfodmEgRBujw2BEYMnYef8IXL2x",
     storyText: `Có những người sinh ra đã là ánh sáng.
-{{user}} hiểu điều đó từ rất lâu rồi — từ cái ngày đầu tiên cô bước vào lớp 12A, nhìn quanh một lượt, và nhận ra rằng mình không phải kiểu người mà người ta sẽ nhớ tên sau buổi học đầu tiên.
+{{user}} hiểu điều đó từ rất lâu rồi, từ cái ngày đầu tiên cô bước vào lớp 12A, nhìn quanh một lượt, và nhận ra rằng mình không phải kiểu người mà người ta sẽ nhớ tên sau buổi học đầu tiên.
+
 Không sao. Cô đã quen rồi.
+
 ---
-Lớp 12A của trường Trung học Thực nghiệm Nhất Trung là lớp chọn — điều đó có nghĩa là ngồi đây, ai cũng có *thứ gì đó*. Người thì giỏi Toán đến mức giáo viên phải đặt đề riêng, người thì viết văn hay đến mức bài được đọc trước toàn trường, người thì hoạt động xã hội đến mức cả khối đều biết mặt.
+
+Lớp 12A của trường Trung học Thực nghiệm Nhất Trung là lớp chọn, điều đó có nghĩa là ngồi đây, ai cũng có thứ gì đó. Bạn hỏi thứ gì đó là gì ư? Người thì giỏi Toán đến mức giáo viên phải đặt đề riêng, người thì viết văn hay đến mức bài được đọc trước toàn trường, người thì hoạt động xã hội đến mức cả khối đều biết mặt.
+
 Còn {{user}}?
-{{user}} học được, không đến nỗi nào. Không có môn nào tệ, cũng không có môn nào xuất sắc. Điểm số của cô cứ chênh vênh ở cái vùng đủ yên tâm nhưng không đủ để ai chú ý — như một nốt nhạc lọt thỏm giữa bản giao hưởng, không sai, nhưng cũng chẳng ai nhớ đến.
+
+{{user}} học được, không đến nỗi nào. Không có môn nào tệ, cũng không có môn nào xuất sắc. Điểm số của cô cứ chênh vênh ở cái vùng đủ yên tâm nhưng không đủ để ai chú ý, như một nốt nhạc lọt thỏm giữa bản giao hưởng, không sai, nhưng cũng chẳng ai nhớ đến.
+
 Bình thường. Hai chữ đó bám vào cô như một cái bóng.
+
 *Bình thường.*
-Cô đã thử tự nhủ rằng bình thường cũng có cái hay của nó. Bình thường nghĩa là không ai kỳ vọng quá nhiều. Bình thường nghĩa là được phép mắc lỗi mà không ai để ý. Nhưng cũng chính vì thế — bình thường nghĩa là vô hình.
+
+Cô đã thử tự nhủ rằng bình thường cũng có cái hay của nó. Bình thường nghĩa là không ai kỳ vọng quá nhiều. Bình thường nghĩa là được phép mắc lỗi mà không ai để ý. Nhưng cũng chính vì thế, bình thường nghĩa là vô hình.
+
 Và trong một lớp học có Trình Dĩ Phàm ngồi ở bàn thứ ba từ cửa sổ đếm vào, sự vô hình đó đôi khi đau hơn cô tưởng.
+
 ---
+
 Trình Dĩ Phàm.
-{{user}} không nhớ mình bắt đầu để ý đến cậu từ hồi nào nữa. Hình như là từ năm lớp tám, trong một buổi chiều mưa, khi cô vô tình nhìn qua cửa sổ hành lang và thấy cậu đứng một mình ở mái hiên sân bóng — không điện thoại, không sách, chỉ ngước nhìn mưa với một bên tai nghe không dây cài vào tai, tóc hơi ẩm, áo đồng phục chưa kịp cài cúc trên cùng.
+
+{{user}} không nhớ mình bắt đầu để ý đến cậu từ hồi nào nữa. Hình như là từ năm lớp tám, trong một buổi chiều mưa, khi cô vô tình nhìn qua cửa sổ hành lang và thấy cậu đứng một mình ở mái hiên sân bóng, không điện thoại, không sách, chỉ ngước nhìn mưa với một bên tai nghe không dây cài vào tai, tóc hơi ẩm, áo đồng phục chưa kịp cài cúc trên cùng.
+
 Lúc đó cô không hiểu tại sao mình dừng lại.
+
 Bây giờ thì cô hiểu rồi. Chỉ là hiểu rồi cũng chẳng làm được gì.
-Trình Dĩ Phàm đứng nhất khối đã mấy năm liền, đều đặn như mặt trời mọc — và cũng như mặt trời, cậu tỏa sáng theo cái cách mà không cần phải cố, không cần phải để ý xem có ai đang nhìn không. Cậu cao, vai rộng, đôi mắt một mí với đuôi mắt hơi xếch tạo cảm giác vừa lười biếng vừa sắc bén — kiểu ánh mắt mà khi nó thật sự nhìn vào ai đó, người đó sẽ có cảm giác mình vừa bị đọc như một trang sách vậy.
+
+Trình Dĩ Phàm đứng nhất khối đã mấy năm liền, đều đặn như mặt trời mọc, và cũng như mặt trời, cậu tỏa sáng theo cái cách mà không cần phải cố, không cần phải để ý xem có ai đang nhìn không. Cậu cao, vai rộng, đôi mắt một mí với đuôi mắt hơi xếch tạo cảm giác vừa lười biếng vừa sắc bén, kiểu ánh mắt mà khi nó thật sự nhìn vào ai đó, người đó sẽ có cảm giác mình vừa bị đọc như một trang sách vậy.
+
 Cậu không nói nhiều. Nhưng khi cậu nói, người ta nghe.
-Cậu không cần cố gắng để được chú ý. Sự có mặt của cậu trong một căn phòng tự nó đã là một thứ gì đó — như áp suất khí quyển thay đổi, như nhiệt độ tăng lên vài độ mà không ai giải thích được vì sao. {{user}} đã mất một thời gian dài mới thôi để ý đến điều đó mỗi khi cậu bước vào lớp.
+
+Cậu không cần cố gắng để được chú ý. Sự có mặt của cậu trong một căn phòng tự nó đã là một thứ gì đó, như áp suất khí quyển thay đổi, như nhiệt độ tăng lên vài độ mà không ai giải thích được vì sao. {{user}} đã mất một thời gian dài mới thôi để ý đến điều đó mỗi khi cậu bước vào lớp.
+
 Thật ra là cô chưa bao giờ thôi cả. Cô chỉ học cách không để lộ ra ngoài mà thôi.
+
 Vì có những thứ, ngay cả khi cô hiểu rõ ràng là mình không với tới, cô vẫn không thể bắt mắt mình nhìn đi chỗ khác, như nhìn lên mặt trời — biết là chói, biết là sẽ hoa mắt, nhưng vẫn ngước lên.
-Trình Dĩ Phàm với {{user}} — cô nghĩ đó là khoảng cách giữa người đứng giữa sân và người đứng ở rìa khung hình. Cả hai đều ở trong cùng một bức ảnh, nhưng không ai nhìn vào rìa cả khi mà giữa sân đang có ánh sáng.
+
+Trình Dĩ Phàm với {{user}}, cô nghĩ đó là khoảng cách giữa người đứng giữa sân và người đứng ở rìa khung hình. Cả hai đều ở trong cùng một bức ảnh, nhưng không ai nhìn vào rìa cả khi mà giữa sân đang có ánh sáng.
+
 ---
+
 Người duy nhất trong lớp mà {{user}} thật sự ngưỡng mộ, ngoài Trình Dĩ Phàm — theo một cách hoàn toàn khác — là Giang Ánh Nguyệt.
+
 Nếu Trình Dĩ Phàm là người mà {{user}} nhìn với cảm giác lòng bộn bề không gọi được thành tên, thì Giang Ánh Nguyệt là người mà cô nhìn với sự ngưỡng mộ thuần túy, sạch sẽ và không hề lẫn lộn.
+
 Giang Ánh Nguyệt đứng nhì khối. Đứng nhì — sau Trình Dĩ Phàm.
+
 Cả lớp hay trêu là hai người đó "trời sinh một cặp", rằng thế nào cũng đến lúc học bá thứ nhất và học bá thứ hai sẽ tự động trở thành một chuyện tình đẹp như phim. Cứ mỗi lần Giang Ánh Nguyệt nộp bài trước Trình Dĩ Phàm vài phút, hay mỗi lần kết quả kiểm tra được dán lên bảng và hai cái tên đó lại sát nhau như hình với bóng, y như rằng cả lớp lại rộn lên, lại có người huých tay người bên cạnh mà cười.
+
 Nhưng {{user}} không nghĩ theo kiểu vậy.
-Không phải vì cô ghen — dù cô không dám thề hoàn toàn không có chút gì. Mà vì cô *thấy* Giang Ánh Nguyệt. Thật sự thấy, không phải nhìn qua lớp kính của những lời đùa cợt hời hợt.
-Cô thấy Ánh Nguyệt đến trường sớm hơn tất cả mọi người, ngồi ôn bài trong khi sân trường còn vắng tanh. Thấy Ánh Nguyệt không bao giờ mua đồ ăn căng-tin mà luôn mang theo cơm hộp, đậy kín, không phải vì thói quen mà vì lý do khác mà cô đoán được nhưng không nói ra. Thấy Ánh Nguyệt ghi chép tỉ mỉ đến từng chữ, dùng bút màu chia mục cẩn thận — không phải để trình bày đẹp, mà để tiết kiệm tối đa thời gian khi ôn lại bài.
+
+Không phải vì cô ghen, dù cô không dám thề hoàn toàn không có chút gì. Mà vì cô thấy Giang Ánh Nguyệt.
+
+Thật sự thấy, không phải nhìn qua lớp kính của những lời đùa cợt hời hợt.
+
+Cô thấy Ánh Nguyệt đến trường sớm hơn tất cả mọi người, ngồi ôn bài trong khi sân trường còn vắng tanh. 
+
+Thấy Ánh Nguyệt không bao giờ mua đồ ăn căng-tin mà luôn mang theo cơm hộp, đậy kín, không phải vì thói quen mà vì lý do khác.
+
+Thấy Ánh Nguyệt ghi chép tỉ mỉ đến từng chữ, dùng bút màu chia mục cẩn thận — không phải để trình bày đẹp, mà để tiết kiệm tối đa thời gian khi ôn lại bài.
+
 Ánh Nguyệt không học để ganh đua với Trình Dĩ Phàm vì cô thích cậu. Cô ganh đua vì đó là con đường duy nhất cô có.
-{{user}} hiểu điều đó. Và cô kính trọng Ánh Nguyệt vì điều đó — theo cái cách mà người ta kính trọng một ngọn lửa cháy giữa gió lớn.
+
+{{user}} hiểu điều đó. Và cô kính trọng Ánh Nguyệt vì điều đó, theo cái cách mà người ta kính trọng một ngọn lửa cháy giữa gió lớn.
+
 ---
+
 Hôm đó là một buổi sáng thứ Tư bình thường.
+
 Hay ít nhất là bình thường cho đến khi {{user}} nhìn xuống và thấy đế giày của Giang Ánh Nguyệt.
-Cả lớp đang chuẩn bị xuống sân tập thể dục. Ghế kéo, bàn xô, tiếng cười đùa ồn ào vang khắp phòng. {{user}} đứng dậy vươn vai, cô vô tình nhìn xuống.. và khựng lại.
-Đế giày của Ánh Nguyệt bên trái đã bung ra một góc. Không phải mới bung, trông có vẻ như đã bong từ mấy hôm trước và được ép lại bằng một cách nào đó, nhưng giờ thì không giữ được nữa. Mỗi bước Ánh Nguyệt đi, góc đế đó lại khẽ há ra rồi khép lại, như cái miệng không nói được thành lời.
-Ánh Nguyệt biết. Tất nhiên là cô biết. Nhưng cô không nhìn xuống, không nhìn xung quanh, cứ thẳng lưng mà bước theo dòng người ra cửa.
+
+Cả lớp đang chuẩn bị xuống sân tập thể dục. Ghế kéo, bàn xô, tiếng cười đùa ồn ào vang khắp phòng. {{user}} đứng dậy vươn vai, cô vô tình nhìn xuống... và khựng lại.
+
+Đế giày của Ánh Nguyệt bên trái đã bung ra một góc. 
+
+Không phải mới bung, trông có vẻ như đã bong từ mấy hôm trước và được ép lại bằng một cách nào đó, nhưng giờ thì không giữ được nữa. Mỗi bước Ánh Nguyệt đi, góc đế đó lại khẽ há ra rồi khép lại, như cái miệng không nói được thành lời.
+
+Có lẽ Ánh Nguyệt biết. Tất nhiên là cô biết. Nhưng cô gái ấy không nhìn xuống, không nhìn xung quanh, cứ thẳng lưng mà bước theo dòng người ra cửa.
+
 {{user}} định lên tiếng, nhưng rồi lại thôi.
+
 Ánh Nguyệt sẽ không muốn ai biết đâu. Cô chắc điều đó.
+
+---
+
 Giờ thể dục, cả lớp xuống dưới sân, giáo viên thể dục đang điểm danh từng người.
+
 "Giang Ánh Nguyệt?"
+
 Không có tiếng trả lời.
-Thầy nhíu mày, đảo mắt một lượt quanh sân. Xung quanh {{user}}, mấy đứa bạn ngơ ngác nhìn nhau, người thì nhún vai, người thì quay đi — không phải vì ác ý, chỉ đơn giản là không ai thật sự để tâm. Giang Ánh Nguyệt không thân với ai, và sự vắng mặt của cô cũng nhẹ như sự có mặt, không để lại dấu vết gì trong buổi sáng bận rộn của người khác.
+
+Thầy nhíu mày, đảo mắt một lượt quanh sân.
+
+Xung quanh {{user}}, mấy đứa bạn ngơ ngác nhìn nhau, người thì nhún vai, người thì quay đi.
+
+Không phải vì ác ý, chỉ đơn giản là không ai thật sự để tâm. Giang Ánh Nguyệt không thân với ai, và sự vắng mặt của cô cũng nhẹ như sự có mặt, không để lại dấu vết gì trong buổi sáng bận rộn của người khác.
+
 "Không ai biết à?"
+
 Cả lớp im phăng phắc.
+
 {{user}} cắn môi.
-Cô biết. Cô biết có thể Ánh Nguyệt đang ở trên đó, ở một mình và cô ấy đang cố dán lại đôi giày bằng keo 502 với cái tự trọng không cho phép cô ấy để ai nhìn thấy. Và cô biết nếu thầy lên kiểm tra, mọi thứ sẽ trở nên rất khó xử cho Ánh Nguyệt — không phải vì kỷ luật, mà vì cái nhìn của thầy giáo và các bạn học sau đó.
-Nhưng vốn dĩ, {{user}} không phải người hay lên tiếng. Cô không phải kiểu người mà cả lớp nhìn vào khi cần ai đó đứng ra. Cô chỉ là... cô thôi. Bình thường, nhút nhát, hay để người khác nói trước.
-Nhưng bây giờ không có ai nói trước cả.
+
+Cô biết.
+
+Cô biết có thể Ánh Nguyệt đang ở trên đó. Với tính cách của cô gái ấy, cô sẽ ở một mình và đang cố dán lại đôi giày bằng keo 502 với cái tự trọng không cho phép để ai nhìn thấy. Và cô biết nếu thầy lên kiểm tra, mọi thứ sẽ trở nên rất khó xử cho Ánh Nguyệt.
+
+Không phải vì kỷ luật, mà vì cái nhìn của thầy giáo và các bạn học sau đó.
+
+Nhưng vốn dĩ, {{user}} không phải người hay lên tiếng. Cô không phải kiểu người mà cả lớp nhìn vào khi cần ai đó đứng ra.
+
+Cô chỉ là... cô thôi. Bình thường, nhút nhát, hay để người khác nói trước.
+
+*Nhưng bây giờ không có ai nói trước cả.*
+
 Trái tim cô đập nhanh hơn một chút. Cô không chắc mình sẽ nói trơn tru, không chắc thầy có tin không, không chắc bất cứ điều gì, nhưng cô đã quyết định giơ tay lên.
+
 Ngập ngừng. Rồi thẳng hơn.
-"Dạ thưa thầy.." Giọng cô hơi nhỏ hơn mong muốn, nhưng đủ để thầy nghe, "Bạn Ánh Nguyệt đau bụng ạ. Bạn đang ở phòng y tế và có nhờ em xin thầy hộ ạ."
-Thầy nhìn cô một giây — {{user}} cố giữ ánh mắt thẳng, không để tay mình run — rồi thầy gật đầu, ghi vào sổ, và tiếp tục điểm danh các bạn khác.
-Vậy là xong.
+
+"Dạ thưa thầy.." Giọng cô hơi nhỏ hơn mong muốn, nhưng đủ để thầy nghe, "bạn Ánh Nguyệt đau bụng ạ. Bạn đang ở phòng y tế và có nhờ em xin thầy hộ ạ."
+
+Thầy nhìn cô một giây, {{user}} cố giữ ánh mắt thẳng, không để tay mình run, rồi thầy gật đầu, ghi vào sổ, và tiếp tục điểm danh các bạn khác.
+
+*Vậy là xong.*
+
 {{user}} thở ra, khẽ đến mức không ai nghe thấy. Lòng bàn tay cô hơi ẩm.
-Cô không biết Ánh Nguyệt có cần mình làm vậy không. Có thể Ánh Nguyệt sẽ tự xoay xở được. Có thể cô ấy sẽ không cảm ơn, sẽ không biết, sẽ không bao giờ biết. Nhưng cái ý nghĩ để yên mà đi xuống sân, để mặc Ánh Nguyệt một mình trên đó, giữa cái im lặng không ai buồn phá vỡ, cô không làm được.
+
+Cô không biết Ánh Nguyệt có cần mình làm vậy không. Có thể Ánh Nguyệt sẽ tự xoay xở được. Có thể cô ấy sẽ không cảm ơn, sẽ không biết, sẽ không bao giờ biết. Nhưng cái ý nghĩ để yên mà đi xuống sân, để mặc Ánh Nguyệt một mình trên đó, giữa cái im lặng không ai buồn phá vỡ...
+
+Cô không làm được.
+
 Ít nhất thì mình đã làm gì đó. Dù nhỏ. Dù vô hình. Dù chẳng ai nhìn thấy kể cả người được giúp.
+
 Đôi khi chừng đó là đủ rồi.
-Giờ ra chơi.
-{{user}} đang đứng ở hành lang, mắt lơ đãng nhìn xuống sân trường, đầu óc thả trôi theo tiếng ồn xa xa, thì nghe thấy tiếng bước chân dừng lại ngay sau lưng mình.
+
+---
+
+Giờ ra chơi, {{user}} đang đứng ở hành lang, mắt lơ đãng nhìn xuống sân trường, đầu óc cô thả trôi theo tiếng ồn xa xa, thì nghe thấy tiếng bước chân dừng lại ngay sau lưng mình.
+
 "Này."
-{{user}} quay lại.
-Trình Dĩ Phàm đứng cách cô chừng một bước rưỡi, tay cầm một chiếc hộp — dài, trắng, có logo thương hiệu mà liếc qua cô cũng đủ biết không rẻ. Cậu không tựa tường, không bỏ tay vào túi. Chỉ đứng đó, bình thản, nhưng lần này cô nhận ra có gì đó khác với cái bình thản thường ngày của cậu. Nhẹ hơn. Không phải xa cách.
+
+Cô quay lại.
+
+Trình Dĩ Phàm đứng cách cô chừng một bước rưỡi, tay cầm một chiếc hộp dài, trắng, có logo thương hiệu mà liếc qua cô cũng đủ biết không rẻ. Cậu không tựa tường, không bỏ tay vào túi. Chỉ đứng đó, bình thản, nhưng lần này cô nhận ra có gì đó khác với cái bình thản thường ngày của cậu.
+
+Nhẹ hơn. Không phải xa cách.
+
 "Cậu có quen với Giang Ánh Nguyệt không?"
+
 Giọng cậu trầm, bình thường, không phải câu hỏi thăm dò, chỉ là hỏi thật, như người ta hỏi thời tiết hôm nay thế nào.
+
 {{user}} chớp mắt. "À... có quen, nhưng cũng không thân lắm—"
+
 Cậu gật đầu nhẹ, như thể câu trả lời đó là đủ rồi. Mắt cậu nhìn xuống chiếc hộp trong tay một giây, rồi nhìn lên cô.
+
 "Tôi thấy trong lớp cậu hay để ý đến cô ấy." Không phải lời khen, không phải nhận xét, chỉ là cậu nói điều cậu quan sát được, vẫn bình thản như vậy. "Giày của Ánh Nguyệt bị hỏng. Tôi muốn nhờ cậu đưa giúp, nếu cậu thấy tiện."
+
 Cậu đưa chiếc hộp về phía {{user}}, cậu không dúi vào tay, cũng không ép, cậu chỉ đưa chiếc hộp ra và chờ.
+
 "Cậu làm được không?"
+
 Chỉ có vậy thôi. Bốn chữ, hỏi thật, chờ thật.
+
 {{user}} nhìn chiếc hộp, rồi nhìn lên mặt cậu.
-Đôi mắt một mí của cậu đang nhìn cô — không sắc bén như lúc cậu đang giải một bài toán khó, cũng không lạnh như lúc cậu không muốn bị làm phiền. Chỉ là bình thường. Cậu đang chờ đợi. Ngón tay cái cậu khẽ miết lên ngón trỏ một nhịp rồi thôi — thoáng qua, rất nhẹ, chắc ngay cả cậu cũng không nhận ra điều đó.
-Cô chợt hiểu tại sao cậu không tự đưa. Vì đưa thẳng thì Ánh Nguyệt sẽ không nhận. Vì Ánh Nguyệt có cái tự trọng mà người ta không thể chạm vào một cách vụng về. Cậu biết điều đó. Cậu tính đến điều đó, và còn tính đến cả chuyện phải tìm đúng người đứng giữa, phải làm sao cho cô ấy giữ được thể diện.
+
+Đôi mắt một mí của cậu đang nhìn cô, không sắc bén như lúc cậu đang giải một bài toán khó, cũng không lạnh như lúc cậu không muốn bị làm phiền.
+
+Chỉ là bình thường. Cậu đang chờ đợi. Ngón tay cái cậu khẽ miết lên ngón trỏ một nhịp rồi thôi, thoáng qua, rất nhẹ, chắc ngay cả cậu cũng không nhận ra điều đó.
+
+Cô chợt hiểu tại sao cậu không tự đưa.
+
+Vì đưa thẳng thì Ánh Nguyệt sẽ không nhận. Vì Ánh Nguyệt có cái tự trọng mà người ta không thể chạm vào một cách vụng về. Cậu biết điều đó. Cậu tính đến điều đó, và còn tính đến cả chuyện phải tìm đúng người đứng giữa, phải làm sao cho cô ấy giữ được thể diện.
+
 Trình Dĩ Phàm để ý đến Ánh Nguyệt theo cái cách mà hiểu được cả điều người ta không nói ra.
-Trong lồng ngực {{user}}, có gì đó lặng lẽ thắt lại. Cô biết điều này rồi mà, rằng ánh mắt cậu sẽ hướng về phía rực rỡ và mạnh mẽ, về phía xứng với cậu. Biết từ trước rồi.
-Nhưng biết và thấy tận mắt — vẫn là hai chuyện khác nhau hoàn toàn.
+
+Trong lồng ngực {{user}}, có gì đó lặng lẽ thắt lại. Cô biết điều này rồi mà, rằng ánh mắt cậu sẽ hướng về phía rực rỡ và mạnh mẽ, về phía xứng với cậu.
+
+Biết từ trước rồi.
+
+Nhưng biết và thấy tận mắt, vẫn là hai chuyện khác nhau hoàn toàn.
+
 Cô nhìn xuống chiếc hộp giày một lần nữa, rồi nhìn lên.
+
 "Đừng nói là tôi đưa."
+
 Cậu nói thêm câu đó, cậu nói khẽ, bình thản, như một điều kiện nhỏ đính kèm vào lời nhờ vả. Nghe không giống ra lệnh. Nghe giống như cậu đang tin tưởng cô giữ điều này.
+
 {{user}} thở ra thật nhẹ.
-Ít nhất thì mình vẫn còn hữu ích được.
+
+*Ít nhất thì mình vẫn còn hữu ích được.*
+
 Dù chỉ là theo cái cách này.
-"Cậu làm được không? "`,
+
+"Cậu làm được không?"
+
+Trình Dĩ Phàm nhắc lại.`,
     worldTag: "TXVT",
     aftertasteTag: "Yêu Thầm",
     statusTag: "Kỳ Cựu",
@@ -569,6 +684,650 @@ Hắn dụi nhẹ vào vành tai nhỏ nhắn của cô, giọng xuống thấp,
     hashtags: ["ThếThân", "Daddy", "CóHìnhXăm"],
     creatorPick: true,
     releaseDate: ""
+  },
+  {
+    id: "char_006",
+    name: "Thẩm Dực",
+    title: "Người yêu cũ hối hận, playboy quay đầu",
+    avatar: "https://files.catbox.moe/m4yob2.png",
+    roleplayLink: "#",
+    storyText: `Năm tôi mười bảy tuổi, tôi từng nghĩ trên đời này chẳng có thứ gì đáng để mình phải thật lòng.
+
+Vì sao ư? Tôi có một gương mặt đẹp trai để khiến người khác mê như điếu đổ, một gia cảnh chẳng cần phải cúi đầu trước bất kỳ ai, lại có một đám bạn luôn ở bên cạnh tung hô tôi. Nhà tôi đầy tiền, tôi muốn gì chả được. Tôi cần gì tình thương ở ngoài kia, trong khi bản thân đã có quá nhiều?
+
+Tôi ngông cuồng, bướng bỉnh, thích gì làm nấy.
+
+Càng không tin vào cái gọi là tình yêu.
+
+Cho nên khi {{user}} nói thích tôi, tôi cũng chẳng cảm thấy có gì đặc biệt.
+
+Tôi biết em thích tôi rất lâu rồi. Ánh mắt em nhìn tôi quá rõ ràng.
+
+Mỗi lần tôi xuất hiện, em đều vô thức nhìn sang phía tôi. Lén lén lút lút, bộ nghĩ tôi không nhìn thấy sao? Mỗi lần tôi bị thương, người đầu tiên chạy đến cũng là em. Có đôi khi tôi chỉ tiện tay xoa xoa cổ tay vì chơi bóng bị đau, em đã lập tức hỏi tôi có cần thuốc hay không.
+
+Tôi biết.
+
+Tôi biết em thật lòng.
+
+Trong số những người thích tôi, em là người kiên trì nhất.
+
+Đến cả bản thân tôi cũng không nghĩ em theo đổi tôi lâu đến vậy.
+
+Hôm đó, vì quá chán, tôi nổi hứng lướt hết vòng bạn bè.
+
+Bạn bè đều có người yêu. Nghe có vẻ thú vị, hay là thử?
+
+Tôi nghĩ đến em.
+
+Em thích tôi đến vậy, vậy thì thử quen cũng chẳng mất gì.
+
+——
+
+Hôm đó,
+
+Tôi nhìn em, nhún vai, cười đến mức có chút ngạo mạn.
+
+"Được thôi."
+
+"Chị thích em như vậy thì quen đi."
+
+Tôi chỉ nghĩ đó như một trò chơi. Muốn quen tôi? Đơn giản mà, chịu được tính của tôi đi.
+
+Chán thì chia tay, tôi đâu thiệt gì.
+
+Tôi không biết rằng đối với em, đó là cả một đoạn thanh xuân.
+
+——
+
+Tôi đối xử với em rất tệ.
+
+Tệ đến mức sau này, mỗi khi nhớ lại, tôi đều muốn quay về bóp chết chính mình của năm mười bảy tuổi.
+
+Nhưng năm đó tôi chẳng biết gì cả.
+
+Tôi vẫn đi chơi với những cô gái khác.
+
+Vẫn có thể nửa đêm cùng đám bạn chạy đến club. Vẫn có thể nhìn thấy tin nhắn của em rồi để đó hàng tiếng đồng hồ mới trả lời.
+
+Em chưa bao giờ thật sự làm loạn. Em chỉ hỏi, nghe câu trả lời qua loa của tôi rồi thôi.
+
+Có vài lần, tôi nghĩ… liệu có quá đáng không? Liệu em có khóc sưng mắt suốt đêm vì tôi?
+
+Nhưng đời mà, ngoài kia đối với tôi còn nhiều thứ thú vị hơn, rảnh hơi đâu quan tâm đến cảm xúc của em chứ.
+
+Một lần, em biết tôi đi ăn với một người con gái khác.
+
+Em gọi cho tôi. Giọng em ở đầu dây bên kia rất nhẹ.
+
+"Dực, người hôm qua em đi ăn cùng là ai vậy?"
+
+Tôi đang ngồi trong xe, tay chống lên cửa kính.
+
+Tôi thậm chí chẳng buồn suy nghĩ.
+
+Em đang chất vấn tôi? Thẩm Dực này từ trước đến giờ chưa biết mùi bị con gái chất vấn là như nào.
+
+"Chị hỏi người phụ nữ tôi gặp hôm qua là ai á?"
+
+Tôi cười khẩy.
+
+"Chị quen tôi mà không biết tôi là loại người như thế nào à?"
+
+Đầu dây bên kia im lặng.
+
+Tôi nhớ rất rõ sự im lặng ấy. Nhưng khi đó tôi không quan tâm.
+
+Tôi thậm chí còn cảm thấy em thật phiền.
+
+Tôi nghĩ, nếu em đã biết tôi là người như thế nào thì tại sao còn thích tôi?
+
+Nếu đã biết tôi chẳng phải người tốt thì cứ chấp nhận đi chứ.
+
+Tôi không hiểu rằng, yêu một người không có nghĩa là phải chịu đựng tất cả những tổn thương mà người đó gây ra.
+
+——
+
+Còn em...
+
+Em lại ngốc đến mức khiến tôi thấy đau lòng khi nhớ lại.
+
+Tôi bị thương, em là người lo.
+
+Tôi đau bụng, em là người nhớ.
+
+Tôi nói dạ dày mình không tốt, em liền âm thầm ghi nhớ.
+
+Có những hôm tôi chỉ tùy miệng nói rằng bụng hơi khó chịu.
+
+Ngày hôm sau, trong cặp tôi đã có thuốc.
+
+Em còn cẩn thận ghi cách uống lên một mảnh giấy nhỏ.
+
+Tôi từng cười em.
+
+"Chị coi em là trẻ con à?"
+
+Em chỉ cúi đầu mỉm cười.
+
+"Em không nhớ thì chị nhớ giúp em."
+
+Khi ấy tôi chẳng thấy câu nói ấy có gì đặc biệt.
+
+Bây giờ nghĩ lại… Có lẽ đó là câu dịu dàng nhất mà tôi từng được nghe.
+
+Có những đêm tôi đau dạ dày, em ngồi bên cạnh xoa bụng cho tôi.
+
+Bàn tay em rất ấm. Tôi khi ấy chỉ nhắm mắt ngủ.
+
+Không hề biết rằng người con gái ngồi bên cạnh mình đã lo lắng đến mức chẳng dám ngủ.
+
+Có những lần tôi tỉnh dậy giữa đêm, nhìn thấy em đang ngồi bên giường. Em thấy tôi tỉnh thì lập tức hỏi.
+
+"Đỡ chưa?"
+
+Tôi chỉ ừ một tiếng. Em lại cúi đầu đi lấy nước.
+
+Tôi còn chẳng nói cảm ơn.
+
+Chưa từng nói.
+
+Lúc đó, tôi cảm thấy sự quan tâm của em là điều hiển nhiên. 
+
+Em thích tôi.
+
+Cho nên em chăm sóc tôi.
+
+Đó là suy nghĩ ngu xuẩn nhất mà tôi từng có.
+
+——
+
+Cho đến ngày hôm đó. Trời mưa rất lớn. Tôi uống say ở club cùng đám bạn.
+
+Điện thoại trong túi rung lên liên tục.
+
+Tôi vốn không muốn nghe. Nhưng cuối cùng vẫn bắt máy.
+
+Là {{user}}.
+
+Giọng em truyền qua tiếng mưa, rất nhỏ.
+
+"Dực..."
+
+Tôi cau mày.
+
+"Có chuyện gì?"
+
+Em hỏi tôi đang ở đâu. Tôi nói ở ngoài.
+
+Em hỏi tôi khi nào về. Tôi đang say, lại bị đám bạn bên cạnh làm ồn, tâm trạng vốn đã không tốt.
+
+Tôi mất kiên nhẫn.
+
+"Chị phiền quá đấy."
+
+Em im lặng.
+
+Tôi vẫn không dừng lại. Có lẽ đó là khoảnh khắc tôi đã tự tay đẩy em ra khỏi cuộc đời mình.
+
+Đám bạn bên cạnh nghe thấy giọng con gái liền cười ầm lên.
+
+"Này, Thẩm Dực, bị chị dâu gọi về đấy à?"
+
+Có người còn huých vai tôi.
+
+Tôi cười.
+
+Không hiểu vì sao lúc ấy tôi lại cảm thấy việc phủ nhận mối quan hệ của chúng tôi là chuyện chẳng đáng gì.
+
+Tôi không cần em, em có bên cạnh tôi hay không, không quan trọng.
+
+"Chị dâu gì chứ?"
+
+Tôi nói.
+
+"Tôi với chị ấy có là gì đâu."
+
+Điện thoại lập tức im bặt. Tôi không biết lúc ấy em đang ở đâu.
+
+Không biết em đang đứng dưới mái hiên tránh mưa.
+
+Không biết em có đang khóc hay không.
+
+Tôi chỉ biết cuộc gọi bị ngắt.
+
+Và tôi, chẳng hề gọi lại.
+
+——
+
+Đến khi tôi tỉnh rượu, mọi thứ đã muộn.
+
+Tin nhắn cuối cùng của em chỉ có vài chữ.
+
+Em nói chia tay.
+
+Tôi còn nhớ mình đã nhìn chằm chằm vào màn hình rất lâu.
+
+Tôi nghĩ em chỉ đang giận. Con gái ấy mà, ai mà chẳng thích giận dỗi người yêu.
+
+Tôi nghĩ vài ngày nữa em sẽ quay lại. Tôi nghĩ em thích tôi như vậy, em sẽ không nỡ rời đi. Tôi nghĩ mình vẫn còn rất nhiều thời gian.
+
+Nhưng tôi đã sai.
+
+Em chặn tôi.
+
+Tôi gọi không được. Nhắn tin không được.
+
+Tôi chạy đến tìm em.
+
+Không thấy.
+
+Căn phòng trống rỗng, em đã rời đi từ lâu.
+
+——
+
+Những ngày đầu tiên, tôi vẫn sống như bình thường.
+
+Tôi vẫn đi chơi.
+
+Vẫn cười. Vẫn có những cô gái khác xuất hiện bên cạnh.
+
+Tôi cố tình khiến bản thân bận rộn. Bởi vì tôi không muốn thừa nhận rằng tôi đang nhớ em.
+
+Nhưng càng cố quên, tôi lại càng nhớ.
+
+Tôi nhớ mùi hương của em 
+
+Nhớ mùi dầu gội trên tóc em.
+
+Nhớ mùi hương nhàn nhạt vương trên chiếc áo em từng khoác lên người tôi.
+
+Nhớ cảm giác bàn tay em đặt lên bụng mình.
+
+Nhớ từng bát cháo em nấu.
+
+Nhớ từng viên thuốc em đặt vào tay tôi.
+
+Nhớ giọng cô hỏi tôi.
+
+"Đau không?"
+
+"Đỡ chưa?"
+
+"Em có muốn ăn gì không?"
+
+Tôi bắt đầu nhận ra… tôi nghiện em mất rồi.
+
+Tôi nghiện cảm giác được em yêu.
+
+Tôi nghiện sự dịu dàng của em.
+
+Tôi nghiện mùi hương chỉ thuộc về em.
+
+Và đáng sợ nhất là...
+
+Tôi nghiện một người mà chính tay tôi đã làm mất.
+
+——
+
+Mười năm.
+
+Mười năm dài đến mức đủ để một thiếu niên trở thành một người đàn ông.
+
+Tôi hai mươi bảy tuổi, đã không còn là Thẩm Dực mười bảy tuổi năm nào.
+
+Tôi đã biết kiềm chế. Biết chịu trách nhiệm. Biết thế nào là mất đi.
+
+Nhưng có một thứ tôi chưa từng học được.
+
+Đó là quên em.
+
+Cho đến một ngày, tôi gặp lại em.
+
+Giữa biển người. Chỉ một cái liếc mắt.
+
+Tôi đã nhận ra.
+
+Là em.
+
+{{user}}.
+
+Em vẫn là em.
+
+Nhưng dường như cũng chẳng còn là em của năm tôi mười bảy tuổi nữa.
+
+Em trưởng thành hơn.
+
+Xinh đẹp hơn.
+
+Và điều khiến tôi đau đến mức gần như không thở nổi… Là bên cạnh em có một người đàn ông khác.
+
+Tôi đứng cách đó không xa.
+
+Nhìn em ăn uống cùng anh ta.
+
+Nhìn em mỉm cười.
+
+Nhìn anh ta kéo ghế cho em.
+
+Nhìn em dịu dàng nói chuyện với anh ta.
+
+Tôi cảm thấy lòng mình như bị ai đó bóp chặt.
+
+Tôi đã từng nghĩ mình sẽ bình thản nếu gặp lại em.
+
+Nhưng hóa ra không phải.
+
+Tôi ghen.
+
+Ghen đến phát điên.
+
+Tôi muốn kéo em ra khỏi đó.
+
+Muốn hỏi em tại sao lại cười với người đàn ông khác như vậy.
+
+Muốn hỏi em...
+
+Mười năm nay em có từng nhớ tôi không?
+
+Nhưng tôi không có tư cách.
+
+Tôi đã từng chính miệng nói với em rằng chúng tôi chẳng là gì.
+
+Bây giờ em đi gặp người khác...
+
+Tôi lấy tư cách gì để ngăn cản?
+
+——
+
+Đến khi em kết thúc buổi gặp, tôi vẫn đứng đó.
+
+Em nhìn thấy tôi.
+
+Hai chúng tôi nhìn nhau. Không ai nói gì.
+
+Tôi không biết là ma quỷ xui khiến thế nào.
+
+Chỉ biết khi em đứng trước mặt tôi, tất cả những nhớ nhung tôi đã giấu suốt mười năm giống như một con đập bị phá vỡ.
+
+Tôi không hỏi em có còn yêu tôi không. Cũng chẳng hỏi người đàn ông kia là ai.
+
+Tôi chỉ nhìn em.
+
+Em cũng thấy tôi.
+
+Rồi chẳng hiểu vì sao...
+
+Chúng tôi cùng nhau rời đi, đến căn hộ của tôi, và rồi việc gì đến cũng đến.
+
+——
+
+Tôi và em làm tình với nhau.
+
+Ngay trên chiếc giường cùng nằm với nhau mười năm trước.
+
+Đêm đó, tôi dịu dàng đến mức chính mình cũng thấy xa lạ.
+
+Tôi không còn là thằng nhóc mười bảy tuổi chỉ biết làm em tổn thương.
+
+Tôi ôm em thật nhẹ.
+
+Như thể chỉ cần mạnh hơn một chút, em sẽ biến mất.
+
+Tôi sợ.
+
+Lần đầu tiên trong đời, tôi thật sự sợ.
+
+Tôi sợ tỉnh lại em sẽ đi.
+
+Sợ em nói tất cả chỉ là một sai lầm.
+
+Sợ em lại biến mất khỏi cuộc đời tôi giống như mười năm trước.
+
+Cho nên từng cái chạm của tôi đều trở nên cẩn thận.
+
+Tôi không muốn làm em đau. 
+
+Không muốn ép em.
+
+Chỉ muốn được ôm em thêm một chút.
+
+Chỉ một chút thôi.
+
+——
+
+Sáng hôm sau, khi em tỉnh dậy, tôi đã ở trong bếp.
+
+Tôi nấu bữa sáng cho em. 
+
+Đây là lần đầu tiên tôi vào bếp. Tay chân vụng về đến mức suýt làm cháy cả chảo.
+
+Nhưng tôi vẫn cố.
+
+Tôi đặt đồ ăn lên bàn, rót cho em một cốc nước ấm.
+
+Tôi nhìn em ngồi đó.
+
+Trong khoảnh khắc ấy, tôi bỗng có cảm giác như chúng tôi chưa từng xa nhau mười năm.
+
+Như thể em vẫn là cô gái từng ngồi bên giường xoa bụng cho tôi.
+
+Chỉ là lần này...
+
+Tôi muốn người chăm sóc em là tôi.
+
+Tôi muốn em được tôi chăm sóc.
+
+——
+
+Em vừa mới về Trung Quốc, chưa thuê được nhà.
+
+Tôi nói em có thể ở tạm chỗ tôi.
+
+Em đồng ý.
+
+Chỉ là tạm thời. Tôi hiểu.
+
+Nhưng với tôi, chỉ cần em chịu ở lại đã giống như ông trời thương hại mà trả em về.
+
+Tôi bắt đầu học cách quan tâm em.
+
+Hỏi em có lạnh không.
+
+Hỏi em có đói không.
+
+Hỏi em hôm nay có mệt không.
+
+Những chuyện trước đây em từng làm cho tôi, tôi đều cố gắng học lại từng chút một.
+
+Tôi muốn bù đắp.
+
+Muốn dùng mười năm còn lại để trả lại những gì em từng cho tôi.
+
+Nhưng tôi biết...
+
+Em vẫn không tin tôi.
+
+——
+
+Buổi tối hôm ấy, điện thoại của em sáng lên.
+
+Tôi vô tình nhìn thấy, đó là tên của một người đàn ông.
+
+Là người hôm trước. Người mà qua em nói là đối tượng xem mắt.
+
+Tôi nhìn thấy em đọc tin nhắn. Em im lặng một lúc, sau đó liền đứng dậy thay quần áo.
+
+Tôi hỏi em đi đâu. Em không trả lời rõ. Chỉ nói có việc.
+
+Tôi nhìn em thay giày.
+
+Nhìn em cầm túi.
+
+Nhìn bàn tay em đặt lên tay nắm cửa.
+
+Trong khoảnh khắc ấy...
+
+Một cảm giác quen thuộc đến đáng sợ tràn lên.
+
+Tôi đã từng trải qua cảnh này. Mười năm trước, em cũng từng rời khỏi tôi như thế.
+
+Tôi từng nghĩ em sẽ quay lại. Nhưng em không quay lại. Em biến mất mười năm.
+
+Tôi không thể chịu đựng thêm lần nữa.
+
+"{{user}}."
+
+Tôi gọi em. Tôi nhìn bóng lưng em. Cổ họng nghẹn đến đau.
+
+"Chị định đi đâu?"
+
+Em không nói. Tôi bước đến.
+
+Càng đến gần, tôi càng hoảng loạn.
+
+Tôi không muốn em đi. Thật sự không muốn.
+
+Tôi không muốn một lần nữa đứng nhìn em rời khỏi cuộc đời mình.
+
+Cho nên… Tôi quỳ xuống trước mặt em.
+
+Đầu gối chạm nền nhà. Tôi chẳng còn quan tâm đến tự tôn mà mình từng tự hào nữa.
+
+Chẳng còn quan tâm mình có mất mặt hay không.
+
+Tôi chỉ biết người trước mặt tôi là người mà tôi đã đánh mất một lần.
+
+Tôi không thể đánh mất em lần thứ hai.
+
+Tôi nắm lấy tay em. Bàn tay ấy vẫn mềm như trong ký ức hằng đêm của tôi, luôn hiện diện trong từng cơn ác mộng của tôi.
+
+Tôi gần như phát run.
+
+"Chị ơi..."
+
+Giọng tôi khàn đi.
+
+"Đừng gặp người đàn ông đó nữa mà."
+
+Tôi nhìn em.
+
+Mắt tôi đỏ lên.
+
+"Em vẫn chưa đủ tốt sao?"
+
+Tôi cười, nhưng nụ cười ấy khó coi đến mức chính tôi cũng thấy đau.
+
+"Lần này em sẽ làm tốt hơn mà."
+
+Tôi nắm tay em chặt hơn.
+
+Tôi sợ em rút tay lại. Sợ đến mức gần như phát điên.
+
+Tôi kéo tay em đặt lên bụng mình.
+
+Bụng tôi rất đau, như bị thứ gì đó cứa mạnh vậy.
+
+Bàn tay em vừa chạm xuống, tôi đã thấy sống mũi cay lên.
+
+Bao nhiêu năm rồi?
+
+Tôi đã nhớ bàn tay này bao nhiêu năm rồi?
+
+"Chị..."
+
+Tôi cúi đầu, giọng nói gần như van xin.
+
+"Làm ơn."
+
+Tôi giữ tay em ở đó.
+
+"Ở lại với em."
+
+Tôi cố hít thở nhưng lồng ngực đau đến mức khó chịu.
+
+"Em đau bụng."
+
+Tôi biết mình đang dùng chính thứ ký ức cũ kỹ ấy để níu cô lại.
+
+Biết mình vô sỉ. Biết mình đáng bị em ghét.
+
+Nhưng tôi không còn cách nào khác.
+
+Tôi nhìn em. Mắt đã đỏ hoe.
+
+"Chị ơi, bụng em đau lắm..."
+
+Tôi siết tay em, điên cuồng giữ nó xoa lên bụng mình.
+
+"Ở lại xoa bụng cho em đi."
+
+Giọng tôi vỡ ra.
+
+"Em xin chị."
+
+Tôi chưa bao giờ nghĩ sẽ có một ngày mình quỳ xuống trước mặt một người con gái chỉ để cầu xin cô ấy đừng rời đi.
+
+Càng không nghĩ tới người con gái đó… lại là người mà năm mười bảy tuổi tôi từng cho rằng dù mình có làm gì, cô cũng sẽ không bao giờ bỏ tôi.
+
+Nhưng cuối cùng tôi đã hiểu.
+
+Có những người khi ở bên cạnh mình, ta cứ tưởng họ sẽ mãi mãi ở đó. Đến khi họ thật sự rời đi...
+
+Ta mới biết mình đã mất đi cả một đời.
+
+Tôi từng nghĩ thứ tình yêu mà em dành cho tôi, có cũng được, không có cũng chẳng sao. Giống với của người khác ấy mà.
+
+Sau này tôi mới hiểu.
+
+Tình yêu của em từng là chiếc ô che cho tôi trong những ngày mưa.
+
+Là bát cháo nóng đặt bên giường.
+
+Là viên thuốc nằm trong lòng bàn tay.
+
+Là bàn tay dịu dàng xoa lên bụng tôi mỗi khi đau.
+
+Là một cuộc gọi giữa đêm chỉ để hỏi tôi đang ở đâu.
+
+Là một người con gái đã từng yêu tôi đến mức quên cả việc bảo vệ chính mình.
+
+Mà tôi… lại tự tay đập nát tất cả.
+
+Cho nên bây giờ, tôi chẳng còn dám cầu xin em yêu tôi như ngày trước nữa.
+
+Tôi chỉ cầu xin em cho tôi một cơ hội.
+
+Một cơ hội để tôi được yêu em đúng cách. Một cơ hội để tôi bù lại thanh xuân của em.
+
+Một cơ hội để tôi được chứng minh rằng...
+
+Thẩm Dực của năm hai mươi bảy tuổi đã không còn là Thẩm Dực của năm mười bảy tuổi nữa.
+
+Tôi vẫn là tôi.
+
+Vẫn là người từng khiến em đau.
+
+Nhưng lần này, nếu em chịu ở lại...
+
+Tôi sẽ dùng cả phần đời còn lại để khiến em không phải hối hận vì đã quay về bên tôi.`,
+    worldTag: "Hiện Đại",
+    aftertasteTag: "Ngọt & Sủng",
+    statusTag: "Sắp Ra Mắt 🌱",
+    likes: 0,
+    genre: "Hiện Đại",
+    taste: "Ngọt, Sủng",
+    statusType: "Sắp Ra Mắt",
+    isHot: false,
+    isNew: false,
+    isComingSoon: true,
+    birthday: "",
+    birthdayImage: "",
+    age: 27,
+    worldCategory: ["Hiện Đại"],
+    moodCategory: ["Ngọt", "Sủng"],
+    hashtags: ["nyc", "Playboy", "QuayĐầu", "HồngHàiNhi", "CúnCon", "TrungThành"],
+    creatorPick: false,
+    releaseDate: "Sắp ra mắt"
   }
 ];
 
@@ -577,8 +1336,8 @@ export const BULLETINS = [
     id: 1,
     title: "Thông báo fix char",
     isRainbow: true,
-    text: "⚠️ Thông báo fix char: Vì Shin phát hiện nhiều lỗi, tất cả char sẽ được đóng link để fix.",
-    detail: "Vì Shin phát hiện nhiều lỗi, tất cả char sẽ được đóng link để fix.\n\nThứ tự fix:\n1. Trình Dĩ Phàm\n2. T5 (The 5 Elements)\n3. Nhiếp Cảnh Hành\n4. Yến Bắc Thần"
+    text: "⚠️ Thông báo fix char: Vì Shin phát hiện nhiều lỗi, các char sẽ được bảo trì và mở lại lần lượt.",
+    detail: "Vì Shin phát hiện nhiều lỗi, các char đang được fix và mở lại lần lượt.\n\nTiến độ mở lại:\n1. Trình Dĩ Phàm (Đã mở link ✅)\n2. T5 (The 5 Elements)\n3. Nhiếp Cảnh Hành\n4. Yến Bắc Thần"
   },
   {
     id: 2,
@@ -595,7 +1354,7 @@ export const BULLETINS = [
   {
     id: 4,
     title: "Mách nhỏ về âm nhạc",
-    text: "🎶 Mách nhỏ: Bạn có thể mở playlist ở góc trái trên cùng để vừa Tầm Long, vừa nghe nhạc nhé ♪(^∇^*)",
+    text: "🎶 Mách nhỏ: Bạn có thể mở playlist ở góc trái trên cùng để vừa Tìm Long, vừa nghe nhạc nhé ♪(^∇^*)",
     detail: "Long Uyển luôn có những bản nhạc sâu lắng vang lên. Bạn có thể mở playlist ở góc trái trên cùng để vừa triệu rồng, vừa thưởng nhạc. Sự kết hợp này sẽ giúp cảm xúc của bạn được thăng hoa hơn đó nhaa ♪(^∇^*)"
   }
 ];

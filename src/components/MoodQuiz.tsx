@@ -504,12 +504,18 @@ export default function MoodQuiz({ characters, onThuongVi, onShowBackstory }: Mo
                       className="bg-[#F8F6F5] border border-[#D8DEE8] hover:border-[#7A8AA5] rounded-2xl p-3 flex flex-col justify-between transition-all duration-300 hover:shadow-sm"
                     >
                       <div className="flex items-start gap-2.5">
-                        <img
-                          src={char.avatar}
-                          alt={char.name}
-                          referrerPolicy="no-referrer"
-                          className="w-10 h-10 rounded-xl object-cover object-top border border-[#D8DEE8] shrink-0"
-                        />
+                        {char.avatar ? (
+                          <img
+                            src={char.avatar}
+                            alt={char.name}
+                            referrerPolicy="no-referrer"
+                            className="w-10 h-10 rounded-xl object-cover object-top border border-[#D8DEE8] shrink-0"
+                          />
+                        ) : (
+                          <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-[#E8EAEF] text-[#7A8AA5] border border-[#D8DEE8] shrink-0 text-base">
+                            🐉
+                          </div>
+                        )}
                         <div className="min-w-0">
                           <h5 className="font-serif text-xs font-bold text-[#3A4258] truncate">
                             {char.name}

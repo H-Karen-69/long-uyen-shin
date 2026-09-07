@@ -15,6 +15,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { KeyRound, Facebook, Music } from 'lucide-react';
 import { ToastMessage } from '../types';
+import goldenGateAvatar from '../assets/images/regenerated_image_1788688077580.png';
 
 interface GoldenGateProps {
   /** Trạng thái cổng đang mở hay đóng */
@@ -153,8 +154,8 @@ export default function GoldenGate({ isOpen, onOpenGate, isEntering, onToast }: 
             style={{
               transformOrigin: 'left center',
               transformStyle: 'preserve-3d',
-              transition: 'transform 1.6s cubic-bezier(0.25, 1, 0.5, 1), filter 1.6s ease',
-              transform: isOpen ? 'rotateY(-100deg)' : 'rotateY(0deg)',
+              transition: 'transform 1.8s cubic-bezier(0.25, 1, 0.35, 1), filter 1.8s ease',
+              transform: isOpen ? 'rotateY(-102deg)' : 'rotateY(0deg)',
               filter: isOpen ? 'brightness(1.15) drop-shadow(-8px 12px 24px rgba(0,0,0,0.3))' : 'drop-shadow(0 10px 20px rgba(0,0,0,0.18))',
             }}
           >
@@ -308,8 +309,8 @@ export default function GoldenGate({ isOpen, onOpenGate, isEntering, onToast }: 
             style={{
               transformOrigin: 'right center',
               transformStyle: 'preserve-3d',
-              transition: 'transform 1.6s cubic-bezier(0.25, 1, 0.5, 1), filter 1.6s ease',
-              transform: isOpen ? 'rotateY(100deg)' : 'rotateY(0deg)',
+              transition: 'transform 1.8s cubic-bezier(0.25, 1, 0.35, 1), filter 1.8s ease',
+              transform: isOpen ? 'rotateY(102deg)' : 'rotateY(0deg)',
               filter: isOpen ? 'brightness(1.15) drop-shadow(8px 12px 24px rgba(0,0,0,0.3))' : 'drop-shadow(0 10px 20px rgba(0,0,0,0.18))',
             }}
           >
@@ -451,8 +452,8 @@ export default function GoldenGate({ isOpen, onOpenGate, isEntering, onToast }: 
             Khi bấm Mở Cổng -> fade out và thu nhỏ nhẹ nhàng (0.4s)
             =================================================================== */}
         <div
-          className={`absolute inset-0 flex flex-col items-center justify-center z-40 px-4 transition-all duration-500 ${
-            isOpen ? 'opacity-0 scale-90 pointer-events-none' : 'opacity-100 scale-100 pointer-events-auto'
+          className={`absolute inset-0 flex flex-col items-center justify-center z-40 px-4 transition-all duration-700 ease-out ${
+            isOpen ? 'opacity-0 scale-95 pointer-events-none' : 'opacity-100 scale-100 pointer-events-auto'
           }`}
         >
           {/* TẤM BIỂN KÍNH MỜ (GLASS CARD CENTER) */}
@@ -484,7 +485,7 @@ export default function GoldenGate({ isOpen, onOpenGate, isEntering, onToast }: 
             >
               <div className="w-full h-full rounded-[18px] overflow-hidden bg-white/70">
                 <img
-                  src="https://i.ibb.co/93qnWNTK/avt.png"
+                  src={goldenGateAvatar}
                   alt="Kamishiro Shinju"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"

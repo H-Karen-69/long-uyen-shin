@@ -131,7 +131,15 @@ export default function StoryModal({ character, onClose, onLike, isLiked, onToas
 
           {/* Footer Action */}
           <div className="bg-[#F0EEED]/80 p-4 border-t border-[#D8DEE8] flex justify-end">
-            {!character.roleplayLink || character.roleplayLink === '#' ? (
+            {character.isComingSoon ? (
+              <button
+                id={`modal-action-btn-${character.id}`}
+                onClick={() => onToast?.('Rồng này đang ẩn mình, sẽ sớm ra mắt nhé! 🌱', 'heart-on')}
+                className="w-full text-center text-sm font-bold text-[#3A4258]/70 bg-[#D8DEE8]/50 hover:bg-[#D8DEE8]/70 py-3 px-6 rounded-[15px] border border-dashed border-[#3A4258]/30 cursor-pointer transition-all duration-300 flex items-center justify-center gap-1.5"
+              >
+                <span>🌱</span> Sắp Ra Mắt
+              </button>
+            ) : !character.roleplayLink || character.roleplayLink === '#' ? (
               <button
                 id={`modal-action-btn-${character.id}`}
                 onClick={() => onToast?.('Vì Shin phát hiện nhiều lỗi, char đang được đóng link để fix nha! 🛠️', 'heart-off')}

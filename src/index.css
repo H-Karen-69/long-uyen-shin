@@ -23,15 +23,9 @@
   background: #5A6B85;
 }
 
-/* Base style resets with Slate/Pink Polka-Dot Wallpaper pattern */
+/* Base style resets */
 body {
-  background-color: #E8EAEF;
-  background-image: 
-    radial-gradient(#D8DEE8 15%, transparent 16%),
-    radial-gradient(#D8DEE8 15%, transparent 16%);
-  background-size: 36px 36px, 36px 36px;
-  background-position: 0 0, 18px 18px;
-  background-attachment: fixed;
+  background-color: #F8F6F0;
   color: #3A4258;
   font-family: var(--font-sans);
   overflow-x: hidden;
@@ -716,19 +710,19 @@ body {
    Bay lượn bồng bềnh tự nhiên, nghiêng cánh nhẹ nhàng, không bị gập dẹt 2D */
 .dragon-flight {
   position: absolute;
-  top: 36%;
-  left: calc(50% - min(35vw, 360px));
-  width: min(70vw, 720px);
+  top: 35%;
+  left: calc(50% - min(36vw, 380px));
+  width: min(72vw, 760px);
   height: auto;
-  animation: dragonCelestialCruise 22s ease-in-out infinite;
+  animation: dragonCelestialCruise 24s ease-in-out infinite;
   will-change: transform;
 }
 
 .living-dragon-container {
   width: 100%;
   height: auto;
-  filter: drop-shadow(0 0 16px rgba(245, 215, 127, 0.45))
-          drop-shadow(0 0 34px rgba(255, 255, 255, 0.35));
+  filter: drop-shadow(0 0 18px rgba(245, 215, 127, 0.45))
+          drop-shadow(0 0 36px rgba(255, 255, 255, 0.35));
 }
 
 .living-dragon-svg {
@@ -736,6 +730,166 @@ body {
   height: auto;
   overflow: visible;
   display: block;
+}
+
+/* ==========================================================================
+   VŨ ĐIỆU THẦN LONG HÍ CHÂU (SACRED PEARL & DRAGON CHASE ANIMATIONS)
+   Viên Dạ Minh Châu bay dẫn đường, bứt phá lượn né - Bạch Long Thần uốn khúc
+   vươn trảo, ngẩng đầu bám đuổi theo sát nút ngọc quý!
+   ========================================================================== */
+
+/* 1. Viên Dạ Minh Châu bay dẫn đường phía trước */
+.pearl-chase-lead {
+  animation: pearlChaseFlight 8s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+@keyframes pearlChaseFlight {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  16% {
+    /* Ngọc vút lên cao và bay ra phía trước, rực rỡ bứt tốc */
+    transform: translate3d(-65px, -38px, 0) scale(1.15);
+  }
+  30% {
+    /* Ngọc khựng lại trêu chọc rồng khi rồng đuổi sát */
+    transform: translate3d(-36px, -14px, 0) scale(1.05);
+  }
+  46% {
+    /* Ngọc đột ngột lượn vồng xuống thấp né tránh cú đớp của rồng */
+    transform: translate3d(-52px, 44px, 0) scale(1.12);
+  }
+  62% {
+    /* Ngọc liệng sát tầm thấp, chuẩn bị tăng tốc */
+    transform: translate3d(-24px, 26px, 0) scale(1.03);
+  }
+  76% {
+    /* Ngọc bứt tốc thần tốc về phía trước, hào quang bùng sáng */
+    transform: translate3d(-88px, -12px, 0) scale(1.22);
+  }
+  88% {
+    /* Rồng tung mình rượt sát, ngọc bay lượn vòng lại chuẩn bị chu kỳ mới */
+    transform: translate3d(-46px, -18px, 0) scale(1.08);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+/* 2. Đầu rồng ngẩng cao, chúi thấp theo dõi và bám đuổi hướng bay của ngọc */
+.head-chase-track {
+  animation: dragonHeadTrackPearl 8s ease-in-out infinite;
+  transform-origin: 0% 50%;
+  will-change: transform;
+}
+
+@keyframes dragonHeadTrackPearl {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  16% {
+    /* Đầu ngẩng cao, ngước nhìn ngọc đang bay vút lên */
+    transform: translate3d(-22px, -16px, 0) rotate(-11deg);
+  }
+  30% {
+    /* Đầu vươn tới sát ngọc, chực đớp lấy ngọc */
+    transform: translate3d(-34px, -8px, 0) rotate(-6deg);
+  }
+  46% {
+    /* Đầu rồng chúc xuống thấp bám theo hướng ngọc lượn xuống */
+    transform: translate3d(-18px, 20px, 0) rotate(11deg);
+  }
+  62% {
+    /* Rồng liệng tầm thấp theo sát ngọc */
+    transform: translate3d(-10px, 12px, 0) rotate(6deg);
+  }
+  76% {
+    /* Rồng gầm vang, sẵn sàng cho cú bứt phá */
+    transform: translate3d(-8px, -4px, 0) rotate(-4deg);
+  }
+  88% {
+    /* Rồng phóng mình rượt sát sau viên ngọc */
+    transform: translate3d(-40px, -10px, 0) rotate(-8deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+}
+
+/* 3. Móng vuốt trước vươn dài ra chộp bắt ngọc */
+.dragon-front-claw-reach {
+  animation: dragonFrontClawReach 8s ease-in-out infinite;
+  transform-origin: 0% 0%;
+  will-change: transform;
+}
+
+@keyframes dragonFrontClawReach {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  20% {
+    /* Chân trước vươn dài ra đón bắt ngọc đang vút lên */
+    transform: translate3d(-28px, -14px, 0) rotate(-16deg) scale(1.08);
+  }
+  46% {
+    /* Chân quắp theo hướng ngọc lượn xuống */
+    transform: translate3d(-16px, 14px, 0) rotate(12deg);
+  }
+  74% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  88% {
+    /* Lại vươn trảo chộp đón trong cú phóng */
+    transform: translate3d(-34px, -10px, 0) rotate(-14deg) scale(1.06);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+}
+
+/* 4. Thân rồng uốn lượn nhấp nhô truyền động năng bơi đuổi theo ngọc */
+.dragon-chase-body-surge {
+  animation: dragonBodySurge 8s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes dragonBodySurge {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  20% {
+    transform: translate3d(-18px, -8px, 0);
+  }
+  46% {
+    transform: translate3d(-10px, 12px, 0);
+  }
+  76% {
+    transform: translate3d(4px, 0, 0);
+  }
+  88% {
+    transform: translate3d(-30px, -6px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* 5. Râu rồng bay dạt khí động học */
+.dragon-chase-whiskers {
+  animation: dragonWhiskersFlutter 4s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes dragonWhiskersFlutter {
+  0%, 100% {
+    transform: scale(1) skewY(0deg);
+  }
+  50% {
+    transform: scale(1.04, 0.96) skewY(-2.5deg);
+  }
 }
 
 /* Quỹ đạo lượn bồng bềnh tự nhiên của Thần Long trên bầu trời Long Uyển:
@@ -764,7 +918,7 @@ body {
     width: min(90vw, 420px);
     left: calc(50% - min(45vw, 210px));
     top: 34%;
-    animation-duration: 18s;
+    animation-duration: 20s;
   }
 }
 
@@ -1224,6 +1378,93 @@ body {
   90% { opacity: 0.9; }
   100% { transform: translate(var(--drift), 100vh) rotate(720deg); opacity: 0; }
 }
+
+/* ==========================================================================
+   MINI-GAME RÚT THẺ TÂM MỆNH LONG UYỂN (SCOPED STYLES)
+   ========================================================================== */
+.tam-menh-section-ombre {
+  background: linear-gradient(165deg, #F8F6F0 0%, #F5E6EA 35%, #E8EEF6 70%, #F8F6F0 100%);
+}
+
+.tam-menh-perspective {
+  perspective: 1200px;
+}
+
+.tam-menh-card-inner {
+  transform-style: preserve-3d;
+  transition: transform 0.75s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.tam-menh-flipped {
+  transform: rotateY(180deg);
+}
+
+.tam-menh-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.tam-menh-back {
+  transform: rotateY(0deg);
+}
+
+.tam-menh-front {
+  transform: rotateY(180deg);
+}
+
+@keyframes tamMenhFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.tam-menh-float-0 { animation: tamMenhFloat 3.8s ease-in-out infinite 0s; }
+.tam-menh-float-1 { animation: tamMenhFloat 4.2s ease-in-out infinite 0.5s; }
+.tam-menh-float-2 { animation: tamMenhFloat 3.6s ease-in-out infinite 1s; }
+.tam-menh-float-3 { animation: tamMenhFloat 4.4s ease-in-out infinite 0.3s; }
+.tam-menh-float-4 { animation: tamMenhFloat 4.0s ease-in-out infinite 0.8s; }
+
+@keyframes tamMenhGleam {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.tam-menh-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(242, 209, 132, 0.35), transparent);
+  background-size: 200% 100%;
+  animation: tamMenhGleam 2.8s ease-in-out infinite;
+}
+
+/* Memory Game 3D Flip Card Styles */
+.memory-card-perspective {
+  perspective: 1000px;
+}
+
+.memory-card-inner {
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.memory-card-flipped {
+  transform: rotateY(180deg);
+}
+
+.memory-card-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.memory-card-front {
+  transform: rotateY(180deg);
+}
+
 
 
 

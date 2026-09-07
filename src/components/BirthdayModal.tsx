@@ -180,12 +180,18 @@ export default function BirthdayModal({ character, onClose, addToast }: Birthday
         {/* Left Side: Image & Hero */}
         <div className="w-full md:w-1/2 relative h-48 md:h-auto flex-shrink-0">
           <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10" />
-          <img 
-            src={character.birthdayImage || character.avatar} 
-            alt={character.name} 
-            className="w-full h-full object-cover"
-            referrerPolicy="no-referrer"
-          />
+          {(character.birthdayImage || character.avatar) ? (
+            <img 
+              src={character.birthdayImage || character.avatar} 
+              alt={character.name} 
+              className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center bg-[#7A8AA5]/30 text-6xl">
+              🐉
+            </div>
+          )}
           <div className="absolute bottom-6 left-6 right-6 z-20 text-white">
             <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold mb-3 border border-white/30">
               <Gift className="w-4 h-4 text-[#FFE873]" />
