@@ -31,6 +31,7 @@ import Leaderboard from './components/Leaderboard';
 import ConfessionCorner from './components/ConfessionCorner';
 import CharacterFeedbackModal from './components/CharacterFeedbackModal';
 import FallingDragons from './components/FallingDragons';
+import NatureSkyCreatures from './components/NatureSkyCreatures';
 import { ChatIdeasBoard } from './components/ChatIdeasBoard';
 import { GameHubCTA } from './components/GameHubCTA';
 import MiniMusicPlayer from './components/MiniMusicPlayer';
@@ -439,6 +440,8 @@ export default function App() {
     <div className="min-h-screen bg-[#F8F6F0] text-[#5D4E3C] relative font-sans selection:bg-[#FDF3D2] selection:text-[#3A4258] overflow-x-hidden">
       {/* Falling animation of sparkles - Chỉ hiển thị khi đã vào trong Long Uyển */}
       {hasEntered && <FallingDragons />}
+      {/* Đàn chim và bướm bay lượn trên nền trời giao diện chính */}
+      {hasEntered && <NatureSkyCreatures />}
 
       {/* Floating Toast Container */}
       <div className="fixed bottom-5 right-5 z-50 flex flex-col gap-2.5 max-w-sm pointer-events-none">
