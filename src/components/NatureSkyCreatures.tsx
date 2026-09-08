@@ -45,234 +45,103 @@ interface BirdFlockConfig {
 }
 
 export default function NatureSkyCreatures() {
-  // Cấu hình các đàn chim bay theo bầy / đội hình hình chữ V hoặc theo luồng
+  // Cấu hình đàn chim thanh thoát, số lượng tối giản để siêu mượt và không lag
   const flocks = useMemo<BirdFlockConfig[]>(() => {
     return [
-      // 1. Đàn Tiên Hạc 5 con bay theo đội hình chữ V uy nghi (Trái sang Phải)
+      // 1. Đàn Tiên Hạc trắng 3 con bay hình chữ V thanh nhã (Trái sang Phải)
       {
         id: 'crane-flock-1',
         type: 'crane',
         direction: 'left-to-right',
-        top: 10,
-        duration: 28,
-        delay: -8, // Bay rải rác ngay từ đầu, không đứng góc trái
-        opacity: 0.9,
-        waveSpeed: 5.2,
-        flapSpeed: 0.9,
+        top: 9,
+        duration: 32,
+        delay: -8,
+        opacity: 0.85,
+        waveSpeed: 5.5,
+        flapSpeed: 0.95,
         members: [
-          { offsetX: 0, offsetY: 0, scale: 1.05, flapOffset: 0 },
-          { offsetX: -48, offsetY: -26, scale: 0.94, flapOffset: 0.18 },
-          { offsetX: -95, offsetY: -50, scale: 0.85, flapOffset: 0.35 },
-          { offsetX: -46, offsetY: 25, scale: 0.94, flapOffset: 0.14 },
-          { offsetX: -90, offsetY: 48, scale: 0.86, flapOffset: 0.32 },
+          { offsetX: 0, offsetY: 0, scale: 0.95, flapOffset: 0 },
+          { offsetX: -38, offsetY: -20, scale: 0.86, flapOffset: 0.18 },
+          { offsetX: -36, offsetY: 20, scale: 0.86, flapOffset: 0.14 },
         ],
       },
-      // 2. Đàn Chim Én mùa xuân 7 con chao lượn nhanh rợp trời (Phải sang Trái)
-      {
-        id: 'swallow-flock-1',
-        type: 'swallow',
-        direction: 'right-to-left',
-        top: 25,
-        duration: 16,
-        delay: -4,
-        opacity: 0.86,
-        waveSpeed: 3.1,
-        flapSpeed: 0.33,
-        members: [
-          { offsetX: 0, offsetY: 0, scale: 0.96, flapOffset: 0 },
-          { offsetX: 38, offsetY: -20, scale: 0.88, flapOffset: 0.08 },
-          { offsetX: 68, offsetY: 16, scale: 0.82, flapOffset: 0.22 },
-          { offsetX: 98, offsetY: -8, scale: 0.78, flapOffset: 0.04 },
-          { offsetX: 130, offsetY: 24, scale: 0.85, flapOffset: 0.16 },
-          { offsetX: 156, offsetY: -22, scale: 0.74, flapOffset: 0.28 },
-          { offsetX: 185, offsetY: 6, scale: 0.8, flapOffset: 0.12 },
-        ],
-      },
-      // 3. Đàn Chim Nhạn thủy mặc 8 con thiên di xa xăm tầng mây cao (Trái sang Phải)
-      {
-        id: 'ink-geese-flock',
-        type: 'ink_bird',
-        direction: 'left-to-right',
-        top: 6,
-        duration: 35,
-        delay: -18,
-        opacity: 0.78,
-        waveSpeed: 5.6,
-        flapSpeed: 0.75,
-        members: [
-          { offsetX: 0, offsetY: 0, scale: 0.8, flapOffset: 0 },
-          { offsetX: -32, offsetY: -16, scale: 0.74, flapOffset: 0.12 },
-          { offsetX: -64, offsetY: -30, scale: 0.68, flapOffset: 0.24 },
-          { offsetX: -96, offsetY: -42, scale: 0.62, flapOffset: 0.36 },
-          { offsetX: -30, offsetY: 18, scale: 0.74, flapOffset: 0.08 },
-          { offsetX: -60, offsetY: 34, scale: 0.68, flapOffset: 0.2 },
-          { offsetX: -88, offsetY: 48, scale: 0.62, flapOffset: 0.32 },
-          { offsetX: -115, offsetY: 62, scale: 0.56, flapOffset: 0.44 },
-        ],
-      },
-      // 4. Đàn Chim Khuyên / Sẻ Hoa 4 con ríu rít tầng trung (Phải sang Trái)
+      // 2. Cặp chim khuyên lục ngọc 2 con ríu rít tầng trung (Phải sang Trái)
       {
         id: 'songbird-flock-1',
         type: 'songbird',
         direction: 'right-to-left',
-        top: 44,
-        duration: 18,
-        delay: -11,
-        opacity: 0.84,
-        waveSpeed: 2.7,
-        flapSpeed: 0.27,
+        top: 38,
+        duration: 24,
+        delay: -12,
+        opacity: 0.8,
+        waveSpeed: 3.2,
+        flapSpeed: 0.28,
         members: [
-          { offsetX: 0, offsetY: 0, scale: 0.88, flapOffset: 0 },
-          { offsetX: 28, offsetY: 16, scale: 0.8, flapOffset: 0.14 },
-          { offsetX: -22, offsetY: 24, scale: 0.76, flapOffset: 0.07 },
-          { offsetX: 42, offsetY: -12, scale: 0.82, flapOffset: 0.21 },
+          { offsetX: 0, offsetY: 0, scale: 0.82, flapOffset: 0 },
+          { offsetX: 24, offsetY: 14, scale: 0.74, flapOffset: 0.14 },
         ],
       },
     ];
   }, []);
 
-  // Cấu hình dàn chim và bướm đơn lẻ bay dạo cảnh (đều dùng negative delay để rải đều bầu trời)
+  // Cấu hình chim và bướm đơn lẻ bay dạo cảnh - tinh gọn, không gây rối mắt hay lag
   const creatures = useMemo<CreatureFlightConfig[]>(() => {
     return [
-      // 1. Tiên hạc bay cao (Trái sang Phải) - Chậm rãi, uy nghi
+      // 1. Tiên hạc trắng bay cao thong dong (Trái sang Phải)
       {
         id: 'crane-1',
         type: 'crane',
         direction: 'left-to-right',
-        top: 8,
-        duration: 26,
+        top: 15,
+        duration: 28,
         delay: -3,
-        scale: 1.1,
-        opacity: 0.85,
-        waveHeight: 18,
-        waveSpeed: 5,
-        flapSpeed: 0.9,
+        scale: 0.95,
+        opacity: 0.8,
+        waveHeight: 16,
+        waveSpeed: 5.2,
+        flapSpeed: 0.92,
       },
-      // 2. Cặp bướm hồng phấn dạo chơi bên dưới lướt nhẹ
+      // 2. Bướm hồng phấn dạo chơi tầng trung (Trái sang Phải)
       {
         id: 'pink-bf-1',
         type: 'pink_butterfly',
         direction: 'left-to-right',
-        top: 24,
-        duration: 18,
+        top: 30,
+        duration: 22,
         delay: -14,
-        scale: 0.95,
-        opacity: 0.88,
-        waveHeight: 28,
-        waveSpeed: 3.2,
-        flapSpeed: 0.28,
-      },
-      // 3. Chim én chao lượn nhanh (Phải sang Trái)
-      {
-        id: 'swallow-1',
-        type: 'swallow',
-        direction: 'right-to-left',
-        top: 16,
-        duration: 15,
-        delay: -8,
         scale: 0.9,
-        opacity: 0.82,
-        waveHeight: 22,
-        waveSpeed: 2.8,
-        flapSpeed: 0.35,
+        opacity: 0.85,
+        waveHeight: 24,
+        waveSpeed: 3.4,
+        flapSpeed: 0.3,
       },
-      // 4. Bướm lam ngọc bích bay tầm trung (Phải sang Trái)
-      {
-        id: 'jade-bf-1',
-        type: 'jade_butterfly',
-        direction: 'right-to-left',
-        top: 38,
-        duration: 20,
-        delay: -12,
-        scale: 1.05,
-        opacity: 0.9,
-        waveHeight: 32,
-        waveSpeed: 3.5,
-        flapSpeed: 0.32,
-      },
-      // 5. Chim khuyên lục ngọc bay nhấp nhô (Trái sang Phải)
+      // 3. Chim khuyên lục ngọc đơn lẻ (Phải sang Trái)
       {
         id: 'songbird-1',
         type: 'songbird',
-        direction: 'left-to-right',
-        top: 48,
-        duration: 17,
-        delay: -6,
-        scale: 0.85,
-        opacity: 0.85,
-        waveHeight: 25,
-        waveSpeed: 2.6,
+        direction: 'right-to-left',
+        top: 50,
+        duration: 20,
+        delay: -7,
+        scale: 0.8,
+        opacity: 0.82,
+        waveHeight: 22,
+        waveSpeed: 2.8,
         flapSpeed: 0.26,
       },
-      // 6. Bướm hoàng kim swallowtail rực rỡ (Trái sang Phải)
+      // 4. Bướm hoàng kim swallowtail tầng dưới (Phải sang Trái)
       {
         id: 'gold-bf-1',
         type: 'gold_butterfly',
-        direction: 'left-to-right',
-        top: 60,
-        duration: 22,
-        delay: -16,
-        scale: 1.0,
-        opacity: 0.88,
-        waveHeight: 30,
-        waveSpeed: 3.8,
-        flapSpeed: 0.3,
-      },
-      // 7. Chim én thứ 2 chao lượn vòng cung cao
-      {
-        id: 'swallow-2',
-        type: 'swallow',
-        direction: 'left-to-right',
-        top: 28,
-        duration: 14,
-        delay: -2,
-        scale: 0.82,
-        opacity: 0.8,
-        waveHeight: 20,
-        waveSpeed: 2.4,
-        flapSpeed: 0.32,
-      },
-      // 8. Bướm tím tử la lan (Phải sang Trái)
-      {
-        id: 'violet-bf-1',
-        type: 'violet_butterfly',
         direction: 'right-to-left',
-        top: 72,
-        duration: 21,
-        delay: -5,
+        top: 65,
+        duration: 25,
+        delay: -18,
         scale: 0.92,
         opacity: 0.85,
         waveHeight: 26,
-        waveSpeed: 3.4,
-        flapSpeed: 0.29,
-      },
-      // 9. Tiên hạc thứ 2 bay thong dong xa xăm (Phải sang Trái)
-      {
-        id: 'crane-2',
-        type: 'crane',
-        direction: 'right-to-left',
-        top: 12,
-        duration: 30,
-        delay: -21,
-        scale: 0.85,
-        opacity: 0.72,
-        waveHeight: 14,
-        waveSpeed: 5.5,
-        flapSpeed: 1.05,
-      },
-      // 10. Bướm hồng phấn bay dạo tầng dưới
-      {
-        id: 'pink-bf-2',
-        type: 'pink_butterfly',
-        direction: 'right-to-left',
-        top: 52,
-        duration: 19,
-        delay: -9,
-        scale: 0.88,
-        opacity: 0.82,
-        waveHeight: 34,
-        waveSpeed: 3.6,
-        flapSpeed: 0.31,
+        waveSpeed: 3.8,
+        flapSpeed: 0.32,
       },
     ];
   }, []);
@@ -390,7 +259,7 @@ function renderCreatureSVG(type: CreatureType, flapSpeed: number, isL2R: boolean
       // Tiên hạc Á Đông (Sacred Crane): mỏ dài, cổ cong duyên dáng, thân trắng tuyết, viền cánh huyền hắc, chỏm đầu đỏ son
       return (
         <div
-          className="relative w-16 h-12 flex items-center justify-center filter drop-shadow-[0_2px_4px_rgba(180,190,205,0.3)]"
+          className="relative w-16 h-12 flex items-center justify-center"
           style={{ transform: faceTransform }}
         >
           <svg viewBox="0 0 70 50" className="w-full h-full overflow-visible">
@@ -464,7 +333,7 @@ function renderCreatureSVG(type: CreatureType, flapSpeed: number, isL2R: boolean
       // Chim én (Huyền Nhạn): Cánh liềm dài, đuôi én đôi chẻ nhọn, chao lượn nhanh
       return (
         <div
-          className="relative w-12 h-9 flex items-center justify-center filter drop-shadow-[0_2px_3px_rgba(70,80,100,0.25)]"
+          className="relative w-12 h-9 flex items-center justify-center"
           style={{ transform: faceTransform }}
         >
           <svg viewBox="0 0 54 40" className="w-full h-full overflow-visible">
@@ -515,7 +384,7 @@ function renderCreatureSVG(type: CreatureType, flapSpeed: number, isL2R: boolean
       // Chim khuyên / sẻ hoa: Nhỏ nhắn, màu lục ngọc pastel (#7CB9A8) pha vàng mơ
       return (
         <div
-          className="relative w-10 h-7 flex items-center justify-center filter drop-shadow-[0_1px_3px_rgba(100,160,140,0.2)]"
+          className="relative w-10 h-7 flex items-center justify-center"
           style={{ transform: faceTransform }}
         >
           <svg viewBox="0 0 46 32" className="w-full h-full overflow-visible">
@@ -549,7 +418,7 @@ function renderCreatureSVG(type: CreatureType, flapSpeed: number, isL2R: boolean
       // Bướm hồ điệp hồng phấn (#F5A8B8 & #E88BA0)
       return (
         <div
-          className="relative w-9 h-8 flex items-center justify-center filter drop-shadow-[0_2px_6px_rgba(232,139,160,0.35)]"
+          className="relative w-9 h-8 flex items-center justify-center"
           style={{ transform: faceTransform }}
         >
           <svg viewBox="0 0 44 38" className="w-full h-full overflow-visible">
@@ -630,7 +499,7 @@ function renderCreatureSVG(type: CreatureType, flapSpeed: number, isL2R: boolean
       // Bướm lam ngọc bích (#7EE0D6 & #4EB3A8)
       return (
         <div
-          className="relative w-9 h-8 flex items-center justify-center filter drop-shadow-[0_2px_6px_rgba(78,179,168,0.35)]"
+          className="relative w-9 h-8 flex items-center justify-center"
           style={{ transform: faceTransform }}
         >
           <svg viewBox="0 0 44 38" className="w-full h-full overflow-visible">
@@ -699,7 +568,7 @@ function renderCreatureSVG(type: CreatureType, flapSpeed: number, isL2R: boolean
       // Bướm hoàng kim swallowtail (#FCD872 & #E5B232)
       return (
         <div
-          className="relative w-10 h-9 flex items-center justify-center filter drop-shadow-[0_2px_6px_rgba(229,178,50,0.35)]"
+          className="relative w-10 h-9 flex items-center justify-center"
           style={{ transform: faceTransform }}
         >
           <svg viewBox="0 0 46 40" className="w-full h-full overflow-visible">
@@ -767,7 +636,7 @@ function renderCreatureSVG(type: CreatureType, flapSpeed: number, isL2R: boolean
       // Bướm tử la lan tím (#D8B4F8 & #9D6CD8)
       return (
         <div
-          className="relative w-9 h-8 flex items-center justify-center filter drop-shadow-[0_2px_6px_rgba(157,108,216,0.35)]"
+          className="relative w-9 h-8 flex items-center justify-center"
           style={{ transform: faceTransform }}
         >
           <svg viewBox="0 0 44 38" className="w-full h-full overflow-visible">
@@ -829,7 +698,7 @@ function renderCreatureSVG(type: CreatureType, flapSpeed: number, isL2R: boolean
       // Chim nhạn thiên di nét mực thư pháp Á Đông (Thủy Mặc bay tầng cao)
       return (
         <div
-          className="relative w-8 h-5 flex items-center justify-center filter drop-shadow-[0_1px_2px_rgba(60,70,85,0.25)]"
+          className="relative w-8 h-5 flex items-center justify-center"
           style={{ transform: faceTransform }}
         >
           <svg viewBox="0 0 38 22" className="w-full h-full overflow-visible">
