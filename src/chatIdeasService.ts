@@ -67,15 +67,8 @@ export function subscribeToChatIdeas(
         };
       });
 
-      // Sắp xếp giảm dần theo lượt tim, nếu bằng tim thì ý tưởng mới hơn sẽ xếp ở cuối (timeA - timeB)
-      ideas.sort((a, b) => {
-        if (b.likes !== a.likes) {
-          return b.likes - a.likes;
-        }
-        const timeA = (a.createdAt as any)?.toMillis?.() || (a.createdAt as any)?.seconds * 1000 || 0;
-        const timeB = (b.createdAt as any)?.toMillis?.() || (b.createdAt as any)?.seconds * 1000 || 0;
-        return timeA - timeB;
-      });
+      // Luôn đảm bảo sắp xếp giảm dần theo lượt tim
+      ideas.sort((a, b) => b.likes - a.likes);
 
       callback(ideas);
     },
@@ -95,14 +88,7 @@ export function subscribeToChatIdeas(
               createdAt: data.createdAt,
             };
           });
-          ideas.sort((a, b) => {
-            if (b.likes !== a.likes) {
-              return b.likes - a.likes;
-            }
-            const timeA = (a.createdAt as any)?.toMillis?.() || (a.createdAt as any)?.seconds * 1000 || 0;
-            const timeB = (b.createdAt as any)?.toMillis?.() || (b.createdAt as any)?.seconds * 1000 || 0;
-            return timeA - timeB;
-          });
+          ideas.sort((a, b) => b.likes - a.likes);
           callback(ideas);
         },
         (error) => {
