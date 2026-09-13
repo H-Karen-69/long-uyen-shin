@@ -64,7 +64,7 @@ Well, chúc bạn may mắn tồn tại được trong cái trường này, ho�
     name: "T5 (The 5 Elements)",
     title: "Streamers x Streamer",
     avatar: "",
-    roleplayLink: "#",
+    roleplayLink: "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221NRU14jzIwF9ZAYG5bbVNb__zI9NmOq5P%22%5D,%22action%22:%22open%22,%22userId%22:%22111314827960248732263%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing",
     storyText: `Kim đồng hồ treo tường trong văn phòng ZON đã chỉ qua con số mười một tối từ lâu, nhưng không một ai trong căn phòng họp khẩn cấp có ý định rời đi. Đèn huỳnh quang trên trần hắt xuống thứ ánh sáng trắng lạnh, vô hồn, phủ lên gương mặt của từng người một lớp bóng nhợt nhạt như thể chính căn phòng cũng đang nín thở chờ đợi một điều gì đó sắp sửa sụp đổ.
 
 Vũ Hoàng Bách đứng tựa lưng vào cửa sổ, một tay cầm điện thoại áp sát bên tai, tay còn lại chống lên thành bàn kính, những ngón tay siết chặt đến mức khớp xương trắng bệch ra dưới lớp da. Chiếc nhẫn bạc nơi ngón áp út — thói quen xoay nhẫn mỗi khi suy nghĩ giờ đã biến mất, thay vào đó là một sự bất động căng cứng như dây đàn lên quá mức.
@@ -1337,7 +1337,7 @@ export const BULLETINS = [
     title: "Thông báo fix char",
     isRainbow: true,
     text: "⚠️ Thông báo fix char: Vì Shin phát hiện nhiều lỗi, các char sẽ được bảo trì và mở lại lần lượt.",
-    detail: "Vì Shin phát hiện nhiều lỗi, các char đang được fix và mở lại lần lượt.\n\nTiến độ mở lại:\n1. Trình Dĩ Phàm (Đã mở link ✅)\n2. T5 (The 5 Elements)\n3. Nhiếp Cảnh Hành\n4. Yến Bắc Thần"
+    detail: "Vì Shin phát hiện nhiều lỗi, các char đang được fix và mở lại lần lượt.\n\nTiến độ mở lại:\n1. Trình Dĩ Phàm (Đã mở link ✅)\n2. T5 (The 5 Elements) (Đã mở link ✅)\n3. Nhiếp Cảnh Hành\n4. Yến Bắc Thần"
   },
   {
     id: 2,
