@@ -122,7 +122,7 @@ export default function CharacterFeedbackModal({ charId, charName, onClose, addT
       // Dispatch event to sync with other components
       window.dispatchEvent(new Event('longuyen_username_changed'));
 
-      addToast(`Chào mừng ${trimmedName} đến Long Uyển của Shin`, 'success');
+      addToast(`Chào mừng ${trimmedName} đến Long Uyển của Shinju`, 'success');
 
       // Replay actions
       if (pendingAction) {
@@ -223,7 +223,7 @@ export default function CharacterFeedbackModal({ charId, charName, onClose, addT
         <div className="relative flex-none p-5 pb-4 border-b border-[#D8DEE8] bg-white/50 pr-16">
           <div>
             <h2 className="font-serif text-xl font-bold text-[#3A4258]">Feedback cho {charName}</h2>
-            <p className="text-[#6B7590] text-xs font-comfortaa mt-1">Chia sẻ cảm nhận của bạn với Shin.</p>
+            <p className="text-[#6B7590] text-xs font-comfortaa mt-1">Chia sẻ cảm nhận của bạn với Shinju.</p>
           </div>
           <DragonCloseButton onClick={onClose} className="absolute top-4 right-4 z-20" tooltip="Khép lại cảm nhận" />
         </div>

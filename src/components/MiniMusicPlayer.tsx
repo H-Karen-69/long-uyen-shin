@@ -260,12 +260,12 @@ export default function MiniMusicPlayer({ addToast, hasEntered }: MiniMusicPlaye
     if (consecutiveErrorsRef.current >= SHIN_GARDEN_PLAYLIST.length) {
       setIsFallback(true);
       consecutiveErrorsRef.current = 0;
-      addToast('Không thể tải các bài nhạc của Long Ngâm, Shin đổi sang nhạc dự phòng nha! 🎵', 'info');
+      addToast('Không thể tải các bài nhạc của Long Ngâm, Shinju đổi sang nhạc dự phòng nha! 🎵', 'info');
       return;
     }
 
     const nextIdx = (currentTrackIdx + 1) % SHIN_GARDEN_PLAYLIST.length;
-    addToast(`Bài "${currentTrack.title}" gặp sự cố kết nối, Shin tự động chuyển sang bài kế tiếp nhé! ⏭️`, 'info');
+    addToast(`Bài "${currentTrack.title}" gặp sự cố kết nối, Shinju tự động chuyển sang bài kế tiếp nhé! ⏭️`, 'info');
     playTrack(nextIdx);
   };
 

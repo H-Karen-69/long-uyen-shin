@@ -399,7 +399,7 @@ body {
 
 /* CHỈNH LẠI MÀU CHỮ ĐỂ NỔI RÕ TRÊN NỀN KÍNH SÁNG */
 
-/* Tiêu đề "Long Uyển Của Shin" - Phong cách Muted thanh nhã, dịu nhẹ vừa vặn */
+/* Tiêu đề "Long Vân Ngự Uyển" - Phong cách Muted thanh nhã, dịu nhẹ vừa vặn */
 .gacha-title {
   display: flex !important;
   flex-direction: column !important;
@@ -409,7 +409,7 @@ body {
   -webkit-text-fill-color: transparent !important;
 }
 
-/* Chữ "Long Uyển": Sắc Xanh sage / ngọc lục bảo muted thanh nhã, nhạt dịu hơn */
+/* Vế 1 "Long Vân": Sắc Xanh sage / ngọc lục bảo muted thanh nhã, nhạt dịu hơn */
 .gacha-title .title-longuyen,
 .gacha-title > span:first-child {
   background: linear-gradient(180deg, #D0E8DF 0%, #76AB94 35%, #4C856D 75%, #386B56 100%) !important;
@@ -418,7 +418,8 @@ body {
   filter: drop-shadow(0px 1px 2px rgba(56, 107, 86, 0.22)) drop-shadow(0px 0px 8px rgba(118, 171, 148, 0.2)) !important;
 }
 
-/* Chữ "Của Shin": Sắc Hồng dusty rose / mận cổ điển muted thanh thoát, nhạt dịu hơn */
+/* Vế 2 "Ngự Uyển": Sắc Hồng dusty rose / mận cổ điển muted thanh thoát, nhạt dịu hơn */
+.gacha-title .title-cuashinju,
 .gacha-title .title-cuashin,
 .gacha-title > span:last-child {
   background: linear-gradient(180deg, #F3DAE3 0%, #CB8AA6 32%, #AA6684 72%, #8A4666 100%) !important;
@@ -962,23 +963,107 @@ body {
 }
 
 /* ==========================================================================
-   🌿 DÃY ĐỒI PHONG CÁCH ANIME GHIBLI (ANIME ROLLING HILLS)
+   ☁️ BIỂN MÂY TIÊN CẢNH ANIME (ANIME CELESTIAL SEA OF CLOUDS)
+   Các tầng mây bồng bềnh cuộn trôi, lững lờ đón nắng mai và gió thoảng
    ========================================================================== */
-.anime-hills-container {
+.anime-cloud-sea-container {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 48%;
+  height: 52%;
   pointer-events: none;
   z-index: 1;
 }
 
-.anime-hills-svg {
+.anime-cloud-sea-svg {
   width: 100%;
   height: 100%;
   overflow: visible;
   display: block;
+}
+
+/* Tầng mây xa lững lờ trôi khẽ */
+.cloud-layer-far {
+  animation: cloudLayerFarBreeze 22s ease-in-out infinite alternate;
+  transform-origin: bottom center;
+  will-change: transform;
+}
+
+@keyframes cloudLayerFarBreeze {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(12px, -6px, 0) scale(1.015);
+  }
+  100% {
+    transform: translate3d(-10px, 4px, 0) scale(1);
+  }
+}
+
+/* Tầng mây giữa nhấp nhô mềm mại */
+.cloud-layer-mid {
+  animation: cloudLayerMidRoll 16s ease-in-out infinite alternate;
+  transform-origin: bottom center;
+  will-change: transform;
+}
+
+@keyframes cloudLayerMidRoll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-14px, -8px, 0);
+  }
+  100% {
+    transform: translate3d(10px, -3px, 0);
+  }
+}
+
+/* Tầng mây trước bồng bềnh êm ái */
+.cloud-layer-near {
+  animation: cloudLayerNearSway 12s ease-in-out infinite alternate;
+  transform-origin: bottom center;
+  will-change: transform;
+}
+
+@keyframes cloudLayerNearSway {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(8px, -5px, 0) scale(1.01);
+  }
+  100% {
+    transform: translate3d(-6px, 2px, 0) scale(1);
+  }
+}
+
+/* Các cụm mây tiên lướt trôi đón gió */
+.puff-left {
+  animation: puffDriftLeft 14s ease-in-out infinite alternate;
+}
+.puff-center {
+  animation: puffDriftCenter 18s ease-in-out infinite alternate;
+}
+.puff-right {
+  animation: puffDriftRight 16s ease-in-out infinite alternate;
+}
+
+@keyframes puffDriftLeft {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(24px, -12px, 0); }
+}
+
+@keyframes puffDriftCenter {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-28px, 8px, 0); }
+}
+
+@keyframes puffDriftRight {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(20px, -10px, 0); }
 }
 
 /* ==========================================================================

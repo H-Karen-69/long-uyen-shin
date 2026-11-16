@@ -493,10 +493,10 @@ export default function GoldenGate({ isOpen, onOpenGate, isEntering, onToast }: 
               </div>
             </motion.div>
 
-            {/* TIÊU ĐỀ CHÍNH: LONG UYỂN CỦA SHIN (TĂNG CỠ CHỮ LỚN HƠN NỮA CHO ĐIỆN THOẠI, GIỮ NGUYÊN BẢN CŨ TRÊN MÀN HÌNH LỚN) */}
+            {/* TIÊU ĐỀ CHÍNH: LONG VÂN NGỰ UYỂN (TĂNG CỠ CHỮ LỚN HƠN NỮA CHO ĐIỆN THOẠI, GIỮ NGUYÊN BẢN CŨ TRÊN MÀN HÌNH LỚN) */}
             <h1 className="gacha-title font-serif text-[2.65rem] xs:text-[2.9rem] sm:text-4xl md:text-5xl font-black tracking-tight mb-4 sm:mb-6 leading-tight flex flex-col items-center select-none">
-              <span className="title-longuyen">Long Uyển</span>
-              <span className="title-cuashin mt-0.5 sm:mt-1">Của Shin</span>
+              <span className="title-longuyen">Long Vân</span>
+              <span className="title-cuashinju mt-0.5 sm:mt-1">Ngự Uyển</span>
             </h1>
 
             {/* NÚT BẤM: 🔑 MỞ CỔNG LONG UYỂN (PHỐI SẮC MUTED THANH NHÃ, DỊU NHẸ VỪA VẶN, 1 DÒNG TRÊN MỌI THIẾT BỊ) */}
@@ -532,7 +532,7 @@ export default function GoldenGate({ isOpen, onOpenGate, isEntering, onToast }: 
 
               <button
                 type="button"
-                onClick={() => onToast?.('Kênh TikTok của Shin đang được ươm mầm, sớm ra mắt nha! 🐉', 'info')}
+                onClick={() => onToast?.('Kênh TikTok của Shinju đang được ươm mầm, sớm ra mắt nha! 🐉', 'info')}
                 className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/55 hover:bg-white/85 border border-white/80 text-[#8F486B] hover:text-[#6D2E4D] shadow-[0_2px_8px_rgba(143,72,107,0.1)] transition-all duration-200 cursor-pointer group pointer-events-auto"
                 title="TikTok Kamishiro Shinju"
               >

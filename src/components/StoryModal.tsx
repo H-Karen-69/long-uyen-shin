@@ -142,7 +142,7 @@ export default function StoryModal({ character, onClose, onLike, isLiked, onToas
             ) : !character.roleplayLink || character.roleplayLink === '#' ? (
               <button
                 id={`modal-action-btn-${character.id}`}
-                onClick={() => onToast?.('Vì Shin phát hiện nhiều lỗi, char đang được đóng link để fix nha! 🛠️', 'heart-off')}
+                onClick={() => onToast?.('Vì Shinju phát hiện nhiều lỗi, char đang được đóng link để fix nha! 🛠️', 'heart-off')}
                 className="w-full text-center text-sm font-bold text-[#3A4258]/70 bg-[#D8DEE8]/60 hover:bg-[#D8DEE8]/90 py-3 px-6 rounded-[15px] border border-[#D8DEE8] cursor-pointer transition-all duration-300"
               >
                 Đang đóng link để fix 🛠️

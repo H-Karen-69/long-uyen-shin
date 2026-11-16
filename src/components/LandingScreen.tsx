@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import GoldenGate from './GoldenGate';
 import LivingEasternDragon from './LivingEasternDragon';
-import { AnimeHills, AnimeWildflowers } from './AnimeMeadow';
+import { AnimeCloudSea } from './AnimeCloudSea';
 import { AnimeBirds } from './AnimeBirds';
 import { AnimeSakuraTree } from './AnimeSakuraTree';
 
@@ -165,7 +165,7 @@ export default function LandingScreen({
           <div className="enchanted-garden-bg" aria-hidden="true">
             <div className="sky-gradient"></div>
             <div className="glowing-sun"></div>
-            <AnimeHills />
+            <AnimeCloudSea />
             <AnimeBirds />
             <AnimeSakuraTree />
             <div id="sakuraRain" className="sakura-rain"></div>
@@ -184,9 +184,6 @@ export default function LandingScreen({
                 <LivingEasternDragon isGateOpen={isGateOpen} />
               </div>
             </div>
-
-            {/* KHÓM HOA CỎ TIỀN CẢNH */}
-            <AnimeWildflowers />
           </div>
         </div>
 

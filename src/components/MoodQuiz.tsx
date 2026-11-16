@@ -164,18 +164,18 @@ export default function MoodQuiz({ characters, onThuongVi, onShowBackstory }: Mo
     if (mood === 'vui') {
       messageText = "Hôm nay tâm mệnh rực rỡ như một mảnh linh ngọc mới chiếu sáng. Cứ giữ nắng trong lòng nhé.";
     } else if (mood === 'buon') {
-      messageText = "Buồn cũng không sao, ngọc rồng dẫu sương gió cũng giữ trọn hào quang. Shin ở đây với bạn.";
+      messageText = "Buồn cũng không sao, ngọc rồng dẫu sương gió cũng giữ trọn hào quang. Shinju ở đây với bạn.";
     } else if (mood === 'codon') {
-      messageText = "Long Uyển không bao giờ vắng người. Vào chọn một câu chuyện, có Shin bầu bạn.";
+      messageText = "Long Uyển không bao giờ vắng người. Vào chọn một câu chuyện, có Shinju bầu bạn.";
     } else if (mood === 'buc') {
       messageText = "Bực dọc thì nứt một viên ngọc cho hả giận. Xong rồi mình đi tìm chuyện dịu lại nha.";
     } else if (mood === 'binh-thuong' && flavor) {
       const flavorMessages = {
-        chua: "Băng thanh một chút mới đáng chinh phục. Đi thôi, Shin dẫn đường.",
+        chua: "Băng thanh một chút mới đáng chinh phục. Đi thôi, Shinju dẫn đường.",
         ngot: "Hôm nay chỉ toàn vị ngọt. Cứ thả mình vào nhé.",
         non: "Có những viên ngọc non cần được bảo vệ. Đi tìm nó nào.",
         dang: "Sương phủ thật đấy, nhưng đôi khi mình cần chút sương lạnh để nhớ lâu.",
-        la: "Long Uyển của Shin còn nhiều góc lạ lắm, thử nhé."
+        la: "Long Uyển của Shinju còn nhiều góc lạ lắm, thử nhé."
       };
       messageText = flavorMessages[flavor];
     }
@@ -254,7 +254,7 @@ export default function MoodQuiz({ characters, onThuongVi, onShowBackstory }: Mo
               Hôm nay tâm mệnh bạn ra sao?
             </h3>
             <p className="text-xs text-[#E88BA0] font-semibold tracking-wide mb-6">
-              Chọn một viên ngọc hợp mệnh, Shin sẽ chọn chuyện cho bạn.
+              Chọn một viên ngọc hợp mệnh, Shinju sẽ chọn chuyện cho bạn.
             </p>
 
             {/* 5 Mood Button Grid */}
@@ -285,7 +285,7 @@ export default function MoodQuiz({ characters, onThuongVi, onShowBackstory }: Mo
             {yesterdayMessage && (
               <div className="mt-6 border-t border-[#D8DEE8]/60 pt-4 w-full text-center">
                 <span className="text-[10px] text-[#6B7590] uppercase tracking-widest font-bold">
-                  Lời nhắn gần đây của bạn từ Shin
+                  Lời nhắn gần đây của bạn từ Shinju
                 </span>
                 <p className="text-xs font-serif font-semibold italic text-[#E88BA0] mt-1 max-w-md mx-auto">
                   "{yesterdayMessage}"
@@ -308,7 +308,7 @@ export default function MoodQuiz({ characters, onThuongVi, onShowBackstory }: Mo
               Vậy hôm nay bạn muốn gì?
             </h3>
             <p className="text-xs text-[#E88BA0] font-semibold tracking-wide mb-6">
-              Chọn một hương vị, Shin dẫn bạn đi.
+              Chọn một hương vị, Shinju dẫn bạn đi.
             </p>
 
             {/* 5 Flavor cards */}
@@ -430,7 +430,7 @@ export default function MoodQuiz({ characters, onThuongVi, onShowBackstory }: Mo
             </div>
             
             <p className="text-xs font-bold text-[#E88BA0] animate-pulse">
-              Ngọc rồng đang nứt ra để hiển thị lời tiên tri từ Shin...
+              Ngọc rồng đang nứt ra để hiển thị lời tiên tri từ Shinju...
             </p>
           </motion.div>
         )}
@@ -452,12 +452,12 @@ export default function MoodQuiz({ characters, onThuongVi, onShowBackstory }: Mo
             >
               <div className="absolute top-2 left-2 text-sm opacity-65">🌸</div>
               <div className="absolute bottom-2 right-2 text-sm opacity-65">🌸</div>
-              <div className="absolute top-2 right-3 text-[10px] text-[#7A8AA5] font-bold font-mono">SHIN'S ADVICE</div>
+              <div className="absolute top-2 right-3 text-[10px] text-[#7A8AA5] font-bold font-mono">SHINJU'S ADVICE</div>
               
               <div className="text-3xl mb-1.5 select-none">📜</div>
               
               <span className="text-[10px] font-bold text-[#E88BA0] uppercase tracking-widest font-sans">
-                Lời nhắn ngọt ngào của Shin
+                Lời nhắn ngọt ngào của Shinju
               </span>
               
               <h4 className="font-serif text-sm md:text-base font-extrabold text-[#3A4258] mt-2 mb-1.5 leading-relaxed italic max-w-lg">
@@ -476,7 +476,7 @@ export default function MoodQuiz({ characters, onThuongVi, onShowBackstory }: Mo
                 <div className="flex items-center gap-1.5">
                   <Trophy size={14} className="text-[#E88BA0]" />
                   <span className="font-serif text-xs font-black text-[#3A4258] tracking-wide uppercase">
-                    Shin đề cử cho bạn hôm nay
+                    Shinju đề cử cho bạn hôm nay
                   </span>
                 </div>
                 

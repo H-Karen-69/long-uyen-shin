@@ -47,8 +47,8 @@ import { subscribeAllCharacterLikes, toggleCharacterLike } from './lib/character
 export default function App() {
   // THÔNG TIN TÀI KHOẢN DONATE (Bạn hãy thay thế thông tin thật của mình ở đây nhé 🔮)
   const DONATE_ACCOUNT_HOLDER = "LE THU HUONG";
-  const DONATE_BANK_NAME = "MB Bank";
-  const DONATE_ACCOUNT_NUMBER = "0984307708";
+  const DONATE_BANK_NAME = "TPBank";
+  const DONATE_ACCOUNT_NUMBER = "07200818558";
 
   // State variables
   const [hasEntered, setHasEntered] = useState(false);
@@ -74,6 +74,7 @@ export default function App() {
   const [selectedBulletin, setSelectedBulletin] = useState<{id: number, title: string, text: string, detail: string} | null>(null);
   const [toasts, setToasts] = useState<ToastMessage[]>([]);
   const [showDonatePopup, setShowDonatePopup] = useState(false);
+  const [isQrZoomed, setIsQrZoomed] = useState(false);
 
 
   // Initialize data on mount
@@ -86,6 +87,7 @@ export default function App() {
         setSelectedBulletin(null);
         setShowBirthdayPopup(false);
         setShowDonatePopup(false);
+        setIsQrZoomed(false);
       }
     };
     window.addEventListener('keydown', handleKeyDown);
@@ -200,7 +202,7 @@ export default function App() {
       return;
     }
     if (!char.roleplayLink || char.roleplayLink === '#') {
-      addToast('Vì Shin phát hiện nhiều lỗi, char đang được đóng link để fix nha! 🛠️', 'info');
+      addToast('Vì Shinju phát hiện nhiều lỗi, char đang được đóng link để fix nha! 🛠️', 'info');
       return;
     }
     addToast('Đang triệu hồi rồng, chờ xíu nhé...', 'success');
@@ -348,7 +350,8 @@ export default function App() {
   // Helper: Retrieve sorting priority for characters:
   // 0: Sắp Ra Mắt (đẩy lên đầu)
   // 1: Hot (sau sắp ra mắt, trước tân long)
-  // 2: Tân Long (Mới)
+  // 2: Ren (Tân Long mới nhất, xếp ngay sau Hot)
+  // 2.5: Tân Long khác (Mới)
   // 3: Còn lại (Kỳ Cựu, bình thường...)
   const getCharacterSortPriority = (char: Character): number => {
     if (char.isComingSoon || char.statusType === 'Sắp Ra Mắt' || char.statusTag?.includes('Sắp Ra Mắt')) {
@@ -357,8 +360,11 @@ export default function App() {
     if (char.isHot || char.statusType === 'Hot' || char.statusTag === 'HOT 🔥') {
       return 1;
     }
-    if (char.isNew || char.statusType === 'Mới' || char.statusTag === 'Mẻ Mới' || char.statusTag?.includes('Tân Long')) {
+    if (char.id === 'char_007' || char.name.includes('Asakura Ren')) {
       return 2;
+    }
+    if (char.isNew || char.statusType === 'Mới' || char.statusTag === 'Mẻ Mới' || char.statusTag?.includes('Tân Long')) {
+      return 2.5;
     }
     return 3;
   };
@@ -521,7 +527,7 @@ export default function App() {
                 <button
                   onClick={() => setShowDonatePopup(true)}
                   className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#F2DB88] to-[#E5C973] hover:from-[#E5C973] hover:to-[#F2DB88] text-[#F8F6F5] font-extrabold text-xs md:text-sm shadow-sm hover:shadow active:scale-95 transition-all duration-300 cursor-pointer border border-[#F2DB88]/50 shrink-0 font-comfortaa h-10 md:h-9"
-                  title="Ủng hộ Shin"
+                  title="Ủng hộ Shinju"
                 >
                   <span className="text-sm md:text-base">🔮</span>
                   <span>Donate</span>
@@ -627,7 +633,7 @@ export default function App() {
               {/* SIDEBAR COLUMNS (Top Chanh Board & Filters) */}
               <div className="space-y-6 lg:col-span-1">
                 
-                {/* 1. TOP CHANH NHÀ SHIN (DYNAMIC LEADERBOARD) */}
+                {/* 1. TOP CHANH NHÀ SHINJU (DYNAMIC LEADERBOARD) */}
                 <Leaderboard
                   characters={characters}
                   onShowBackstory={handleBackground}
@@ -922,7 +928,7 @@ export default function App() {
                           Vị rồng này chưa được triệu hồi!
                         </h3>
                         <p className="text-xs text-[#5D4E3C]/60 max-w-sm mt-1">
-                          Hãy điều chỉnh bộ lọc hoặc gửi confession cho Shin nhé!
+                          Hãy điều chỉnh bộ lọc hoặc gửi confession cho Shinju nhé!
                         </p>
                         <button
                           onClick={() => {
@@ -966,7 +972,7 @@ export default function App() {
                     <Facebook size={16} />
                   </a>
                   <button
-                    onClick={() => addToast('Kênh TikTok của Shin đang được ươm mầm, sớm ra mắt nha! 🔮', 'info')}
+                    onClick={() => addToast('Kênh TikTok của Shinju đang được ươm mầm, sớm ra mắt nha! 🔮', 'info')}
                     className="p-2 rounded-full bg-[#F8F6F5] hover:bg-[#D8DEE8] text-[#6B7590] hover:text-[#3A4258] transition-all duration-300 border border-[#D8DEE8] hover:scale-110 cursor-pointer"
                     title="TikTok"
                   >
@@ -985,13 +991,13 @@ export default function App() {
                     />
                   </div>
                   <p className="text-sm md:text-base font-bold font-serif tracking-wide text-[#3A4258]">
-                    2026 Long Uyển Của Shin — Created by Kamishiro Shinju
+                    2026 Long Vân Ngự Uyển — Created by Kamishiro Shinju
                   </p>
                 </div>
                 
                 {/* Line 2: Cute sub-text */}
                 <p className="text-xs font-comfortaa text-[#6B7590]">
-                  Một góc nhỏ dành cho những ai yêu mến rồng của Shin 🐉
+                  Một góc nhỏ dành cho những ai yêu mến rồng của Shinju 🐉
                 </p>
 
                 {/* Visitor Counter Pill Badge */}
@@ -1149,18 +1155,21 @@ export default function App() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-[#F8F6F5] border border-[#D8DEE8] p-8 rounded-[32px] shadow-2xl max-w-sm w-full text-center relative overflow-hidden"
+              className="bg-[#F8F6F5] border border-[#D8DEE8] p-6 rounded-[32px] shadow-2xl max-w-sm w-full text-center relative overflow-hidden my-auto max-h-[95vh] overflow-y-auto custom-scrollbar"
             >
               <div className="absolute -top-10 -right-10 opacity-15 text-[#7A8AA5]"><Sparkles className="w-28 h-28" /></div>
               
               <DragonCloseButton 
-                onClick={() => setShowDonatePopup(false)}
+                onClick={() => {
+                  setShowDonatePopup(false);
+                  setIsQrZoomed(false);
+                }}
                 className="absolute top-4 right-4 z-20"
                 tooltip="Đóng lại"
               />
               
               <div className="relative z-10">
-                <div className="w-16 h-16 p-1 border border-[#7A8AA5]/50 rounded-full shadow-md mx-auto mb-4 flex items-center justify-center bg-[#F8F6F5]">
+                <div className="w-16 h-16 p-1 border border-[#7A8AA5]/50 rounded-full shadow-md mx-auto mb-3 flex items-center justify-center bg-[#F8F6F5]">
                   <img
                     src="https://files.catbox.moe/23ftgt.png"
                     alt="Long Uyển Avatar"
@@ -1168,24 +1177,32 @@ export default function App() {
                     referrerPolicy="no-referrer"
                   />
                 </div>
-                <h2 className="font-serif text-2xl font-bold text-[#3A4258] mb-2">Mời Shin một tách trà Long Tĩnh 🐉</h2>
-                <p className="text-[#6B7590] font-comfortaa text-xs mb-6 leading-relaxed">
-                  Nếu bạn yêu mến Long Uyển này, có thể gửi Shin chút yêu thương nhé 🌸
+                <h2 className="font-serif text-2xl font-bold text-[#3A4258] mb-1.5">Mời Shinju một tách trà Long Tĩnh 🐉</h2>
+                <p className="text-[#6B7590] font-comfortaa text-xs mb-4 leading-relaxed">
+                  Nếu bạn yêu mến Long Uyển này, có thể gửi Shinju chút yêu thương nhé 🌸
                 </p>
                 
-                {/* QR Code Placeholder with pretty border */}
-                <div className="w-48 h-48 bg-white border-2 border-[#D8DEE8] rounded-[24px] p-3 mx-auto mb-6 flex items-center justify-center shadow-inner relative group overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-[#7A8AA5]/10 to-[#F2DB88]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                {/* QR Code Container - Keeps original w-48 h-48 frame size, while maximizing the QR image inside */}
+                <div 
+                  onClick={() => setIsQrZoomed(true)}
+                  className="w-48 h-48 bg-white border border-[#D8DEE8] rounded-[20px] p-1 mx-auto mb-4 flex items-center justify-center shadow-md relative group overflow-hidden cursor-pointer"
+                  title="Nhấn để xem ảnh phóng to"
+                >
                   <img
-                    src="https://i.ibb.co/2YKqsK0X/QR-MB.jpg"
-                    alt="QR Code Donate Placeholder"
+                    src="https://files.catbox.moe/7wfopm.jpg"
+                    alt="QR Code TPBank"
                     referrerPolicy="no-referrer"
-                    className="w-full h-full object-contain rounded-lg filter contrast-[1.05]"
+                    className="w-full h-full object-contain rounded-xl filter contrast-[1.04] transition-transform duration-300 group-hover:scale-105"
                   />
+                  <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none rounded-xl">
+                    <span className="bg-black/60 text-white text-[10px] font-comfortaa px-2 py-0.5 rounded-full flex items-center gap-1 backdrop-blur-xs">
+                      🔍 Phóng to
+                    </span>
+                  </div>
                 </div>
 
-                {/* Account Details */}
-                <div className="bg-[#F0EEED] border border-[#D8DEE8] rounded-[20px] p-4 text-center max-w-[280px] mx-auto mb-6 text-[#3A4258] font-comfortaa space-y-2.5 shadow-inner">
+                {/* Account Details - Keeps original compact size */}
+                <div className="bg-[#F0EEED] border border-[#D8DEE8] rounded-[20px] p-4 text-center max-w-[280px] mx-auto mb-4 text-[#3A4258] font-comfortaa space-y-2 shadow-inner">
                   <div className="text-xs">
                     <span className="font-semibold text-[#6B7590]">Chủ tài khoản: </span>
                     <span className="font-extrabold text-[#3A4258]">{DONATE_ACCOUNT_HOLDER}</span>
@@ -1220,9 +1237,81 @@ export default function App() {
                   </div>
                 </div>
                 
-                <p className="text-[11px] font-comfortaa tracking-wide text-[#6B7590] bg-[#F0EEED] py-2 px-4 rounded-xl inline-block border border-[#D8DEE8]">
+                <p className="text-[11px] font-comfortaa tracking-wide text-[#6B7590] bg-[#F0EEED] py-1.5 px-4 rounded-xl inline-block border border-[#D8DEE8]">
                   Chân thành cảm ơn bạn 🌸
                 </p>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
+      {/* LIGHTBOX ZOOM FOR QR CODE - Located outside modal with close button completely outside the image */}
+      <AnimatePresence>
+        {isQrZoomed && (
+          <div
+            className="fixed inset-0 z-70 bg-black/85 backdrop-blur-md flex flex-col items-center justify-center p-4 select-none"
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsQrZoomed(false);
+            }}
+          >
+            {/* Outer close button in viewport top-right */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsQrZoomed(false);
+              }}
+              className="fixed top-5 right-5 z-80 px-4 py-2 rounded-full bg-white/20 hover:bg-white/35 text-white backdrop-blur-md border border-white/40 shadow-xl active:scale-95 transition-all cursor-pointer flex items-center gap-2 font-comfortaa text-sm"
+              title="Đóng (Esc)"
+            >
+              <span>Đóng</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+
+            {/* QR Card Container - Clean and totally unobstructed */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.85 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.85 }}
+              className="bg-white p-4 rounded-3xl max-w-[340px] sm:max-w-[380px] w-full shadow-2xl relative flex flex-col items-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="w-full flex items-center justify-between pb-2 mb-2 border-b border-gray-100">
+                <span className="font-serif font-bold text-base text-[#3A4258]">Mã QR Ngân Hàng</span>
+                <button
+                  onClick={() => setIsQrZoomed(false)}
+                  className="p-1 rounded-lg text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition-colors cursor-pointer"
+                  title="Đóng"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                </button>
+              </div>
+
+              {/* QR Image - Completely free of any overlays or covering buttons */}
+              <div className="w-full aspect-square bg-white rounded-2xl overflow-hidden flex items-center justify-center border border-gray-200 p-1">
+                <img
+                  src="https://files.catbox.moe/7wfopm.jpg"
+                  alt="QR Code TPBank phóng to"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-contain rounded-xl"
+                />
+              </div>
+              
+              <div className="mt-3 flex items-center justify-between w-full px-1 text-xs text-[#6B7590] font-comfortaa">
+                <span className="font-medium text-[#3A4258]">TPBank: {DONATE_ACCOUNT_NUMBER}</span>
+                <button
+                  onClick={() => setIsQrZoomed(false)}
+                  className="px-3 py-1 bg-[#F0EEED] hover:bg-[#D8DEE8] text-[#3A4258] rounded-full font-medium transition-colors cursor-pointer text-xs"
+                >
+                  ✕ Đóng phóng to
+                </button>
               </div>
             </motion.div>
           </div>

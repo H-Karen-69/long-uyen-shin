@@ -223,9 +223,9 @@ export default function TamMenhGame({
           <span className="text-[#E88BA0]">Tâm Mệnh</span>
         </h3>
 
-        {/* Dòng chữ tâm mệnh màu hồng: Chọn một lá bài, để Shin đọc / tâm mệnh của bạn hôm nay. */}
+        {/* Dòng chữ tâm mệnh màu hồng: Chọn một lá bài, để Shinju đọc / tâm mệnh của bạn hôm nay. */}
         <p className="text-xs sm:text-sm text-[#E88BA0] font-semibold tracking-wide mb-3.5 leading-relaxed">
-          <span className="block sm:inline">Chọn một lá bài, để Shin đọc</span>{' '}
+          <span className="block sm:inline">Chọn một lá bài, để Shinju đọc</span>{' '}
           <span className="block sm:inline">tâm mệnh của bạn hôm nay.</span>
         </p>
 

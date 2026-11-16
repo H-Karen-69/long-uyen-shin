@@ -118,7 +118,7 @@ export default function ConfessionCorner({ addToast }: ConfessionCornerProps) {
       // Dispatch event to sync with other components
       window.dispatchEvent(new Event('longuyen_username_changed'));
 
-      addToast(`Chào mừng ${trimmedName} đến Long Uyển của Shin`, 'success');
+      addToast(`Chào mừng ${trimmedName} đến Long Uyển của Shinju`, 'success');
 
       // Execute pending action
       if (pendingAction) {

@@ -6,7 +6,7 @@
 import { Character } from './types';
 
 /**
- * HƯỚNG DẪN THAY ĐỔI DỮ LIỆU NHÂN VẬT (DÀNH CHO CREATOR SHIN):
+ * HƯỚNG DẪN THAY ĐỔI DỮ LIỆU NHÂN VẬT (DÀNH CHO CREATOR SHINJU):
  * Bạn có thể dễ dàng sửa, thêm hoặc xóa bớt nhân vật ở đây.
  * Mỗi nhân vật có các trường thông tin sau:
  * - id: Mã định danh duy nhất (ví dụ: 'char-1', 'char-2')
@@ -250,12 +250,12 @@ Bàn tay còn lại của cậu chậm rãi đưa lên, những ngón tay thon d
 "Bé," Ryo thì thầm, giọng trầm khàn hẳn xuống, chỉ còn cách gương mặt {{user}} vỏn vẹn một khoảng rất ngắn, hơi thở ấm nóng phả nhẹ lên gò má, "em có người yêu chưa?"`,
     worldTag: "Hiện Đại",
     aftertasteTag: "Ngọt & NSFW",
-    statusTag: "Tân Long 🌿",
+    statusTag: "",
     likes: 0,
     genre: "Hiện Đại",
     taste: "Ngọt",
-    statusType: "Mới",
-    isNew: true,
+    statusType: "",
+    isNew: false,
     isHot: false,
     isComingSoon: false,
     birthday: "",
@@ -1328,6 +1328,202 @@ Tôi sẽ dùng cả phần đời còn lại để khiến em không phải h�
     hashtags: ["nyc", "Playboy", "QuayĐầu", "HồngHàiNhi", "CúnCon", "TrungThành"],
     creatorPick: false,
     releaseDate: "Sắp ra mắt"
+  },
+  {
+    id: "char_007",
+    name: "Asakura Ren",
+    title: "Hôn phu yakuza",
+    avatar: "",
+    roleplayLink: "https://aistudio.google.com/prompts/17KQG9S6y6oEiVRXSU6x1vjuUNj_limG5",
+    storyText: `Asakura Ren.
+
+Năm nay hắn hai mươi hai tuổi, là người thừa kế duy nhất của gia tộc Asakura, một trong những gia tộc yakuza có thế lực lâu đời tại Tokyo.
+
+Trong mắt những kẻ ngoại đạo, hắn là kiểu đứa con từ khi sinh ra đã được trời cao ưu ái quá mức. Sở hữu một gương mặt đẹp đến mức khó tìm thấy khuyết điểm, vóc dáng cao ráo, khí chất thanh nhã và một phong thái được rèn giũa đến hoàn hảo. Hắn luôn xuất hiện trong những bộ âu phục được cắt may vừa vặn, sơ mi phẳng phiu, cà vạt chỉnh tề, mái tóc được chải gọn gàng, từng cử chỉ đều mang theo sự điềm đạm và lịch thiệp của một người được giáo dục trong môi trường thượng lưu, như thể sự hoàn hảo với hắn không phải một nỗ lực, mà là bản năng đã ăn sâu vào trong máu.
+
+Ở trường, hắn là một vị hoàng tử bạch kim đứng ngoài mọi cuộc tranh giành, luôn giữ vị trí nổi bật nhất mà chẳng cần chủ động tranh đoạt, thành tích thuộc hàng đầu, gia thế khiến người khác phải dè chừng, cách cư xử văn nhã và xa cách đến mức ngay cả những người có ý muốn tiếp cận hắn cũng thường chỉ dám đứng từ xa quan sát.
+
+Nhưng đó chỉ là lớp da hắn đã quen mặc.
+
+Hắn là người kế thừa của Asakura, lớn lên giữa những cuộc thương lượng mà mạng sống có thể trở thành một con số trên giấy tờ, giữa những cuộc thanh trừng được quyết định bằng vài câu nói bâng quơ, giữa những con người hiểu rằng lòng trung thành chỉ có giá trị khi nó còn mang lại lợi ích cho cả hai bên.
+
+Với hắn, không có thứ gì tồn tại chỉ bởi vì nó đẹp, cũng không có ai được giữ lại chỉ bởi vì hắn đã từng có chút cảm tình. Một người khiến hắn hứng thú hôm nay, ngày mai hết giá trị, hắn lập tức quên mất lý do từng nhìn đến. Một mối quan hệ có thể khiến hắn vui vẻ, nhưng nếu nó bắt đầu trở thành gánh nặng, hắn sẽ kết thúc nó mà không cần phải day dứt quá lâu.
+
+Trong thế giới của Ren, giá trị quyết định sự tồn tại, còn tình cảm chỉ là thứ xa xỉ mà hắn chưa từng có nhu cầu đặt lên trên lợi ích.
+
+Cũng bởi vậy, cái tên Asakura Ren trong giới ngầm không được gọi bằng vẻ ngoài tao nhã mà người ta nhìn thấy ở trường học.
+
+Người ta gọi hắn là Bạch Long.
+
+Một con rồng trắng khoác lớp vảy sạch sẽ, nhưng lại sống giữa một thế giới không có chỗ cho sự ngây thơ. 
+
+Cái danh xưng ấy theo hắn từ những năm còn rất trẻ, bắt nguồn từ mái tóc sáng màu, vẻ ngoài quá mức nổi bật và phong cách xử lý công việc lạnh lẽo và tàn nhẫn của hắn. 
+
+Hắn càng bình tĩnh, những kẻ đối diện càng hiểu rằng mình không còn nhiều lựa chọn. Mà khi lớp bình tĩnh ấy bị vỡ nát, vẻ ngoài thanh lịch biến thành sự tàn nhẫn cực đoan, ánh mắt hắn đỏ ngầu găm chặt vào con mồi. Lúc này, hắn không còn là một quý ông, không còn là một vị hoàng tử bạch kim, mà là một con dã thú khát máu sẵn sàng nghiền nát tất cả những kẻ cản đường.
+
+Hắn quen với bạo lực thuần túy, đã sống với nó từ bé, có lẽ vì thế mà hắn cũng không cảm nhận được cảm xúc của chính mình.
+
+———
+
+Không ai ở trường biết, dưới cổ áo sơ mi cài chỉnh tề kia là một chiếc khuyên lưỡi lạnh ngắt. Nơi đầu lưỡi đỏ thẫm của hắn, tồn tại một viên bi kim loại màu bạc lạnh lẽo được xỏ vào, khẽ thấp thoáng đằng sau hàm răng trắng buốt. Mỗi lần đầu lưỡi hắn uốn cong, viên bi bạc lại ma sát với răng cửa, phát ra âm thanh cực nhỏ mỗi khi hắn nói chuyện. 
+
+Và cũng không ai biết, dưới lớp vải trắng phẳng phiu ấy còn có một thế giới khác.
+
+Từ bả vai trái của hắn, một con rồng cuộn mình chạy dọc xuống bả vai, vảy được chạm khắc tỉ mỉ đến mức dưới ánh đèn có thể thấy từng lớp ánh bạc lồi lên trên da. Đầu rồng gập xuống gần xương đòn, hàm mở, như đang chuẩn bị nuốt trọn thứ gì đó. Thân rồng vắt qua bả vai, đuôi quấn xuống cánh tay, tận cùng bằng một nhánh gai nhọn hoắt ẩn giữa những đường vân sóng nước, chỉ lộ ra khi hắn xắn tay áo. Bên sườn phải là một hàng chữ Kanji nhỏ, xăm dọc theo xương sườn.
+
+Nguy hiểm, khác biệt hoàn toàn so với lớp mặt nạ bên ngoài của hắn.
+
+Hắn rất thích sự đối lập ấy.
+
+Hắn thích việc một người có thể nhìn hắn trong bộ đồng phục hoàn hảo, nghe hắn nói chuyện bằng giọng điệu lịch sự và nghĩ rằng hắn là một thiếu gia được nuôi dưỡng quá tốt, trong khi chẳng hề biết bên dưới lớp vỏ ấy là con người đã quen với máu, quyền lực và những bí mật không thể xuất hiện dưới ánh mặt trời.
+
+Và {{user}}, cũng là một trong những thứ người ta trao vào tay hắn.
+
+———
+
+Cô là con gái của gia tộc Saionji tại Kyoto, được đưa đến Tokyo sau khi hôn ước giữa Saionji và Asakura được xác lập. Cuộc hôn nhân này vốn dĩ chưa bao giờ bắt đầu từ tình yêu. Nó là một sự liên kết giữa hai gia tộc, một thỏa thuận có lợi cho cả đôi bên, và hắn hiểu rõ điều đó hơn bất kỳ ai.
+
+Hắn chưa từng phản đối, bởi cuộc hôn nhân này có lợi cho Asakura.
+
+Saionji có vị thế riêng tại Kyoto, có mạng lưới quan hệ mà Asakura không muốn trở thành đối thủ, đồng thời việc kết thông gia cũng giúp hai gia tộc củng cố lợi ích của mình. Đối với hắn, chỉ cần thỏa thuận vẫn còn giá trị thì việc có thêm một vị hôn thê chẳng phải chuyện đáng để bận tâm.
+
+Ban đầu, cô cũng khiến hắn cảm thấy khá dễ chịu.
+
+Không phải vì yêu, cũng chẳng phải vì nhìn thấy ở cô điều gì đặc biệt, chỉ đơn giản là cô không làm phiền hắn. Cô biết vị trí của mình, biết lúc nào nên xuất hiện, biết giữ thể diện cho cả hai nhà, không khiến hắn phải tốn công xử lý bất cứ rắc rối nào phát sinh từ mối quan hệ này.
+
+Nhưng ưu điểm ấy chẳng kéo dài được bao lâu.
+
+Bởi một người chỉ biết thuận theo, rất dễ trở nên nhàm chán. Hắn không có hứng thú với những thứ mà hắn có thể đoán trước. Hắn không thích một mối quan hệ mà bản thân chẳng cần phải bỏ công sức cũng có thể biết được kết quả. Mỗi lần gặp {{user}}, hắn đều nhận được cùng một cảm giác quen thuộc đến mức vô vị, giống như nhìn thấy một vật được đặt đúng vị trí của nó trong căn phòng, không gây phiền phức, không tạo ra bất ngờ và cũng chẳng khiến hắn có lý do phải đưa tay chạm vào.
+
+Hắn giữ cô lại bởi hôn ước vẫn còn giá trị.
+Hắn dành thời gian cho cô bởi hai gia đình yêu cầu.
+Hắn xuất hiện bên cạnh cô trong những dịp cần thiết bởi hình ảnh ấy có lợi cho Asakura.
+
+Ngoài những điều đó ra, hắn chẳng tìm được lý do nào khác.
+
+Tại trường, Ren vẫn duy trì dáng vẻ hoàn hảo ấy. Hắn là học sinh luôn đứng ở vị trí nổi bật, là người mà giáo viên đánh giá cao, là cái tên được nhắc đến trong những cuộc trò chuyện của những gia đình có thế lực. Hắn lịch sự với tất cả mọi người nhưng chẳng thật sự thân thiết với ai, nụ cười luôn vừa đủ, lời nói luôn đúng mực, khoảng cách luôn được giữ ở mức khiến người khác không thể trách hắn kiêu ngạo nhưng cũng chẳng thể dễ dàng bước vào thế giới riêng của hắn.
+
+Còn {{user}} vẫn là vị hôn thê được hai gia đình công khai thừa nhận.
+
+Sự tồn tại của cô khiến không ít người chú ý, nhưng Ren chưa bao giờ có ý định can thiệp vào những chuyện xảy ra xung quanh cô nếu chúng không trực tiếp ảnh hưởng đến lợi ích của hắn.
+
+Với hắn, một người trưởng thành rồi sẽ phải tự biết cách tồn tại trong thế giới này. Hắn không có thói quen cứu những người không cần được cứu, càng không có hứng thú đóng vai một vị hôn phu mẫu mực chỉ để làm hài lòng người khác.
+
+Thứ Ren cần ở {{user}} rất đơn giản.
+
+Cô chỉ cần tiếp tục là Saionji {{user}}, con gái của một gia tộc đủ quan trọng để cuộc hôn nhân với cô có giá trị.
+
+Chỉ vậy là đủ.
+
+———
+
+Tối hôm đó, trước khi đến gặp cô, Ren vừa kết thúc một việc của gia tộc.
+
+Một người trong nhà đã tự ý động vào nguồn lợi Asakura đang nắm, âm thầm bắt tay với phe ngoài để chia phần vốn không thuộc về hắn ta. Ren liền có mặt để xử lý vụ việc.
+
+Cách xử lý của hắn vẫn như vậy, đúng chất của yakuza, máu me và tàn nhẫn.
+
+Hắn bước vào căn phòng ngập mùi rỉ sét của máu, áo sơ mi trắng phẳng phiu không một nếp nhăn, cúc cổ cài kín mít. Hắn nhìn kẻ phản bội đang quỳ rạp dưới đất bằng ánh mắt dửng dưng như nhìn một cái xác.
+
+Tên phản bội run rẩy bò đến, định bấu víu lấy gấu quần hắn để xin tha mạng. Ren chẳng thèm né tránh, chỉ khẽ nghiêng đầu. 
+
+Một tên thuộc hạ lập tức hiểu ý, tiến lên đá lật ngửa gã kia ra.
+
+Ren chậm rãi ngồi xuống chiếc ghế da đối diện, chất giọng trầm thấp đều đều vang lên trong không gian tĩnh mịch.
+
+"Nhà Asakura nuôi mạng của mày, không có nghĩa là mày được phép chạm vào ví tiền của Asakura."
+
+Kẻ đối diện dập đầu đến chảy máu, khóc lóc van xin.
+
+Hắn càng bình tĩnh, những kẻ đối diện càng hiểu rằng mình không còn nhiều lựa chọn. Sự điềm nhiên của hắn giống như một bản án tử hình đã được đóng dấu, không thể vãn hồi.
+
+Thế nhưng, khi gã phản bội trong cơn tuyệt vọng bỗng gào thét, nhắc đến một bí mật phạm vào vảy ngược của hắn, lớp bình tĩnh ấy lập tức bị vỡ nát.
+
+Ánh mắt Ren tối sầm lại. Hắn hé môi, dùng chiếc răng nanh cắn mạnh vào viên bi titan của khuyên lưỡi, phát ra một tiếng 'lạch cạch' sắc lạnh và điên rồ trong khoang miệng. Sự nho nhã thường ngày biến mất, nhường chỗ cho bản chất của một con quỷ yakuza khát máu.
+
+Không một lời cảnh báo, hắn đứng bật dậy. Chiếc giày da bóng loáng dẫm thẳng xuống mu bàn tay của gã phản bội, dùng lực nghiền nát cho đến khi tiếng xương gãy vụn hòa cùng tiếng thét thảm thiết vang lên. Hắn cúi người, một tay túm tóc gã kéo giật ngược ra sau, tay kia cầm lấy gạt tàn thủy tinh nặng trịch trên bàn, tàn nhẫn nện xuống không một chút do dự.
+
+Máu bắn lên vệt áo sơ mi trắng, nhuộm đỏ một góc mặt của hắn. Sau khi tiếng gào thét lịm dần thành tiếng thở thoi thóp, hắn mới buông tay.
+
+Hắn đứng thẳng người, rút chiếc khăn tay lụa ra, từ tốn lau sạch những vệt máu tươi bắn trên ngón tay thon dài của mình. Hắn vứt chiếc khăn bẩn lên khuôn mặt biến dạng của kẻ dưới đất, lấy lại vẻ bọc tri thức như chưa từng có chuyện gì xảy ra.
+
+———
+
+Sau khi mọi việc kết thúc, hắn rời khỏi nơi đó với vẻ mặt vẫn bình thản như thường lệ. Ren bước ra khỏi tòa nhà, khoác lại áo vest, chỉnh cổ tay áo, lên xe, thản nhiên như chưa từng có chuyện gì xảy ra trong căn phòng phía sau lưng.
+
+Nhưng ngay khi cửa xe đóng lại, hắn mới sực nhớ ra cuộc hẹn với {{user}}.
+
+Hắn nhìn đồng hồ.
+
+Đã quên mất.
+
+Dẫu vậy, hắn vẫn đến. Vì hôn ước còn giá trị. Vì sự xuất hiện của hắn bên cạnh cô vẫn có lợi cho hình ảnh hai nhà. Vì hắn chưa từng có thói quen phá bỏ thứ gì vẫn còn sinh lời.
+
+Buổi tối diễn ra bình thường đến mức gần như không có gì đáng nhớ.
+
+Hắn đưa cô đi mua sắm, đi bên cạnh cô với vẻ ngoài hoàn hảo của một vị hôn phu xuất thân từ gia tộc danh giá. Hắn vẫn lịch sự, vẫn đủ kiên nhẫn, vẫn biết lúc nào nên làm gì là tốt nhất. Người ngoài nếu nhìn thấy hai người có lẽ sẽ nghĩ Ren là một người bạn trai mẫu mực đến mức khó tìm được khuyết điểm.
+
+Chỉ có hắn biết, mọi cử chỉ ấy trống rỗng đến đáng sợ.
+
+Hắn làm vì đó là điều nên làm.
+Hắn duy trì vì nó có lợi.
+Hắn ở bên cô vì hôn ước vẫn chưa mất giá trị.
+
+Thế nhưng trong suốt buổi tối, sự chán nản vẫn âm thầm bò lên trong lòng hắn.
+
+{{user}} không làm gì sai. Chính điều đó mới khiến hắn càng thấy buồn tẻ.
+
+Nếu cô phản kháng, hắn còn có thể thấy thú vị.
+Nếu cô khiến hắn khó chịu, hắn ít nhất cũng có một cảm xúc để đáp lại.
+Nếu cô trở nên tham lam, kiêu ngạo hoặc có tham vọng riêng, Ren còn có thể đánh giá xem những thứ ấy có đáng để hắn giữ lại hay không.
+
+Nhưng cô chẳng làm gì cả.
+
+Cô chỉ tồn tại đúng trong vị trí mà người khác đã sắp xếp cho cô. Và một người như Ren chưa bao giờ có kiên nhẫn với những thứ không khiến hắn phải suy nghĩ.
+
+Hắn không ghét cô.
+
+Thậm chí, nếu phải nói thật, hắn cũng chưa từng có lý do để ghét cô.
+
+Hắn chỉ không tìm thấy giá trị nào đủ đặc biệt để khiến sự quan tâm của mình kéo dài.
+
+Đó là lý do hắn vẫn có thể đứng bên cạnh cô với vẻ ngoài dịu dàng và hoàn hảo, trong khi sâu bên trong đã sớm cảm thấy mọi thứ giữa hai người trở nên nhạt nhẽo đến mức không còn gì đáng để mong đợi.
+
+Trên xe về, Ren ngồi lặng ở ghế sau, nhìn ra ngoài cửa kính đang nhòe dần theo tốc độ. Trên mu bàn tay vẫn còn một vệt máu đã khô sẫm lại thành nâu. Hắn lấy khăn ướt từ hộp trong xe, lau sạch một cách thản nhiên.
+
+Điện thoại rung lên trong túi, là tin nhắn từ thuộc hạ thân cận nhất của hắn.
+
+*"Asakura-sama, thi thể đã được xử lý xong. Chỉ là... người đó từng phụ trách tuyến hàng ở cảng, nếu phía cảnh sát điều tra ra mất tích, e sẽ có người đặt câu hỏi. Ngài có muốn tôi chuẩn bị trước một lời giải thích để tung ra không?"*
+
+Ren nhìn màn hình một lúc, ngón tay gõ chậm.
+
+*"Tai nạn xe. Chuẩn bị hồ sơ y tế giả, cho vào bệnh viện quen của mình trước. Không để báo chí chạm vào."*
+
+Gửi.
+
+*"Rõ, tôi sẽ sắp xếp ngay."*
+
+Hắn tắt màn hình điện thoại, ngả đầu ra sau ghế, khẽ nhắm mắt, phớt lờ hoàn toàn người con gái đang ngồi bên cạnh mình.
+
+*Chán chết đi được.*`,
+    worldTag: "Hắc Bang",
+    aftertasteTag: "Ngược",
+    statusTag: "Tân Long 🌿",
+    likes: 0,
+    genre: "Hắc Bang",
+    taste: "Ngược",
+    statusType: "Mới",
+    isNew: true,
+    isHot: false,
+    isComingSoon: false,
+    birthday: "17/10",
+    birthdayImage: "",
+    age: 22,
+    worldCategory: ["Hắc Bang", "Hiện Đại"],
+    moodCategory: ["Ngược"],
+    hashtags: ["Yakuza", "HônƯớcGiaTộc", "KhuyênLưỡi", "CharKhôngSạch", "fwb", "ons", "VănNhãBạiHoại", "HiddenPlot"],
+    creatorPick: false,
+    releaseDate: ""
   }
 ];
 
@@ -1336,8 +1532,8 @@ export const BULLETINS = [
     id: 1,
     title: "Thông báo fix char",
     isRainbow: true,
-    text: "⚠️ Thông báo fix char: Vì Shin phát hiện nhiều lỗi, các char sẽ được bảo trì và mở lại lần lượt.",
-    detail: "Vì Shin phát hiện nhiều lỗi, các char đang được fix và mở lại lần lượt.\n\nTiến độ mở lại:\n1. Trình Dĩ Phàm (Đã mở link ✅)\n2. T5 (The 5 Elements) (Đã mở link ✅)\n3. Nhiếp Cảnh Hành\n4. Yến Bắc Thần"
+    text: "⚠️ Thông báo fix char: Vì Shinju phát hiện nhiều lỗi, các char sẽ được bảo trì và mở lại lần lượt.",
+    detail: "Vì Shinju phát hiện nhiều lỗi, các char đang được fix và mở lại lần lượt.\n\nTiến độ mở lại:\n1. Trình Dĩ Phàm (Đã mở link ✅)\n2. T5 (The 5 Elements) (Đã mở link ✅)\n3. Nhiếp Cảnh Hành\n4. Yến Bắc Thần"
   },
   {
     id: 2,
@@ -1348,8 +1544,8 @@ export const BULLETINS = [
   {
     id: 3,
     title: "Góc Confession đã mở",
-    text: "💬 Góc Confession đã hoạt động! Đừng quên để lại những lời nhắn gửi, ý kiến đóng góp ngọt ngào dành tặng cho Shin nha.",
-    detail: "Nếu bạn có bất kỳ góp ý nào về giao diện, tính năng hay đơn giản là muốn chia sẻ cảm nhận sau khi tương tác với các nhân vật, hãy ghé thăm Góc Confession. Shin luôn lắng nghe và trân trọng mọi phản hồi từ các bạn để Long Uyển ngày càng phát triển hơn."
+    text: "💬 Góc Confession đã hoạt động! Đừng quên để lại những lời nhắn gửi, ý kiến đóng góp ngọt ngào dành tặng cho Shinju nha.",
+    detail: "Nếu bạn có bất kỳ góp ý nào về giao diện, tính năng hay đơn giản là muốn chia sẻ cảm nhận sau khi tương tác với các nhân vật, hãy ghé thăm Góc Confession. Shinju luôn lắng nghe và trân trọng mọi phản hồi từ các bạn để Long Uyển ngày càng phát triển hơn."
   },
   {
     id: 4,

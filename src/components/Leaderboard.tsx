@@ -26,7 +26,7 @@ export default function Leaderboard({ characters, onShowBackstory }: Leaderboard
         </div>
         <div>
           <h3 className="font-serif text-lg font-extrabold text-[#3A4258] leading-tight">
-            Cửu Long Đài Nhà Shin 👑
+            Cửu Long Đài Nhà Shinju 👑
           </h3>
           <p className="text-[11px] text-[#6B7590] font-medium">
             Xếp hạng được bình chọn nhiều nhất

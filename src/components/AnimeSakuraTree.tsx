@@ -67,12 +67,12 @@ export const AnimeSakuraTree: React.FC<AnimeSakuraTreeProps> = ({ className = ''
             <stop offset="100%" stopColor="#F47D9C" />
           </linearGradient>
 
-          {/* Thảm cỏ xanh dưới gốc */}
-          <linearGradient id="mossyGroundGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#7EBA94" />
-            <stop offset="40%" stopColor="#559972" />
-            <stop offset="85%" stopColor="#3C7755" />
-            <stop offset="100%" stopColor="#2A593D" />
+          {/* Cụm mây tiên ôm chân gốc cây cổ thụ */}
+          <linearGradient id="treeCloudBaseGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#FFFFFF" />
+            <stop offset="35%" stopColor="#FFF2F7" />
+            <stop offset="70%" stopColor="#E3EEFA" />
+            <stop offset="100%" stopColor="#CCE0F5" />
           </linearGradient>
 
           {/* Đóa hoa anh đào 5 cánh chuẩn anime */}
@@ -123,22 +123,31 @@ export const AnimeSakuraTree: React.FC<AnimeSakuraTreeProps> = ({ className = ''
             (Cố định vững chãi ở chân, không bị xoay nhấc theo thân)
             =================================================================== */}
         <g className="sakura-roots-ground">
-          {/* Gò đồi đất cỏ ôm chân gốc */}
+          {/* Cụm mây bồng bềnh tiên cảnh nâng đỡ chân gốc rễ cổ thụ */}
           <path
-            d="M -30 780 L -30 705 Q 60 675 160 685 Q 260 695 380 725 Q 460 745 520 780 Z"
-            fill="url(#mossyGroundGrad)"
+            d="M -30 780 L -30 690 
+               C 30 655, 110 650, 180 675 
+               C 250 645, 340 655, 410 690 
+               C 470 720, 520 745, 560 780 Z"
+            fill="url(#treeCloudBaseGrad)"
           />
-          {/* Vệt bóng râm dưới chân gốc rễ */}
-          <ellipse cx="195" cy="735" rx="160" ry="25" fill="#1C3825" opacity="0.6" />
+          {/* Viền sáng trên cụm mây nâng gốc cây */}
+          <path
+            d="M -30 690 
+               C 30 655, 110 650, 180 675 
+               C 250 645, 340 655, 410 690 
+               C 470 720, 520 745, 560 780"
+            stroke="#FFFFFF"
+            strokeWidth="3.5"
+            fill="none"
+          />
+          {/* Múi mây trắng phồng xốp bao bọc rễ cây */}
+          <ellipse cx="140" cy="710" rx="85" ry="32" fill="#FFFFFF" opacity="0.9" />
+          <ellipse cx="320" cy="725" rx="95" ry="35" fill="#FFFFFF" opacity="0.85" />
+          <ellipse cx="230" cy="745" rx="110" ry="30" fill="#F4F8FD" opacity="0.8" />
 
-          {/* Các mảng rêu phong bám trên mặt đất */}
-          <path
-            d="M 50 710 Q 70 702 95 712 Q 80 722 50 710 Z
-               M 230 715 Q 255 708 275 718 Q 260 728 230 715 Z
-               M 320 735 Q 350 728 375 738 Q 350 750 320 735 Z"
-            fill="#3B694B"
-            opacity="0.8"
-          />
+          {/* Vệt bóng mây lam êm dịu dưới chân gốc rễ */}
+          <ellipse cx="195" cy="735" rx="150" ry="22" fill="#D3E4F6" opacity="0.65" />
 
           {/* ================= CÁC RỄ CHÍNH TO KHỎE BÁNH BẠNH ================= */}
           {/* Rễ chính bên trái vươn xa */}
@@ -302,26 +311,19 @@ export const AnimeSakuraTree: React.FC<AnimeSakuraTreeProps> = ({ className = ''
             strokeLinecap="round"
           />
 
-          {/* Các mảng rêu phong ôm quanh gốc và trên các gờ rễ */}
+          {/* Làn sương mây trắng cuộn nhẹ quanh các gờ rễ cổ thụ */}
           <path
-            d="M 130 655 Q 145 645 160 658 Q 148 668 130 655 Z
-               M 180 660 Q 200 650 215 662 Q 200 672 180 660 Z
-               M 235 670 Q 255 660 270 672 Q 255 682 235 670 Z"
-            fill="#5E8C4E"
-            opacity="0.85"
+            d="M 120 720 Q 150 710 180 724
+               M 210 725 Q 245 715 270 730
+               M 290 735 Q 320 725 350 740"
+            stroke="#FFFFFF"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeOpacity="0.8"
+            fill="none"
           />
 
-          {/* Các khóm cỏ xanh & hoa dại mọc quanh rễ */}
-          <path
-            d="M 25 740 L 22 725 L 28 738 L 32 722 L 35 742 
-               M 85 735 L 82 718 L 88 732 L 94 720 L 96 738
-               M 220 740 L 216 722 L 224 736 L 228 720 L 232 742
-               M 310 740 L 308 724 L 314 736 L 318 722 L 322 742"
-            stroke="#4F8F5E"
-            strokeWidth="2"
-            strokeLinecap="round"
-          />
-          {/* Cánh hoa anh đào rơi nằm trên thảm cỏ và rễ cây */}
+          {/* Cánh hoa anh đào rơi bồng bềnh nằm trên cụm mây và rễ cây */}
           <circle cx="70" cy="735" r="3.5" fill="#FFCCD7" />
           <circle cx="115" cy="748" r="3" fill="#FFAEC0" />
           <circle cx="195" cy="742" r="4" fill="#FFCCD7" />
